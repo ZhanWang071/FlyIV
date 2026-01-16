@@ -3,6 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GlobalApiConfig", menuName = "Config/ApiConfig")]
 public class ApiConfig : ScriptableObject
 {
+    [Header("Client-Server Communication")]
+    [SerializeField] public string serverUrl = "http://127.0.0.1:5001/generate_skill";
+
     [Header("Common Settings")]
     [SerializeField] public string apiKey = "sk-1tbfpLQRbZVig0pa2805B35a9e08426190A7E2Be79E76013";
 

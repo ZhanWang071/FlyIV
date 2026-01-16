@@ -21,7 +21,10 @@ public class VLMFocus : MonoBehaviour
 
     [Header("Debug")]
     [Tooltip("这里会实时显示最近一次的VLM检测结果")]
-    public List<string> identifiedObjects = new List<string>();
+    public List<string> identifiedObjects = new List<string> { "TestCube" };
+    
+    [TextArea(10, 20)]
+    public string objectsDataDisplay;
 
     public class OpenAIResponse
     {
@@ -31,6 +34,41 @@ public class VLMFocus : MonoBehaviour
     }
 
     public class VLMResult { public string focused_object; }
+    
+    // 用于序列化的简单数据结构
+    [System.Serializable]
+    public class Vector3Data
+    {
+        public float x;
+        public float y;
+        public float z;
+        
+        public Vector3Data(Vector3 v)
+        {
+            x = (float)Math.Round(v.x, 2);
+            y = (float)Math.Round(v.y, 2);
+            z = (float)Math.Round(v.z, 2);
+        }
+    }
+    
+    [System.Serializable]
+    public class ObjectData
+    {
+        public string name;
+        public Vector3Data position;
+        public Vector3Data scale;
+        public BoundaryData boundary;
+    }
+    
+    [System.Serializable]
+    public class BoundaryData
+    {
+        public Vector3Data center;
+        public Vector3Data size;
+        public Vector3Data forward;
+        public Vector3Data right;
+        public Vector3Data up;
+    }
 
     void Start() 
     {
@@ -174,9 +212,10 @@ public class VLMFocus : MonoBehaviour
     /// <summary>
     /// 获取focused物体的geometry信息，用于user prompt
     /// </summary>
+    [ContextMenu("Get Focused Objects Data")]
     public List<object> GetFocusedObjectsData()
     {
-        List<object> objectsData = new List<object>();
+        List<ObjectData> objectsData = new List<ObjectData>();
         foreach (string objName in identifiedObjects)
         {
             GameObject go = GameObject.Find(objName);
@@ -187,27 +226,26 @@ public class VLMFocus : MonoBehaviour
 
             Bounds bounds = renderer.bounds;
 
-            // Helper to round Vector3 to two decimal places
-            Vector3 RoundVec3(Vector3 v) => new Vector3(
-                (float)Math.Round(v.x, 2), 
-                (float)Math.Round(v.y, 2), 
-                (float)Math.Round(v.z, 2)
-            );
-
-            objectsData.Add(new
+            objectsData.Add(new ObjectData
             {
                 name = go.name,
-                position = RoundVec3(new Vector3(bounds.center.x, bounds.max.y, bounds.center.z)),
-                scale = RoundVec3(go.transform.localScale),
-                boundary = new {
-                    center = RoundVec3(bounds.center),
-                    size = RoundVec3(bounds.size),
-                    forward = RoundVec3(go.transform.forward),
-                    right = RoundVec3(go.transform.right),
-                    up = RoundVec3(go.transform.up)
+                position = new Vector3Data(new Vector3(bounds.center.x, bounds.max.y, bounds.center.z)),
+                scale = new Vector3Data(go.transform.localScale),
+                boundary = new BoundaryData
+                {
+                    center = new Vector3Data(bounds.center),
+                    size = new Vector3Data(bounds.size),
+                    forward = new Vector3Data(go.transform.forward),
+                    right = new Vector3Data(go.transform.right),
+                    up = new Vector3Data(go.transform.up)
                 }
             });
         }
-        return objectsData;
+        
+        // 将数据序列化为格式化的JSON字符串
+        objectsDataDisplay = JsonConvert.SerializeObject(objectsData, Formatting.Indented);
+        
+        // 为了保持返回类型兼容，转换为List<object>
+        return objectsData.Cast<object>().ToList();
     }
 }

@@ -899,6 +899,7 @@ GameObject:
   - component: {fileID: 1687222467}
   - component: {fileID: 1687222471}
   - component: {fileID: 1687222473}
+  - component: {fileID: 1687222474}
   m_Layer: 0
   m_Name: Configuration
   m_TagString: Untagged
@@ -924,7 +925,17 @@ MonoBehaviour:
   targetCamera: {fileID: 1531150776}
   resolution: 512
   jpgQuality: 75
-  identifiedObjects: []
+  identifiedObjects:
+  - TestCube
+  objectsDataDisplay: "[\n  {\n    \"name\": \"TestCube\",\n    \"position\": {\n     
+    \"x\": -0.5,\n      \"y\": 1.62,\n      \"z\": 0.84\n    },\n    \"scale\": {\n     
+    \"x\": 0.2,\n      \"y\": 0.2,\n      \"z\": 0.2\n    },\n    \"boundary\": {\n     
+    \"center\": {\n        \"x\": -0.5,\n        \"y\": 1.52,\n        \"z\": 0.84\n     
+    },\n      \"size\": {\n        \"x\": 0.2,\n        \"y\": 0.2,\n        \"z\":
+    0.2\n      },\n      \"forward\": {\n        \"x\": 0.0,\n        \"y\": 0.0,\n       
+    \"z\": 1.0\n      },\n      \"right\": {\n        \"x\": 1.0,\n        \"y\":
+    0.0,\n        \"z\": 0.0\n      },\n      \"up\": {\n        \"x\": 0.0,\n       
+    \"y\": 1.0,\n        \"z\": 0.0\n      }\n    }\n  }\n]"
 --- !u!4 &1687222468
 Transform:
   m_ObjectHideFlags: 0
@@ -1041,6 +1052,19 @@ MonoBehaviour:
 
     ORIENT_TO("TestCube",
     "user");'
+  executeCodes: 
+--- !u!114 &1687222474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687222466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacabc80634cf4620a39fa41e0ea1733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnityPythonBridge
 --- !u!1 &2092139007
 GameObject:
   m_ObjectHideFlags: 0
