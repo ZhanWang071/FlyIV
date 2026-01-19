@@ -45,11 +45,13 @@ public class InteractionTracker : MonoBehaviour
         if (showDebugRay) DrawDebugRays();
     }
 
+    [ContextMenu("Detect Pointing Object")]
     private GameObject PerformPointingDetection()
     {
         // 优先检测右手，其次左手
         GameObject hitObj = TraceRay(rightPointer);
         if (hitObj == null) hitObj = TraceRay(leftPointer);
+        if (hitObj != null && _currentlyPointedObject.name != hitObj.name) Debug.Log("[InteractionTracker] The current pointing object is: " + hitObj.name);
         return hitObj;
     }
 

@@ -46,6 +46,7 @@ Client/*.VC.db
 Client/*.pidb.meta
 Client/*.pdb.meta
 Client/*.mdb.meta
+Client/ProjectSettings/ProjectVersion.txt
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
