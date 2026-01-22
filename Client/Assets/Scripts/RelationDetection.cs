@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
+using System.IO;
 
 public class RelationDetection : MonoBehaviour
 {
@@ -14,21 +15,22 @@ public class RelationDetection : MonoBehaviour
 
     [Header("Settings - Horizontal (Paper Strict)")]
     [Tooltip("水平关系的有效距离 (对应论文中的 d_max)")]
-    [SerializeField] private float maxHorizontalDistance = 0.2f; // d_max
+    [SerializeField] private float maxHorizontalDistance = 2f; // d_max
 
     [Tooltip("水平视野夹角阈值 (对应论文中的 Theta, 单位: 度)。建议 45~60 度")]
     [Range(10, 90)]
     [SerializeField] private float viewAngleThreshold = 33.0f; // Theta
 
     [Header("Settings - Proximity")]
-    [SerializeField] private float nearDistance = 0.5f;
-    [SerializeField] private float farDistance = 2f;
+    [SerializeField] private float nearDistance = 2f;
+    // [SerializeField] private float farDistance = 2f;
 
     [Header("Result Display")]
     [Tooltip("这里会实时显示最近一次的关系检测结果")]
     [SerializeField] private VLMFocus vlmHandler;
     [TextArea(10, 20)] public string relationDataJSON;
 
+    private static readonly object _logLock = new object();
     // --- 数据结构定义 ---
 
     [Serializable]
@@ -228,7 +230,7 @@ public class RelationDetection : MonoBehaviour
         // 最后检查距离
         float dist3D = Vector3.Distance(posA, posB);
         if (dist3D < nearDistance) return "near";
-        else if (dist3D < farDistance) return "far";
+        // else if (dist3D < farDistance) return "far";
 
         return null;
     }
@@ -313,7 +315,6 @@ public class RelationDetection : MonoBehaviour
     {
         string inputJson = vlmHandler.objectsDataDisplay;
         string outputJson = GetRelationData(inputJson);
-        Debug.Log($"[RelationDetection] 关系检测完成，记录到Log文件");
         LogRelationData(outputJson);  
     }
 
@@ -328,13 +329,22 @@ public class RelationDetection : MonoBehaviour
         }
 
         string logFilePath = vlmHandler.GetCurrentLogFilePath();
-        try
+        lock (_logLock)
         {
-            vlmHandler.WriteToLog(relationDataJSON);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"[RelationDetection] 写入日志失败: {e.Message}");
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"--- Relation Detection Result ---");
+                    writer.WriteLine(relationDataJSON);
+                    writer.WriteLine();
+                    Debug.Log($"[RelationDetection] 关系检测完成，记录到Log文件");
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[RelationDetection] 写入日志失败: {e.Message}");
+            }
         }
     }
 }
