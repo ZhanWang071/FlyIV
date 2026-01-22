@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
 using Newtonsoft.Json;
 
 
@@ -25,6 +26,12 @@ public class VLMFocus : MonoBehaviour
     
     [TextArea(10, 20)]
     public string objectsDataDisplay;
+    
+    public System.Action<string> OnVLMFocusFinished;
+    
+    // 日志文件路径（静态，供 RelationDetection 使用）
+    private static string _currentLogFilePath;
+    private static readonly object _logLock = new object();
 
     public class OpenAIResponse
     {
@@ -75,11 +82,16 @@ public class VLMFocus : MonoBehaviour
         customApiUrl = ApiConfig.Instance.vlmUrl; 
         apiKey = ApiConfig.Instance.apiKey;
         model = ApiConfig.Instance.vlmModel; 
+
+        targetCamera = Camera.main;
     }
 
     [ContextMenu("Test Identify Now")]
     public async Task IdentifyFocusedObject()
     {
+        // 创建或获取日志文件路径
+        CreateLogFile();
+        
         // 1. 扫描场景 
         List<string> candidateNames = GameObject.FindObjectsByType<GameObject>(FindObjectsSortMode.None)
             .Where(go => go.GetComponent<Renderer>() != null && go.activeInHierarchy)
@@ -126,6 +138,17 @@ public class VLMFocus : MonoBehaviour
                             // if (name == identifiedObjects[0]) UnityEditor.Selection.activeGameObject = foundObj;
                             // #endif
                         }
+                    }
+                    
+                    // 5. 获取物体数据并触发完成事件
+                    GetFocusedObjectsData();
+                    
+                    // 6. 记录 identifiedObjects 到日志文件
+                    LogIdentifiedObjects();
+                    
+                    if (OnVLMFocusFinished != null && !string.IsNullOrEmpty(objectsDataDisplay))
+                    {
+                        OnVLMFocusFinished.Invoke(objectsDataDisplay);
                     }
                 }
             } 
@@ -247,5 +270,105 @@ public class VLMFocus : MonoBehaviour
         
         // 为了保持返回类型兼容，转换为List<object>
         return objectsData.Cast<object>().ToList();
+    }
+
+    /// <summary>
+    /// 创建日志文件（如果还没有创建）
+    /// </summary>
+    private void CreateLogFile()
+    {
+        if (!string.IsNullOrEmpty(_currentLogFilePath) && File.Exists(_currentLogFilePath)) return; // 日志文件已存在
+
+        // 生成日期戳格式：yyyyMMdd_HHmmss
+        string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        string fileName = $"SceneGraph_{timestamp}.txt";
+        _currentLogFilePath = Path.Combine(Application.dataPath, "Logs", fileName);
+    }
+
+    /// <summary>
+    /// 记录 identifiedObjects 到日志文件
+    /// </summary>
+    private void LogIdentifiedObjects()
+    {
+        if (string.IsNullOrEmpty(_currentLogFilePath) || identifiedObjects == null || identifiedObjects.Count == 0)
+        {
+            return;
+        }
+
+        lock (_logLock)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(_currentLogFilePath, true))
+                {
+                    writer.WriteLine($"--- Identified Objects Detection Result: ({identifiedObjects.Count}) ---");
+                    writer.WriteLine(identifiedObjects);
+                    writer.WriteLine();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[VLMFocus] 写入日志失败: {e.Message}");
+            }
+        }
+    }
+
+    /// <summary>
+    /// 获取当前日志文件路径（供 RelationDetection 使用）
+    /// </summary>
+    public string GetCurrentLogFilePath()
+    {
+        if (!File.Exists(_currentLogFilePath))  CreateLogFile();
+        return _currentLogFilePath;
+    }
+
+    /// <summary>
+    /// 写入日志（供 RelationDetection 使用）
+    /// </summary>
+    public void WriteToLog(string content)
+    {
+        lock (_logLock)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(_currentLogFilePath, true))
+                {
+                    writer.WriteLine($"--- Relation Detection Result ---");
+                    writer.WriteLine(content);
+                    writer.WriteLine();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[RelationDetection] 写入日志失败: {e.Message}");
+            }
+        }
+    }
+
+    /// ------------ Test Cases ----------------
+
+    [ContextMenu("Test Case 1")]
+    public void testCase1()
+    {
+        // 设置 Main Camera 的 World Transform
+        Vector3 position = new Vector3(
+            0.405f,    // X (0.4047400951385498)
+            1.525f,   // Y (1.524625301361084)
+            -0.605f   // Z (-0.604840874671936)
+        );
+        
+        // Rotation 使用四元数格式 (x, y, z, w)
+        Quaternion rotationQuaternion = new Quaternion(
+            0.002f,   // X (0.0016219038516283036)
+            0.998f,   // Y (0.9980877637863159)
+            -0.030f,  // Z (-0.029951637610793115)
+            0.054f    // W (0.054047852754592898)
+        );
+
+        // 应用 Transform
+        targetCamera.transform.position = position;
+        targetCamera.transform.rotation = rotationQuaternion;
+
+        _ = IdentifyFocusedObject();
     }
 }

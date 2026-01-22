@@ -7,10 +7,12 @@ public class Orchestrator : MonoBehaviour
     [Header("Reference Settings")]
     public SpeechToText sttHandler;
     public VLMFocus vlmHandler;
+    public RelationDetection relationDetector;
     public InteractionTracker interactionTracker;
     public SkillController skillController;
     public ActionExecutor actionExecutor;
     public Transform playerCamera;
+    public GameObject Environment;
 
     private void Start()
     {

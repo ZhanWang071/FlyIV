@@ -12,6 +12,11 @@ public class SpeechToText : MonoBehaviour
     [SerializeField] private string apiKey;
     [SerializeField] private string model;
 
+    [Header("Open/Close Auto Voice Detection")]
+    [Tooltip("是否启用自动语音检测")]
+    [SerializeField] private bool autoDetection = false;
+
+
     [Header("Voice Activity Detection")]
     public float threshold = 0.02f;   
     public float silenceDelay = 1.0f; 
@@ -77,6 +82,12 @@ public class SpeechToText : MonoBehaviour
 
     void Update()
     {
+        // 如果自动检测未启用，直接返回
+        if (!autoDetection)
+        {
+            return;
+        }
+
         // 自动恢复检查：如果正在录制中途断开了
         if (_recordingClip == null || !Microphone.IsRecording(_currentDevice))
         {
