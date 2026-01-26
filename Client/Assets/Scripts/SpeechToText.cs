@@ -1,21 +1,23 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
+using OpenAI;
+using OpenAI.Chat;
+using OpenAI.Audio;
 
 public class SpeechToText : MonoBehaviour
 {
     [Header("API Configuration")]
-    [SerializeField] private string customApiUrl; 
-    [SerializeField] private string apiKey;
-    [SerializeField] private string model;
+    private OpenAIClient openaiClient;
 
     [Header("Open/Close Auto Voice Detection")]
     [Tooltip("是否启用自动语音检测")]
     [SerializeField] private bool autoDetection = false;
-
 
     [Header("Voice Activity Detection")]
     public float threshold = 0.02f;   
@@ -47,9 +49,7 @@ public class SpeechToText : MonoBehaviour
 
     private void Start()
     {
-        customApiUrl = ApiConfig.Instance.sttUrl; 
-        apiKey = ApiConfig.Instance.apiKey;
-        model = ApiConfig.Instance.sttModel;
+        openaiClient = new OpenAIClient(ApiConfig.Instance.Auth, ApiConfig.Instance.Settings);
         
         StartCoroutine(DelayedStart());
     }
@@ -142,7 +142,9 @@ public class SpeechToText : MonoBehaviour
     private void HandleSpeechEnd()
     {
         byte[] audioData = WavUtility.FromAudioClip(_recordingClip);
-        StartCoroutine(UploadAudio(audioData));
+        string audioFile = SaveAudioData(audioData);
+        Destroy(_recordingClip);
+        _ = UploadAudio(audioFile);
     }
 
     /// <summary>
@@ -160,41 +162,99 @@ public class SpeechToText : MonoBehaviour
         OnTranscribeFinished?.Invoke(manualInputText);
     }
 
-    private IEnumerator UploadAudio(byte[] wavBytes)
+    private async Task UploadAudio(string audioFile)
     {
-        WWWForm form = new WWWForm();
-        form.AddBinaryData("file", wavBytes, "audio.wav", "audio/wav");
-        form.AddField("model", model);
-        form.AddField("prompt", "Translate the user's voice command into valid text, ignoring interjections like umm, ok.");
-
-        using (UnityWebRequest www = UnityWebRequest.Post(customApiUrl, form))
+        try
         {
-            www.SetRequestHeader("Authorization", "Bearer " + apiKey);
+            var request = new AudioTranscriptionRequest(
+                audioPath: audioFile,
+                model: ApiConfig.Instance.sttModel,
+                prompt: "Translate the user's voice command into valid text, ignoring interjections like umm, ok.",
+                temperature: 0.1f
+            );
+            var response = await openaiClient.AudioEndpoint.CreateTranscriptionTextAsync(request);
 
-            yield return www.SendWebRequest();
+            lastRecognizedText = response;
 
-            if (www.result == UnityWebRequest.Result.Success)
+            if (IsMeaningful(response))
             {
-                var response = JsonConvert.DeserializeObject<OpenAISttResponse>(www.downloadHandler.text);
-                string text = response.text.Trim();
-
-                // 更新 Inspector 显示
-                lastRecognizedText = text;
-
-                if (IsMeaningful(text))
-                {
-                    Debug.Log($"<color=cyan>[SpeechToText] 转录结果: {text}</color>");
-                    OnTranscribeFinished?.Invoke(text);
-                }
-                else
-                {
-                    Debug.Log("<color=gray>[SpeechToText] 已过滤语气词: " + text + "</color>");
-                }
+                Debug.Log($"<color=cyan>[SpeechToText] 转录结果: {response}</color>");
+                OnTranscribeFinished?.Invoke(response);
             }
             else
             {
-                Debug.LogError("<color=cyan>[SpeechToText] STT API Error: " + www.error + "</color>");
+                Debug.Log("<color=gray>[SpeechToText] 已过滤语气词: " + response + "</color>");
             }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"[SpeechToText] OpenAI API 调用失败: {e.Message}");
+        }
+        
+        /// ------------- Old Version (UnityWebRequest) ----------
+        // WWWForm form = new WWWForm();
+        // form.AddBinaryData("file", wavBytes, "audio.wav", "audio/wav");
+        // form.AddField("model", model);
+        // form.AddField("prompt", "Translate the user's voice command into valid text, ignoring interjections like umm, ok.");
+
+        // using (UnityWebRequest www = UnityWebRequest.Post(customApiUrl, form))
+        // {
+        //     www.SetRequestHeader("Authorization", "Bearer " + apiKey);
+
+        //     yield return www.SendWebRequest();
+
+        //     if (www.result == UnityWebRequest.Result.Success)
+        //     {
+        //         var response = JsonConvert.DeserializeObject<OpenAISttResponse>(www.downloadHandler.text);
+        //         string text = response.text.Trim();
+
+        //         // 更新 Inspector 显示
+        //         lastRecognizedText = text;
+
+        //         if (IsMeaningful(text))
+        //         {
+        //             Debug.Log($"<color=cyan>[SpeechToText] 转录结果: {text}</color>");
+        //             OnTranscribeFinished?.Invoke(text);
+        //         }
+        //         else
+        //         {
+        //             Debug.Log("<color=gray>[SpeechToText] 已过滤语气词: " + text + "</color>");
+        //         }
+        //     }
+        //     else
+        //     {
+        //         Debug.LogError("<color=cyan>[SpeechToText] STT API Error: " + www.error + "</color>");
+        //     }
+        // }
+    }
+
+    private string SaveAudioData(byte[] audioData, string fileName = "audio.wav")
+    {
+        // 确保目录存在
+        string directoryPath = Path.Combine(Application.dataPath, "Tmp");
+        if (!Directory.Exists(directoryPath))
+        {
+            Directory.CreateDirectory(directoryPath);
+            Debug.Log($"创建目录: {directoryPath}");
+        }
+        
+        // 构建完整文件路径
+        string filePath = Path.Combine(directoryPath, fileName);
+        
+        try
+        {
+            // 写入音频数据到文件
+            File.WriteAllBytes(filePath, audioData);
+            
+            Debug.Log($"音频文件已保存: {filePath}");
+            Debug.Log($"文件大小: {audioData.Length} 字节");
+            
+            return filePath;
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"保存音频文件失败: {e.Message}");
+            return null;
         }
     }
 

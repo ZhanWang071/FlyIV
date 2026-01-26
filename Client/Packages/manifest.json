@@ -4,6 +4,7 @@
     "com.meta.xr.sdk.all": "83.0.1",
     "com.monitor1394.xcharts": "https://github.com/XCharts-Team/XCharts.git",
     "com.monitor1394.xcharts.daemon": "https://github.com/XCharts-Team/XCharts-Daemon.git",
+    "com.openai.unity": "8.8.9",
     "com.unity.feature.development": "1.0.2",
     "com.unity.ide.rider": "3.0.38",
     "com.unity.inputsystem": "1.16.0",
@@ -51,5 +52,15 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.openai",
+        "com.utilities"
+      ]
+    }
+  ]
 }

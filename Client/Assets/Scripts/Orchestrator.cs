@@ -14,11 +14,14 @@ public class Orchestrator : MonoBehaviour
     public Transform playerCamera;
     public GameObject Environment;
 
+    [Header("Independent Module Test")]
+    [SerializeField] private bool voiceSendtoVLM = false;
+
     private void Start()
     {
         if (playerCamera == null) playerCamera = Camera.main.transform;
         
-        sttHandler.OnTranscribeFinished += (speechText) => {
+        if (voiceSendtoVLM) sttHandler.OnTranscribeFinished += (speechText) => {
             _ = ProcessWorkflow(speechText);
         };
     }
