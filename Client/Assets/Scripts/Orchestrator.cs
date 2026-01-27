@@ -60,4 +60,10 @@ public class Orchestrator : MonoBehaviour
         await actionExecutor.ExecuteSkillSequence(skillsResponse);
     }
 
+    /// ---------- Debug Buttons --------------
+    public void ResetConversation()
+    {
+        skillController.ResetConversation();
+    }
+
 }

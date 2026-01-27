@@ -17,18 +17,6 @@ public class ApiConfig : ScriptableObject
     public string vlmModel = "gpt-4o-mini";
     public string sttModel = "gpt-4o-mini-transcribe";
     public string llmModel = "gemini-2.5-flash";
-    
-    [Header("VLM (Visual Language Model)")]
-    public string vlmUrl =  "https://vip.yi-zhan.top/v1/chat/completions";
-    
-
-    [Header("STT (Speech To Text)")]
-    public string sttUrl = "https://vip.yi-zhan.top/v1/audio/transcriptions";
-    
-
-    [Header("Skill Controller")]
-    public string llmUrl = "https://vip.yi-zhan.top/v1/chat/completions";
-    
 
     // --- 自动化单例访问逻辑 ---
     private static ApiConfig _instance;

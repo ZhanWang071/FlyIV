@@ -346,7 +346,7 @@ public class VLMFocus : MonoBehaviour
         // 生成日期戳格式：yyyyMMdd_HHmmss
         string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
         string fileName = $"SceneGraph_{timestamp}.txt";
-        _currentLogFilePath = Path.Combine(Application.dataPath, "Logs", fileName);
+        _currentLogFilePath = Path.Combine(Application.dataPath, "Logs/VLMFocus", fileName);
     }
 
     /// <summary>
@@ -361,7 +361,7 @@ public class VLMFocus : MonoBehaviour
 
         string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
         string fileName = $"SceneGraph_{timestamp}.txt";
-        _currentLogFilePath = Path.Combine(Application.dataPath, "Logs", fileName);
+        _currentLogFilePath = Path.Combine(Application.dataPath, "Logs/VLMFocus", fileName);
 
         lock (_logLock)
         {
