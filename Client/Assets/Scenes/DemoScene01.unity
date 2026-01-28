@@ -660,11 +660,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 608190816}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2, y: -0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -2, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &90418232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,8 +719,8 @@ MonoBehaviour:
   m_fontSizeMin: 0
   m_fontSizeMax: 0
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1340,7 +1340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.8199999}
+  m_AnchoredPosition: {x: -0.02, y: 1.8}
   m_SizeDelta: {x: 549, y: 143.99998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &135116884
@@ -6737,11 +6737,11 @@ RectTransform:
   - {fileID: 986104223}
   m_Father: {fileID: 2008760247}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 274.5, y: -71.99999}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -274.5, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &608190817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14256,11 +14256,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1364706939}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2, y: -0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1238221163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14315,8 +14315,8 @@ MonoBehaviour:
   m_fontSizeMin: 0
   m_fontSizeMax: 0
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -16023,11 +16023,11 @@ RectTransform:
   - {fileID: 1166750328}
   m_Father: {fileID: 2008760247}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 274.5, y: -71.99999}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1364706940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20159,6 +20159,7 @@ MonoBehaviour:
   promptPath: Prompts/SkillControllerSystemPrompt
   maxHistoryCount: 10
   lastResponse: 
+  userinput: Create a visualization on the teacher desk
 --- !u!114 &1687222471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20213,10 +20214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActionExecutor
   skillsFolder: Skills
-  skillSequence: 'SCALE("TestCube", 0.4f, 0.4f , 0.4f);
-
-    ORIENT_TO("TestCube",
-    "user");'
+  skillSequence: Embed("Canvas", "Blackboard");
   executeCodes: 
 --- !u!114 &1687222474
 MonoBehaviour:

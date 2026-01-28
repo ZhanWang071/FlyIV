@@ -18,10 +18,13 @@ public class ActionExecutor : MonoBehaviour
 
     public async Task ExecuteSkillSequence(string skillOutput)
     {
+        Debug.Log($"[ActionExecutor] 执行skill sequence: {skillOutput}");
+
         skillSequence = skillOutput;
         // 正则表达式匹配：函数名(所有参数内容)
         // 匹配格式如：ORIENT_TO("barchart_01", "user");
-        string pattern = @"(\w+)\s*\(([^)]*)\);";
+        // string pattern = @"(\w+)\s*\(([^)]*)\);";
+        string pattern = @"(\w+)\s*\((.*?)\);$";
         MatchCollection matches = Regex.Matches(skillOutput, pattern);
 
         foreach (Match match in matches)
@@ -34,6 +37,7 @@ public class ActionExecutor : MonoBehaviour
 
             executeCodes += $"{className}.Execute({rawArgs});\n";
             
+            Debug.Log($"[ActionExecutor] 执行skill: {className}.Execute({rawArgs})");
             await RunDynamicSkill(className, rawArgs);
         }
     }
@@ -61,8 +65,18 @@ public class ActionExecutor : MonoBehaviour
             string code = File.ReadAllText(filePath);
 
             var scriptOptions = ScriptOptions.Default
-                .WithReferences(typeof(UnityEngine.Object).Assembly)
-                .WithImports("UnityEngine", "System", "System.Collections.Generic");
+                .WithReferences(
+                    typeof(UnityEngine.Object).Assembly,           // 核心程序集
+                    typeof(UnityEngine.Canvas).Assembly,
+                    typeof(UnityEngine.UI.Graphic).Assembly,        // UI 程序集 (修复关键)
+                    typeof(UnityEngine.Physics).Assembly
+                )
+                .WithImports(
+                    "UnityEngine", 
+                    "System", 
+                    "System.Collections.Generic", 
+                    "UnityEngine.UI"
+                );
 
             // 2. 动态执行：直接将 rawArgs 作为参数传递给 Execute 方法
             // 拼接后的代码类似于: Create.Execute("barchart_01", "specs.json");
@@ -88,6 +102,14 @@ public class ActionExecutor : MonoBehaviour
 
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行");
         
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("Test Case")]
+    private async void Test()
+    {
+        skillSequence = "";
+        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case");
         await ExecuteSkillSequence(skillSequence);
     }
 }

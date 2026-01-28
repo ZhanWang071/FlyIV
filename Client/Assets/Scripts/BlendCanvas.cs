@@ -24,12 +24,17 @@ public class BlendCanvas : MonoBehaviour
     }
 
     [ContextMenu("TestBlendCanvas")]
-    public void EmbeddedVis()
+    private void TestEmbedVis()
     {
-        if (string.IsNullOrEmpty(targetObjectName) || string.IsNullOrEmpty(chartCanvasName) || userCamera == null) return;
+        EmbeddedVis(chartCanvasName, targetObjectName);
+    }
 
-        GameObject chartCanvas = GameObject.Find(chartCanvasName);
-        GameObject targetObject = GameObject.Find(targetObjectName);
+    public void EmbeddedVis(string viewCanvas_id, string target_id)
+    {
+        if (string.IsNullOrEmpty(target_id) || string.IsNullOrEmpty(viewCanvas_id) || userCamera == null) return;
+
+        GameObject chartCanvas = GameObject.Find(viewCanvas_id);
+        GameObject targetObject = GameObject.Find(target_id);
 
         if (chartCanvas == null || targetObject == null)
         {
