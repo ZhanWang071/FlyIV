@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class OrientTo
 {
     // 定义最大倾斜角度（例如 30 度）

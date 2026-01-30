@@ -1,0 +1,529 @@
+--- Identified Objects Detection Result: (9) ---
+["DeskAndChair (1)","DeskAndChair (2)","DeskAndChair (7)","FrontDoor","Glass","TeacherDesk","Blackboard (2)","Classroom","Switch"]
+
+--- Objects Geometry Data: (9) ---
+[
+  {
+    "name": "DeskAndChair (1)",
+    "position": {
+      "x": -2.0,
+      "y": 1.0,
+      "z": 0.08
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -2.0,
+        "y": 0.5,
+        "z": 0.08
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (2)",
+    "position": {
+      "x": -4.0,
+      "y": 1.0,
+      "z": 0.08
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -4.0,
+        "y": 0.5,
+        "z": 0.08
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (7)",
+    "position": {
+      "x": -4.0,
+      "y": 1.0,
+      "z": 1.68
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -4.0,
+        "y": 0.5,
+        "z": 1.68
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "FrontDoor",
+    "position": {
+      "x": -5.13,
+      "y": 2.5,
+      "z": -2.25
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -5.13,
+        "y": 1.25,
+        "z": -2.25
+      },
+      "size": {
+        "x": 0.23,
+        "y": 2.5,
+        "z": 1.5
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Glass",
+    "position": {
+      "x": 5.23,
+      "y": 3.45,
+      "z": 0.0
+    },
+    "scale": {
+      "x": 1.9,
+      "y": 0.4,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.23,
+        "y": 3.25,
+        "z": 0.0
+      },
+      "size": {
+        "x": 0.0,
+        "y": 0.4,
+        "z": 1.9
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "TeacherDesk",
+    "position": {
+      "x": 0.0,
+      "y": 0.92,
+      "z": -2.3
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 0.46,
+        "z": -2.3
+      },
+      "size": {
+        "x": 1.8,
+        "y": 0.92,
+        "z": 0.8
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Blackboard (2)",
+    "position": {
+      "x": -1.5,
+      "y": 2.6,
+      "z": -3.93
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -1.5,
+        "y": 1.8,
+        "z": -3.93
+      },
+      "size": {
+        "x": 3.1,
+        "y": 1.6,
+        "z": 0.14
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Classroom",
+    "position": {
+      "x": -0.9,
+      "y": 4.0,
+      "z": 3.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -0.9,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "size": {
+        "x": 12.2,
+        "y": 4.0,
+        "z": 14.0
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Switch",
+    "position": {
+      "x": -4.0,
+      "y": 1.6,
+      "z": -4.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -4.0,
+        "y": 1.55,
+        "z": -4.0
+      },
+      "size": {
+        "x": 0.1,
+        "y": 0.1,
+        "z": 0.01
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  }
+]
+
+
+=== Relation Detection Phase [15:42:24] ===
+--- User/Camera Node Info ---
+{
+  "name": "User",
+  "position": {
+    "x": -2.08,
+    "y": 1.11,
+    "z": 0.15
+  },
+  "scale": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+  },
+  "boundary": {
+    "center": {
+      "x": -2.08,
+      "y": 0.26,
+      "z": 0.15
+    },
+    "size": {
+      "x": 0.5,
+      "y": 1.7,
+      "z": 0.3
+    },
+    "forward": {
+      "x": -0.7,
+      "y": -0.34,
+      "z": -0.63
+    },
+    "right": {
+      "x": -0.67,
+      "y": 0.0,
+      "z": 0.74
+    },
+    "up": {
+      "x": -0.25,
+      "y": 0.94,
+      "z": -0.23
+    }
+  }
+}
+--- Calculated Relations (User-Forward Based) ---
+[
+  {
+    "object": "DeskAndChair (1)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (1)",
+    "target": "User",
+    "relation": "above"
+  },
+  {
+    "object": "DeskAndChair (2)",
+    "target": "DeskAndChair (7)",
+    "relation": "near"
+  },
+  {
+    "object": "DeskAndChair (2)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (2)",
+    "target": "User",
+    "relation": "near"
+  },
+  {
+    "object": "DeskAndChair (7)",
+    "target": "DeskAndChair (2)",
+    "relation": "near"
+  },
+  {
+    "object": "DeskAndChair (7)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "FrontDoor",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "TeacherDesk",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Blackboard (2)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (1)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (2)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (7)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "FrontDoor",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "TeacherDesk",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Blackboard (2)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Switch",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "User",
+    "relation": "above"
+  },
+  {
+    "object": "Switch",
+    "target": "Blackboard (2)",
+    "relation": "right"
+  },
+  {
+    "object": "Switch",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "User",
+    "target": "DeskAndChair (1)",
+    "relation": "below"
+  },
+  {
+    "object": "User",
+    "target": "DeskAndChair (2)",
+    "relation": "near"
+  },
+  {
+    "object": "User",
+    "target": "Classroom",
+    "relation": "below"
+  }
+]
+==================================================

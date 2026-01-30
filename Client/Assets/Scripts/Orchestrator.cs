@@ -14,14 +14,11 @@ public class Orchestrator : MonoBehaviour
     public Transform playerCamera;
     public GameObject Environment;
 
-    [Header("Independent Module Test")]
-    [SerializeField] private bool voiceSendtoVLM = false;
-
     private void Start()
     {
         if (playerCamera == null) playerCamera = Camera.main.transform;
         
-        if (voiceSendtoVLM) sttHandler.OnTranscribeFinished += (speechText) => {
+        sttHandler.OnTranscribeFinished += (speechText) => {
             _ = ProcessWorkflow(speechText);
         };
     }
@@ -58,12 +55,6 @@ public class Orchestrator : MonoBehaviour
 
         // 执行skill sequence codes
         await actionExecutor.ExecuteSkillSequence(skillsResponse);
-    }
-
-    /// ---------- Debug Buttons --------------
-    public void ResetConversation()
-    {
-        skillController.ResetConversation();
     }
 
 }

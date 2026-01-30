@@ -1,0 +1,289 @@
+--- Identified Objects Detection Result: (5) ---
+["Clock","Blackboard","Bookcase","Globe","TeacherDesk"]
+
+--- Objects Geometry Data: (5) ---
+[
+  {
+    "name": "Clock",
+    "position": {
+      "x": 0.0,
+      "y": 3.7,
+      "z": -3.95
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 3.4,
+        "z": -3.95
+      },
+      "size": {
+        "x": 0.6,
+        "y": 0.6,
+        "z": 0.08
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Blackboard",
+    "position": {
+      "x": 0.0,
+      "y": 2.6,
+      "z": -3.93
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 1.8,
+        "z": -3.93
+      },
+      "size": {
+        "x": 6.1,
+        "y": 1.6,
+        "z": 0.14
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Bookcase",
+    "position": {
+      "x": 4.75,
+      "y": 1.2,
+      "z": -3.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.75,
+        "y": 0.6,
+        "z": -3.0
+      },
+      "size": {
+        "x": 0.5,
+        "y": 1.2,
+        "z": 2.0
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Globe",
+    "position": {
+      "x": 4.73,
+      "y": 1.8,
+      "z": -3.69
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.73,
+        "y": 1.48,
+        "z": -3.69
+      },
+      "size": {
+        "x": 0.45,
+        "y": 0.63,
+        "z": 0.42
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "TeacherDesk",
+    "position": {
+      "x": 0.0,
+      "y": 0.92,
+      "z": -2.3
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 0.46,
+        "z": -2.3
+      },
+      "size": {
+        "x": 1.8,
+        "y": 0.92,
+        "z": 0.8
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  }
+]
+
+
+=== Relation Detection Phase [16:14:29] ===
+--- User/Camera Node Info ---
+{
+  "name": "User",
+  "position": {
+    "x": 0.41,
+    "y": 1.52,
+    "z": -0.61
+  },
+  "scale": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+  },
+  "boundary": {
+    "center": {
+      "x": 0.41,
+      "y": 0.67,
+      "z": -0.61
+    },
+    "size": {
+      "x": 0.5,
+      "y": 1.7,
+      "z": 0.3
+    },
+    "forward": {
+      "x": 0.11,
+      "y": -0.06,
+      "z": -0.99
+    },
+    "right": {
+      "x": -0.99,
+      "y": 0.0,
+      "z": -0.11
+    },
+    "up": {
+      "x": 0.01,
+      "y": 1.0,
+      "z": -0.06
+    }
+  }
+}
+--- Calculated Relations (User-Forward Based) ---
+[
+  {
+    "object": "Clock",
+    "target": "Blackboard",
+    "relation": "above"
+  },
+  {
+    "object": "Blackboard",
+    "target": "Clock",
+    "relation": "below"
+  },
+  {
+    "object": "Bookcase",
+    "target": "Globe",
+    "relation": "below"
+  },
+  {
+    "object": "Globe",
+    "target": "Bookcase",
+    "relation": "above"
+  },
+  {
+    "object": "TeacherDesk",
+    "target": "Clock",
+    "relation": "in front of"
+  },
+  {
+    "object": "TeacherDesk",
+    "target": "User",
+    "relation": "in front of"
+  },
+  {
+    "object": "User",
+    "target": "TeacherDesk",
+    "relation": "near"
+  }
+]
+==================================================

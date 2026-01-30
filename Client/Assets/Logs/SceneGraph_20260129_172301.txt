@@ -1,0 +1,1729 @@
+--- Identified Objects Detection Result: (26) ---
+["DeskAndChair (10)","DeskAndChair (14)","DeskAndChair (13)","DeskAndChair (17)","DeskAndChair (18)","DeskAndChair (19)","DeskAndChair (20)","DeskAndChair (22)","DeskAndChair (23)","DeskAndChair (25)","Noticeboard","Pin","Pin (1)","Poster","Classroom","WindowSmall (4)","Glass","WindowSmall (1)","WindowSmall (2)","Window (1)","Window (2)","Window (3)","Light (4)","Shelf (3)","Shelf (1)","Shelf (2)"]
+
+--- Objects Geometry Data: (26) ---
+[
+  {
+    "name": "DeskAndChair (10)",
+    "position": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 3.28
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 0.5,
+        "z": 3.28
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (14)",
+    "position": {
+      "x": 4.0,
+      "y": 1.0,
+      "z": 3.28
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.0,
+        "y": 0.5,
+        "z": 3.28
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (13)",
+    "position": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 4.88
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 0.5,
+        "z": 4.88
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (17)",
+    "position": {
+      "x": 2.0,
+      "y": 1.0,
+      "z": 4.88
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 2.0,
+        "y": 0.5,
+        "z": 4.88
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (18)",
+    "position": {
+      "x": 4.0,
+      "y": 1.0,
+      "z": 4.88
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.0,
+        "y": 0.5,
+        "z": 4.88
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (19)",
+    "position": {
+      "x": 4.0,
+      "y": 1.0,
+      "z": 6.48
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.0,
+        "y": 0.5,
+        "z": 6.48
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (20)",
+    "position": {
+      "x": 2.0,
+      "y": 1.0,
+      "z": 6.48
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 2.0,
+        "y": 0.5,
+        "z": 6.48
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (22)",
+    "position": {
+      "x": -2.0,
+      "y": 1.0,
+      "z": 6.48
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -2.0,
+        "y": 0.5,
+        "z": 6.48
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (23)",
+    "position": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 6.48
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 0.5,
+        "z": 6.48
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (25)",
+    "position": {
+      "x": 2.0,
+      "y": 1.0,
+      "z": 3.28
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 2.0,
+        "y": 0.5,
+        "z": 3.28
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Noticeboard",
+    "position": {
+      "x": 0.0,
+      "y": 2.6,
+      "z": 9.93
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 1.8,
+        "z": 9.93
+      },
+      "size": {
+        "x": 3.1,
+        "y": 1.6,
+        "z": 0.14
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Pin",
+    "position": {
+      "x": -1.05,
+      "y": 2.25,
+      "z": 9.95
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -1.05,
+        "y": 2.24,
+        "z": 9.95
+      },
+      "size": {
+        "x": 0.02,
+        "y": 0.02,
+        "z": 0.07
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Pin (1)",
+    "position": {
+      "x": -0.18,
+      "y": 2.23,
+      "z": 9.95
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -0.18,
+        "y": 2.22,
+        "z": 9.95
+      },
+      "size": {
+        "x": 0.02,
+        "y": 0.02,
+        "z": 0.07
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Poster",
+    "position": {
+      "x": -0.6,
+      "y": 2.3,
+      "z": 9.95
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -0.6,
+        "y": 1.79,
+        "z": 9.95
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Classroom",
+    "position": {
+      "x": -0.9,
+      "y": 4.0,
+      "z": 3.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -0.9,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "size": {
+        "x": 12.2,
+        "y": 4.0,
+        "z": 14.0
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "WindowSmall (4)",
+    "position": {
+      "x": 5.2,
+      "y": 3.5,
+      "z": 6.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.2,
+        "y": 3.25,
+        "z": 6.0
+      },
+      "size": {
+        "x": 0.1,
+        "y": 0.5,
+        "z": 2.0
+      },
+      "forward": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Glass",
+    "position": {
+      "x": 5.23,
+      "y": 3.45,
+      "z": 0.0
+    },
+    "scale": {
+      "x": 1.9,
+      "y": 0.4,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.23,
+        "y": 3.25,
+        "z": 0.0
+      },
+      "size": {
+        "x": 0.0,
+        "y": 0.4,
+        "z": 1.9
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "WindowSmall (1)",
+    "position": {
+      "x": 5.2,
+      "y": 3.5,
+      "z": 4.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.2,
+        "y": 3.25,
+        "z": 4.0
+      },
+      "size": {
+        "x": 0.1,
+        "y": 0.5,
+        "z": 2.0
+      },
+      "forward": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "WindowSmall (2)",
+    "position": {
+      "x": 5.2,
+      "y": 3.5,
+      "z": 2.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.2,
+        "y": 3.25,
+        "z": 2.0
+      },
+      "size": {
+        "x": 0.1,
+        "y": 0.5,
+        "z": 2.0
+      },
+      "forward": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Window (1)",
+    "position": {
+      "x": 5.1,
+      "y": 3.0,
+      "z": 6.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.1,
+        "y": 2.0,
+        "z": 6.0
+      },
+      "size": {
+        "x": 0.05,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Window (2)",
+    "position": {
+      "x": 5.15,
+      "y": 3.0,
+      "z": 4.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.15,
+        "y": 2.0,
+        "z": 4.0
+      },
+      "size": {
+        "x": 0.05,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Window (3)",
+    "position": {
+      "x": 5.1,
+      "y": 3.0,
+      "z": 2.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.1,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "size": {
+        "x": 0.05,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Light (4)",
+    "position": {
+      "x": 2.5,
+      "y": 4.0,
+      "z": 6.5
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 2.5,
+        "y": 3.97,
+        "z": 6.5
+      },
+      "size": {
+        "x": 1.0,
+        "y": 0.05,
+        "z": 1.0
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Shelf (3)",
+    "position": {
+      "x": 4.7,
+      "y": 1.5,
+      "z": 9.8
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.7,
+        "y": 0.75,
+        "z": 9.8
+      },
+      "size": {
+        "x": 0.6,
+        "y": 1.5,
+        "z": 0.4
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Shelf (1)",
+    "position": {
+      "x": 4.1,
+      "y": 1.5,
+      "z": 9.8
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.1,
+        "y": 0.75,
+        "z": 9.8
+      },
+      "size": {
+        "x": 0.6,
+        "y": 1.5,
+        "z": 0.4
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Shelf (2)",
+    "position": {
+      "x": 3.5,
+      "y": 1.5,
+      "z": 9.8
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 3.5,
+        "y": 0.75,
+        "z": 9.8
+      },
+      "size": {
+        "x": 0.6,
+        "y": 1.5,
+        "z": 0.4
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  }
+]
+
+
+=== Relation Detection Phase [17:23:01] ===
+--- User/Camera Node Info ---
+{
+  "name": "User",
+  "position": {
+    "x": 0.73,
+    "y": 1.07,
+    "z": 2.55
+  },
+  "scale": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+  },
+  "boundary": {
+    "center": {
+      "x": 0.73,
+      "y": 0.22,
+      "z": 2.55
+    },
+    "size": {
+      "x": 0.5,
+      "y": 1.7,
+      "z": 0.3
+    },
+    "forward": {
+      "x": 0.49,
+      "y": -0.13,
+      "z": 0.86
+    },
+    "right": {
+      "x": 0.87,
+      "y": 0.0,
+      "z": -0.49
+    },
+    "up": {
+      "x": 0.06,
+      "y": 0.99,
+      "z": 0.11
+    }
+  }
+}
+--- Calculated Relations ---
+[
+  {
+    "object": "DeskAndChair (10)",
+    "target": "DeskAndChair (13)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (10)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (10)",
+    "target": "User",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (14)",
+    "target": "DeskAndChair (18)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (14)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (14)",
+    "target": "WindowSmall (1)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (14)",
+    "target": "WindowSmall (2)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (14)",
+    "target": "Window (2)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (13)",
+    "target": "DeskAndChair (10)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (13)",
+    "target": "DeskAndChair (23)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (13)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (17)",
+    "target": "DeskAndChair (20)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (17)",
+    "target": "DeskAndChair (25)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (17)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (17)",
+    "target": "Light (4)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (18)",
+    "target": "DeskAndChair (14)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (18)",
+    "target": "DeskAndChair (19)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (18)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (18)",
+    "target": "WindowSmall (4)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (18)",
+    "target": "WindowSmall (1)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (18)",
+    "target": "Window (1)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (18)",
+    "target": "Window (2)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (19)",
+    "target": "DeskAndChair (18)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (19)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (19)",
+    "target": "WindowSmall (4)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (19)",
+    "target": "Window (1)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (19)",
+    "target": "Light (4)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (20)",
+    "target": "DeskAndChair (17)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (20)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (20)",
+    "target": "Light (4)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (22)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (23)",
+    "target": "DeskAndChair (13)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (23)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (25)",
+    "target": "DeskAndChair (17)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (25)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (25)",
+    "target": "User",
+    "relation": "near"
+  },
+  {
+    "object": "Noticeboard",
+    "target": "Pin",
+    "relation": "below"
+  },
+  {
+    "object": "Noticeboard",
+    "target": "Pin (1)",
+    "relation": "below"
+  },
+  {
+    "object": "Noticeboard",
+    "target": "Poster",
+    "relation": "behind"
+  },
+  {
+    "object": "Noticeboard",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Pin",
+    "target": "Noticeboard",
+    "relation": "above"
+  },
+  {
+    "object": "Pin",
+    "target": "Pin (1)",
+    "relation": "near"
+  },
+  {
+    "object": "Pin",
+    "target": "Poster",
+    "relation": "in front of"
+  },
+  {
+    "object": "Pin",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "Pin (1)",
+    "target": "Noticeboard",
+    "relation": "above"
+  },
+  {
+    "object": "Pin (1)",
+    "target": "Pin",
+    "relation": "near"
+  },
+  {
+    "object": "Pin (1)",
+    "target": "Poster",
+    "relation": "behind"
+  },
+  {
+    "object": "Pin (1)",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "Poster",
+    "target": "Noticeboard",
+    "relation": "in front of"
+  },
+  {
+    "object": "Poster",
+    "target": "Pin",
+    "relation": "near"
+  },
+  {
+    "object": "Poster",
+    "target": "Pin (1)",
+    "relation": "near"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (10)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (14)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (13)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (17)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (18)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (19)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (20)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (22)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (23)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (25)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Noticeboard",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Pin",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "Pin (1)",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "WindowSmall (4)",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "WindowSmall (1)",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "WindowSmall (2)",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "Light (4)",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "Shelf (3)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Shelf (1)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Shelf (2)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "User",
+    "relation": "above"
+  },
+  {
+    "object": "WindowSmall (4)",
+    "target": "DeskAndChair (18)",
+    "relation": "behind"
+  },
+  {
+    "object": "WindowSmall (4)",
+    "target": "DeskAndChair (19)",
+    "relation": "right"
+  },
+  {
+    "object": "WindowSmall (4)",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "WindowSmall (4)",
+    "target": "WindowSmall (1)",
+    "relation": "behind"
+  },
+  {
+    "object": "WindowSmall (4)",
+    "target": "Window (1)",
+    "relation": "behind"
+  },
+  {
+    "object": "WindowSmall (4)",
+    "target": "Window (2)",
+    "relation": "behind"
+  },
+  {
+    "object": "Glass",
+    "target": "WindowSmall (2)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Glass",
+    "target": "Window (3)",
+    "relation": "in front of"
+  },
+  {
+    "object": "WindowSmall (1)",
+    "target": "DeskAndChair (14)",
+    "relation": "behind"
+  },
+  {
+    "object": "WindowSmall (1)",
+    "target": "DeskAndChair (18)",
+    "relation": "right"
+  },
+  {
+    "object": "WindowSmall (1)",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "WindowSmall (1)",
+    "target": "WindowSmall (4)",
+    "relation": "in front of"
+  },
+  {
+    "object": "WindowSmall (1)",
+    "target": "WindowSmall (2)",
+    "relation": "behind"
+  },
+  {
+    "object": "WindowSmall (1)",
+    "target": "Window (1)",
+    "relation": "in front of"
+  },
+  {
+    "object": "WindowSmall (1)",
+    "target": "Window (2)",
+    "relation": "above"
+  },
+  {
+    "object": "WindowSmall (1)",
+    "target": "Window (3)",
+    "relation": "behind"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "DeskAndChair (14)",
+    "relation": "right"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "Glass",
+    "relation": "behind"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "WindowSmall (1)",
+    "relation": "in front of"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "Window (2)",
+    "relation": "in front of"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "Window (3)",
+    "relation": "behind"
+  },
+  {
+    "object": "Window (1)",
+    "target": "DeskAndChair (18)",
+    "relation": "behind"
+  },
+  {
+    "object": "Window (1)",
+    "target": "DeskAndChair (19)",
+    "relation": "right"
+  },
+  {
+    "object": "Window (1)",
+    "target": "WindowSmall (4)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Window (1)",
+    "target": "WindowSmall (1)",
+    "relation": "behind"
+  },
+  {
+    "object": "Window (1)",
+    "target": "Window (2)",
+    "relation": "behind"
+  },
+  {
+    "object": "Window (2)",
+    "target": "DeskAndChair (14)",
+    "relation": "behind"
+  },
+  {
+    "object": "Window (2)",
+    "target": "DeskAndChair (18)",
+    "relation": "right"
+  },
+  {
+    "object": "Window (2)",
+    "target": "WindowSmall (4)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Window (2)",
+    "target": "WindowSmall (1)",
+    "relation": "below"
+  },
+  {
+    "object": "Window (2)",
+    "target": "WindowSmall (2)",
+    "relation": "behind"
+  },
+  {
+    "object": "Window (2)",
+    "target": "Window (1)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Window (2)",
+    "target": "Window (3)",
+    "relation": "behind"
+  },
+  {
+    "object": "Window (3)",
+    "target": "DeskAndChair (14)",
+    "relation": "right"
+  },
+  {
+    "object": "Window (3)",
+    "target": "Glass",
+    "relation": "behind"
+  },
+  {
+    "object": "Window (3)",
+    "target": "WindowSmall (1)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Window (3)",
+    "target": "WindowSmall (2)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Window (3)",
+    "target": "Window (2)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Light (4)",
+    "target": "DeskAndChair (17)",
+    "relation": "behind"
+  },
+  {
+    "object": "Light (4)",
+    "target": "DeskAndChair (19)",
+    "relation": "left"
+  },
+  {
+    "object": "Light (4)",
+    "target": "DeskAndChair (20)",
+    "relation": "behind"
+  },
+  {
+    "object": "Light (4)",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "Shelf (3)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Shelf (3)",
+    "target": "Shelf (1)",
+    "relation": "right"
+  },
+  {
+    "object": "Shelf (3)",
+    "target": "Shelf (2)",
+    "relation": "near"
+  },
+  {
+    "object": "Shelf (1)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Shelf (1)",
+    "target": "Shelf (3)",
+    "relation": "left"
+  },
+  {
+    "object": "Shelf (1)",
+    "target": "Shelf (2)",
+    "relation": "right"
+  },
+  {
+    "object": "Shelf (2)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Shelf (2)",
+    "target": "Shelf (3)",
+    "relation": "near"
+  },
+  {
+    "object": "Shelf (2)",
+    "target": "Shelf (1)",
+    "relation": "left"
+  },
+  {
+    "object": "User",
+    "target": "DeskAndChair (10)",
+    "relation": "near"
+  },
+  {
+    "object": "User",
+    "target": "DeskAndChair (25)",
+    "relation": "left"
+  },
+  {
+    "object": "User",
+    "target": "Classroom",
+    "relation": "below"
+  }
+]
+==================================================

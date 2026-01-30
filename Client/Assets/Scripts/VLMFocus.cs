@@ -6,14 +6,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
-using OpenAI;
-using OpenAI.Chat;
-using OpenAI.Models;
+
 
 public class VLMFocus : MonoBehaviour
 {
     [Header("API Configuration")]
-    private OpenAIClient openaiClient;
+    [SerializeField] private string customApiUrl; 
+    [SerializeField] private string apiKey;
+    [SerializeField] private string model;
 
     [Header("Capture Settings")]
     public Camera targetCamera;
@@ -33,6 +33,15 @@ public class VLMFocus : MonoBehaviour
     private static string _currentLogFilePath;
     private static readonly object _logLock = new object();
 
+    public class OpenAIResponse
+    {
+        public Choice[] choices;
+        public class Choice { public Message message; }
+        public class Message { public string content; }
+    }
+
+    public class VLMResult { public string focused_object; }
+    
     // 用于序列化的简单数据结构
     [System.Serializable]
     public class Vector3Data
@@ -70,7 +79,9 @@ public class VLMFocus : MonoBehaviour
 
     void Start() 
     {
-        openaiClient = new OpenAIClient(ApiConfig.Instance.Auth, ApiConfig.Instance.Settings);
+        customApiUrl = ApiConfig.Instance.vlmUrl; 
+        apiKey = ApiConfig.Instance.apiKey;
+        model = ApiConfig.Instance.vlmModel; 
 
         targetCamera = Camera.main;
     }
@@ -146,91 +157,55 @@ public class VLMFocus : MonoBehaviour
 
     private async Task<string> CallOpenAICompatibleAPI(byte[] imageBytes, string candidates)
     {
-        try
+        string base64Image = Convert.ToBase64String(imageBytes);
+
+        // 构建 OpenAI 视觉格式 Payload
+        var payload = new {
+        model = this.model,
+        messages = new[] {
+            new {
+                role = "user",
+                content = new object[] {
+                    new { 
+                        type = "text", 
+                        // 修改后的 Prompt：要求返回数组格式
+                        text = $"Identify the object(s) the user is looking at in this image. " + $"Choose ONLY from this object candidates list: [{candidates}]. " + $"Return a JSON array of object names string like: [\"name1\", \"name2\"]" 
+                    },
+                    new { 
+                        type = "image_url", 
+                        image_url = new { url = $"data:image/jpeg;base64,{base64Image}" } 
+                    }
+                }
+            }
+        },
+            response_format = new { type = "json_object" },
+            temperature = 0.1
+        };
+
+        string jsonPayload = JsonConvert.SerializeObject(payload);
+
+        using (UnityWebRequest request = new UnityWebRequest(customApiUrl, "POST"))
         {
-            // 构造多模态消息内容
-            var prompt = $"Identify the object(s) the user is looking at in this image. " +
-                         $"Choose ONLY from this object candidates list: [{candidates}]. " +
-                         $"Return a JSON array of object names string like: [\"name1\", \"name2\"]";
-
-            string base64Image = Convert.ToBase64String(imageBytes);
-
-            var messages = new List<Message>
-            {
-                new Message(Role.System, "You are a helpful assistant."),
-                new Message(Role.User, new List<Content>
-                {
-                    prompt,
-                    new ImageUrl($"data:image/jpeg;base64,{base64Image}")
-                }),
-            };
+            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            request.downloadHandler = new DownloadHandlerBuffer();
             
-            var request = new ChatRequest(
-                messages,
-                model: ApiConfig.Instance.vlmModel,
-                temperature: 0.1f
-            );
-            var response = await openaiClient.ChatEndpoint.GetCompletionAsync(request);
+            // OpenAI 必须在 Header 中携带 Authorization
+            request.SetRequestHeader("Content-Type", "application/json");
+            request.SetRequestHeader("Authorization", $"Bearer {apiKey}");
 
-            Console.WriteLine($"{response.FirstChoice.Message.Role}: {response.FirstChoice.Message.Content}");
+            var operation = request.SendWebRequest();
+            while (!operation.isDone) await Task.Yield();
 
-            return response.FirstChoice.Message.Content.ToString();
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"[VLMFocus] OpenAI API 调用失败: {e.Message}");
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                var response = JsonConvert.DeserializeObject<OpenAIResponse>(request.downloadHandler.text);
+                return response.choices[0].message.content;
+            }
+            
+            Debug.LogError($"[VLMFocus] API Error: {request.error}\n{request.downloadHandler.text}");
             return null;
         }
-
-        /// ------------- Old Version (UnityWebRequest) ----------
-        // // 构建 OpenAI 视觉格式 Payload
-        // string base64Image = Convert.ToBase64String(imageBytes);
-        // var payload = new {
-        // model = this.model,
-        // messages = new[] {
-        //     new {
-        //         role = "user",
-        //         content = new object[] {
-        //             new { 
-        //                 type = "text", 
-        //                 // 修改后的 Prompt：要求返回数组格式
-        //                 text = $"Identify the object(s) the user is looking at in this image. " + $"Choose ONLY from this object candidates list: [{candidates}]. " + $"Return a JSON array of object names string like: [\"name1\", \"name2\"]" 
-        //             },
-        //             new { 
-        //                 type = "image_url", 
-        //                 image_url = new { url = $"data:image/jpeg;base64,{base64Image}" } 
-        //             }
-        //         }
-        //     }
-        // },
-        //     response_format = new { type = "json_object" },
-        //     temperature = 0.1
-        // };
-
-        // string jsonPayload = JsonConvert.SerializeObject(payload);
-
-        // using (UnityWebRequest request = new UnityWebRequest(customApiUrl, "POST"))
-        // {
-        //     byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
-        //     request.uploadHandler = new UploadHandlerRaw(bodyRaw);
-        //     request.downloadHandler = new DownloadHandlerBuffer();
-            
-        //     // OpenAI 必须在 Header 中携带 Authorization
-        //     request.SetRequestHeader("Content-Type", "application/json");
-        //     request.SetRequestHeader("Authorization", $"Bearer {apiKey}");
-
-        //     var operation = request.SendWebRequest();
-        //     while (!operation.isDone) await Task.Yield();
-
-        //     if (request.result == UnityWebRequest.Result.Success)
-        //     {
-        //         var response = JsonConvert.DeserializeObject<OpenAIResponse>(request.downloadHandler.text);
-        //         return response.choices[0].message.content;
-        //     }
-            
-        //     Debug.LogError($"[VLMFocus] API Error: {request.error}\n{request.downloadHandler.text}");
-        //     return null;
-        // }
     }
 
     private byte[] CaptureAsJpg()
@@ -346,7 +321,7 @@ public class VLMFocus : MonoBehaviour
         // 生成日期戳格式：yyyyMMdd_HHmmss
         string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
         string fileName = $"SceneGraph_{timestamp}.txt";
-        _currentLogFilePath = Path.Combine(Application.dataPath, "Logs/VLMFocus", fileName);
+        _currentLogFilePath = Path.Combine(Application.dataPath, "Logs", fileName);
     }
 
     /// <summary>
@@ -361,7 +336,7 @@ public class VLMFocus : MonoBehaviour
 
         string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
         string fileName = $"SceneGraph_{timestamp}.txt";
-        _currentLogFilePath = Path.Combine(Application.dataPath, "Logs/VLMFocus", fileName);
+        _currentLogFilePath = Path.Combine(Application.dataPath, "Logs", fileName);
 
         lock (_logLock)
         {

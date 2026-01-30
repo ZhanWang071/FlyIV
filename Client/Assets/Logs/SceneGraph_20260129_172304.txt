@@ -1,0 +1,1959 @@
+--- Identified Objects Detection Result: (27) ---
+["DeskAndChair (3)","DeskAndChair (4)","DeskAndChair (5)","DeskAndChair (6)","Chair","TeacherDesk","Globe1","Globe2","Blackboard (2)","Blackboard (1)","Chalk","Chalk (1)","Brush","Clock","Arm","Classroom","WindowSmall (2)","Glass","WindowSmall (3)","Window (3)","Window (4)","Light","Bookcase","Books (4)","Books (1)","Books (2)","Books (3)"]
+
+--- Objects Geometry Data: (27) ---
+[
+  {
+    "name": "DeskAndChair (3)",
+    "position": {
+      "x": 2.0,
+      "y": 1.0,
+      "z": 0.08
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 2.0,
+        "y": 0.5,
+        "z": 0.08
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (4)",
+    "position": {
+      "x": 4.0,
+      "y": 1.0,
+      "z": 0.08
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.0,
+        "y": 0.5,
+        "z": 0.08
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (5)",
+    "position": {
+      "x": 4.0,
+      "y": 1.0,
+      "z": 1.68
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.0,
+        "y": 0.5,
+        "z": 1.68
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (6)",
+    "position": {
+      "x": 2.0,
+      "y": 1.0,
+      "z": 1.68
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 2.0,
+        "y": 0.5,
+        "z": 1.68
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Chair",
+    "position": {
+      "x": 3.82,
+      "y": 1.0,
+      "z": -3.65
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 3.82,
+        "y": 0.5,
+        "z": -3.65
+      },
+      "size": {
+        "x": 0.59,
+        "y": 1.0,
+        "z": 0.57
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "TeacherDesk",
+    "position": {
+      "x": 0.0,
+      "y": 0.92,
+      "z": -2.3
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 0.46,
+        "z": -2.3
+      },
+      "size": {
+        "x": 1.8,
+        "y": 0.92,
+        "z": 0.8
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Globe1",
+    "position": {
+      "x": 4.74,
+      "y": 1.8,
+      "z": -3.69
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.74,
+        "y": 1.48,
+        "z": -3.69
+      },
+      "size": {
+        "x": 0.44,
+        "y": 0.63,
+        "z": 0.4
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Globe2",
+    "position": {
+      "x": 4.72,
+      "y": 1.78,
+      "z": -3.69
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.72,
+        "y": 1.57,
+        "z": -3.69
+      },
+      "size": {
+        "x": 0.42,
+        "y": 0.42,
+        "z": 0.42
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -0.92,
+        "y": 0.4,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.4,
+        "y": 0.92,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Blackboard (2)",
+    "position": {
+      "x": -1.5,
+      "y": 2.6,
+      "z": -3.93
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -1.5,
+        "y": 1.8,
+        "z": -3.93
+      },
+      "size": {
+        "x": 3.1,
+        "y": 1.6,
+        "z": 0.14
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Blackboard (1)",
+    "position": {
+      "x": 1.5,
+      "y": 2.6,
+      "z": -3.93
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 1.5,
+        "y": 1.8,
+        "z": -3.93
+      },
+      "size": {
+        "x": 3.1,
+        "y": 1.6,
+        "z": 0.14
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Chalk",
+    "position": {
+      "x": 1.73,
+      "y": 1.04,
+      "z": -3.91
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 1.73,
+        "y": 1.03,
+        "z": -3.91
+      },
+      "size": {
+        "x": 0.06,
+        "y": 0.01,
+        "z": 0.01
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Chalk (1)",
+    "position": {
+      "x": 1.84,
+      "y": 1.04,
+      "z": -3.89
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 1.84,
+        "y": 1.03,
+        "z": -3.89
+      },
+      "size": {
+        "x": 0.05,
+        "y": 0.01,
+        "z": 0.05
+      },
+      "forward": {
+        "x": 0.71,
+        "y": 0.0,
+        "z": 0.71
+      },
+      "right": {
+        "x": 0.71,
+        "y": 0.0,
+        "z": -0.71
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Brush",
+    "position": {
+      "x": 2.16,
+      "y": 1.09,
+      "z": -3.9
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 2.16,
+        "y": 1.06,
+        "z": -3.9
+      },
+      "size": {
+        "x": 0.16,
+        "y": 0.07,
+        "z": 0.08
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Clock",
+    "position": {
+      "x": 0.0,
+      "y": 3.7,
+      "z": -3.95
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 3.4,
+        "z": -3.95
+      },
+      "size": {
+        "x": 0.6,
+        "y": 0.6,
+        "z": 0.08
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Arm",
+    "position": {
+      "x": -0.04,
+      "y": 3.62,
+      "z": -3.92
+    },
+    "scale": {
+      "x": 0.01,
+      "y": 0.28,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -0.04,
+        "y": 3.49,
+        "z": -3.92
+      },
+      "size": {
+        "x": 0.13,
+        "y": 0.25,
+        "z": 0.0
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -0.9,
+        "y": -0.43,
+        "z": 0.0
+      },
+      "up": {
+        "x": -0.43,
+        "y": 0.9,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Classroom",
+    "position": {
+      "x": -0.9,
+      "y": 4.0,
+      "z": 3.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -0.9,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "size": {
+        "x": 12.2,
+        "y": 4.0,
+        "z": 14.0
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "WindowSmall (2)",
+    "position": {
+      "x": 5.2,
+      "y": 3.5,
+      "z": 2.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.2,
+        "y": 3.25,
+        "z": 2.0
+      },
+      "size": {
+        "x": 0.1,
+        "y": 0.5,
+        "z": 2.0
+      },
+      "forward": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Glass",
+    "position": {
+      "x": 5.23,
+      "y": 3.45,
+      "z": 0.0
+    },
+    "scale": {
+      "x": 1.9,
+      "y": 0.4,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.23,
+        "y": 3.25,
+        "z": 0.0
+      },
+      "size": {
+        "x": 0.0,
+        "y": 0.4,
+        "z": 1.9
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "WindowSmall (3)",
+    "position": {
+      "x": 5.2,
+      "y": 3.5,
+      "z": 0.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.2,
+        "y": 3.25,
+        "z": 0.0
+      },
+      "size": {
+        "x": 0.1,
+        "y": 0.5,
+        "z": 2.0
+      },
+      "forward": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Window (3)",
+    "position": {
+      "x": 5.1,
+      "y": 3.0,
+      "z": 2.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.1,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "size": {
+        "x": 0.05,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Window (4)",
+    "position": {
+      "x": 5.15,
+      "y": 3.0,
+      "z": 0.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.15,
+        "y": 2.0,
+        "z": 0.0
+      },
+      "size": {
+        "x": 0.05,
+        "y": 2.0,
+        "z": 2.0
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Light",
+    "position": {
+      "x": 2.5,
+      "y": 4.0,
+      "z": -1.5
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 2.5,
+        "y": 3.97,
+        "z": -1.5
+      },
+      "size": {
+        "x": 1.0,
+        "y": 0.05,
+        "z": 1.0
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Bookcase",
+    "position": {
+      "x": 4.75,
+      "y": 1.2,
+      "z": -3.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.75,
+        "y": 0.6,
+        "z": -3.0
+      },
+      "size": {
+        "x": 0.5,
+        "y": 1.2,
+        "z": 2.0
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Books (4)",
+    "position": {
+      "x": 4.65,
+      "y": 1.07,
+      "z": -3.77
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.65,
+        "y": 0.92,
+        "z": -3.77
+      },
+      "size": {
+        "x": 0.2,
+        "y": 0.3,
+        "z": 0.4
+      },
+      "forward": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Books (1)",
+    "position": {
+      "x": 4.67,
+      "y": 1.07,
+      "z": -3.36
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.67,
+        "y": 0.92,
+        "z": -3.36
+      },
+      "size": {
+        "x": 0.2,
+        "y": 0.3,
+        "z": 0.4
+      },
+      "forward": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Books (2)",
+    "position": {
+      "x": 4.62,
+      "y": 0.64,
+      "z": -3.21
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.62,
+        "y": 0.49,
+        "z": -3.21
+      },
+      "size": {
+        "x": 0.2,
+        "y": 0.3,
+        "z": 0.4
+      },
+      "forward": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Books (3)",
+    "position": {
+      "x": 4.63,
+      "y": 0.64,
+      "z": -2.78
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 4.63,
+        "y": 0.49,
+        "z": -2.78
+      },
+      "size": {
+        "x": 0.2,
+        "y": 0.3,
+        "z": 0.4
+      },
+      "forward": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  }
+]
+
+
+=== Relation Detection Phase [17:23:04] ===
+--- User/Camera Node Info ---
+{
+  "name": "User",
+  "position": {
+    "x": 1.74,
+    "y": 0.97,
+    "z": 1.52
+  },
+  "scale": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+  },
+  "boundary": {
+    "center": {
+      "x": 1.74,
+      "y": 0.12,
+      "z": 1.52
+    },
+    "size": {
+      "x": 0.5,
+      "y": 1.7,
+      "z": 0.3
+    },
+    "forward": {
+      "x": 0.68,
+      "y": -0.05,
+      "z": -0.73
+    },
+    "right": {
+      "x": -0.73,
+      "y": 0.0,
+      "z": -0.68
+    },
+    "up": {
+      "x": 0.03,
+      "y": 1.0,
+      "z": -0.03
+    }
+  }
+}
+--- Calculated Relations ---
+[
+  {
+    "object": "DeskAndChair (3)",
+    "target": "DeskAndChair (6)",
+    "relation": "near"
+  },
+  {
+    "object": "DeskAndChair (3)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (3)",
+    "target": "Light",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (3)",
+    "target": "User",
+    "relation": "near"
+  },
+  {
+    "object": "DeskAndChair (4)",
+    "target": "DeskAndChair (5)",
+    "relation": "near"
+  },
+  {
+    "object": "DeskAndChair (4)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (4)",
+    "target": "Glass",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (4)",
+    "target": "WindowSmall (3)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (4)",
+    "target": "Window (4)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (5)",
+    "target": "DeskAndChair (4)",
+    "relation": "near"
+  },
+  {
+    "object": "DeskAndChair (5)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (5)",
+    "target": "WindowSmall (2)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (5)",
+    "target": "Window (3)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (6)",
+    "target": "DeskAndChair (3)",
+    "relation": "near"
+  },
+  {
+    "object": "DeskAndChair (6)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (6)",
+    "target": "User",
+    "relation": "above"
+  },
+  {
+    "object": "Chair",
+    "target": "Globe1",
+    "relation": "near"
+  },
+  {
+    "object": "Chair",
+    "target": "Globe2",
+    "relation": "near"
+  },
+  {
+    "object": "Chair",
+    "target": "Blackboard (1)",
+    "relation": "behind"
+  },
+  {
+    "object": "Chair",
+    "target": "Brush",
+    "relation": "near"
+  },
+  {
+    "object": "Chair",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Chair",
+    "target": "Bookcase",
+    "relation": "right"
+  },
+  {
+    "object": "Chair",
+    "target": "Books (4)",
+    "relation": "near"
+  },
+  {
+    "object": "Chair",
+    "target": "Books (1)",
+    "relation": "near"
+  },
+  {
+    "object": "Chair",
+    "target": "Books (2)",
+    "relation": "right"
+  },
+  {
+    "object": "Chair",
+    "target": "Books (3)",
+    "relation": "right"
+  },
+  {
+    "object": "TeacherDesk",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Globe1",
+    "target": "Chair",
+    "relation": "near"
+  },
+  {
+    "object": "Globe1",
+    "target": "Globe2",
+    "relation": "below"
+  },
+  {
+    "object": "Globe1",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Globe1",
+    "target": "Bookcase",
+    "relation": "above"
+  },
+  {
+    "object": "Globe1",
+    "target": "Books (4)",
+    "relation": "above"
+  },
+  {
+    "object": "Globe1",
+    "target": "Books (1)",
+    "relation": "behind"
+  },
+  {
+    "object": "Globe1",
+    "target": "Books (2)",
+    "relation": "behind"
+  },
+  {
+    "object": "Globe1",
+    "target": "Books (3)",
+    "relation": "near"
+  },
+  {
+    "object": "Globe2",
+    "target": "Chair",
+    "relation": "near"
+  },
+  {
+    "object": "Globe2",
+    "target": "Globe1",
+    "relation": "above"
+  },
+  {
+    "object": "Globe2",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Globe2",
+    "target": "Bookcase",
+    "relation": "above"
+  },
+  {
+    "object": "Globe2",
+    "target": "Books (4)",
+    "relation": "above"
+  },
+  {
+    "object": "Globe2",
+    "target": "Books (1)",
+    "relation": "behind"
+  },
+  {
+    "object": "Globe2",
+    "target": "Books (2)",
+    "relation": "behind"
+  },
+  {
+    "object": "Globe2",
+    "target": "Books (3)",
+    "relation": "near"
+  },
+  {
+    "object": "Blackboard (2)",
+    "target": "Clock",
+    "relation": "below"
+  },
+  {
+    "object": "Blackboard (2)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Blackboard (1)",
+    "target": "Chalk",
+    "relation": "above"
+  },
+  {
+    "object": "Blackboard (1)",
+    "target": "Chalk (1)",
+    "relation": "above"
+  },
+  {
+    "object": "Blackboard (1)",
+    "target": "Brush",
+    "relation": "above"
+  },
+  {
+    "object": "Blackboard (1)",
+    "target": "Clock",
+    "relation": "below"
+  },
+  {
+    "object": "Blackboard (1)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Chalk",
+    "target": "Blackboard (1)",
+    "relation": "below"
+  },
+  {
+    "object": "Chalk",
+    "target": "Chalk (1)",
+    "relation": "near"
+  },
+  {
+    "object": "Chalk",
+    "target": "Brush",
+    "relation": "near"
+  },
+  {
+    "object": "Chalk",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Chalk (1)",
+    "target": "Blackboard (1)",
+    "relation": "below"
+  },
+  {
+    "object": "Chalk (1)",
+    "target": "Chalk",
+    "relation": "near"
+  },
+  {
+    "object": "Chalk (1)",
+    "target": "Brush",
+    "relation": "near"
+  },
+  {
+    "object": "Chalk (1)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Brush",
+    "target": "Chair",
+    "relation": "near"
+  },
+  {
+    "object": "Brush",
+    "target": "Blackboard (1)",
+    "relation": "below"
+  },
+  {
+    "object": "Brush",
+    "target": "Chalk",
+    "relation": "near"
+  },
+  {
+    "object": "Brush",
+    "target": "Chalk (1)",
+    "relation": "near"
+  },
+  {
+    "object": "Brush",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Clock",
+    "target": "TeacherDesk",
+    "relation": "behind"
+  },
+  {
+    "object": "Clock",
+    "target": "Blackboard (2)",
+    "relation": "above"
+  },
+  {
+    "object": "Clock",
+    "target": "Blackboard (1)",
+    "relation": "above"
+  },
+  {
+    "object": "Clock",
+    "target": "Arm",
+    "relation": "behind"
+  },
+  {
+    "object": "Clock",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "Arm",
+    "target": "TeacherDesk",
+    "relation": "behind"
+  },
+  {
+    "object": "Arm",
+    "target": "Blackboard (2)",
+    "relation": "behind"
+  },
+  {
+    "object": "Arm",
+    "target": "Blackboard (1)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Arm",
+    "target": "Clock",
+    "relation": "in front of"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (3)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (4)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (5)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (6)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Chair",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "TeacherDesk",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Globe1",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Globe2",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Blackboard (2)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Blackboard (1)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Chalk",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Chalk (1)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Brush",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Clock",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "WindowSmall (2)",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "WindowSmall (3)",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "Light",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "Bookcase",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Books (4)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Books (1)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Books (2)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Books (3)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "User",
+    "relation": "above"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "DeskAndChair (5)",
+    "relation": "left"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "Glass",
+    "relation": "in front of"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "WindowSmall (3)",
+    "relation": "in front of"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "Window (3)",
+    "relation": "behind"
+  },
+  {
+    "object": "WindowSmall (2)",
+    "target": "Window (4)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Glass",
+    "target": "WindowSmall (2)",
+    "relation": "behind"
+  },
+  {
+    "object": "Glass",
+    "target": "WindowSmall (3)",
+    "relation": "behind"
+  },
+  {
+    "object": "Glass",
+    "target": "Window (3)",
+    "relation": "behind"
+  },
+  {
+    "object": "Glass",
+    "target": "Window (4)",
+    "relation": "behind"
+  },
+  {
+    "object": "WindowSmall (3)",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "WindowSmall (3)",
+    "target": "WindowSmall (2)",
+    "relation": "behind"
+  },
+  {
+    "object": "WindowSmall (3)",
+    "target": "Glass",
+    "relation": "in front of"
+  },
+  {
+    "object": "WindowSmall (3)",
+    "target": "Window (3)",
+    "relation": "behind"
+  },
+  {
+    "object": "WindowSmall (3)",
+    "target": "Window (4)",
+    "relation": "above"
+  },
+  {
+    "object": "Window (3)",
+    "target": "DeskAndChair (5)",
+    "relation": "left"
+  },
+  {
+    "object": "Window (3)",
+    "target": "WindowSmall (2)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Window (3)",
+    "target": "Glass",
+    "relation": "in front of"
+  },
+  {
+    "object": "Window (3)",
+    "target": "WindowSmall (3)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Window (3)",
+    "target": "Window (4)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Window (4)",
+    "target": "DeskAndChair (4)",
+    "relation": "near"
+  },
+  {
+    "object": "Window (4)",
+    "target": "WindowSmall (2)",
+    "relation": "behind"
+  },
+  {
+    "object": "Window (4)",
+    "target": "Glass",
+    "relation": "in front of"
+  },
+  {
+    "object": "Window (4)",
+    "target": "WindowSmall (3)",
+    "relation": "below"
+  },
+  {
+    "object": "Window (4)",
+    "target": "Window (3)",
+    "relation": "behind"
+  },
+  {
+    "object": "Light",
+    "target": "DeskAndChair (3)",
+    "relation": "behind"
+  },
+  {
+    "object": "Light",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "Bookcase",
+    "target": "Chair",
+    "relation": "left"
+  },
+  {
+    "object": "Bookcase",
+    "target": "Globe1",
+    "relation": "below"
+  },
+  {
+    "object": "Bookcase",
+    "target": "Globe2",
+    "relation": "below"
+  },
+  {
+    "object": "Bookcase",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Bookcase",
+    "target": "Books (4)",
+    "relation": "below"
+  },
+  {
+    "object": "Bookcase",
+    "target": "Books (1)",
+    "relation": "below"
+  },
+  {
+    "object": "Bookcase",
+    "target": "Books (2)",
+    "relation": "above"
+  },
+  {
+    "object": "Bookcase",
+    "target": "Books (3)",
+    "relation": "above"
+  },
+  {
+    "object": "Books (4)",
+    "target": "Chair",
+    "relation": "near"
+  },
+  {
+    "object": "Books (4)",
+    "target": "Globe1",
+    "relation": "below"
+  },
+  {
+    "object": "Books (4)",
+    "target": "Globe2",
+    "relation": "below"
+  },
+  {
+    "object": "Books (4)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Books (4)",
+    "target": "Bookcase",
+    "relation": "above"
+  },
+  {
+    "object": "Books (4)",
+    "target": "Books (1)",
+    "relation": "near"
+  },
+  {
+    "object": "Books (4)",
+    "target": "Books (2)",
+    "relation": "near"
+  },
+  {
+    "object": "Books (4)",
+    "target": "Books (3)",
+    "relation": "near"
+  },
+  {
+    "object": "Books (1)",
+    "target": "Chair",
+    "relation": "left"
+  },
+  {
+    "object": "Books (1)",
+    "target": "Globe1",
+    "relation": "in front of"
+  },
+  {
+    "object": "Books (1)",
+    "target": "Globe2",
+    "relation": "in front of"
+  },
+  {
+    "object": "Books (1)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Books (1)",
+    "target": "Bookcase",
+    "relation": "above"
+  },
+  {
+    "object": "Books (1)",
+    "target": "Books (4)",
+    "relation": "near"
+  },
+  {
+    "object": "Books (1)",
+    "target": "Books (2)",
+    "relation": "above"
+  },
+  {
+    "object": "Books (1)",
+    "target": "Books (3)",
+    "relation": "near"
+  },
+  {
+    "object": "Books (2)",
+    "target": "Chair",
+    "relation": "left"
+  },
+  {
+    "object": "Books (2)",
+    "target": "Globe1",
+    "relation": "in front of"
+  },
+  {
+    "object": "Books (2)",
+    "target": "Globe2",
+    "relation": "in front of"
+  },
+  {
+    "object": "Books (2)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Books (2)",
+    "target": "Bookcase",
+    "relation": "below"
+  },
+  {
+    "object": "Books (2)",
+    "target": "Books (4)",
+    "relation": "near"
+  },
+  {
+    "object": "Books (2)",
+    "target": "Books (1)",
+    "relation": "below"
+  },
+  {
+    "object": "Books (2)",
+    "target": "Books (3)",
+    "relation": "near"
+  },
+  {
+    "object": "Books (3)",
+    "target": "Chair",
+    "relation": "left"
+  },
+  {
+    "object": "Books (3)",
+    "target": "Globe1",
+    "relation": "near"
+  },
+  {
+    "object": "Books (3)",
+    "target": "Globe2",
+    "relation": "near"
+  },
+  {
+    "object": "Books (3)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Books (3)",
+    "target": "Bookcase",
+    "relation": "below"
+  },
+  {
+    "object": "Books (3)",
+    "target": "Books (4)",
+    "relation": "near"
+  },
+  {
+    "object": "Books (3)",
+    "target": "Books (1)",
+    "relation": "near"
+  },
+  {
+    "object": "Books (3)",
+    "target": "Books (2)",
+    "relation": "near"
+  },
+  {
+    "object": "User",
+    "target": "DeskAndChair (3)",
+    "relation": "in front of"
+  },
+  {
+    "object": "User",
+    "target": "DeskAndChair (6)",
+    "relation": "below"
+  },
+  {
+    "object": "User",
+    "target": "Classroom",
+    "relation": "below"
+  }
+]
+==================================================

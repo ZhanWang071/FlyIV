@@ -1,0 +1,1504 @@
+--- Identified Objects Detection Result: (23) ---
+["DeskAndChair (24)","DeskAndChair (1)","DeskAndChair (2)","DeskAndChair (7)","DeskAndChair (8)","DeskAndChair (9)","DeskAndChair (11)","DeskAndChair (12)","DeskAndChair (15)","DeskAndChair (16)","DeskAndChair (21)","FrontDoor","Glass","BackDoor","TeacherDesk","Blackboard (2)","Blackboard (1)","Clock","Classroom","Light (1)","Light (3)","AirConditionerVent (1)","Switch"]
+
+--- Objects Geometry Data: (23) ---
+[
+  {
+    "name": "DeskAndChair (24)",
+    "position": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.08
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 0.5,
+        "z": 0.08
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (1)",
+    "position": {
+      "x": -2.0,
+      "y": 1.0,
+      "z": 0.08
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -2.0,
+        "y": 0.5,
+        "z": 0.08
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (2)",
+    "position": {
+      "x": -4.0,
+      "y": 1.0,
+      "z": 0.08
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -4.0,
+        "y": 0.5,
+        "z": 0.08
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (7)",
+    "position": {
+      "x": -4.0,
+      "y": 1.0,
+      "z": 1.68
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -4.0,
+        "y": 0.5,
+        "z": 1.68
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (8)",
+    "position": {
+      "x": -2.0,
+      "y": 1.0,
+      "z": 1.68
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -2.0,
+        "y": 0.5,
+        "z": 1.68
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (9)",
+    "position": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 1.68
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 0.5,
+        "z": 1.68
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (11)",
+    "position": {
+      "x": -2.0,
+      "y": 1.0,
+      "z": 3.28
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -2.0,
+        "y": 0.5,
+        "z": 3.28
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (12)",
+    "position": {
+      "x": -4.0,
+      "y": 1.0,
+      "z": 3.28
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -4.0,
+        "y": 0.5,
+        "z": 3.28
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (15)",
+    "position": {
+      "x": -2.0,
+      "y": 1.0,
+      "z": 4.88
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -2.0,
+        "y": 0.5,
+        "z": 4.88
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (16)",
+    "position": {
+      "x": -4.0,
+      "y": 1.0,
+      "z": 4.88
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -4.0,
+        "y": 0.5,
+        "z": 4.88
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "DeskAndChair (21)",
+    "position": {
+      "x": -4.0,
+      "y": 1.0,
+      "z": 6.48
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -4.0,
+        "y": 0.5,
+        "z": 6.48
+      },
+      "size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "FrontDoor",
+    "position": {
+      "x": -5.13,
+      "y": 2.5,
+      "z": -2.25
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -5.13,
+        "y": 1.25,
+        "z": -2.25
+      },
+      "size": {
+        "x": 0.23,
+        "y": 2.5,
+        "z": 1.5
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Glass",
+    "position": {
+      "x": 5.23,
+      "y": 3.45,
+      "z": 0.0
+    },
+    "scale": {
+      "x": 1.9,
+      "y": 0.4,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 5.23,
+        "y": 3.25,
+        "z": 0.0
+      },
+      "size": {
+        "x": 0.0,
+        "y": 0.4,
+        "z": 1.9
+      },
+      "forward": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "BackDoor",
+    "position": {
+      "x": -5.12,
+      "y": 2.5,
+      "z": 8.25
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -5.12,
+        "y": 1.25,
+        "z": 8.25
+      },
+      "size": {
+        "x": 0.23,
+        "y": 2.5,
+        "z": 1.5
+      },
+      "forward": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "right": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "TeacherDesk",
+    "position": {
+      "x": 0.0,
+      "y": 0.92,
+      "z": -2.3
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 0.46,
+        "z": -2.3
+      },
+      "size": {
+        "x": 1.8,
+        "y": 0.92,
+        "z": 0.8
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "right": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Blackboard (2)",
+    "position": {
+      "x": -1.5,
+      "y": 2.6,
+      "z": -3.93
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -1.5,
+        "y": 1.8,
+        "z": -3.93
+      },
+      "size": {
+        "x": 3.1,
+        "y": 1.6,
+        "z": 0.14
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Blackboard (1)",
+    "position": {
+      "x": 1.5,
+      "y": 2.6,
+      "z": -3.93
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 1.5,
+        "y": 1.8,
+        "z": -3.93
+      },
+      "size": {
+        "x": 3.1,
+        "y": 1.6,
+        "z": 0.14
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Clock",
+    "position": {
+      "x": 0.0,
+      "y": 3.7,
+      "z": -3.95
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": 0.0,
+        "y": 3.4,
+        "z": -3.95
+      },
+      "size": {
+        "x": 0.6,
+        "y": 0.6,
+        "z": 0.08
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Classroom",
+    "position": {
+      "x": -0.9,
+      "y": 4.0,
+      "z": 3.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -0.9,
+        "y": 2.0,
+        "z": 3.0
+      },
+      "size": {
+        "x": 12.2,
+        "y": 4.0,
+        "z": 14.0
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Light (1)",
+    "position": {
+      "x": -2.5,
+      "y": 4.0,
+      "z": -1.5
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -2.5,
+        "y": 3.97,
+        "z": -1.5
+      },
+      "size": {
+        "x": 1.0,
+        "y": 0.05,
+        "z": 1.0
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Light (3)",
+    "position": {
+      "x": -2.5,
+      "y": 4.0,
+      "z": 2.5
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -2.5,
+        "y": 3.97,
+        "z": 2.5
+      },
+      "size": {
+        "x": 1.0,
+        "y": 0.05,
+        "z": 1.0
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "AirConditionerVent (1)",
+    "position": {
+      "x": -2.5,
+      "y": 4.0,
+      "z": 0.5
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -2.5,
+        "y": 3.96,
+        "z": 0.5
+      },
+      "size": {
+        "x": 1.0,
+        "y": 0.08,
+        "z": 1.0
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  },
+  {
+    "name": "Switch",
+    "position": {
+      "x": -4.0,
+      "y": 1.6,
+      "z": -4.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "boundary": {
+      "center": {
+        "x": -4.0,
+        "y": 1.55,
+        "z": -4.0
+      },
+      "size": {
+        "x": 0.1,
+        "y": 0.1,
+        "z": 0.01
+      },
+      "forward": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    }
+  }
+]
+
+
+=== Relation Detection Phase [17:23:08] ===
+--- User/Camera Node Info ---
+{
+  "name": "User",
+  "position": {
+    "x": 0.83,
+    "y": 0.95,
+    "z": 0.73
+  },
+  "scale": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+  },
+  "boundary": {
+    "center": {
+      "x": 0.83,
+      "y": 0.1,
+      "z": 0.73
+    },
+    "size": {
+      "x": 0.5,
+      "y": 1.7,
+      "z": 0.3
+    },
+    "forward": {
+      "x": -0.96,
+      "y": 0.01,
+      "z": -0.26
+    },
+    "right": {
+      "x": -0.26,
+      "y": 0.0,
+      "z": 0.97
+    },
+    "up": {
+      "x": 0.01,
+      "y": 1.0,
+      "z": 0.0
+    }
+  }
+}
+--- Calculated Relations ---
+[
+  {
+    "object": "DeskAndChair (24)",
+    "target": "DeskAndChair (1)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (24)",
+    "target": "DeskAndChair (9)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (24)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (24)",
+    "target": "User",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (1)",
+    "target": "DeskAndChair (24)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (1)",
+    "target": "DeskAndChair (2)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (1)",
+    "target": "DeskAndChair (8)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (1)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (1)",
+    "target": "Light (1)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (1)",
+    "target": "AirConditionerVent (1)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (2)",
+    "target": "DeskAndChair (1)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (2)",
+    "target": "DeskAndChair (7)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (2)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (2)",
+    "target": "Light (1)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (2)",
+    "target": "AirConditionerVent (1)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (7)",
+    "target": "DeskAndChair (2)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (7)",
+    "target": "DeskAndChair (8)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (7)",
+    "target": "DeskAndChair (12)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (7)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (7)",
+    "target": "Light (3)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (8)",
+    "target": "DeskAndChair (1)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (8)",
+    "target": "DeskAndChair (7)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (8)",
+    "target": "DeskAndChair (9)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (8)",
+    "target": "DeskAndChair (11)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (8)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (8)",
+    "target": "Light (3)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (8)",
+    "target": "AirConditionerVent (1)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (9)",
+    "target": "DeskAndChair (24)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (9)",
+    "target": "DeskAndChair (8)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (9)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (9)",
+    "target": "User",
+    "relation": "near"
+  },
+  {
+    "object": "DeskAndChair (11)",
+    "target": "DeskAndChair (8)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (11)",
+    "target": "DeskAndChair (12)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (11)",
+    "target": "DeskAndChair (15)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (11)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (11)",
+    "target": "Light (3)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (12)",
+    "target": "DeskAndChair (7)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (12)",
+    "target": "DeskAndChair (11)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (12)",
+    "target": "DeskAndChair (16)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (12)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (15)",
+    "target": "DeskAndChair (11)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (15)",
+    "target": "DeskAndChair (16)",
+    "relation": "in front of"
+  },
+  {
+    "object": "DeskAndChair (15)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (16)",
+    "target": "DeskAndChair (12)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (16)",
+    "target": "DeskAndChair (15)",
+    "relation": "behind"
+  },
+  {
+    "object": "DeskAndChair (16)",
+    "target": "DeskAndChair (21)",
+    "relation": "left"
+  },
+  {
+    "object": "DeskAndChair (16)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "DeskAndChair (21)",
+    "target": "DeskAndChair (16)",
+    "relation": "right"
+  },
+  {
+    "object": "DeskAndChair (21)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "FrontDoor",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "FrontDoor",
+    "target": "Switch",
+    "relation": "right"
+  },
+  {
+    "object": "BackDoor",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "TeacherDesk",
+    "target": "Blackboard (2)",
+    "relation": "right"
+  },
+  {
+    "object": "TeacherDesk",
+    "target": "Blackboard (1)",
+    "relation": "right"
+  },
+  {
+    "object": "TeacherDesk",
+    "target": "Clock",
+    "relation": "right"
+  },
+  {
+    "object": "TeacherDesk",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Blackboard (2)",
+    "target": "Clock",
+    "relation": "below"
+  },
+  {
+    "object": "Blackboard (2)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Blackboard (1)",
+    "target": "TeacherDesk",
+    "relation": "left"
+  },
+  {
+    "object": "Blackboard (1)",
+    "target": "Clock",
+    "relation": "below"
+  },
+  {
+    "object": "Blackboard (1)",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "Clock",
+    "target": "TeacherDesk",
+    "relation": "left"
+  },
+  {
+    "object": "Clock",
+    "target": "Blackboard (2)",
+    "relation": "above"
+  },
+  {
+    "object": "Clock",
+    "target": "Blackboard (1)",
+    "relation": "above"
+  },
+  {
+    "object": "Clock",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (24)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (1)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (2)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (7)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (8)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (9)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (11)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (12)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (15)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (16)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "DeskAndChair (21)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "FrontDoor",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "BackDoor",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "TeacherDesk",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Blackboard (2)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Blackboard (1)",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "Clock",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "Light (1)",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "Light (3)",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "AirConditionerVent (1)",
+    "relation": "below"
+  },
+  {
+    "object": "Classroom",
+    "target": "Switch",
+    "relation": "above"
+  },
+  {
+    "object": "Classroom",
+    "target": "User",
+    "relation": "above"
+  },
+  {
+    "object": "Light (1)",
+    "target": "DeskAndChair (1)",
+    "relation": "left"
+  },
+  {
+    "object": "Light (1)",
+    "target": "DeskAndChair (2)",
+    "relation": "left"
+  },
+  {
+    "object": "Light (1)",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "Light (1)",
+    "target": "AirConditionerVent (1)",
+    "relation": "left"
+  },
+  {
+    "object": "Light (3)",
+    "target": "DeskAndChair (7)",
+    "relation": "in front of"
+  },
+  {
+    "object": "Light (3)",
+    "target": "DeskAndChair (8)",
+    "relation": "right"
+  },
+  {
+    "object": "Light (3)",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "Light (3)",
+    "target": "AirConditionerVent (1)",
+    "relation": "right"
+  },
+  {
+    "object": "AirConditionerVent (1)",
+    "target": "DeskAndChair (1)",
+    "relation": "right"
+  },
+  {
+    "object": "AirConditionerVent (1)",
+    "target": "DeskAndChair (2)",
+    "relation": "in front of"
+  },
+  {
+    "object": "AirConditionerVent (1)",
+    "target": "DeskAndChair (8)",
+    "relation": "left"
+  },
+  {
+    "object": "AirConditionerVent (1)",
+    "target": "Classroom",
+    "relation": "above"
+  },
+  {
+    "object": "AirConditionerVent (1)",
+    "target": "Light (1)",
+    "relation": "right"
+  },
+  {
+    "object": "AirConditionerVent (1)",
+    "target": "Light (3)",
+    "relation": "left"
+  },
+  {
+    "object": "Switch",
+    "target": "FrontDoor",
+    "relation": "left"
+  },
+  {
+    "object": "Switch",
+    "target": "Classroom",
+    "relation": "below"
+  },
+  {
+    "object": "User",
+    "target": "DeskAndChair (24)",
+    "relation": "near"
+  },
+  {
+    "object": "User",
+    "target": "DeskAndChair (9)",
+    "relation": "near"
+  },
+  {
+    "object": "User",
+    "target": "Classroom",
+    "relation": "below"
+  }
+]
+==================================================
