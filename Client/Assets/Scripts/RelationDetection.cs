@@ -7,19 +7,26 @@ using System.IO;
 
 public class RelationDetection : MonoBehaviour
 {
+    [Header("References")]
+    [Tooltip("Used to get object recognition data from VLM")]
+    [SerializeField] private VLMFocus vlmHandler;
+
+    [Header("User Settings")]
+    public Vector3 userBodySize = new Vector3(0.5f, 1.7f, 0.3f); // 宽, 高, 深
+    
     [Header("Settings - Vertical")]
     [Tooltip("判定垂直重叠的阈值：重叠面积占较小物体底面积的百分比 (0.0 ~ 1.0)")]
     [SerializeField] private float verticalOverlapThreshold = 0.2f;
     [Tooltip("判定为 Above/Below 的最小高度差 (m)")]
     [SerializeField] private float verticalHeightDiff = 0.2f;
 
-    [Header("Settings - Horizontal (Paper Strict)")]
+    [Header("Settings - Horizontal")]
     [Tooltip("水平关系的有效距离 (对应论文中的 d_max)")]
-    [SerializeField] private float maxHorizontalDistance = 2f; // d_max
+    [SerializeField] private float maxHorizontalDistance = 4f; // d_max
 
     [Tooltip("水平视野夹角阈值 (对应论文中的 Theta, 单位: 度)。建议 45~60 度")]
     [Range(10, 90)]
-    [SerializeField] private float viewAngleThreshold = 33.0f; // Theta
+    [SerializeField] private float viewAngleThreshold = 60.0f; // Theta
 
     [Header("Settings - Proximity")]
     [SerializeField] private float nearDistance = 2f;
@@ -27,7 +34,6 @@ public class RelationDetection : MonoBehaviour
 
     [Header("Result Display")]
     [Tooltip("这里会实时显示最近一次的关系检测结果")]
-    [SerializeField] private VLMFocus vlmHandler;
     [TextArea(10, 20)] public string relationDataJSON;
 
     private static readonly object _logLock = new object();
@@ -44,6 +50,7 @@ public class RelationDetection : MonoBehaviour
             this.y = (float)Math.Round(y, 2);
             this.z = (float)Math.Round(z, 2);
         }
+        public Vector3Data(Vector3 v) : this(v.x, v.y, v.z) { }
         public Vector3 ToUnityVec() => new Vector3(x, y, z);
     }
 
@@ -113,12 +120,70 @@ public class RelationDetection : MonoBehaviour
             Debug.Log("[RelationDetection] 收到VLM检测结果数据为空");
             return;
         }
+
+        string finalInputJson = objectsDataJSON;
+        string userNodeJson = null;
+
+        // 加入user node
+        try
+        {
+            List<ObjectNode> nodeList = JsonConvert.DeserializeObject<List<ObjectNode>>(objectsDataJSON);
+            if (nodeList == null) nodeList = new List<ObjectNode>();
+
+            // Directly call local method
+            ObjectNode userNode = GetCameraNode();
+            if (userNode != null)
+            {
+                userNodeJson = JsonConvert.SerializeObject(userNode, Formatting.Indented);
+                nodeList.Add(userNode);
+                Debug.Log($"[RelationDetection] 成功加入user node");
+            }
+
+            finalInputJson = JsonConvert.SerializeObject(nodeList, Formatting.Indented);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"[RelationDetection] 合并user节点失败: {e.Message}");
+        }
         
         // 自动执行关系检测
         string result = GetRelationData(objectsDataJSON);
 
         Debug.Log($"[RelationDetection] 关系检测完成，记录到Log文件");
         LogRelationData(result);  
+    }
+
+    // --- User Node Generation ---
+
+    public ObjectNode GetCameraNode()
+    {
+        Transform t = Camera.main.transform;
+
+        // 1. 计算关键点
+        // 假设摄像机位置 (t.position) 就是用户的 "头顶/眼睛" 位置
+        // Position (Top Center Anchor): 直接就是摄像机位置
+        Vector3 topPosition = t.position;
+
+        // Boundary Center (几何中心): 从头顶向下移动身高的一半
+        Vector3 bodyCenter = t.position - (Vector3.up * userBodySize.y * 0.5f);
+
+        // 2. 构建节点
+        ObjectNode userNode = new ObjectNode
+        {
+            name = "User",
+            position = new Vector3Data(topPosition.x, topPosition.y, topPosition.z),
+            scale = new Vector3Data(1f, 1f, 1f),
+            boundary = new BoundaryData
+            {
+                center = new Vector3Data(bodyCenter.x, bodyCenter.y, bodyCenter.z),
+                size = new Vector3Data(userBodySize.x, userBodySize.y, userBodySize.z),
+                forward = new Vector3Data(t.forward.x, t.forward.y, t.forward.z),
+                right = new Vector3Data(t.right.x, t.right.y, t.right.z),
+                up = new Vector3Data(t.up.x, t.up.y, t.up.z)
+            }
+        };
+
+        return userNode;
     }
 
     // --- 核心接口 ---
@@ -142,6 +207,15 @@ public class RelationDetection : MonoBehaviour
 
         List<RelationOutput> relations = new List<RelationOutput>();
 
+        // 获取 User 位置和 Forward 方向, add user node
+        Vector3? userFwd = null;
+
+        var camNode = GetCameraNode();
+        if (camNode != null)
+        {
+            userFwd = camNode.boundary.forward.ToUnityVec();
+        }
+
         for (int i = 0; i < nodes.Count; i++)
         {
             for (int j = 0; j < nodes.Count; j++)
@@ -151,7 +225,7 @@ public class RelationDetection : MonoBehaviour
                 ObjectNode subject = nodes[i];
                 ObjectNode target = nodes[j];
 
-                string rel = ComputeRelation(subject, target);
+                string rel = ComputeRelation(subject, target, userFwd);
 
                 if (rel != null)
                 {
@@ -172,11 +246,34 @@ public class RelationDetection : MonoBehaviour
 
     // --- 几何计算逻辑 ---
 
-    private string ComputeRelation(ObjectNode objA, ObjectNode objB)
+
+    /// <summary>
+    /// 根据检测平面的“基准方向” (baselineDir)，判断应该使用物体的 Width(X) 还是 Depth(Z)。
+    /// </summary>
+    private float GetProjectedSize(ObjectNode obj, Vector3 baselineDir)
+    {
+        Vector3 objRight = obj.boundary.right.ToUnityVec();
+        Vector3 objFwd = obj.boundary.forward.ToUnityVec();
+
+        objRight.y = 0; objRight.Normalize();
+        objFwd.y = 0; objFwd.Normalize();
+        baselineDir.y = 0; baselineDir.Normalize();
+
+        float dotX = Mathf.Abs(Vector3.Dot(objRight, baselineDir));
+        float dotZ = Mathf.Abs(Vector3.Dot(objFwd, baselineDir));
+
+        return (dotX > dotZ) ? obj.boundary.size.x : obj.boundary.size.z;
+    }
+
+    private string ComputeRelation(ObjectNode objA, ObjectNode objB, Vector3? userFwd)
     {
         // 1. 准备数据：基于几何中心 (boundary.center)
         Vector3 posA = objA.boundary.center.ToUnityVec(); // Subject (Target in logic)
         Vector3 posB = objB.boundary.center.ToUnityVec(); // Reference Object
+
+        Vector3 sizeA = objA.boundary.size.ToUnityVec();
+        Vector3 sizeB = objB.boundary.size.ToUnityVec();
+
 
         Bounds boundsA = new Bounds(objA.boundary.center.ToUnityVec(), objA.boundary.size.ToUnityVec());
         Bounds boundsB = new Bounds(objB.boundary.center.ToUnityVec(), objB.boundary.size.ToUnityVec());
@@ -198,32 +295,68 @@ public class RelationDetection : MonoBehaviour
         // 需要遍历四个方向，检查物体 A 是否落在物体 B 的特定几何区域内。
 
         // 获取 B 的局部坐标轴
-        Vector3 forwardB = objB.boundary.forward.ToUnityVec().normalized;
-        Vector3 rightB = objB.boundary.right.ToUnityVec().normalized;
-        Vector3 centerB = posB;
-        Vector3 sizeB = objB.boundary.size.ToUnityVec();
+        Vector3 forwardForFB;
+        Vector3 rightForFB;
 
-        // 拍扁向量到水平面 (XZ Plane) - 论文要求在投影平面计算
+        Vector3 forwardForLR;
+        Vector3 rightForLR;
+
+        // 判定物体对中是否包含 User
+        bool pairHasUser = (objA.name == "User" || objB.name == "User");
+
+        // Case A: 纯物体对 (没有 User) -> 强制使用 User 的视角 (User-Centric)
+        // Case B: 包含 User -> 使用物体自身的固有方向 (Intrinsic)，即 target 的 forward
+        if (!pairHasUser && userFwd.HasValue)
+        {
+            // Case A: 纯物体对 (没有 User) -> 强制使用 User 的视角 (User-Centric)
+            Vector3 uFwd = userFwd.Value;
+            uFwd.y = 0; uFwd.Normalize();
+
+            // --- 规则 1: 前后判定 (相对于 User) ---
+            // "In Front Of B" 意味着物体在 B 和 User 之间 (Facing User)
+            forwardForFB = -uFwd;
+            rightForFB = Vector3.Cross(Vector3.up, forwardForFB).normalized;
+
+            // --- 规则 2: 左右判定 (相对于 User) ---
+            // "Right of B" 意味着在 User 视野的右侧
+            forwardForLR = uFwd;
+            rightForLR = Vector3.Cross(Vector3.up, forwardForLR).normalized;
+        }
+        else
+        {
+            // Case B: 包含 User，或者场景中根本没有 User 数据
+            // 使用 Target (objB) 自身的固有 Forward
+            Vector3 objFwd = objB.boundary.forward.ToUnityVec();
+            objFwd.y = 0; objFwd.Normalize();
+
+            forwardForFB = objFwd;
+            rightForFB = Vector3.Cross(Vector3.up, forwardForFB).normalized;
+
+            forwardForLR = objFwd;
+            rightForLR = rightForFB;
+        }
+
+        Vector3 centerB = posB;
         Vector3 flatPosA = new Vector3(posA.x, 0, posA.z);
         Vector3 flatCenterB = new Vector3(centerB.x, 0, centerB.z);
-        Vector3 flatForwardB = new Vector3(forwardB.x, 0, forwardB.z).normalized;
-        Vector3 flatRightB = new Vector3(rightB.x, 0, rightB.z).normalized;
+
+        // --- Check Front / Behind ---
+        float widthForFB = GetProjectedSize(objB, rightForFB);
 
         // 检查 "In Front Of" (正前方)
-        if (CheckSpatialRelation(flatPosA, flatCenterB, flatForwardB, flatRightB, sizeB.x, maxHorizontalDistance, viewAngleThreshold))
+        if (CheckSpatialRelation(flatPosA, flatCenterB, forwardForFB, rightForFB, widthForFB, maxHorizontalDistance, viewAngleThreshold))
             return "in front of";
 
-        // 检查 "Behind" (正后方) -> 方向是 -Forward, 基准线仍然是 Right (Width)
-        if (CheckSpatialRelation(flatPosA, flatCenterB, -flatForwardB, flatRightB, sizeB.x, maxHorizontalDistance, viewAngleThreshold))
+        if (CheckSpatialRelation(flatPosA, flatCenterB, -forwardForFB, -rightForFB, widthForFB, maxHorizontalDistance, viewAngleThreshold))
             return "behind";
 
-        // 检查 "Right" (右侧) -> 方向是 Right, 基准线变成 Forward (Depth)
-        // 注意：CheckSpatialRelation 的参数顺序：方向向量，正交向量(基准线方向)，基准线长度
-        if (CheckSpatialRelation(flatPosA, flatCenterB, flatRightB, flatForwardB, sizeB.z, maxHorizontalDistance, viewAngleThreshold))
+        // --- Check Right / Left ---
+        float widthForLR = GetProjectedSize(objB, forwardForLR);
+
+        if (CheckSpatialRelation(flatPosA, flatCenterB, rightForLR, forwardForLR, widthForLR, maxHorizontalDistance, viewAngleThreshold))
             return "right";
 
-        // 检查 "Left" (左侧) -> 方向是 -Right
-        if (CheckSpatialRelation(flatPosA, flatCenterB, -flatRightB, flatForwardB, sizeB.z, maxHorizontalDistance, viewAngleThreshold))
+        if (CheckSpatialRelation(flatPosA, flatCenterB, -rightForLR, -forwardForLR, widthForLR, maxHorizontalDistance, viewAngleThreshold))
             return "left";
 
         // --- Step 3: 邻近关系 (Proximity) ---
@@ -282,7 +415,12 @@ public class RelationDetection : MonoBehaviour
         float angleC = Vector3.Angle(vecC_Target, direction);
 
         // 如果两个端点的视线夹角都小于阈值，说明物体完全在梯形/扇形通道内
-        return (angleB < theta) && (angleC < theta);
+        float angleVL = theta / 2 + 90.0f;
+
+        if (angleB >= angleVL) return false;
+        if (angleC >= angleVL) return false;
+
+        return true;
     }
 
     private bool CheckHorizontalOverlapWithThreshold(Bounds a, Bounds b)
