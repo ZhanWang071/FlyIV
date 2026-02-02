@@ -106,7 +106,7 @@ public class ActionExecutor : MonoBehaviour
     }
 
     [ContextMenu("Test Case")]
-    private async void Test()
+    private async void TestCase()
     {
         skillSequence = "";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case");
