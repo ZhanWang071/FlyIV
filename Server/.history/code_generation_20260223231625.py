@@ -79,17 +79,4 @@ if __name__ == "__main__":
     ]
     generated_code = generate_functions(test_data)
     print(generated_code)
-'''
-0223测试输出：
-using UnityEngine;
-using XCharts.Runtime;
 
-public class Update
-{
-    public static void Execute(BaseChart chart, string element_id, float value)
-    {
-        Debug.Log("Executing Update logic...");
-...
-    }}
-下一步需要确认是否直接把参数输入到函数体内
-'''
