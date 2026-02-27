@@ -98,13 +98,13 @@ public class Update
 ## 0227版本函数增加
 
 {"function": "UPDATE(string chart id, stringelement_id, string y_value)",
-"description": "Update the value of an existing mark"}
+"description": "Update the value of an existingmark"}
 
-{"function" :"DELETE ELEMENT(string chart id, string element id)",
+{"function" :"DELETE ELEMENT(string chart idstring element id)",
 "description":"Delete element"}
 
-{"function" :"APPEND SINGLE(string chart id,string x_value, string y_value)",
-"description": "Append a single element"}
+{"function" :"APPEND SIGNLE(string chart idstring x_value, string y_value)",
+"description": "Append a signle element"}
 
 {"function" :"APPEND SERIES(string chart id,List<string>x_values, List<string> y_values, int serie index)",
 "description":"Append a series of elements"}
