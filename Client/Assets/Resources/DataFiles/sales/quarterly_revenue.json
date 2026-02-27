@@ -1,0 +1,47 @@
+[
+    {
+      "quarter": "Q1",
+      "region": "North America",
+      "revenue": 1250000
+    },
+    {
+      "quarter": "Q1",
+      "region": "Europe",
+      "revenue": 980000
+    },
+    {
+      "quarter": "Q1",
+      "region": "Asia",
+      "revenue": 1450000
+    },
+    {
+      "quarter": "Q2",
+      "region": "North America",
+      "revenue": 1380000
+    },
+    {
+      "quarter": "Q2",
+      "region": "Europe",
+      "revenue": 1050000
+    },
+    {
+      "quarter": "Q2",
+      "region": "Asia",
+      "revenue": 1620000
+    },
+    {
+      "quarter": "Q3",
+      "region": "North America",
+      "revenue": 1420000
+    },
+    {
+      "quarter": "Q3",
+      "region": "Europe",
+      "revenue": 1100000
+    },
+    {
+      "quarter": "Q3",
+      "region": "Asia",
+      "revenue": 1750000
+    }
+]

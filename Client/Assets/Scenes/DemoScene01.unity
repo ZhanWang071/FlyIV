@@ -586,6 +586,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barchart_bookshelf
       objectReference: {fileID: 0}
+    - target: {fileID: 1346337909612740, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1368467265936920, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1389,7 +1393,7 @@ GameObject:
   - component: {fileID: 132006722}
   - component: {fileID: 132006721}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: barchart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20294,8 +20298,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillController
   promptPath: Prompts/SkillControllerSystemPrompt
   maxHistoryCount: 10
+  availableDataFiles:
+  - file: DataFiles/sales/monthly_sales.json
+    description: monthly sales data with product categories
+  - file: DataFiles/sales/quarterly_revenue.json
+    description: quarterly revenue data by region
+  - file: DataFiles/education/student_scores.json
+    description: student test scores and grades
   lastResponse: 
   userinput: Create a visualization on the teacher desk
+  testCaseFile: TestCases/TestCase1
 --- !u!114 &1687222471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20350,7 +20362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActionExecutor
   skillsFolder: Skills
-  skillSequence: Embed("Canvas", "Blackboard");
+  skillSequence: APPEND("barchart_01", 60.0f);
   executeCodes: 
 --- !u!114 &1687222474
 MonoBehaviour:
