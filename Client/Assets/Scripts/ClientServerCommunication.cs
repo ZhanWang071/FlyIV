@@ -27,8 +27,11 @@ public class ClientServerCommunication : MonoBehaviour
     public async void TestCommunication()
     {
         var requestData = new List<FunctionRequest> {
-            new FunctionRequest { function = "UPDATE(string element_id, float value)", description = "Update the mark" },
-            new FunctionRequest { function = "DELETE_ELEMENT(string element_id)", description = "Delete element" }
+            new FunctionRequest { function = "UPDATE(string chart_id, string element_id, string y_value)", description = "Update the value of an existing mark" },
+            new FunctionRequest { function = "DELETE_ELEMENT(string chart_id, string element_id)", description = "Delete element" },
+            new FunctionRequest { function = "APPEND_SIGNLE(string chart_id, string x_value, string y_value)", description = "Append a signle element" },
+            new FunctionRequest { function = "APPEND_SERIES(string chart_id, List<string> x_values, List<string> y_values, int serie_index)", description = "Append a series of elements" },
+            new FunctionRequest { function = "HIGHLIGHT(string chart_id, string element_id, string highlight_type)", description = "Highlight a single element" }
         };
 
         await SendToPythonAndSave(requestData);

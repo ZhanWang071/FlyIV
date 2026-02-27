@@ -1,0 +1,32 @@
+[
+    {
+      "month": "January",
+      "sales": 45000,
+      "category": "Electronics"
+    },
+    {
+      "month": "February",
+      "sales": 52000,
+      "category": "Electronics"
+    },
+    {
+      "month": "March",
+      "sales": 48000,
+      "category": "Electronics"
+    },
+    {
+      "month": "April",
+      "sales": 61000,
+      "category": "Electronics"
+    },
+    {
+      "month": "May",
+      "sales": 55000,
+      "category": "Electronics"
+    },
+    {
+      "month": "June",
+      "sales": 67000,
+      "category": "Electronics"
+    }
+]

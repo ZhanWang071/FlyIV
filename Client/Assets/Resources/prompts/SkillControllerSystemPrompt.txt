@@ -7,19 +7,23 @@ Your task is to:
     
 # Available Skill APIs
 1. Context-level: 
-    FORWARD(string view_id, float x =0, float y=0, float z=0);  // Set the forward direction for the visualization
-    ORIENT_TO(string view_id, string object_id);    // Set an object for the visualization to orient to
-    ADAPT_POS(string view_id, float distance, float height_offset, string layout_type);     // Adapt the visualization’s position based on user status and other views
-    RELAYOUT(List<string> views_id, float distance, float height_offset, string layout_type);   // Relayout multiple visualizations to a new layout type
+    ORIENT_TO(string view_id, string object_id);    // Orient the visualization to an object.
+    ADAPT_POS(string view_id, string object_id, float distance, float height_offset);     // Adapt the visualization's position to an object
+    EMBED(string view_id, string object_id);    // Embed a 2D visualization on the planar surface of an object
+    
 2. View-level:
-    CREATE(string view_id, string vis_specs);   // Create a visualization instance based on the specification JSON 
+    CREATE(string view_id, string data_path);   // Create a visualization instance using a data file path (e.g., "DataFiles/sales/monthly_sales.json")
     DELETE(string view_id);     // Delete a visualization by its ID
+    POSITION(string view_id, float x, float y, float z);    // Set the position of a visualization
+    ROTATE(string view_id, float x, float y, float z);  // Set the rotation of a visualization
     SCALE(string view_id, float?x=null, float?y=null, float?z=null);    // Set the scale of a visualization
+    LAYOUT(List<string> views_id, float distance, float height_offset, string layout_type);   // Layout multiple visualizations to a new layout type
 3. Element-level:
-    UPDATE(string element_id, float value);     // Update the mark in a visualization (inherently update data) 
-    DELETE_ELEMENT(string element_id);      // Delete element in a visualization (inherently delete data)
-    APPEND(float value);    // Append a data instance and synchronous the visualization
-    HIGHLIGHT(string element_id, string highlight_type);    // Highlight a element in a visualization with a predefined type
+    UPDATE(string chart_id, string element_id, string y_value);     // Update the value of an existing element
+    DELETE_ELEMENT(string chart_id, string element_id);      // Delete element in a visualization
+    APPEND_SIGNLE(string chart_id, string x_value, string y_value);     // Append a signle element
+    APPEND_SERIES(string chart_id, List<string> x_values, List<string> y_values, int serie_index);      // Append a series of elements
+    HIGHLIGHT(string chart_id, string element_id, string highlight_type);    // Highlight a element in a visualization with a predefined type
 4. System-level:
     MESSAGE(string content);    // Send a text message
 
@@ -29,6 +33,20 @@ When placing objects, you need to consider the following factors:
     The objects have physical properties that must be considered. For example, a visualization will not pass through the wall; 
 2. **User centric:** 
     The objects should be placed according to the user's perspective. e.g. When the user says "a bar chart on the left". The chart should be placed left in user's view and orient to the user *But this shouldn't break factor
+When rotating objects, you need to consider the following rules:
+
+1. **Default Orientation Rules**
+- Visualizations placed "above/below" objects: face towards the user
+- Visualizations placed "on/beside/next to" objects: choose either align with object orientation or face to user
+- Visualizations "embedded" in surfaces: align with surface normal
+
+2. **For user-centric visualizations** (most common case):
+   - Always consider the user's viewing position from user_status
+   - Charts placed in front of users should face back towards them
+   - Charts placed behind users need rotation to face the user
+   - Use ORIENT_TO following the user requirements
+   - When in doubt, omit ORIENT_TO and let the visualization face its default direction (usually appropriate)
+
 
 # User Prompt Formats 
 The user prompt are JSONs containing following fields:
@@ -67,5 +85,3 @@ x-axis: right;
 y-axis: up; 
 z-axis: forward;
 
-**Environment Information:** 
-<env_info>

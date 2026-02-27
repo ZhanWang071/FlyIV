@@ -6,6 +6,9 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Linq;
+using XCharts.Runtime;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 public class ActionExecutor : MonoBehaviour
 {
@@ -21,6 +24,8 @@ public class ActionExecutor : MonoBehaviour
         Debug.Log($"[ActionExecutor] 执行skill sequence: {skillOutput}");
 
         skillSequence = skillOutput;
+        // 如果分号后面有空格，则删除这些空格（例如: "); CREATE(...)" -> ");CREATE(...)"）
+        // skillOutput = skillOutput.Replace("; ", ";");
         // 正则表达式匹配：函数名(所有参数内容)
         // 匹配格式如：ORIENT_TO("barchart_01", "user");
         // string pattern = @"(\w+)\s*\(([^)]*)\);";
@@ -69,13 +74,21 @@ public class ActionExecutor : MonoBehaviour
                     typeof(UnityEngine.Object).Assembly,           // 核心程序集
                     typeof(UnityEngine.Canvas).Assembly,
                     typeof(UnityEngine.UI.Graphic).Assembly,        // UI 程序集 (修复关键)
+                    typeof(XCharts.Runtime.ChartLabel).Assembly,
+                    typeof(System.IO.File).Assembly,
+                    typeof(System.Linq.Enumerable).Assembly,
+                    typeof(Newtonsoft.Json.JsonConvert).Assembly,
                     typeof(UnityEngine.Physics).Assembly
                 )
                 .WithImports(
                     "UnityEngine", 
                     "System", 
+                    "System.IO",
+                    "System.Linq",
                     "System.Collections.Generic", 
-                    "UnityEngine.UI"
+                    "UnityEngine.UI",
+                    "XCharts.Runtime"
+                    , "Newtonsoft.Json", "Newtonsoft.Json.Linq"
                 );
 
             // 2. 动态执行：直接将 rawArgs 作为参数传递给 Execute 方法
