@@ -118,11 +118,67 @@ public class ActionExecutor : MonoBehaviour
         await ExecuteSkillSequence(skillSequence);
     }
 
-    [ContextMenu("Test Case")]
-    private async void TestCase()
+    [ContextMenu("Test Case: AdaptePos")]
+    private async void TestCaseAdaptePos()
     {
-        skillSequence = "";
+        skillSequence = "ADAPT_POS(\"barchart_01\",\"TeacherDesk\",0f,1.5f);";
+        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case AdaptePos");
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("Test Case: OrientTo")]
+    private async void TestCaseOrientTo()
+    {
+        skillSequence = "ORIENT_TO(\"barchart_01\",\"user\");";
+        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case OrientTo");
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("Test Case: Embed")]
+    private async void TestCaseEmbed()
+    {
+        skillSequence = "EMBED(\"barchart_01\",\"Blackboard\");";
+        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Embed");
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("Test Case: Update")]
+    private async void TestCaseUpdate()
+    {
+        skillSequence = "UPDATE(\"BarChart\",\"1\",\"60.5\");";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case");
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("Test Case: AppendSingle")]
+    private async void TestCaseAppendSingle()
+    {
+        skillSequence = "APPEND_SINGLE(\"BarChart\",\"x6\",\"60.5\");";
+        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case");
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("Test Case: AppendSeries")]
+    private async void TestCaseAppendSeries()
+    {
+        skillSequence = "APPEND_SERIES(\"BarChart\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> { \"88\",    \"74\",    \"95\"  },1);";
+        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case");
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("Test Case: DeleteElement")]
+    private async void TestCaseDeleteElement()
+    {
+        skillSequence = "DELETE_ELEMENT(\"BarChart\",\"2\");";
+        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case DeleteElement");
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("Test Case: Highlight")]
+    private async void TestCaseHighlight()
+    {
+        skillSequence = "HIGHLIGHT(\"BarChart\",\"0:1\", \"select\");\nHIGHLIGHT(\"BarChart\",\"0:2\", \"emphasis\");\nHIGHLIGHT(\"BarChart\",\"0:3\", \"blur\");";
+        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Highlight");
         await ExecuteSkillSequence(skillSequence);
     }
 }

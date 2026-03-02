@@ -29,8 +29,15 @@ public class OrientTo
         pitch = Mathf.Clamp(pitch, -maxPitchAngle, maxPitchAngle);
 
         // 3. 应用新的旋转：保留计算出的 Y 轴（左右转），限制 X 轴（上下偏）
-        actor.transform.rotation = Quaternion.Euler(pitch, angles.y, 0);
+        float yaw = angles.y;
+        // 如果 actor 是 Canvas 类型（UI），则需要在 Y 轴上额外旋转 180° 以保持正面对目标
+        if (actor.GetComponent<Canvas>() != null)
+        {
+            yaw += 180f;
+        }
 
-        Debug.Log($"[Skill] OrientTo 完成: {object_name} 俯仰角限制在 {pitch:F1}°");
+        actor.transform.rotation = Quaternion.Euler(pitch, yaw, 0);
+
+        Debug.Log($"[Skill] OrientTo 完成: {object_name} 俯仰角限制在 {pitch:F1}°，yaw={yaw:F1}°");
     }
 }

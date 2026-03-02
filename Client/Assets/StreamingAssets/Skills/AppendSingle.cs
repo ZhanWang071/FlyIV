@@ -1,4 +1,4 @@
-public class Append
+public class AppendSingle
 {
     public static void Execute(string chart_id, string x_value, string y_value)
     {
