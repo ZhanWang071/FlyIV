@@ -20362,7 +20362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActionExecutor
   skillsFolder: Skills
-  skillSequence: APPEND("barchart_01", 60.0f);
+  skillSequence: APPEND("BarChart","x6","60.5");
   executeCodes: 
 --- !u!114 &1687222474
 MonoBehaviour:
@@ -20439,6 +20439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf5d321da4004700906a2a04f403195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RelationDetectionDynamic
+  flag: 0
   detectionMode: 0
   periodicInterval: 1000
   vlmHandler: {fileID: 1687222467}

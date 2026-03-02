@@ -8,6 +8,7 @@ public class RelationDetectionDynamic: MonoBehaviour
     public enum DetectionMode { Continuous, Periodic }
 
     [Header("Settings")]
+    public bool flag = false; // 主开关
     public DetectionMode detectionMode = DetectionMode.Continuous;
     [Tooltip("Periodic模式：每隔多少帧检测一次")]
     public int periodicInterval = 1000;
@@ -76,10 +77,13 @@ public class RelationDetectionDynamic: MonoBehaviour
     {
         HandleInputAndLook(); // 处理键盘鼠标
 
-        // 核心简化：统一的触发判定
-        if (ShouldRunDetection())
+        if (flag)
         {
-            DetectAndTrigger();
+            // 核心简化：统一的触发判定
+            if (ShouldRunDetection())
+            {
+                DetectAndTrigger();
+            }
         }
     }
 
