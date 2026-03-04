@@ -4,7 +4,8 @@ public class AppendSeries
         string chart_id,
         List<string> x_values,
         List<string> y_values,
-        int serieIndex)
+        int serieIndex,
+        string serieType)
     {
         Debug.Log("Executing AppendSeriesSkill logic...");
 
@@ -13,8 +14,7 @@ public class AppendSeries
         BaseChart chart = FindChart(chart_id);
         if (chart == null) return;
 
-        Serie serie = EnsureSerieExists(chart, serieIndex);
-        if (serie == null) return;
+        if (EnsureSerieExists(chart, serieIndex, serieType) == null) return;
 
         int appendedCount = AppendData(chart, x_values, y_values, serieIndex);
 
@@ -35,26 +35,22 @@ public class AppendSeries
             Debug.LogWarning("AppendSeriesSkill: chart_id is null or empty.");
             return false;
         }
-
         if (x_values == null || x_values.Count == 0)
         {
             Debug.LogWarning("AppendSeriesSkill: x_values list is null or empty.");
             return false;
         }
-
         if (y_values == null || y_values.Count == 0)
         {
             Debug.LogWarning("AppendSeriesSkill: y_values list is null or empty.");
             return false;
         }
-
         if (x_values.Count != y_values.Count)
         {
             Debug.LogWarning($"AppendSeriesSkill: x_values count ({x_values.Count}) " +
                              $"does not match y_values count ({y_values.Count}).");
             return false;
         }
-
         return true;
     }
 
@@ -82,23 +78,32 @@ public class AppendSeries
     // Serie Management
     // -------------------------------------------------------------------------
 
-    private static Serie EnsureSerieExists(BaseChart chart, int serieIndex)
+    private static Serie EnsureSerieExists(BaseChart chart, int serieIndex, string serieType)
     {
         Serie serie = chart.GetSerie(serieIndex);
         if (serie != null) return serie;
 
+        string normalizedType = string.IsNullOrEmpty(serieType) ? "line" : serieType.ToLower().Trim();
         int currentCount = chart.series.Count;
         int seriesToCreate = serieIndex - currentCount + 1;
 
         for (int s = 0; s < seriesToCreate; s++)
-            chart.AddSerie<Line>("serie" + (currentCount + s));
+        {
+            string serieName = "serie" + (currentCount + s);
+            bool isTarget = s == seriesToCreate - 1;
+
+            if (isTarget && normalizedType == "bar")
+                chart.AddSerie<Bar>(serieName);
+            else
+                chart.AddSerie<Line>(serieName);
+        }
 
         serie = chart.GetSerie(serieIndex);
 
         if (serie == null)
             Debug.LogWarning($"AppendSeriesSkill: Failed to create serie at index {serieIndex}.");
         else
-            Debug.Log($"AppendSeriesSkill: Created new Line serie at index {serieIndex}.");
+            Debug.Log($"AppendSeriesSkill: Created new serie of type '{serieType}' at index {serieIndex}.");
 
         return serie;
     }
@@ -119,8 +124,6 @@ public class AppendSeries
 
         for (int i = 0; i < x_values.Count; i++)
         {
-            string xVal = x_values[i];
-
             if (!TryParseDouble(y_values[i], out double parsedY))
             {
                 Debug.LogWarning($"AppendSeriesSkill: Could not parse y_values[{i}] '{y_values[i]}' as a number. Skipping.");
@@ -128,9 +131,9 @@ public class AppendSeries
             }
 
             if (isCategoryAxis)
-                AppendCategoryPoint(chart, xAxis, serieIndex, xVal, parsedY);
+                AppendCategoryPoint(chart, xAxis, serieIndex, x_values[i], parsedY);
             else
-                AppendValuePoint(chart, serieIndex, xVal, parsedY, i);
+                AppendValuePoint(chart, serieIndex, x_values[i], parsedY, i);
 
             appendedCount++;
         }
@@ -139,29 +142,19 @@ public class AppendSeries
     }
 
     private static void AppendCategoryPoint(
-        BaseChart chart,
-        XAxis xAxis,
-        int serieIndex,
-        string xVal,
-        double parsedY)
+        BaseChart chart, XAxis xAxis, int serieIndex, string xVal, double parsedY)
     {
-        bool categoryExists = xAxis.data != null && xAxis.data.Contains(xVal);
-        if (!categoryExists) chart.AddXAxisData(xVal);
+        if (xAxis.data == null || !xAxis.data.Contains(xVal))
+            chart.AddXAxisData(xVal);
 
         chart.AddData(serieIndex, parsedY, xVal);
     }
 
     private static void AppendValuePoint(
-        BaseChart chart,
-        int serieIndex,
-        string xVal,
-        double parsedY,
-        int index)
+        BaseChart chart, int serieIndex, string xVal, double parsedY, int index)
     {
         if (TryParseDouble(xVal, out double parsedX))
-        {
             chart.AddData(serieIndex, parsedX, parsedY, xVal);
-        }
         else
         {
             Debug.LogWarning($"AppendSeriesSkill: x_values[{index}] '{xVal}' is not numeric on value axis. Adding y only.");

@@ -7,7 +7,11 @@ public class Update
         Vis vis = FindVis(chart_id);
         if (vis == null) return;
 
-        if (!TryParseIndex(element_id, vis.markInstances.Count, out int index)) return;
+        if (!int.TryParse(element_id, out int index))
+        {
+            Debug.LogWarning($"Invalid element_id: {element_id}");
+            return;
+        }
 
         JSONNode visSpecs = vis.GetVisSpecs();
         if (visSpecs == null)
@@ -16,72 +20,30 @@ public class Update
             return;
         }
 
-        string yField = GetEncodingField(visSpecs, "y");
-        if (yField == null)
-        {
-            Debug.LogWarning($"No y field mapping found in vis spec encoding for chart: {chart_id}");
-            return;
-        }
+        if (!TryGetYEncoding(visSpecs, chart_id, out string yField, out string yType)) return;
 
         JSONNode dataValues = visSpecs["data"]["values"];
         if (dataValues == null)
         {
-            Debug.LogWarning($"No data values found in vis spec for chart: {chart_id}");
+            Debug.LogWarning($"No inline data values found in vis spec for chart: {chart_id}");
             return;
         }
-        if (index >= dataValues.Count)
+
+        if (index < 0 || index >= dataValues.Count)
         {
             Debug.LogWarning($"element_id {element_id} exceeds data values count: {dataValues.Count}");
             return;
         }
 
-        // --- Update in-memory spec ---
-        dataValues[index][yField] = new JSONString(y_value);
+        if (!TrySetValue(dataValues[index], yField, yType, y_value)) return;
 
-        // --- Persist to file ---
-        PersistUpdate(vis, visSpecs, index, yField, y_value);
-
-        // --- Update live mark ---
-        Mark mark = vis.markInstances[index].GetComponent<Mark>();
-        if (mark != null)
-        {
-            mark.datum[yField] = y_value;
-            mark.SetChannelValue("y", y_value);
-        }
-
-        if (index < vis.data.values.Count)
-            vis.data.values[index][yField] = y_value;
+        vis.UpdateVisSpecsFromTextSpecs();
 
         Debug.Log($"UpdateSkill completed: chart={chart_id} mark={element_id} {yField}={y_value}");
     }
 
     // -------------------------------------------------------------------------
-    // Persistence
-    // -------------------------------------------------------------------------
-
-    private static void PersistUpdate(Vis vis, JSONNode visSpecs, int index, string yField, string y_value)
-    {
-        if (visSpecs["data"]["url"] != null && visSpecs["data"]["url"].Value != "inline")
-        {
-            string dataFilePath = Parser.GetFullDataPath(visSpecs["data"]["url"].Value);
-            if (!File.Exists(dataFilePath)) return;
-
-            JSONNode dataFileJson = JSON.Parse(File.ReadAllText(dataFilePath));
-            if (dataFileJson != null && index < dataFileJson.Count)
-            {
-                dataFileJson[index][yField] = new JSONString(y_value);
-                File.WriteAllText(dataFilePath, dataFileJson.ToString(2));
-            }
-        }
-        else
-        {
-            string specFilePath = Parser.GetFullSpecsPath(vis.visSpecsURL);
-            File.WriteAllText(specFilePath, JSON.Parse(visSpecs.ToString()).ToString(2));
-        }
-    }
-
-    // -------------------------------------------------------------------------
-    // Shared Utilities
+    // Scene Lookup
     // -------------------------------------------------------------------------
 
     private static Vis FindVis(string chart_id)
@@ -100,23 +62,48 @@ public class Update
         return vis;
     }
 
-    private static bool TryParseIndex(string element_id, int maxCount, out int index)
+    // -------------------------------------------------------------------------
+    // Encoding Lookup
+    // -------------------------------------------------------------------------
+
+    private static bool TryGetYEncoding(JSONNode visSpecs, string chart_id, out string yField, out string yType)
     {
-        if (!int.TryParse(element_id, out index))
+        yField = null;
+        yType = "quantitative";
+
+        if (visSpecs["encoding"] == null ||
+            visSpecs["encoding"]["y"] == null ||
+            visSpecs["encoding"]["y"]["field"] == null)
         {
-            Debug.LogWarning($"Invalid element_id: {element_id}");
+            Debug.LogWarning($"No y field mapping found in vis spec encoding for chart: {chart_id}");
             return false;
         }
-        if (index < 0 || index >= maxCount)
-        {
-            Debug.LogWarning($"element_id out of range: {element_id} (total marks: {maxCount})");
-            return false;
-        }
+
+        yField = visSpecs["encoding"]["y"]["field"].Value;
+        yType = visSpecs["encoding"]["y"]["type"]?.Value ?? "quantitative";
         return true;
     }
 
-    private static string GetEncodingField(JSONNode visSpecs, string axis)
+    // -------------------------------------------------------------------------
+    // Value Assignment
+    // -------------------------------------------------------------------------
+
+    private static bool TrySetValue(JSONNode entry, string yField, string yType, string y_value)
     {
-        return visSpecs["encoding"]?[axis]?["field"]?.Value;
+        if (yType == "quantitative")
+        {
+            if (!double.TryParse(y_value, NumberStyles.Any, CultureInfo.InvariantCulture, out double parsed))
+            {
+                Debug.LogWarning($"UpdateSkill: y_value '{y_value}' cannot be parsed as a number for quantitative field.");
+                return false;
+            }
+            entry[yField] = new JSONNumber(parsed);
+        }
+        else
+        {
+            entry[yField] = new JSONString(y_value);
+        }
+
+        return true;
     }
 }

@@ -221,8 +221,8 @@ public class ActionExecutor : MonoBehaviour
     [ContextMenu("Test Case: AppendSeries")]
     private async void TestCaseAppendSeries()
     {
-        if (skillsFolderPath == SkillFolderOption.XCharts) skillSequence = "APPEND_SERIES(\"BarChart\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> {\"88\", \"74\", \"95\"},1);";
-        else if (skillsFolderPath == SkillFolderOption.DxR) skillSequence = "APPEND_SERIES(\"BarChart_01\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> {\"88\", \"74\", \"95\"},1);";
+        if (skillsFolderPath == SkillFolderOption.XCharts) skillSequence = "APPEND_SERIES(\"BarChart\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> {\"88\", \"74\", \"95\"},1, \"bar\");";
+        else if (skillsFolderPath == SkillFolderOption.DxR) skillSequence = "APPEND_SERIES(\"BarChart_01\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> {\"88\", \"74\", \"95\"},1, \"bar\");";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case");
         await ExecuteSkillSequence(skillSequence);
     }
