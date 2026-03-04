@@ -126,6 +126,22 @@ public class ActionExecutor : MonoBehaviour
         await ExecuteSkillSequence(skillSequence);
     }
 
+    [ContextMenu("Test Case: Create")]
+    private async void TestCaseCreate()
+    {
+        skillSequence = "CREATE(\"barchart_02\",\"education/student_scores.json\");\nADAPT_POS(\"barchart_02\",\"TeacherDesk\",0f,1.5f);";
+        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Create");
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("Test Case: Layout")]
+    private async void TestCaseLayout()
+    {
+        skillSequence = "LAYOUT(new List<string> {\"BarChart_01\", \"BarChart_02\", \"BarChart_03\"}, 1.5f, 0f, \"arc\");";
+        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Layout");
+        await ExecuteSkillSequence(skillSequence);
+    }
+
     [ContextMenu("Test Case: OrientTo")]
     private async void TestCaseOrientTo()
     {

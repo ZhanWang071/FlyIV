@@ -3,7 +3,7 @@ public class Create
     public static void Execute(string view_id, string data_path)
     {
         // ── 1. Load & Parse JSON dynamically ────────────────────────────────
-        data_path = Path.Combine(Application.dataPath, "Resources", data_path);
+        data_path = Path.Combine(Application.dataPath, "Resources","DataFiles", data_path);
         if (!File.Exists(data_path))
         {
             Debug.LogError($"[Skill] Create 失敗: Data file not found at {data_path}");
