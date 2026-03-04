@@ -1,15 +1,16 @@
-{ "width": 550,
+{
+  "width": 550,
   "data": {
-     "values": [
-        {"keyword": "Algorithms", "count": 28},
-        {"keyword": "Data", "count": 55},
-        {"keyword": "Visualization", "count": 43},
-        {"keyword": "Compilers", "count": 91},
-        {"keyword": "Graphics", "count": 81},
-        {"keyword": "Computers", "count": 53},
-        {"keyword": "Software", "count": 28},
-        {"keyword": "Mathematics", "count": 87},
-        {"keyword": "Programming", "count": 52}
+    "values": [
+      { "keyword": "Algorithms", "count": 28 },
+      { "keyword": "Data", "count": 55 },
+      { "keyword": "Visualization", "count": 43 },
+      { "keyword": "Compilers", "count": 91 },
+      { "keyword": "Graphics", "count": 81 },
+      { "keyword": "Computers", "count": 53 },
+      { "keyword": "Software", "count": 28 },
+      { "keyword": "Mathematics", "count": 87 },
+      { "keyword": "Programming", "count": 52 }
     ]
   },
   "mark": "book",
@@ -32,7 +33,7 @@
       "field": "count",
       "type": "quantitative",
       "scale": {
-        "domain": [ 0, 100 ]
+        "domain": [0, 100]
       }
     },
     "yrotation": {
@@ -42,7 +43,7 @@
       "value": 80
     },
     "yoffsetpct": {
-      "value":  -1
+      "value": -1
     }
   }
 }

@@ -130,7 +130,7 @@ namespace DxR
         /// Currently, deletes everything and reconstructs everything from scratch.
         /// TODO: Only reconstruct newly updated properties.
         /// </summary>
-        private void UpdateVis()
+        public void UpdateVis()
         {
             DeleteAll();
 

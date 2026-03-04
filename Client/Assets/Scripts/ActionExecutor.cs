@@ -212,7 +212,8 @@ public class ActionExecutor : MonoBehaviour
     [ContextMenu("Test Case: AppendSingle")]
     private async void TestCaseAppendSingle()
     {
-        skillSequence = "APPEND_SINGLE(\"BarChart\",\"x6\",\"60.5\");";
+        if (skillsFolderPath == SkillFolderOption.XCharts) skillSequence = "APPEND_SINGLE(\"BarChart\",\"x6\",\"60.5\");";
+        else if (skillsFolderPath == SkillFolderOption.DxR) skillSequence = "APPEND_SINGLE(\"BarChart_01\",\"x6\",\"60.5\");"; ;
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case");
         await ExecuteSkillSequence(skillSequence);
     }
@@ -220,7 +221,8 @@ public class ActionExecutor : MonoBehaviour
     [ContextMenu("Test Case: AppendSeries")]
     private async void TestCaseAppendSeries()
     {
-        skillSequence = "APPEND_SERIES(\"BarChart\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> {\"88\", \"74\", \"95\"},1);";
+        if (skillsFolderPath == SkillFolderOption.XCharts) skillSequence = "APPEND_SERIES(\"BarChart\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> {\"88\", \"74\", \"95\"},1, \"bar\");";
+        else if (skillsFolderPath == SkillFolderOption.DxR) skillSequence = "APPEND_SERIES(\"BarChart_01\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> {\"88\", \"74\", \"95\"},1, \"bar\");";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case");
         await ExecuteSkillSequence(skillSequence);
     }
@@ -228,7 +230,8 @@ public class ActionExecutor : MonoBehaviour
     [ContextMenu("Test Case: DeleteElement")]
     private async void TestCaseDeleteElement()
     {
-        skillSequence = "DELETE_ELEMENT(\"BarChart\",\"2\");";
+        if (skillsFolderPath == SkillFolderOption.XCharts) skillSequence = "DELETE_ELEMENT(\"BarChart\",\"2\");";
+        else if (skillsFolderPath == SkillFolderOption.DxR) skillSequence = "DELETE_ELEMENT(\"BarChart_01\",\"2\");";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case DeleteElement");
         await ExecuteSkillSequence(skillSequence);
     }
@@ -236,7 +239,8 @@ public class ActionExecutor : MonoBehaviour
     [ContextMenu("Test Case: Highlight")]
     private async void TestCaseHighlight()
     {
-        skillSequence = "HIGHLIGHT(\"BarChart\",\"0:1\", \"color\");\nHIGHLIGHT(\"BarChart\",\"0:2\", \"label\");\nHIGHLIGHT(\"BarChart\",\"0:3\", \"colorlabel\");";
+        if (skillsFolderPath == SkillFolderOption.XCharts) skillSequence = "HIGHLIGHT(\"BarChart\",\"0:1\", \"color\");\nHIGHLIGHT(\"BarChart\",\"0:2\", \"label\");\nHIGHLIGHT(\"BarChart\",\"0:3\", \"colorlabel\");";
+        else if (skillsFolderPath == SkillFolderOption.DxR) skillSequence = "HIGHLIGHT(\"BarChart_01\",\"0:1\", \"color\");\nHIGHLIGHT(\"BarChart_01\",\"0:2\", \"label\");\nHIGHLIGHT(\"BarChart_01\",\"0:3\", \"colorlabel\");";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Highlight");
         await ExecuteSkillSequence(skillSequence);
     }
