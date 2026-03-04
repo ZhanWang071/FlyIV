@@ -118,4 +118,3 @@ public class Update
 
 {"function": "CREATE(string view_id, string data_path, string chart_type, string x_field, string y_field)",
 "description": "Create a new chart view with specified data and chart type"}
-# 针对DxR的构建流程： 1. 构建 spec JSON（data.url、mark、encoding） 2. 将 spec 写入磁盘：Parser.GetFullSpecsPath(view_id + ".json")  3. 若 view_id GameObject 已存在 → 走 UpdateVis() 路径；若不存在 → 创建 GameObject，命名为 view_id，设置 vis.visSpecsURL = view_id + ".json"，AddComponent<Vis>()（Awake 自动读文件 + UpdateVis）
