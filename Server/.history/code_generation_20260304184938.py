@@ -114,6 +114,3 @@ public class Update
 
 {"function" :"HIGHLIGHT(string chart id,string element id, string highlight type)",
 "description": "Highlight a single element"}
-
-{"function": "CREATE(string view_id, string data_path, string chart_type, string x_field, string y_field)",
-"description": "Create a new chart view with specified data and chart type"}
