@@ -1,4 +1,4 @@
-public class AppendSeriesSkill
+public class AppendSeries
 {
     public static void Execute(string chart_id, List<string> x_values, List<string> y_values, int serie_index)
     {
