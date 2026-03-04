@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Linq;
 using XCharts.Runtime;
+using SimpleJSON;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -29,7 +30,7 @@ public class ActionExecutor : MonoBehaviour
         // 正则表达式匹配：函数名(所有参数内容)
         // 匹配格式如：ORIENT_TO("barchart_01", "user");
         // string pattern = @"(\w+)\s*\(([^)]*)\);";
-        string pattern = @"(\w+)\s*\((.*?)\);$";
+        string pattern = @"(\w+)\s*\((.*?)\);";
         MatchCollection matches = Regex.Matches(skillOutput, pattern);
 
         foreach (Match match in matches)
@@ -78,17 +79,21 @@ public class ActionExecutor : MonoBehaviour
                     typeof(System.IO.File).Assembly,
                     typeof(System.Linq.Enumerable).Assembly,
                     typeof(Newtonsoft.Json.JsonConvert).Assembly,
-                    typeof(UnityEngine.Physics).Assembly
+                    typeof(UnityEngine.Physics).Assembly,
+                    typeof(SimpleJSON.JSON).Assembly                // 添加 SimpleJSON 程序集
                 )
                 .WithImports(
                     "UnityEngine", 
                     "System", 
                     "System.IO",
                     "System.Linq",
-                    "System.Collections.Generic", 
+                    "System.Collections.Generic",
+                    "System.Globalization",
                     "UnityEngine.UI",
-                    "XCharts.Runtime"
-                    , "Newtonsoft.Json", "Newtonsoft.Json.Linq"
+                    "XCharts.Runtime",
+                    "SimpleJSON",
+                    "Newtonsoft.Json", 
+                    "Newtonsoft.Json.Linq"
                 );
 
             // 2. 动态执行：直接将 rawArgs 作为参数传递给 Execute 方法
@@ -129,7 +134,7 @@ public class ActionExecutor : MonoBehaviour
     [ContextMenu("Test Case: Create")]
     private async void TestCaseCreate()
     {
-        skillSequence = "CREATE(\"barchart_02\",\"education/student_scores.json\");\nADAPT_POS(\"barchart_02\",\"TeacherDesk\",0f,1.5f);";
+        skillSequence = "CREATE(\"barchart_02\",\"education/student_scores.json\", \"bar\", \"name\", \"math_score\");\nADAPT_POS(\"barchart_02\",\"TeacherDesk\",0f,1.5f);\nORIENT_TO(\"barchart_02\",\"user\");";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Create");
         await ExecuteSkillSequence(skillSequence);
     }
@@ -177,7 +182,7 @@ public class ActionExecutor : MonoBehaviour
     [ContextMenu("Test Case: AppendSeries")]
     private async void TestCaseAppendSeries()
     {
-        skillSequence = "APPEND_SERIES(\"BarChart\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> { \"88\",    \"74\",    \"95\"  },1);";
+        skillSequence = "APPEND_SERIES(\"BarChart\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> {\"88\", \"74\", \"95\"},1);";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case");
         await ExecuteSkillSequence(skillSequence);
     }
@@ -193,7 +198,7 @@ public class ActionExecutor : MonoBehaviour
     [ContextMenu("Test Case: Highlight")]
     private async void TestCaseHighlight()
     {
-        skillSequence = "HIGHLIGHT(\"BarChart\",\"0:1\", \"select\");\nHIGHLIGHT(\"BarChart\",\"0:2\", \"emphasis\");\nHIGHLIGHT(\"BarChart\",\"0:3\", \"blur\");";
+        skillSequence = "HIGHLIGHT(\"BarChart\",\"0:1\", \"color\");\nHIGHLIGHT(\"BarChart\",\"0:2\", \"label\");\nHIGHLIGHT(\"BarChart\",\"0:3\", \"colorlabel\");";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Highlight");
         await ExecuteSkillSequence(skillSequence);
     }

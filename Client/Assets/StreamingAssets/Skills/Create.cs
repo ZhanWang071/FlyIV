@@ -1,173 +1,214 @@
 public class Create
-{
-    public static void Execute(string view_id, string data_path)
     {
-        // ── 1. Load & Parse JSON dynamically ────────────────────────────────
-        data_path = Path.Combine(Application.dataPath, "Resources","DataFiles", data_path);
-        if (!File.Exists(data_path))
-        {
-            Debug.LogError($"[Skill] Create 失敗: Data file not found at {data_path}");
-            return;
-        }
-        
+        public static void Execute(
+            string view_id,
+            string data_path,
+            string chart_type,
+            string x_field,
+            string y_field)
+    {
+        Debug.Log("Executing CreateSkill logic...");
 
-        string json = File.ReadAllText(data_path);
-        JArray dataArray;
-        try
+        // --- Load Data ---
+        string fullPath = Path.Combine(Application.dataPath, "Resources", "DataFiles", data_path);
+
+        if (!File.Exists(fullPath))
         {
-            dataArray = JArray.Parse(json);
-        }
-        catch (JsonException e)
-        {
-            Debug.LogError($"[Skill] Create 失敗: Failed to parse JSON — {e.Message}");
+            Debug.LogWarning("Data file not found: " + fullPath);
             return;
         }
+
+        string jsonContent = File.ReadAllText(fullPath);
+        JSONArray dataArray = JSON.Parse(jsonContent).AsArray;
 
         if (dataArray == null || dataArray.Count == 0)
         {
-            Debug.LogError("[Skill] Create 失敗: JSON array is empty.");
+            Debug.LogWarning("Data is empty or invalid JSON array.");
             return;
         }
 
-        // ── 2. Introspect schema from the first record ───────────────────────
-        // Separate fields into: one label field (first string field) + numeric fields (series)
-        JObject firstRecord = (JObject)dataArray[0];
+        // --- Build Canvas ---
+        GameObject canvasObj = new GameObject(view_id);
+        Canvas canvas = canvasObj.AddComponent<Canvas>();
+        canvas.renderMode = RenderMode.WorldSpace;
+        canvasObj.AddComponent<CanvasScaler>();
+        canvasObj.AddComponent<GraphicRaycaster>();
 
-        string labelField = null;         // e.g. "name", "city", "product"
-        List<string> numericFields = new List<string>(); // e.g. "math_score", "revenue", ...
+        RectTransform canvasRect = canvasObj.GetComponent<RectTransform>();
+        canvasRect.anchorMin = Vector2.zero;
+        canvasRect.anchorMax = Vector2.zero;
+        canvasRect.sizeDelta = new Vector2(800, 600);
+        canvasRect.localScale = new Vector3(0.001f, 0.001f, 0.001f);
+        canvasRect.localPosition = Vector3.zero;
 
-        foreach (var prop in firstRecord.Properties())
-        {
-            JTokenType t = prop.Value.Type;
-            if (labelField == null && (t == JTokenType.String || t == JTokenType.Integer && prop.Name.ToLower().Contains("id")))
-            {
-                // Pick the first human-readable string field as the category label
-                // Skip obvious ID fields (those ending in "_id" or equal to "id")
-                string lower = prop.Name.ToLower();
-                bool isId = lower == "id" || lower.EndsWith("_id") || lower.EndsWith("id");
-                if (!isId && t == JTokenType.String)
-                {
-                    labelField = prop.Name;
-                }
-            }
-            else if (t == JTokenType.Float || t == JTokenType.Integer)
-            {
-                // Skip fields that look like IDs even if numeric
-                string lower = prop.Name.ToLower();
-                bool isId = lower == "id" || lower.EndsWith("_id") || lower.EndsWith("id");
-                if (!isId)
-                {
-                    numericFields.Add(prop.Name);
-                }
-            }
-        }
+        // --- Build Chart GameObject ---
+        GameObject chartObj = new GameObject(view_id + "_Chart");
+        chartObj.transform.SetParent(canvasObj.transform, false);
 
-        // Fallback: if no string label was found, use the index as label
-        bool useFallbackLabel = (labelField == null);
+        RectTransform chartRect = chartObj.AddComponent<RectTransform>();
+        chartRect.anchorMin = Vector2.zero;
+        chartRect.anchorMax = Vector2.one;
+        chartRect.offsetMin = Vector2.zero;
+        chartRect.offsetMax = Vector2.zero;
+        chartRect.pivot = new Vector2(0.5f, 0.5f);
 
-        if (numericFields.Count == 0)
-        {
-            Debug.LogError("[Skill] Create 失敗: No numeric fields found to visualize.");
-            return;
-        }
+        // --- Attach Chart Component ---
+        string ct = chart_type.ToLower().Trim();
+        BaseChart chart = AttachChartComponent(chartObj, ct);
 
-        Debug.Log($"[Skill] Detected label field: '{labelField ?? "(index)"}', " +
-                  $"numeric fields: [{string.Join(", ", numericFields)}]");
-
-        // ── 3. Find or Create Chart GameObject ──────────────────────────────
-        GameObject chartGO = GameObject.Find(view_id);
-        if (chartGO == null)
-            chartGO = new GameObject(view_id);
-
-        BarChart chart = chartGO.GetComponent<BarChart>();
         if (chart == null)
-            chart = chartGO.AddComponent<BarChart>();
-
-        chart.RemoveData();
-
-        // ── 4. Title — derived from the data file name ───────────────────────
-        var title = chart.EnsureChartComponent<Title>();
-        title.show = true;
-        title.text = Path.GetFileNameWithoutExtension(data_path)
-                         .Replace("_", " ")
-                         .Replace("-", " ");
-        title.subText = string.Join(" / ", numericFields.Select(f => FormatFieldName(f)));
-
-        // ── 5. Axes ───────────────────────────────────────────────────────────
-        var xAxis = chart.EnsureChartComponent<XAxis>();
-        xAxis.splitNumber = dataArray.Count;
-        xAxis.boundaryGap = true;
-        xAxis.type = Axis.AxisType.Category;
-
-        var yAxis = chart.EnsureChartComponent<YAxis>();
-        yAxis.type = Axis.AxisType.Value;
-        yAxis.minMaxType = Axis.AxisMinMaxType.MinMax; // auto-fit to actual data range
-
-        // ── 6. Register X-Axis Labels ─────────────────────────────────────────
-        for (int i = 0; i < dataArray.Count; i++)
         {
-            JObject record = (JObject)dataArray[i];
-            string label = useFallbackLabel
-                ? i.ToString()
-                : record[labelField]?.ToString() ?? i.ToString();
-            chart.AddXAxisData(label);
+            Debug.LogWarning("Failed to create chart component.");
+            return;
         }
 
-        // ── 7. Add one Serie per numeric field ────────────────────────────────
-        for (int fi = 0; fi < numericFields.Count; fi++)
-        {
-            string field = numericFields[fi];
-            string serieName = FormatFieldName(field);
+        // chart.SetSize(800, 600);
+        chart.ClearData();
 
-            // ✅ Capture the returned Serie object
-            Bar serie = chart.AddSerie<Bar>(serieName);
+        // --- Populate Chart ---
+        bool isPie = ct == "pie" || ct == "ring";
+        bool isRadar = ct == "radar";
 
-            foreach (JObject record in dataArray)
-            {
-                float value = record[field] != null
-                    ? record[field].Value<float>()
-                    : 0f;
+        if (isPie)
+            PopulatePieChart(chart, dataArray, x_field, y_field, view_id);
+        else if (isRadar)
+            PopulateRadarChart(chart, dataArray, x_field, y_field, view_id);
+        else
+            PopulateCartesianChart(chart, dataArray, x_field, y_field, view_id, ct);
 
-                // ✅ Use serie.index (the int index) when calling AddData
-                chart.AddData(serie.index, value);
-            }
-        }
-
-        // ── 8. Legend, Tooltip, Grid ──────────────────────────────────────────
-        var legend = chart.EnsureChartComponent<Legend>();
-        legend.show = true;
-
-        var tooltip = chart.EnsureChartComponent<Tooltip>();
-        tooltip.show = true;
-        tooltip.type = Tooltip.Type.Shadow;
-
-        var grid = chart.EnsureChartComponent<GridCoord>();
-        grid.show = true;
-        grid.left = 60;
-        grid.bottom = 60;
-
-        // ── 9. Refresh ────────────────────────────────────────────────────────
-        chart.RefreshAllComponent();
         chart.RefreshChart();
 
-        Debug.Log($"[Skill] Create 完成: {view_id}");
+        Debug.Log($"CreateSkill completed. Chart '{view_id}' created with type " +
+                  $"'{chart_type}', {dataArray.Count} data points.");
     }
 
-    private static string FormatFieldName(string field)
+    // -------------------------------------------------------------------------
+    // Chart Component Factory
+    // -------------------------------------------------------------------------
+
+    private static BaseChart AttachChartComponent(GameObject chartObj, string ct)
     {
-        // snake_case → words
-        var words = field.Split('_');
-        var result = new System.Text.StringBuilder();
-        foreach (var word in words)
+        switch (ct)
         {
-            if (word.Length == 0) continue;
-            // camelCase split within each word
-            string spaced = System.Text.RegularExpressions.Regex.Replace(
-                word, "([a-z])([A-Z])", "$1 $2");
-            result.Append(char.ToUpper(spaced[0]));
-            result.Append(spaced.Substring(1).ToLower());
-            result.Append(" ");
+            case "line": return chartObj.AddComponent<LineChart>();
+            case "bar": return chartObj.AddComponent<BarChart>();
+            case "pie": return chartObj.AddComponent<PieChart>();
+            case "scatter": return chartObj.AddComponent<ScatterChart>();
+            case "heatmap": return chartObj.AddComponent<HeatmapChart>();
+            case "radar": return chartObj.AddComponent<RadarChart>();
+            case "ring": return chartObj.AddComponent<RingChart>();
+            default:
+                Debug.LogWarning($"Unknown chart_type: '{ct}'. Defaulting to BarChart.");
+                return chartObj.AddComponent<BarChart>();
         }
-        return result.ToString().Trim();
+    }
+
+    // -------------------------------------------------------------------------
+    // Population Helpers
+    // -------------------------------------------------------------------------
+
+    private static void AddCommonComponents(BaseChart chart, string view_id)
+    {
+        chart.EnsureChartComponent<Title>().show = true;
+        chart.EnsureChartComponent<Title>().text = view_id;
+        chart.EnsureChartComponent<Tooltip>().show = true;
+        // chart.EnsureChartComponent<Legend>().show = true;
+    }
+
+    private static void PopulateCartesianChart(
+        BaseChart chart,
+        JSONArray dataArray,
+        string x_field,
+        string y_field,
+        string view_id,
+        string ct)
+    {
+        AddCommonComponents(chart, view_id);
+
+        XAxis xAxis = chart.EnsureChartComponent<XAxis>();
+        xAxis.show = true;
+        xAxis.type = Axis.AxisType.Category;
+        xAxis.splitNumber = 0;
+        xAxis.boundaryGap = true;
+        xAxis.data.Clear();
+
+        YAxis yAxis = chart.EnsureChartComponent<YAxis>();
+        yAxis.show = true;
+        yAxis.type = Axis.AxisType.Value;
+
+        chart.EnsureChartComponent<GridCoord>();
+
+        // Add the appropriate serie type
+        chart.AddSerie<Bar>(y_field);   // default; overridden below
+
+        switch (ct)
+        {
+            case "line":
+                chart.RemoveAllSerie();
+                chart.AddSerie<Line>(y_field);
+                break;
+            case "scatter":
+                chart.RemoveAllSerie();
+                chart.AddSerie<Scatter>(y_field);
+                break;
+            case "heatmap":
+                chart.RemoveAllSerie();
+                chart.AddSerie<Heatmap>(y_field);
+                break;
+        }
+
+        for (int i = 0; i < dataArray.Count; i++)
+        {
+            JSONNode item = dataArray[i];
+            string xVal = item[x_field].Value;
+            double yVal = item[y_field].AsDouble;
+
+            chart.AddXAxisData(xVal);
+            chart.AddData(0, yVal, xVal);
+        }
+    }
+
+    private static void PopulatePieChart(
+        BaseChart chart,
+        JSONArray dataArray,
+        string x_field,
+        string y_field,
+        string view_id)
+    {
+        AddCommonComponents(chart, view_id);
+        chart.AddSerie<Pie>(y_field);
+
+        for (int i = 0; i < dataArray.Count; i++)
+        {
+            JSONNode item = dataArray[i];
+            chart.AddData(0, item[y_field].AsDouble, item[x_field].Value);
+        }
+    }
+
+    private static void PopulateRadarChart(
+        BaseChart chart,
+        JSONArray dataArray,
+        string x_field,
+        string y_field,
+        string view_id)
+    {
+        AddCommonComponents(chart, view_id);
+
+        RadarCoord radarCoord = chart.EnsureChartComponent<RadarCoord>();
+        radarCoord.shape = RadarCoord.Shape.Polygon;
+
+        var radarValues = new List<double>(dataArray.Count);
+
+        for (int i = 0; i < dataArray.Count; i++)
+        {
+            JSONNode item = dataArray[i];
+            double yVal = item[y_field].AsDouble;
+
+            radarCoord.AddIndicator(item[x_field].Value, 0, yVal * 1.5);
+            radarValues.Add(yVal);
+        }
+
+        chart.AddSerie<Radar>(y_field);
+        chart.AddData(0, radarValues, y_field);
     }
 }
