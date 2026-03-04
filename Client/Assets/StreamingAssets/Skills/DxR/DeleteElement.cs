@@ -7,57 +7,28 @@ public class DeleteElement
         Vis vis = FindVis(chart_id);
         if (vis == null) return;
 
-        if (!TryParseIndex(element_id, vis.markInstances.Count, out int index)) return;
-
-        // --- Remove mark from scene and runtime list ---
-        GameObject markObj = vis.markInstances[index];
-        vis.markInstances.RemoveAt(index);
-        GameObject.Destroy(markObj);
-
-        if (index < vis.data.values.Count)
-            vis.data.values.RemoveAt(index);
-
-        // --- Update in-memory spec ---
-        JSONNode visSpecs = vis.GetVisSpecs();
-        if (visSpecs == null)
+        if (!int.TryParse(element_id, out int index))
         {
-            Debug.LogWarning($"Vis specs is null for chart: {chart_id}");
+            Debug.LogWarning($"Invalid element_id: {element_id}");
             return;
         }
 
-        JSONNode dataValues = visSpecs["data"]["values"];
-        if (dataValues != null && index < dataValues.Count)
-            dataValues.Remove(index);
+        JSONNode visSpecs = vis.GetVisSpecs();
+        JSONNode dataValues = GetDataValues(visSpecs, chart_id);
+        if (dataValues == null) return;
 
-        // --- Persist to file ---
-        PersistDelete(vis, visSpecs, index);
+        if (index < 0 || index >= dataValues.Count)
+        {
+            Debug.LogWarning($"element_id {element_id} out of range (total: {dataValues.Count})");
+            return;
+        }
+
+        dataValues.Remove(index);
+        visSpecs["data"]["url"] = new JSONString("inline");
+
+        vis.UpdateVis();
 
         Debug.Log($"DeleteElementSkill completed: chart={chart_id} deleted mark={element_id}");
-    }
-
-    // -------------------------------------------------------------------------
-    // Persistence
-    // -------------------------------------------------------------------------
-
-    private static void PersistDelete(Vis vis, JSONNode visSpecs, int index)
-    {
-        if (visSpecs["data"]["url"] != null && visSpecs["data"]["url"].Value != "inline")
-        {
-            string dataFilePath = Parser.GetFullDataPath(visSpecs["data"]["url"].Value);
-            if (!File.Exists(dataFilePath)) return;
-
-            JSONNode dataFileJson = JSON.Parse(File.ReadAllText(dataFilePath));
-            if (dataFileJson != null && index < dataFileJson.Count)
-            {
-                dataFileJson.Remove(index);
-                File.WriteAllText(dataFilePath, dataFileJson.ToString(2));
-            }
-        }
-        else
-        {
-            string specFilePath = Parser.GetFullSpecsPath(vis.visSpecsURL);
-            File.WriteAllText(specFilePath, JSON.Parse(visSpecs.ToString()).ToString(2));
-        }
     }
 
     // -------------------------------------------------------------------------
@@ -80,18 +51,18 @@ public class DeleteElement
         return vis;
     }
 
-    private static bool TryParseIndex(string element_id, int maxCount, out int index)
+    private static JSONNode GetDataValues(JSONNode visSpecs, string chart_id)
     {
-        if (!int.TryParse(element_id, out index))
+        if (visSpecs == null)
         {
-            Debug.LogWarning($"Invalid element_id: {element_id}");
-            return false;
+            Debug.LogWarning($"Vis specs is null for chart: {chart_id}");
+            return null;
         }
-        if (index < 0 || index >= maxCount)
-        {
-            Debug.LogWarning($"element_id out of range: {element_id} (total marks: {maxCount})");
-            return false;
-        }
-        return true;
+
+        JSONNode dataValues = visSpecs["data"]["values"];
+        if (dataValues == null)
+            Debug.LogWarning($"No data values found in vis spec for chart: {chart_id}");
+
+        return dataValues;
     }
 }

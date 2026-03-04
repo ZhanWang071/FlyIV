@@ -240,7 +240,7 @@ public class ActionExecutor : MonoBehaviour
     private async void TestCaseHighlight()
     {
         if (skillsFolderPath == SkillFolderOption.XCharts) skillSequence = "HIGHLIGHT(\"BarChart\",\"0:1\", \"color\");\nHIGHLIGHT(\"BarChart\",\"0:2\", \"label\");\nHIGHLIGHT(\"BarChart\",\"0:3\", \"colorlabel\");";
-        else if (skillsFolderPath == SkillFolderOption.DxR) skillSequence = "HIGHLIGHT(\"BarChart_01\",\"0:1\", \"color\");\nHIGHLIGHT(\"BarChart_01\",\"0:2\", \"label\");\nHIGHLIGHT(\"BarChart_01\",\"0:3\", \"colorlabel\");";
+        else if (skillsFolderPath == SkillFolderOption.DxR) skillSequence = "HIGHLIGHT(\"BarChart_01\",\"0:1\", \"color\");";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Highlight");
         await ExecuteSkillSequence(skillSequence);
     }
