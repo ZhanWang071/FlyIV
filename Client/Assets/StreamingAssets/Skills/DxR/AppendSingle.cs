@@ -14,101 +14,89 @@ public class AppendSingle
             return;
         }
 
-        string xField = GetEncodingField(visSpecs, "x");
-        string yField = GetEncodingField(visSpecs, "y");
+        if (!TryGetEncoding(visSpecs, chart_id,
+                out string xField, out string xType,
+                out string yField, out string yType)) return;
 
-        if (xField == null || yField == null)
+        JSONNode dataValues = visSpecs["data"]["values"];
+        if (dataValues == null)
         {
-            Debug.LogWarning($"Missing x or y field mapping in vis spec encoding for chart: {chart_id}");
+            Debug.LogWarning($"No data values found in vis spec for chart: {chart_id}");
             return;
         }
 
-        // --- Build new datum ---
-        var newDatum = BuildDatum(vis, xField, yField, x_value, y_value);
+        JSONObject newEntry = BuildDefaultEntry(dataValues);
 
-        // --- Update runtime data ---
-        vis.data.values.Add(newDatum);
+        if (!TrySetField(newEntry, xField, xType, x_value, "x_value")) return;
+        if (!TrySetField(newEntry, yField, yType, y_value, "y_value")) return;
 
-        AppendToSpecValues(visSpecs, vis, newDatum);
-        AppendMark(vis, newDatum, x_value, y_value);
-        PersistAppend(vis, visSpecs, newDatum);
+        dataValues.Add(newEntry);
+        visSpecs["data"]["url"] = new JSONString("inline");
+
+        vis.UpdateVis();
 
         Debug.Log($"AppendSingleSkill completed: chart={chart_id} x={x_value} y={y_value}");
     }
 
     // -------------------------------------------------------------------------
-    // Data Building
+    // Encoding
     // -------------------------------------------------------------------------
 
-    private static Dictionary<string, string> BuildDatum(
-        Vis vis, string xField, string yField, string x_value, string y_value)
+    private static bool TryGetEncoding(
+        JSONNode visSpecs, string chart_id,
+        out string xField, out string xType,
+        out string yField, out string yType)
     {
-        var datum = new Dictionary<string, string>();
-        foreach (string field in vis.data.fieldNames)
-            datum[field] = "0";
+        xField = xType = yField = yType = null;
 
-        datum[xField] = x_value;
-        datum[yField] = y_value;
-        return datum;
-    }
-
-    private static void AppendToSpecValues(
-        JSONNode visSpecs, Vis vis, Dictionary<string, string> newDatum)
-    {
-        JSONNode dataValues = visSpecs["data"]["values"];
-        if (dataValues == null) return;
-
-        JSONObject newEntry = new JSONObject();
-        foreach (string field in vis.data.fieldNames)
-            newEntry[field] = new JSONString(newDatum[field]);
-
-        dataValues.Add(newEntry);
-    }
-
-    private static void AppendMark(Vis vis, Dictionary<string, string> newDatum, string x_value, string y_value)
-    {
-        if (vis.markInstances.Count == 0) return;
-
-        GameObject template = vis.markInstances[vis.markInstances.Count - 1];
-        GameObject newMark = GameObject.Instantiate(template, template.transform.parent);
-        Mark mark = newMark.GetComponent<Mark>();
-
-        if (mark != null)
+        JSONNode enc = visSpecs["encoding"];
+        if (enc == null ||
+            enc["x"] == null || enc["x"]["field"] == null ||
+            enc["y"] == null || enc["y"]["field"] == null)
         {
-            mark.datum = newDatum;
-            mark.SetChannelValue("x", x_value);
-            mark.SetChannelValue("y", y_value);
+            Debug.LogWarning($"Missing x or y field mapping in vis spec encoding for chart: {chart_id}");
+            return false;
         }
 
-        vis.markInstances.Add(newMark);
+        xField = enc["x"]["field"].Value;
+        xType = enc["x"]["type"]?.Value ?? "nominal";
+        yField = enc["y"]["field"].Value;
+        yType = enc["y"]["type"]?.Value ?? "quantitative";
+        return true;
     }
 
     // -------------------------------------------------------------------------
-    // Persistence
+    // Entry Building
     // -------------------------------------------------------------------------
 
-    private static void PersistAppend(Vis vis, JSONNode visSpecs, Dictionary<string, string> newDatum)
+    private static JSONObject BuildDefaultEntry(JSONNode dataValues)
     {
-        if (visSpecs["data"]["url"] != null && visSpecs["data"]["url"].Value != "inline")
+        var entry = new JSONObject();
+        if (dataValues.Count > 0)
+            foreach (KeyValuePair<string, JSONNode> field in dataValues[0].AsObject)
+                entry[field.Key] = new JSONString("0");
+
+        return entry;
+    }
+
+    private static bool TrySetField(
+        JSONObject entry, string field, string type, string value, string paramName)
+    {
+        if (type == "quantitative")
         {
-            string dataFilePath = Parser.GetFullDataPath(visSpecs["data"]["url"].Value);
-            if (!File.Exists(dataFilePath)) return;
-
-            JSONNode dataFileJson = JSON.Parse(File.ReadAllText(dataFilePath));
-            if (dataFileJson == null) return;
-
-            JSONObject appendEntry = new JSONObject();
-            foreach (string field in vis.data.fieldNames)
-                appendEntry[field] = new JSONString(newDatum[field]);
-
-            dataFileJson.Add(appendEntry);
-            File.WriteAllText(dataFilePath, dataFileJson.ToString(2));
+            if (!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out double parsed))
+            {
+                Debug.LogWarning($"AppendSingleSkill: {paramName} '{value}' cannot be parsed as a number for quantitative field.");
+                return false;
+            }
+            entry[field] = new JSONNumber(parsed);
         }
         else
         {
-            string specFilePath = Parser.GetFullSpecsPath(vis.visSpecsURL);
-            File.WriteAllText(specFilePath, JSON.Parse(visSpecs.ToString()).ToString(2));
+            entry[field] = new JSONString(value);
         }
+
+        return true;
     }
 
     // -------------------------------------------------------------------------
@@ -129,10 +117,5 @@ public class AppendSingle
             Debug.LogWarning($"Vis component not found on: {chart_id}");
 
         return vis;
-    }
-
-    private static string GetEncodingField(JSONNode visSpecs, string axis)
-    {
-        return visSpecs["encoding"]?[axis]?["field"]?.Value;
     }
 }
