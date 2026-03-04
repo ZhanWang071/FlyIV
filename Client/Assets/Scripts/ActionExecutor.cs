@@ -13,8 +13,30 @@ using Newtonsoft.Json.Linq;
 
 public class ActionExecutor : MonoBehaviour
 {
+    
+    public enum SkillFolderOption
+    {
+        [InspectorName("XCharts")]
+        XCharts,
+        [InspectorName("DxR")]
+        DxR
+    }
+
+    public SkillFolderOption skillsFolderPath;
+
     [Header("Settings")]
-    public string skillsFolder = "Skills";
+    public string skillsFolder
+    {
+        get
+        {
+            switch (skillsFolderPath)
+            {
+                case SkillFolderOption.XCharts: return "Skills/XCharts";
+                case SkillFolderOption.DxR: return "Skills/DxR";
+                default: return "";
+            }
+        }
+    }
 
     [Header("Excueted Skill Sequence")]
     [SerializeField] [TextArea(5,20)] private string skillSequence;
@@ -58,43 +80,58 @@ public class ActionExecutor : MonoBehaviour
 
     private async Task RunDynamicSkill(string className, string args)
     {
-        string filePath = Path.Combine(Application.streamingAssetsPath, skillsFolder, $"{className}.cs");
+        string filePath = Path.Combine(Application.streamingAssetsPath, "Skills", $"{className}.cs");
 
         if (!File.Exists(filePath))
         {
-            Debug.LogError($"[ActionExecutor] 找不到 Skill 文件: {filePath}");
-            return;
+            filePath = Path.Combine(Application.streamingAssetsPath, skillsFolder, $"{className}.cs");
+            if (!File.Exists(filePath))
+            {
+                Debug.LogError($"[ActionExecutor] 找不到 Skill 文件: {filePath}");
+                return;
+            }
         }
 
         try
         {
             string code = File.ReadAllText(filePath);
 
+            var sharedReferences = new[]
+            {
+                typeof(UnityEngine.Object).Assembly,
+                typeof(UnityEngine.Canvas).Assembly,
+                typeof(UnityEngine.UI.Graphic).Assembly,
+                typeof(System.IO.File).Assembly,
+                typeof(System.Linq.Enumerable).Assembly,
+                typeof(Newtonsoft.Json.JsonConvert).Assembly,
+                typeof(UnityEngine.Physics).Assembly,
+                typeof(SimpleJSON.JSON).Assembly
+            };
+
+            var sharedImports = new[]
+            {
+                "UnityEngine",
+                "System",
+                "System.IO",
+                "System.Linq",
+                "System.Collections.Generic",
+                "System.Globalization",
+                "UnityEngine.UI",
+                "SimpleJSON",
+                "Newtonsoft.Json",
+                "Newtonsoft.Json.Linq"
+            };
+
+            var (extraAssembly, extraImport) = skillsFolderPath switch
+            {
+                SkillFolderOption.XCharts => (typeof(XCharts.Runtime.ChartLabel).Assembly, "XCharts.Runtime"),
+                SkillFolderOption.DxR => (typeof(DxR.Vis).Assembly, "DxR"),
+                _ => throw new System.ArgumentOutOfRangeException(nameof(skillsFolderPath))
+            };
+
             var scriptOptions = ScriptOptions.Default
-                .WithReferences(
-                    typeof(UnityEngine.Object).Assembly,           // 核心程序集
-                    typeof(UnityEngine.Canvas).Assembly,
-                    typeof(UnityEngine.UI.Graphic).Assembly,        // UI 程序集 (修复关键)
-                    typeof(XCharts.Runtime.ChartLabel).Assembly,
-                    typeof(System.IO.File).Assembly,
-                    typeof(System.Linq.Enumerable).Assembly,
-                    typeof(Newtonsoft.Json.JsonConvert).Assembly,
-                    typeof(UnityEngine.Physics).Assembly,
-                    typeof(SimpleJSON.JSON).Assembly                // 添加 SimpleJSON 程序集
-                )
-                .WithImports(
-                    "UnityEngine", 
-                    "System", 
-                    "System.IO",
-                    "System.Linq",
-                    "System.Collections.Generic",
-                    "System.Globalization",
-                    "UnityEngine.UI",
-                    "XCharts.Runtime",
-                    "SimpleJSON",
-                    "Newtonsoft.Json", 
-                    "Newtonsoft.Json.Linq"
-                );
+                .WithReferences(sharedReferences.Append(extraAssembly))
+                .WithImports(sharedImports.Append(extraImport));
 
             // 2. 动态执行：直接将 rawArgs 作为参数传递给 Execute 方法
             // 拼接后的代码类似于: Create.Execute("barchart_01", "specs.json");
@@ -131,14 +168,6 @@ public class ActionExecutor : MonoBehaviour
         await ExecuteSkillSequence(skillSequence);
     }
 
-    [ContextMenu("Test Case: Create")]
-    private async void TestCaseCreate()
-    {
-        skillSequence = "CREATE(\"barchart_02\",\"education/student_scores.json\", \"bar\", \"name\", \"math_score\");\nADAPT_POS(\"barchart_02\",\"TeacherDesk\",0f,1.5f);\nORIENT_TO(\"barchart_02\",\"user\");";
-        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Create");
-        await ExecuteSkillSequence(skillSequence);
-    }
-
     [ContextMenu("Test Case: Layout")]
     private async void TestCaseLayout()
     {
@@ -163,10 +192,19 @@ public class ActionExecutor : MonoBehaviour
         await ExecuteSkillSequence(skillSequence);
     }
 
+    [ContextMenu("Test Case: Create")]
+    private async void TestCaseCreate()
+    {
+        skillSequence = "CREATE(\"barchart_02\",\"education/student_scores.json\", \"bar\", \"name\", \"math_score\");\nADAPT_POS(\"barchart_02\",\"TeacherDesk\",0f,1.5f);\nORIENT_TO(\"barchart_02\",\"user\");";
+        Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Create");
+        await ExecuteSkillSequence(skillSequence);
+    }
+
     [ContextMenu("Test Case: Update")]
     private async void TestCaseUpdate()
     {
-        skillSequence = "UPDATE(\"BarChart\",\"1\",\"60.5\");";
+        if (skillsFolderPath == SkillFolderOption.XCharts) skillSequence = "UPDATE(\"BarChart\",\"1\",\"60.5\");";
+        else if (skillsFolderPath == SkillFolderOption.DxR) skillSequence = "UPDATE(\"BarChart_01\",\"1\",\"60.5\");";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case");
         await ExecuteSkillSequence(skillSequence);
     }

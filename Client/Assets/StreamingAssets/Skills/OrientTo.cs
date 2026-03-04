@@ -31,10 +31,11 @@ public class OrientTo
         // 3. 应用新的旋转：保留计算出的 Y 轴（左右转），限制 X 轴（上下偏）
         float yaw = angles.y;
         // 如果 actor 是 Canvas 类型（UI），则需要在 Y 轴上额外旋转 180° 以保持正面对目标
-        if (actor.GetComponent<Canvas>() != null)
-        {
-            yaw += 180f;
-        }
+        // if (actor.GetComponent<Canvas>() != null)
+        // {
+        //     yaw += 180f;
+        // }
+        yaw += 180f;
 
         actor.transform.rotation = Quaternion.Euler(pitch, yaw, 0);
 

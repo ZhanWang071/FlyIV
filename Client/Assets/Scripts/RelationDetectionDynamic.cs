@@ -29,7 +29,7 @@ public class RelationDetectionDynamic: MonoBehaviour
     private Vector3 _lastUserPos;
     private float _userStopTimer = 0f;
     private Camera _cam;
-    private bool _cursorLocked = true;
+    // private bool _cursorLocked = true;
     private List<TrackedObject> _sceneObjects = new List<TrackedObject>();
 
     private class TrackedObject
