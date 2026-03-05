@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: aebf83b95c51847a2abb548f17022c83
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/NAF Plugin/Editor/AssemblyInfo.cs
+  uploadId: 871466

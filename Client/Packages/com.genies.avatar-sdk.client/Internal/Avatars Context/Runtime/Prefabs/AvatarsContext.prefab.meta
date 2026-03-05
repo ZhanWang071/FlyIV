@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bde910cf28f527c46aeefe9ad6f4b05f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars Context/Runtime/Prefabs/AvatarsContext.prefab
+  uploadId: 871466

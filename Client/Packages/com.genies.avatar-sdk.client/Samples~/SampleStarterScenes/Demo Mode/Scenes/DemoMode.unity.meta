@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 03ab6b78dd15a428abd013c48b9cda99
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Samples~/SampleStarterScenes/Demo
+    Mode/Scenes/DemoMode.unity
+  uploadId: 871466

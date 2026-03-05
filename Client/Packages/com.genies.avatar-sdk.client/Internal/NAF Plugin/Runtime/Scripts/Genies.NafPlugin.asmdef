@@ -1,0 +1,25 @@
+{
+    "name": "Genies.NafPlugin",
+    "rootNamespace": "Genies.NafPlugin",
+    "references": ["GUID:343deaaf83e0cee4ca978e7df0b80d21","GUID:2bafac87e7f4b9b418d9448d219b01ab"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.genies.sdk.avatar",
+            "expression": "",
+            "define": "GENIES_SDK"
+        },
+        {
+            "name": "com.genies.avatar-sdk.client",
+            "expression": "",
+            "define": "GENIES_SDK"
+        }
+    ],
+    "noEngineReferences": false
+}

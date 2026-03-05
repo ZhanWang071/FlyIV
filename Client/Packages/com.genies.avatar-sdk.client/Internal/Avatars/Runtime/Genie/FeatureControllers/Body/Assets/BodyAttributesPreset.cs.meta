@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: dca77dcb6fe04053884ef4ea5e5c47c5
+timeCreated: 1715016625
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Genie/FeatureControllers/Body/Assets/BodyAttributesPreset.cs
+  uploadId: 871466

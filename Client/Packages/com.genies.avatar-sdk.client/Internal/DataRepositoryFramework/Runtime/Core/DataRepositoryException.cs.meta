@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 4bcc31d37f6c418d8453a46f75b259e9
+timeCreated: 1675125742
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataRepositoryFramework/Runtime/Core/DataRepositoryException.cs
+  uploadId: 871466

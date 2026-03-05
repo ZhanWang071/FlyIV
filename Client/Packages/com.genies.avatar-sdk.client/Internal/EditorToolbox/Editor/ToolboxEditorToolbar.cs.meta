@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d76c99bc21200924e972d9fc36e6a990
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/EditorToolbox/Editor/ToolboxEditorToolbar.cs
+  uploadId: 871466

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: abd811ea5933f41cd8f6d2bfa1d80075
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Configs/Data/UserClosetItemPickerDataSource.asset
+  uploadId: 871466

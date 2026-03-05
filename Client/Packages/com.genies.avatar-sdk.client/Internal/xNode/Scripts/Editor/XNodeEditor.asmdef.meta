@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 002c1bbed08fa44d282ef34fd5edb138
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/xNode/Scripts/Editor/XNodeEditor.asmdef
+  uploadId: 871466

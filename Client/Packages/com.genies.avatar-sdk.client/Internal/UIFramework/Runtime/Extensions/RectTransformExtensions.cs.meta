@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: da582c4fd1a64ed29095b7f870d4351b
+timeCreated: 1677716226
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Extensions/RectTransformExtensions.cs
+  uploadId: 871466

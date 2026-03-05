@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 5c1570ee456a4b3e80ce03c09b20718d
+timeCreated: 1748888258
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/NAF/Runtime/Scripts/UnifiedGenie/GenieColor.cs
+  uploadId: 871466

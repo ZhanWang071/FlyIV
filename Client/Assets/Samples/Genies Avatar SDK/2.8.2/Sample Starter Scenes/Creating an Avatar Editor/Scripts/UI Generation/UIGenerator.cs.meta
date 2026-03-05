@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: f6ca2029b38d44548ac51b481fb2fb2d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Samples~/SampleStarterScenes/Creating
+    an Avatar Editor/Scripts/UI Generation/UIGenerator.cs
+  uploadId: 871466

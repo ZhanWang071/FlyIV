@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ee391533b80a4e83a52e143e0b038ab0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Services/Runtime/GeneratedCSharpApis/Model/MintAssetOnceResponse.cs
+  uploadId: 871466

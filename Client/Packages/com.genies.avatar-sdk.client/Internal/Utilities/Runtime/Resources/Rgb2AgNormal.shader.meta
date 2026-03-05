@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: b08cb38a79e945bcbdb02a26aa1bf4af
+timeCreated: 1689696021
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Resources/Rgb2AgNormal.shader
+  uploadId: 871466

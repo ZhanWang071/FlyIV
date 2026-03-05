@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 03f6d154e5244f5b84c0f7eac34bbe17
+timeCreated: 1683760495
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/Scrolling/OptimizedScroller/IScrollableAnimator.cs
+  uploadId: 871466

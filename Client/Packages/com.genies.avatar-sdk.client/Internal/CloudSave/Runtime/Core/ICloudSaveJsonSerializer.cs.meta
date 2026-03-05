@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: ad8468ce371e45e79e2903f5206440f5
+timeCreated: 1675276203
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CloudSave/Runtime/Core/ICloudSaveJsonSerializer.cs
+  uploadId: 871466

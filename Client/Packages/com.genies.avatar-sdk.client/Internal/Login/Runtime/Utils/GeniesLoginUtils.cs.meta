@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 396634499b11b462a84772babf773e87
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Login/Runtime/Utils/GeniesLoginUtils.cs
+  uploadId: 871466

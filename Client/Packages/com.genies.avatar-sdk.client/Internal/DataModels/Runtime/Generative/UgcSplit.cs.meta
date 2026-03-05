@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e59713f343d443609153c39032108e24
+timeCreated: 1704849896
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/Generative/UgcSplit.cs
+  uploadId: 871466

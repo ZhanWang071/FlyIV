@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: ad8c912dfcbc49ecba15974c2229b9bc
+timeCreated: 1749741235
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/Commands/Naf/EquipNativeAvatarTattooCommand.cs
+  uploadId: 871466

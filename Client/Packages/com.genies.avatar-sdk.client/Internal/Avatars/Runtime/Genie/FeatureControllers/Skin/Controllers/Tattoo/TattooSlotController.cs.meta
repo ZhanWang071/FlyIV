@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 663c7b11616e4313aa0a0a5e2efde4a7
+timeCreated: 1673527142
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Genie/FeatureControllers/Skin/Controllers/Tattoo/TattooSlotController.cs
+  uploadId: 871466

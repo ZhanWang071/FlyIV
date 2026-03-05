@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b0e787e80cae4459afe84b3c468a8a8b
+timeCreated: 1678807364
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/Controllers/Avatar/Body/BodyPresetCustomizationController.cs
+  uploadId: 871466

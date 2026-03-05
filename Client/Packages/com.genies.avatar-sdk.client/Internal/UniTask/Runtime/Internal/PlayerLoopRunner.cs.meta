@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 340c6d420bb4f484aa8683415ea92571
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UniTask/Runtime/Internal/PlayerLoopRunner.cs
+  uploadId: 871466

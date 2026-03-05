@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: eb5f173be445469193d32c2b775bf846
+timeCreated: 1687796423
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Genie/FeatureControllers/Skin/MegaSkinTattooSettings.cs
+  uploadId: 871466

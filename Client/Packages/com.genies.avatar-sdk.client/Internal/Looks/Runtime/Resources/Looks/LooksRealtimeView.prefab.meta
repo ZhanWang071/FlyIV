@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7ba55b1c768054868b4342d97008a856
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Looks/Runtime/Resources/Looks/LooksRealtimeView.prefab
+  uploadId: 871466

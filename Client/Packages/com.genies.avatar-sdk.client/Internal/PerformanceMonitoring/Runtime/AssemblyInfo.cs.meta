@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8b99a6db10fd24507af940204219c7a9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/PerformanceMonitoring/Runtime/AssemblyInfo.cs
+  uploadId: 871466

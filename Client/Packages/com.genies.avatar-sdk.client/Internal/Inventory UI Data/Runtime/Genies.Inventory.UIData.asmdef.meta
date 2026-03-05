@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fe567e5b0ce234f6ab770c87ef25bfd2
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Inventory UI Data/Runtime/Genies.Inventory.UIData.asmdef
+  uploadId: 871466

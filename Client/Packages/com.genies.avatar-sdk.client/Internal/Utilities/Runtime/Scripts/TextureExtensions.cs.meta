@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: d27a55e48e974f4e9e7ce51217daf53a
+timeCreated: 1683647921
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/TextureExtensions.cs
+  uploadId: 871466

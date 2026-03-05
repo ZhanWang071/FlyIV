@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 71bc1872af624aa9a2c8e6e1774cee77
+timeCreated: 1694456278
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/FeatureFlags/Runtime/FeatureFlagsHelper.cs
+  uploadId: 871466

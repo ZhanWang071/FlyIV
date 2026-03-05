@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 885a3662fbaba7c47979790356264411
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Shaders/ShaderGraph/PBRHelpers.cginc
+  uploadId: 871466

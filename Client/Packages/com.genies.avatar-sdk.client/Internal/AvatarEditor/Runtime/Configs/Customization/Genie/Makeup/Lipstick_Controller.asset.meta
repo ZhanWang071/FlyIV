@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 52552b358e12d4e6ba177b060252d68d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Configs/Customization/Genie/Makeup/Lipstick_Controller.asset
+  uploadId: 871466

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 18108e9feb2ec40498df573cfef2ea15
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UniTask/Runtime/Linq/MinMax.tt
+  uploadId: 871466

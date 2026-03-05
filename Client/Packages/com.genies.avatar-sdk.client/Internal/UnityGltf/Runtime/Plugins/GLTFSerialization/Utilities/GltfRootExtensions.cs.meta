@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 14a6d519d0344f438f272a77e05a896c
+timeCreated: 1707995699
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Plugins/GLTFSerialization/Utilities/GltfRootExtensions.cs
+  uploadId: 871466

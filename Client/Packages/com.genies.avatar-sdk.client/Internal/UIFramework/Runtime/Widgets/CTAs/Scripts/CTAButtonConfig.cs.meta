@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 238f9e8a076f97f439dc99050b43daab
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/CTAs/Scripts/CTAButtonConfig.cs
+  uploadId: 871466

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8215f45933605114eb213ddf57b348b7
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Resources/Popups/PopupInputField.prefab
+  uploadId: 871466

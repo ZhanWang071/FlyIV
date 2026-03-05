@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 892e082d8847b457c997fa5fee1b0ab5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Resources/Prefabs/InventoryDependencyFromGear.asset
+  uploadId: 871466

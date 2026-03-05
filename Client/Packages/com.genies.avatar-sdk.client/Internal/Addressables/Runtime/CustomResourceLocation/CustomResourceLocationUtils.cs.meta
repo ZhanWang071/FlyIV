@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 38c69ac4354742a9ae31fc865fb25778
+timeCreated: 1740156391
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Addressables/Runtime/CustomResourceLocation/CustomResourceLocationUtils.cs
+  uploadId: 871466

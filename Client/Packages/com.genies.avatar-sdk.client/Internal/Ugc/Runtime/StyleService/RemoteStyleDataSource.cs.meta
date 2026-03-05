@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 6cf7d894a08f41f1942daecc9c76e503
+timeCreated: 1675437940
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/StyleService/RemoteStyleDataSource.cs
+  uploadId: 871466

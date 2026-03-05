@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d9de638ab820e984ca7619c5ca591497
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/EditorToolbox/Runtime/Serialization/SerializedDateTime.cs
+  uploadId: 871466

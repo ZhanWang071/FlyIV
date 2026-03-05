@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d752bf9f93938471994ca72afe74b973
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Services/Runtime/GeneratedCSharpApis/Model/SpaceCreateRecordActionRequest.cs
+  uploadId: 871466

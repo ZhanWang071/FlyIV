@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 19364bd2104b74e5092353e57fc95e0b
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Telemetry/Editor/Genies.Telemetry.Editor.asmdef
+  uploadId: 871466

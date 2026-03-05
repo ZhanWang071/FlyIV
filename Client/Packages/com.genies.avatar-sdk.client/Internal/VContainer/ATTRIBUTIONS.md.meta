@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6d5cd07e1ad09442f94c29e4bb5b7905
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/VContainer/ATTRIBUTIONS.md
+  uploadId: 871466

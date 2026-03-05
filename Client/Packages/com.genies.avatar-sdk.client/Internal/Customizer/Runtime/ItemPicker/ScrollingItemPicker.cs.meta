@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3246b582a84a44d398a34bde680da05e
+timeCreated: 1675880960
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Customizer/Runtime/ItemPicker/ScrollingItemPicker.cs
+  uploadId: 871466

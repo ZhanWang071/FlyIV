@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 2f95441d849341844b5db8e1eded4159
+timeCreated: 1463491243
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/UmaModels/dynamiccharactersystem/UMAAssetBundleManager/GUI/AssetBundleLoadingIndicator.cs
+  uploadId: 871466

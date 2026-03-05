@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: cc55ea60db7f4673bc0577c5ed9d964a
+timeCreated: 1670675319
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Species/Unified/OutfitRules/ResolvePantsShoesConflicts.cs
+  uploadId: 871466

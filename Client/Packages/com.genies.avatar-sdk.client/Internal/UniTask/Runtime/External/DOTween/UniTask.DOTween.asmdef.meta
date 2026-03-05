@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 029c1c1b674aaae47a6841a0b89ad80e
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UniTask/Runtime/External/DOTween/UniTask.DOTween.asmdef
+  uploadId: 871466

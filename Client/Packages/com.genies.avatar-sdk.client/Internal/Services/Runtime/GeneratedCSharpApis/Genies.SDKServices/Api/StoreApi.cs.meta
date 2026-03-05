@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c9e0c29b7a2c547dfa69daf8ec967415
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Services/Runtime/GeneratedCSharpApis/Genies.SDKServices/Api/StoreApi.cs
+  uploadId: 871466

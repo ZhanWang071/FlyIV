@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8d52b4172e8c640ba87b78e14ca2f729
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CameraSystem/Runtime/Prefabs/Focus
+    Cameras/ZoomOutFocusLegacy.prefab
+  uploadId: 871466

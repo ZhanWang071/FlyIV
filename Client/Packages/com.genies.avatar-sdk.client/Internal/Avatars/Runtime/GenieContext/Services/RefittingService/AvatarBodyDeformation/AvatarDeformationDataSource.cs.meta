@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: f7a7ebec30634bc3bf76b759f4ff2d0a
+timeCreated: 1676392296
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/GenieContext/Services/RefittingService/AvatarBodyDeformation/AvatarDeformationDataSource.cs
+  uploadId: 871466

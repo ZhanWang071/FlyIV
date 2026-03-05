@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 3460717f92fc4d8488867146bdd4bf1e
+timeCreated: 1706025522
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/BlendShapeBakingUtility.cs
+  uploadId: 871466

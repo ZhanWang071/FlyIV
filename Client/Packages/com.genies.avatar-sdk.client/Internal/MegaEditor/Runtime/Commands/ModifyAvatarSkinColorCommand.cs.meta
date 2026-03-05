@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 639c4704881f4490bdac7a10bd9d930e
+timeCreated: 1678557025
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/Commands/ModifyAvatarSkinColorCommand.cs
+  uploadId: 871466

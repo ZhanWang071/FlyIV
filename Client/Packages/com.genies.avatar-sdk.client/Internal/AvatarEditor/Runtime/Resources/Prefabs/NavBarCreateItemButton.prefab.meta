@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d11d5d9432e7b48fe944c281399925bd
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Resources/Prefabs/NavBarCreateItemButton.prefab
+  uploadId: 871466

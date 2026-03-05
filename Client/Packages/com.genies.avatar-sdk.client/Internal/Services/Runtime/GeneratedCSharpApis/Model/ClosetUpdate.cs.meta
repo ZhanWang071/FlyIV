@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8b55d7173bc734f6b96a853431ff4fdd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Services/Runtime/GeneratedCSharpApis/Model/ClosetUpdate.cs
+  uploadId: 871466

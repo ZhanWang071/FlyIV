@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 486d83bd3925b314f9eba84917f02180
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Customizer/Runtime/EditOrDeleteCustomColorController/EditOrDeleteCustomColorController.cs
+  uploadId: 871466

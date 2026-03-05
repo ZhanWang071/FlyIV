@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 8da90059ae2640b7892fa2376551410c
+timeCreated: 1672752634
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/UmaGenie/UmaGenie.cs
+  uploadId: 871466

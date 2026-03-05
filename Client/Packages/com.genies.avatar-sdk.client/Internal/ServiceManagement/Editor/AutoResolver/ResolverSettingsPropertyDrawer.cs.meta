@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 7d51ca0c5c534995978fc41899dd7605
+timeCreated: 1694896132
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/ServiceManagement/Editor/AutoResolver/ResolverSettingsPropertyDrawer.cs
+  uploadId: 871466

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dbbd1063e382a418c8d3f45c7451a32a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Samples~/SampleStarterScenes/Avatar
+    Starter/Prefabs/Fence.prefab
+  uploadId: 871466

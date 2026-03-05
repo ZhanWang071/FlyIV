@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 590ee5c9c8e04ab7a071627a222445f6
+timeCreated: 1665146591
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/Rendering/Animations/RegionColorAnimation.cs
+  uploadId: 871466

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c1d20a57ebf84d168751bc3a24d07411
+timeCreated: 1737072788
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Popups/ToastPopup/Scripts/ToastPopup.cs
+  uploadId: 871466

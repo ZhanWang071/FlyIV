@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 1db5c304e5ef4fbb8eca9639faaaeab2
+timeCreated: 1714903539
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/GenieComponents/SkeletonModifier/Behaviour/SkeletonModifierBehaviour.RigConstraint.cs
+  uploadId: 871466

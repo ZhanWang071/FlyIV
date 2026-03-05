@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b2636ea0b91b462f8200404db8e12a6b
+timeCreated: 1726581757
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/ReferenceShape/ReferenceShapes/TriangulatedShape/Jobs/TransferDeformJob.cs
+  uploadId: 871466

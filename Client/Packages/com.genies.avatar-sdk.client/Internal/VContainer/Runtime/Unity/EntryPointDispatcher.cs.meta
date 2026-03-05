@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e8b5d8a26f2d409fb1de359daa251bde
+timeCreated: 1614397266
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/VContainer/Runtime/Unity/EntryPointDispatcher.cs
+  uploadId: 871466

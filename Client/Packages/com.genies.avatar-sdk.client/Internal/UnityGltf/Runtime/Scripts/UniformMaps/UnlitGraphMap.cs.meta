@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: a3f20bde7da344549f9b68b6cf264b36
+timeCreated: 1657891307
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/UniformMaps/UnlitGraphMap.cs
+  uploadId: 871466

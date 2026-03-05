@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 62b9e0320b3b44f189757947a9d012b0
+timeCreated: 1697499398
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/ShaderlessTools/Runtime/Data/ShaderField.cs
+  uploadId: 871466

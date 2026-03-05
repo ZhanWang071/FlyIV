@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 99d8e43e32ef35e4abd36a2c13dd9248
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - targetMaterial: {instanceID: 0}
+  - targetShader: {fileID: 4800000, guid: 4b1446d4024c6b748bc298f7aa420d60, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/MaterialData/MaterialDataFacialHairContainer.cs
+  uploadId: 871466

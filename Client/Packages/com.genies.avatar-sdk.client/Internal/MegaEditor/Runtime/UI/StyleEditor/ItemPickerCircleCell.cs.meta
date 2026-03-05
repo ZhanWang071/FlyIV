@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 63d2753310b2463d99f1b2e09e1da20b
+timeCreated: 1680092333
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/UI/StyleEditor/ItemPickerCircleCell.cs
+  uploadId: 871466

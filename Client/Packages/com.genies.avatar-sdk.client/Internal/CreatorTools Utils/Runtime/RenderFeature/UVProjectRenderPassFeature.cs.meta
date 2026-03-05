@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1ec808a3e16bec24db5feb9579e52177
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CreatorTools Utils/Runtime/RenderFeature/UVProjectRenderPassFeature.cs
+  uploadId: 871466

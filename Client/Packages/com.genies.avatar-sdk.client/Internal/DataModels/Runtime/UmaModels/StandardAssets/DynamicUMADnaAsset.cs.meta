@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 28add7ad4625f8748a81d045544985b2
+timeCreated: 1466069396
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/UmaModels/StandardAssets/DynamicUMADnaAsset.cs
+  uploadId: 871466

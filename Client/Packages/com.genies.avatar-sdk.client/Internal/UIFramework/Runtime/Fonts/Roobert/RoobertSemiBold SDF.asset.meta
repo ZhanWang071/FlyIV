@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e3e1e0dd0af87594e81c0c2bcc73715d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Fonts/Roobert/RoobertSemiBold
+    SDF.asset
+  uploadId: 871466

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b3ec424cc6b71bf44bf414521e00748e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CameraSystem/Runtime/CameraTypes/FocusCameraController/FocusPoints/Left
+    Side Below Knee.asset
+  uploadId: 871466

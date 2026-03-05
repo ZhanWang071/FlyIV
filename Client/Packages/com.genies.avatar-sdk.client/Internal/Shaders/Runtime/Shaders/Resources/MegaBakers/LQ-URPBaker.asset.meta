@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a1e09ce3ab7cb7f4f8f12225799cd134
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Shaders/Runtime/Shaders/Resources/MegaBakers/LQ-URPBaker.asset
+  uploadId: 871466

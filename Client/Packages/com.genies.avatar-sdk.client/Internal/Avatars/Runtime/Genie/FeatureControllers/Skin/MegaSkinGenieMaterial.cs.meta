@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 6ae953ebbeb8455398875e111f323b33
+timeCreated: 1673522336
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Genie/FeatureControllers/Skin/MegaSkinGenieMaterial.cs
+  uploadId: 871466

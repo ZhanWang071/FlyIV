@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 688f3dae00364ee6baa5aca8fd5eab97
+timeCreated: 1727186308
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/ReferenceShape/ReferenceShapeLoaders/ReferenceShapesLoaderAsset.cs
+  uploadId: 871466

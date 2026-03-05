@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 60a196fe934be4d1396ed43cc9aad738
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Configs/Customization/Ugc/UgcPattern.asset
+  uploadId: 871466

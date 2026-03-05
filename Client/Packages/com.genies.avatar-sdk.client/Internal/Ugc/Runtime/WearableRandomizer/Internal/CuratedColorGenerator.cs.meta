@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: f2baafb752b04e27b3ca1bf62fbe192a
+timeCreated: 1684397314
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/WearableRandomizer/Internal/CuratedColorGenerator.cs
+  uploadId: 871466

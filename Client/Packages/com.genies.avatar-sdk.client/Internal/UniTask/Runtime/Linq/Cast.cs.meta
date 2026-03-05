@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: edebeae8b61352b428abe9ce8f3fc71a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UniTask/Runtime/Linq/Cast.cs
+  uploadId: 871466

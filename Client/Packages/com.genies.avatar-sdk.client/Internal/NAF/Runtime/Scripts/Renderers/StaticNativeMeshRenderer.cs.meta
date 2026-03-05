@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3a8d87ae8f3c44ed96920f76fc37e754
+timeCreated: 1747847143
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/NAF/Runtime/Scripts/Renderers/StaticNativeMeshRenderer.cs
+  uploadId: 871466

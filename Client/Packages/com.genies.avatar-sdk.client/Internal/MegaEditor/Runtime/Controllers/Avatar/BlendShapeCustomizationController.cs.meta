@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3be46ef3add946528481d11bcb43e7f8
+timeCreated: 1678344830
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/Controllers/Avatar/BlendShapeCustomizationController.cs
+  uploadId: 871466

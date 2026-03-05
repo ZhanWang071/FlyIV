@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d0c7ed49ac25c4f17a04519c320e1830
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/Base/Prefabs/Popup.prefab
+  uploadId: 871466

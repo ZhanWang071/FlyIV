@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 6581bef44e7949e1ae7cf4a597183d1d
+timeCreated: 1653603693
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Plugins/GLTFSerialization/Extensions/KHR_materials_volume.cs
+  uploadId: 871466

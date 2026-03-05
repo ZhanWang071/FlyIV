@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 12fc5b6ce713c3446b64d4a8ffcf5a95
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CameraSystem/Runtime/Prefabs/Focus
+    Cameras/HeadFrontFocusCamera.prefab
+  uploadId: 871466

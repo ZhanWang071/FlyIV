@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 44a8dfd50fa642f4baf09232690eeab2
+timeCreated: 1657013996
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/SceneExporter/ExporterCameras.cs
+  uploadId: 871466

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 79f9fadb55b5461a8cb92abff8316e43
+timeCreated: 1709109536
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Editor/Scripts/KtxImporterHelper.cs
+  uploadId: 871466

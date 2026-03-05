@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: c2b3c968adf4cf14e8de3ba75bc2d736
+timeCreated: 1518286924
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/AssetPathAttribute/SceneReference.cs
+  uploadId: 871466

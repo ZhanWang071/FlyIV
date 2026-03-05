@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 833211d2aa3dd47109ddd827c62db3b5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Inventory/Prefabs/InventoryItemPickerCell.prefab
+  uploadId: 871466

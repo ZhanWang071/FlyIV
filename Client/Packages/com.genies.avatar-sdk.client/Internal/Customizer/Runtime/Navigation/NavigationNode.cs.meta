@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 734822663c04c4ae59600936d8962c53
+timeCreated: 1676639037
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Customizer/Runtime/Navigation/NavigationNode.cs
+  uploadId: 871466

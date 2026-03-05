@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 7021933e4a614b068af7aea317fd61ef
+timeCreated: 1711100835
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Genie/GenieMonoBehaviours/Internal/GenieLodManager.cs
+  uploadId: 871466

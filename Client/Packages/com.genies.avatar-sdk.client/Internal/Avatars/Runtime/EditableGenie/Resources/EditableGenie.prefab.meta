@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e66752e7022f5da42b56396148a1e0c0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/EditableGenie/Resources/EditableGenie.prefab
+  uploadId: 871466

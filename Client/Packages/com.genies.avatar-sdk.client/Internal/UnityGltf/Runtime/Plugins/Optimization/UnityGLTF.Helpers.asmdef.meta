@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d58a4b8a1f92baa4f8100941944470f7
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Plugins/Optimization/UnityGLTF.Helpers.asmdef
+  uploadId: 871466

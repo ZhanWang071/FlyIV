@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0470a26cf0d6fec48b0f28a192159a43
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/EditorToolbox/Runtime/Attributes/Regular/FormattedNumberAttribute.cs
+  uploadId: 871466

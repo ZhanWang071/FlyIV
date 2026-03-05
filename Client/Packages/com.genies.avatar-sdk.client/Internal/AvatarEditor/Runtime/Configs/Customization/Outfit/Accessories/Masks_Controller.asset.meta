@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 20e37bceb069d46e9967c135af101f53
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Configs/Customization/Outfit/Accessories/Masks_Controller.asset
+  uploadId: 871466

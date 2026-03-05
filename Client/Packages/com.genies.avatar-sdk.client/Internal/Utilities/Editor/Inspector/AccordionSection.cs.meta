@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 2fd04f1e0d6b4a5c977fae75748bf78a
+timeCreated: 1739848603
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Editor/Inspector/AccordionSection.cs
+  uploadId: 871466

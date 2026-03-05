@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 4cd9c32014a249d8b47fd5b8ff2e8d3f
+timeCreated: 1638304427
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Buttons/OutlineButtons/OutlineButton.cs
+  uploadId: 871466

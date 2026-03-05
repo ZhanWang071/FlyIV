@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 3453f34a8c4d4d4b86685f873378869c
+timeCreated: 1657891795
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/UniformMaps/BaseGraphMap.cs
+  uploadId: 871466

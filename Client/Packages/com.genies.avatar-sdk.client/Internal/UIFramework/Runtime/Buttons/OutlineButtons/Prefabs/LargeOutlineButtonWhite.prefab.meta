@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 63f1ffd6d8cd66849a33151203e9fcc3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Buttons/OutlineButtons/Prefabs/LargeOutlineButtonWhite.prefab
+  uploadId: 871466

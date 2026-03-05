@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 75679d189dd746078fc88de3cb4c7dbc
+timeCreated: 1710413319
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Genie/IGeniePrefab.cs
+  uploadId: 871466

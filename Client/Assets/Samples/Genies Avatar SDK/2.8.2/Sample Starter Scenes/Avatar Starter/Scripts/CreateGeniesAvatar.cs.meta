@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 01e1fcda600ad4ce9ad96f7b307f6ca7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Samples~/SampleStarterScenes/Avatar
+    Starter/Scripts/CreateGeniesAvatar.cs
+  uploadId: 871466

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: a4bf1f776f034ae1b7b0dbd258b5b025
+timeCreated: 1658358215
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CrashReporting/Runtime/ICrashLogger.cs
+  uploadId: 871466

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f361f94a82d874a899a5e3ac4ea75a18
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Resources/Prefabs/CustomizerNavBarNode.prefab
+  uploadId: 871466

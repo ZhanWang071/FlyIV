@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4e307577a39840a42a33202288f1a87b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CameraSystem/Runtime/CameraTypes/FocusCameraController/FocusPoints/Left
+    Side Calf.asset
+  uploadId: 871466

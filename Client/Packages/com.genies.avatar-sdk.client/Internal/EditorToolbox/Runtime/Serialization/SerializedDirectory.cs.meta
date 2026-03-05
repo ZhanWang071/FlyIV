@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c16f22b1bec5ea64a9f6b6bbc9e136bf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/EditorToolbox/Runtime/Serialization/SerializedDirectory.cs
+  uploadId: 871466

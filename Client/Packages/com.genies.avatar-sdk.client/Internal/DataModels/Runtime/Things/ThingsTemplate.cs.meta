@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: f60fe6e1888e481c87b78198aad12e8c
+timeCreated: 1684185492
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/Things/ThingsTemplate.cs
+  uploadId: 871466

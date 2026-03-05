@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 4bd87a19ea104e09b7066e901fc85fbf
+timeCreated: 1678553608
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/Commands/EquipAvatarMakeupCommand.cs
+  uploadId: 871466

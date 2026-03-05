@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 7f5c902a59be437d985bcc13f13a8ecf
+timeCreated: 1665146792
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/Rendering/Animations/RegionGainAnimation.cs
+  uploadId: 871466

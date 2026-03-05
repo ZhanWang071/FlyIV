@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ebec0fdc2a825ef4d8c526c0a5d8c0b1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Plugins/GLTFSerialization/Extensions/KHR_materials_unlitExtension.cs
+  uploadId: 871466

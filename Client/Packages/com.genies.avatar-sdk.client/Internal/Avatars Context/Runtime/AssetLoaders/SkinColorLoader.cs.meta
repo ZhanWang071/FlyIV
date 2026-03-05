@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: da59357905804d3ba9259c3d4958be87
+timeCreated: 1673537399
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars Context/Runtime/AssetLoaders/SkinColorLoader.cs
+  uploadId: 871466

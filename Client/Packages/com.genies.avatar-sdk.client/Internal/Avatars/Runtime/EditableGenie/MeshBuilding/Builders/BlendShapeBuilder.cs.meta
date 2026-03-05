@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 2bba0242607f43049a5fb40db557ee2d
+timeCreated: 1721234474
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/EditableGenie/MeshBuilding/Builders/BlendShapeBuilder.cs
+  uploadId: 871466

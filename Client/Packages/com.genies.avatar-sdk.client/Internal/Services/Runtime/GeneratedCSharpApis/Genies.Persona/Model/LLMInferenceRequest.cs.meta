@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: bb2a32e2ff1bd48bf81369c3cb69a74b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Services/Runtime/GeneratedCSharpApis/Genies.Persona/Model/LLMInferenceRequest.cs
+  uploadId: 871466

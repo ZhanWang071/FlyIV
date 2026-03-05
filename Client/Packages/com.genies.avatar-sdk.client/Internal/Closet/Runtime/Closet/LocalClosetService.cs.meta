@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 6da7c12df8d2401484e0e5eb82ea6917
+timeCreated: 1678416399
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Closet/Runtime/Closet/LocalClosetService.cs
+  uploadId: 871466

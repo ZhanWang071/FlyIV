@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ba1b6190f298249d38d74f40b5ab724b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Configs/Customization/Genie/Tattoos/Calf_Controller.asset
+  uploadId: 871466

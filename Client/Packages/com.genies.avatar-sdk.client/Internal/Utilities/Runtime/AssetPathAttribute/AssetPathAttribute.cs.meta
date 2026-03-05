@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 21f66b63d5c1d5043be1c45da04ea07e
+timeCreated: 1491923374
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/AssetPathAttribute/AssetPathAttribute.cs
+  uploadId: 871466

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5761d91995e353644a1083bfbfd0ac20
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/NAF/Runtime/Resources/NativeGenie.prefab
+  uploadId: 871466

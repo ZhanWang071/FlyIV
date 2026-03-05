@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: b46ea1356e184122834984053bbe1693
+timeCreated: 1708099053
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Plugins/GLTFSerialization/Schema/AnimationPointerData.cs
+  uploadId: 871466

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 39ad218104f23401c86da225d1ac7406
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Thirdparty Newtonsoft
+    Json Bson/LICENSE.md
+  uploadId: 871466

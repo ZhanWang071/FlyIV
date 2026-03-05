@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 374325717de264de896f14bd047ac520
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Configs/Customization/Genie/Face/CustomEyebrowColor.asset
+  uploadId: 871466

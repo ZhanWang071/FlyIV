@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c5b7e17130ce4d5f8a99c45d54b4d9a8
+timeCreated: 1721050260
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/EditableGenie/MeshBuilding/Combiners/MaterialCombiner.cs
+  uploadId: 871466

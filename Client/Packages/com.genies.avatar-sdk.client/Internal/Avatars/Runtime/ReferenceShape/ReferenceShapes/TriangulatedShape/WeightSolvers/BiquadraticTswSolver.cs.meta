@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: cd3e8137a2dd47a7ab9a2fa5bc999db2
+timeCreated: 1726746930
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/ReferenceShape/ReferenceShapes/TriangulatedShape/WeightSolvers/BiquadraticTswSolver.cs
+  uploadId: 871466

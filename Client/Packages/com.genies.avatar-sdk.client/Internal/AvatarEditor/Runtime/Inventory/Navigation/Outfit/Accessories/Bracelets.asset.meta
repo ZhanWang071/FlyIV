@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e2f80cbf83e2f459db94bee8ea5020a0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Inventory/Navigation/Outfit/Accessories/Bracelets.asset
+  uploadId: 871466

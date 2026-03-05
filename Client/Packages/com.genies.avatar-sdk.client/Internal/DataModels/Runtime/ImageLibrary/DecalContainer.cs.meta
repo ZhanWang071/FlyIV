@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 63b0366877c3464bae5ad40b321c7763
+timeCreated: 1755276116
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/ImageLibrary/DecalContainer.cs
+  uploadId: 871466

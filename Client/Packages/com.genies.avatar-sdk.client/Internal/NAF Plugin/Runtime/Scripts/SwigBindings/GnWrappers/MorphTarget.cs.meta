@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 662c32696c7620b4b828e9a86a81c547
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/NAF Plugin/Runtime/Scripts/SwigBindings/GnWrappers/MorphTarget.cs
+  uploadId: 871466

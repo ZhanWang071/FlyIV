@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: eeafd14e7e2a4b0fab5dc9baf6d0e226
+timeCreated: 1706201726
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/NamedBlendShapeState.cs
+  uploadId: 871466

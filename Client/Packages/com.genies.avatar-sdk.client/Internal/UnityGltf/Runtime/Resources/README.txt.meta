@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f3bf00dab702a054fb2572323e59feff
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Resources/README.txt
+  uploadId: 871466

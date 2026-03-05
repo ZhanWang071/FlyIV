@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a1ab9c582aaa84e5c9d04d476dd27763
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Samples~/DebugSdkFunctions/Prefabs/Editor_SdkFunctionsDebugger.prefab
+  uploadId: 871466

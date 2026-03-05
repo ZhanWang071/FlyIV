@@ -1,0 +1,37 @@
+{
+    "name": "Newtonsoft.Json.UnityConverters",
+    "rootNamespace": "Newtonsoft.Json",
+    "references": ["GUID:343deaaf83e0cee4ca978e7df0b80d21","GUID:2bafac87e7f4b9b418d9448d219b01ab"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.modules.ai",
+            "expression": "",
+            "define": "HAVE_MODULE_AI"
+        },
+        {
+            "name": "com.unity.modules.physics",
+            "expression": "",
+            "define": "HAVE_MODULE_PHYSICS"
+        },
+        {
+            "name": "com.unity.modules.physics2d",
+            "expression": "",
+            "define": "HAVE_MODULE_PHYSICS2D"
+        },
+        {
+            "name": "com.unity.mathematics",
+            "expression": "",
+            "define": "HAVE_MODULE_MATHEMATICS"
+        }
+    ],
+    "noEngineReferences": false
+}

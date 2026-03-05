@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 45ebd57d90fd4d5d947b306c66b5e724
+timeCreated: 1720710718
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/EditableGenie/MeshBuilding/Builders/BindposeBuilder.cs
+  uploadId: 871466

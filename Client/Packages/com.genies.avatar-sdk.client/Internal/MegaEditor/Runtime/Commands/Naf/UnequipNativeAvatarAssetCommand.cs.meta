@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 3f7c16914eaa47b088abc50cfa7f314b
+timeCreated: 1749742613
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/Commands/Naf/UnequipNativeAvatarAssetCommand.cs
+  uploadId: 871466

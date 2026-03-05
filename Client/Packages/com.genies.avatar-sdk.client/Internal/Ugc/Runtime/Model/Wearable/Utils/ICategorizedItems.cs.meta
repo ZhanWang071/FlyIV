@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: f3d541506e8742b1b28a35997d7e8d4b
+timeCreated: 1663253195
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/Model/Wearable/Utils/ICategorizedItems.cs
+  uploadId: 871466

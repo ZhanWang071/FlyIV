@@ -1,0 +1,38 @@
+{
+    "name": "Genies.Animations",
+    "rootNamespace": "Genies.Animations",
+    "references": [
+        "GUID:b8e3962c31543465693c9a09a2a94ec0",
+        "GUID:308234f6ca2189c469fb7364db9f0bd8",
+        "GUID:5a7286cdbb89d40fd931e7cec53b53ca",
+        "GUID:03746d41388b5432d8f92249cbbd553d",
+        "GUID:a5ad1e7e455634f3ab7f5faab80a7850",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:f06555f75b070af458a003d92f9efb00",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:597bf3ce49e48486289d72b74155809c",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.genies.sdk.avatar",
+            "expression": "",
+            "define": "GENIES_SDK"
+        },
+        {
+            "name": "com.genies.avatar-sdk.client",
+            "expression": "",
+            "define": "GENIES_SDK"
+        }
+    ],
+    "noEngineReferences": false
+}

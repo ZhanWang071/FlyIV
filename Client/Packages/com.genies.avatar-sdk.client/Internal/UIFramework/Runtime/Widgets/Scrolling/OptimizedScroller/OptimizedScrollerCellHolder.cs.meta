@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c79341cb0faa42b19894b568a7dd30da
+timeCreated: 1677702131
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/Scrolling/OptimizedScroller/OptimizedScrollerCellHolder.cs
+  uploadId: 871466

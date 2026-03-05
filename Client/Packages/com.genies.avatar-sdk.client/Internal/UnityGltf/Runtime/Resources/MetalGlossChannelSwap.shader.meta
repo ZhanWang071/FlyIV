@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 200d9689f5dda4633867345ba978a8dd
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Resources/MetalGlossChannelSwap.shader
+  uploadId: 871466

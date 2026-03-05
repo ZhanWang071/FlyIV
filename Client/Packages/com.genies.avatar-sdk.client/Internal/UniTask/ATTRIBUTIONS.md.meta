@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 86b5ffb354a7e4a5190e9698a830249b
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UniTask/ATTRIBUTIONS.md
+  uploadId: 871466

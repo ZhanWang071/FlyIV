@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 50074b773d3bd314fa62b93cf56016ec
+timeCreated: 1600624808
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Events/Runtime/EventBus.cs
+  uploadId: 871466

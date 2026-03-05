@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 870ecf89bfc64980a38e2977a56943bb
+timeCreated: 1705055769
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/SceneImporter/NormalMapEncodingConverter.cs
+  uploadId: 871466

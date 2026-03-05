@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 4377f82ccc31440b81b10e5b2d98104f
+timeCreated: 1712309498
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Plugins/GLTFSerialization/Extensions/KHR_materials_dispersion.cs
+  uploadId: 871466

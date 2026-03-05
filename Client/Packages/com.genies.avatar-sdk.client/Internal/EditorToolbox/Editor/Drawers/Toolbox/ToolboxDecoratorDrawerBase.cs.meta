@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fd61b4687b23a5a46af1d0476a980e70
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/EditorToolbox/Editor/Drawers/Toolbox/ToolboxDecoratorDrawerBase.cs
+  uploadId: 871466

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 538b24ee7465a45c292d5e54addaa314
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityMobileInput/Editor/UMI.Editor.asmdef
+  uploadId: 871466

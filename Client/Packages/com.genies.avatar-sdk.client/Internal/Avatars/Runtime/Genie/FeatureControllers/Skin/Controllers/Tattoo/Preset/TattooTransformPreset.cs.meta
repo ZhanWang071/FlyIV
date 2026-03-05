@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 0ee99ab3eed3440b97752507288b49ca
+timeCreated: 1673528844
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Genie/FeatureControllers/Skin/Controllers/Tattoo/Preset/TattooTransformPreset.cs
+  uploadId: 871466

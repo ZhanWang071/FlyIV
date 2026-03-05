@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 59439a10bcd8445e084ae243f7f800be
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Configs/Customization/Genie/Makeup/Stickers.asset
+  uploadId: 871466

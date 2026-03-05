@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c31407405e7442f697ac5d76247caa20
+timeCreated: 1721042445
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/TextureSettingsRenderer.cs
+  uploadId: 871466

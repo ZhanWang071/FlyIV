@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 206cc9e34e8a4b9e9b97bd88c5c708c1
+timeCreated: 1759073916
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/Dependencies/ForwardDeclarations.cs
+  uploadId: 871466

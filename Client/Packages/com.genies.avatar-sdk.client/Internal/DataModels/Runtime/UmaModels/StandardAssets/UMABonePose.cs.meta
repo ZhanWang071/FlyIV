@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 01b68d44e3ab744b98027a983d66b345
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/UmaModels/StandardAssets/UMABonePose.cs
+  uploadId: 871466

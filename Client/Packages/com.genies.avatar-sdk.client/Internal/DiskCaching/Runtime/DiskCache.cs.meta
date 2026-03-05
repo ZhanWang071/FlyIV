@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 77fc9812d8be48a09d93dc96a383ccb0
+timeCreated: 1673647167
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DiskCaching/Runtime/DiskCache.cs
+  uploadId: 871466

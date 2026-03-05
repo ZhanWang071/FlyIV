@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: d5db8410389b4d04a20f5b147ab50b3f
+timeCreated: 1676031608
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Genie/FeatureControllers/BodyVariation/IBodyVariationController.cs
+  uploadId: 871466

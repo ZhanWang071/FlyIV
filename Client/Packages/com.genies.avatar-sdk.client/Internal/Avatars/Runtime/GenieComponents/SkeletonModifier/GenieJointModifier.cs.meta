@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 0cf12f56c05d487d8c1d20f1213d933b
+timeCreated: 1714996367
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/GenieComponents/SkeletonModifier/GenieJointModifier.cs
+  uploadId: 871466

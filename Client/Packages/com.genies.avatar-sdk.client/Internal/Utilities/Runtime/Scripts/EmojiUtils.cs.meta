@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 1feefb28ff464a2caf1964b672cd1886
+timeCreated: 1733874222
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/EmojiUtils.cs
+  uploadId: 871466

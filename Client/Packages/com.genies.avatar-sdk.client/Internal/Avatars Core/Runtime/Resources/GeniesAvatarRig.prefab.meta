@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 16745261d6bf84b72abe63e4e7c935c3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars Core/Runtime/Resources/GeniesAvatarRig.prefab
+  uploadId: 871466

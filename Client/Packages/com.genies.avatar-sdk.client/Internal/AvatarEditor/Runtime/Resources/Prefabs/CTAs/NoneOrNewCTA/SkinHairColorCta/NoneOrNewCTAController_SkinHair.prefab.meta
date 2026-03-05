@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 30477603f84674ed69309525a806b9d4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Resources/Prefabs/CTAs/NoneOrNewCTA/SkinHairColorCta/NoneOrNewCTAController_SkinHair.prefab
+  uploadId: 871466

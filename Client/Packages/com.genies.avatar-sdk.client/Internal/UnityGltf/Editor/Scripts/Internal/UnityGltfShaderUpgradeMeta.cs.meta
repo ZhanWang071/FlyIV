@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 26fa35d7d798408bb796a50daa5a8a6f
+timeCreated: 1677690411
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Editor/Scripts/Internal/UnityGltfShaderUpgradeMeta.cs
+  uploadId: 871466

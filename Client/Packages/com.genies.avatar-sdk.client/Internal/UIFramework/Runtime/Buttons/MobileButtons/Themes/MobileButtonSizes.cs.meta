@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b6d2cceaa36a4ef8b6be4b8135fa0fd5
+timeCreated: 1675379540
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Buttons/MobileButtons/Themes/MobileButtonSizes.cs
+  uploadId: 871466

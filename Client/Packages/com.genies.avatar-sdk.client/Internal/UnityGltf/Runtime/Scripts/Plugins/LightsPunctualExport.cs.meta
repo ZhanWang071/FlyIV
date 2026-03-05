@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3579a4c311b8427f81a0c1a29e9acfe8
+timeCreated: 1703975022
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/Plugins/LightsPunctualExport.cs
+  uploadId: 871466

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 985cca82502f4c53b2de9ae392fe66a3
+timeCreated: 1721647799
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/TextureBlitter.cs
+  uploadId: 871466

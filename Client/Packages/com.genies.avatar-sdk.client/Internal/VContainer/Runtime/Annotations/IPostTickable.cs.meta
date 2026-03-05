@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 968f5691c67f4f64b8deed98e6a62cc2
+timeCreated: 1612009893
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/VContainer/Runtime/Annotations/IPostTickable.cs
+  uploadId: 871466

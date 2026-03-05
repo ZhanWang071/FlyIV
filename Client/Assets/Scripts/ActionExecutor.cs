@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEditor;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
 using System;
@@ -101,6 +102,7 @@ public class ActionExecutor : MonoBehaviour
                 typeof(UnityEngine.Object).Assembly,
                 typeof(UnityEngine.Canvas).Assembly,
                 typeof(UnityEngine.UI.Graphic).Assembly,
+                typeof(UnityEditor.Editor).Assembly,
                 typeof(System.IO.File).Assembly,
                 typeof(System.Linq.Enumerable).Assembly,
                 typeof(Newtonsoft.Json.JsonConvert).Assembly,
@@ -111,6 +113,7 @@ public class ActionExecutor : MonoBehaviour
             var sharedImports = new[]
             {
                 "UnityEngine",
+                "UnityEditor",
                 "System",
                 "System.IO",
                 "System.Linq",

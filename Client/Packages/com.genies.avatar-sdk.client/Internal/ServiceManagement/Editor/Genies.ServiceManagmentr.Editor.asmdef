@@ -1,0 +1,29 @@
+{
+    "name": "Genies.ServiceManagement.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a5ad1e7e455634f3ab7f5faab80a7850",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab",
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:0acc523941302664db1f4e527237feb3"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "System.Collections.Immutable.dll",
+        "Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "Microsoft.CodeAnalysis.Workspaces.dll",
+        "Microsoft.CodeAnalysis.CSharp.dll",
+        "Microsoft.CodeAnalysis.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

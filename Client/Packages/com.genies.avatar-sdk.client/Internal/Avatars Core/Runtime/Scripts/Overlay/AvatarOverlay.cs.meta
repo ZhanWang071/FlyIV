@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 10a5a8bcbbe91443abdc17c2f095d6e2
+timeCreated: 1688384792
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars Core/Runtime/Scripts/Overlay/AvatarOverlay.cs
+  uploadId: 871466

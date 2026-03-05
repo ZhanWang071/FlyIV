@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 0d0bace03e9b40829010acb57e8c77bf
+timeCreated: 1726162889
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/ReferenceShape/ReferenceShapes/UniquePointsShape/Jobs/ReferenceSelfCorrelationMatrixComputeJob.cs
+  uploadId: 871466

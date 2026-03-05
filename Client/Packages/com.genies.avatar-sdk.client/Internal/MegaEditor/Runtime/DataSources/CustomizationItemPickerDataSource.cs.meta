@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 699d92e5bf0d4debafc24192e53115c4
+timeCreated: 1683159216
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/DataSources/CustomizationItemPickerDataSource.cs
+  uploadId: 871466

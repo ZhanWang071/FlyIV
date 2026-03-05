@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 466f422ee3c646e5b571f5b78c44e7b5
+timeCreated: 1726587724
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars Context/Runtime/Services/RefittingServiceSandbox.cs
+  uploadId: 871466

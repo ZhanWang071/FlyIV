@@ -1,0 +1,33 @@
+{
+    "name": "Genies.CameraSystem",
+    "rootNamespace": "Genies.CameraSystem",
+    "references": [
+        "GUID:4307f53044263cf4b835bd812fc161a4",
+        "GUID:bbac8104a2d51ec4d8cc0bac4382e343",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:b14a1d6f094294608a71c141c3e1aee6",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.genies.sdk.avatar",
+            "expression": "",
+            "define": "GENIES_SDK"
+        },
+        {
+            "name": "com.genies.avatar-sdk.client",
+            "expression": "",
+            "define": "GENIES_SDK"
+        }
+    ],
+    "noEngineReferences": false
+}

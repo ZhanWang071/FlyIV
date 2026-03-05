@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 138f7f4bd8e14c2b824a48076e8a1880
+timeCreated: 1681224415
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/MegaMaterial/MegaMaterialUtility.cs
+  uploadId: 871466

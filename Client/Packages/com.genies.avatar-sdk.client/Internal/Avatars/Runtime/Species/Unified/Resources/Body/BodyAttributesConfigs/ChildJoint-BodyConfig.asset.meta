@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ff3b847785542a24db808eb8a17a5122
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Species/Unified/Resources/Body/BodyAttributesConfigs/ChildJoint-BodyConfig.asset
+  uploadId: 871466

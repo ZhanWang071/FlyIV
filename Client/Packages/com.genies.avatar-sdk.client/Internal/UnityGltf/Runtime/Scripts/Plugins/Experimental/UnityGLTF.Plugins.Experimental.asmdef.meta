@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 78eed79366eb2824c853b25847bba69b
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/Plugins/Experimental/UnityGLTF.Plugins.Experimental.asmdef
+  uploadId: 871466

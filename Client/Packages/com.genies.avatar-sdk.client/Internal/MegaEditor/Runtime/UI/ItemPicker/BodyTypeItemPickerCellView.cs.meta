@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 495432eab55d482fb721709ee9f367fc
+timeCreated: 1678809122
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/UI/ItemPicker/BodyTypeItemPickerCellView.cs
+  uploadId: 871466

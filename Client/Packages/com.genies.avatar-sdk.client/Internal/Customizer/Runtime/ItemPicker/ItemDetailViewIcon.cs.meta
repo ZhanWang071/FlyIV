@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 4fb4c6f28425143f692bcb6c1d806772
+timeCreated: 1676362652
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Customizer/Runtime/ItemPicker/ItemDetailViewIcon.cs
+  uploadId: 871466

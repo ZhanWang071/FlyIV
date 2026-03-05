@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3f2f614dc99e48f19485b669f22ef49c
+timeCreated: 1720788999
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Resources/TextureBlit.shader
+  uploadId: 871466

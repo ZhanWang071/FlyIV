@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: a54af4652571dd34c93522fd6fba476c
+timeCreated: 1426041400
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/UmaModels/StandardAssets/UMATime.cs
+  uploadId: 871466

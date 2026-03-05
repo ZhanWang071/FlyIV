@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 27b558eebe46457aafb99ae7c49f9d70
+timeCreated: 1678495812
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/Commands/UnifiedGenieModificationCommand.cs
+  uploadId: 871466

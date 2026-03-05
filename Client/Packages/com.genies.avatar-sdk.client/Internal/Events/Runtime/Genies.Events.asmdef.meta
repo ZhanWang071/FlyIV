@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 236315b3720404127a6963a3d52688db
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Events/Runtime/Genies.Events.asmdef
+  uploadId: 871466

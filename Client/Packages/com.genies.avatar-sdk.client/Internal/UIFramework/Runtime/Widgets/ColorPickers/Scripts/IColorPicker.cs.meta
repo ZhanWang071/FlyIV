@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: be3524f48fe64f41bb0436844921cb10
+timeCreated: 1680196946
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/ColorPickers/Scripts/IColorPicker.cs
+  uploadId: 871466

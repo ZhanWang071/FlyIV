@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f5c6315d20bc345a79c7dfd8fe45eaef
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Native Dependencies/LICENSE.md
+  uploadId: 871466

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b1621daef5a624f41bb5bc3009cba3e0
+timeCreated: 1683159387
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/DataSources/EyebrowColorItemPickerDataSource.cs
+  uploadId: 871466

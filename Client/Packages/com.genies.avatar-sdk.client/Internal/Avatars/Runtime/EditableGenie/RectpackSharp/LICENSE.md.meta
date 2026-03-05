@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 42f53301c5c4c4cb9b56a69043de51ef
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/EditableGenie/RectpackSharp/LICENSE.md
+  uploadId: 871466

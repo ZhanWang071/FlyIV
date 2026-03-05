@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 88d7927f3e2b4d98aa3dcc066e733e6a
+timeCreated: 1726747808
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/ReferenceShape/ReferenceShapes/NoOpReferenceShape.cs
+  uploadId: 871466

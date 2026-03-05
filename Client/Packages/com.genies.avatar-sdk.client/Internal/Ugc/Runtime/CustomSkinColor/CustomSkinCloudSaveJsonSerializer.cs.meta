@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 1e0646d90e4c48069ae515cd9ebd71d9
+timeCreated: 1683154817
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/CustomSkinColor/CustomSkinCloudSaveJsonSerializer.cs
+  uploadId: 871466

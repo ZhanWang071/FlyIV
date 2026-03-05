@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 6bd3287ee078412b83c46ff0e7af9c6b
+timeCreated: 1657013770
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/SceneExporter/ExporterMeshes.cs
+  uploadId: 871466

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 4b6b9842833d4669a39c2f0c9fa00c23
+timeCreated: 1705688343
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/SkinnedMeshRendererExtensions.cs
+  uploadId: 871466

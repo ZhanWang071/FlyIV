@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 65a49a4f49c114950914fd8335238b3d
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Telemetry/LICENSE.md
+  uploadId: 871466

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fe848190f1a690142846fa6384b74e17
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/RenderPipelines/UnityGltf.RenderPipelines.asmdef
+  uploadId: 871466

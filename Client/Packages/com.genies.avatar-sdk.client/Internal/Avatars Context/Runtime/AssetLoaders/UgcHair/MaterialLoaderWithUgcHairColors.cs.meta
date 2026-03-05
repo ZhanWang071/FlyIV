@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 6ddc79f737b5463d950f628b87bae29a
+timeCreated: 1694441768
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars Context/Runtime/AssetLoaders/UgcHair/MaterialLoaderWithUgcHairColors.cs
+  uploadId: 871466

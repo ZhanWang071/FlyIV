@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1ec6b779034d246ceb07ad7297d70b7f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Inventory/Navigation/Outfit/Dresses/Dresses.asset
+  uploadId: 871466

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b102aef9422b48abb2574c4cad3d3a82
+timeCreated: 1677528929
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/Layout/AdjustGridLayoutCellSize.cs
+  uploadId: 871466

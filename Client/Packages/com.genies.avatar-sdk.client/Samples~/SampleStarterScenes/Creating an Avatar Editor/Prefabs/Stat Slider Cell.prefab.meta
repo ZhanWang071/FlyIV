@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4640546182e864bffbb32b409e369456
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Samples~/SampleStarterScenes/Creating
+    an Avatar Editor/Prefabs/Stat Slider Cell.prefab
+  uploadId: 871466

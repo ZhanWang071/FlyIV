@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dd1629f3f3b76244fbc498421c0cf3df
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Shaders/Runtime/Shaders/MegaShader/MegaShader.mat
+  uploadId: 871466

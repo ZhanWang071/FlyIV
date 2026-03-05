@@ -1,0 +1,11 @@
+﻿fileFormatVersion: 2
+guid: a43892c232491ce41885da7b9e769267
+timeCreated: 1644535140
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Input
+    Handlers/DragInputHandler.cs
+  uploadId: 871466

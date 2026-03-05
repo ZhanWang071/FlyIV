@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 33370f1681e81fc4b8e733dea99a3ac7
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/NAF Plugin/ThirdPartyNotices
+  uploadId: 871466

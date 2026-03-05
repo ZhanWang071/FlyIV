@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: d58f9e23239d48adb4a34eab2da190b3
+timeCreated: 1659606960
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/Model/Wearable/Templates/SplitTemplate.cs
+  uploadId: 871466

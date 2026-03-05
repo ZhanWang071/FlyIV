@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: ddf09469b7d047beba8fd0a9da4bf984
+timeCreated: 1677692096
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/Scrolling/OptimizedScroller/OptimizedScroller.cs
+  uploadId: 871466

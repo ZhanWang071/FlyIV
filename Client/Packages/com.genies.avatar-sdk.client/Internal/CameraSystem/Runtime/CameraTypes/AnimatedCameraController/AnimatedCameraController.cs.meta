@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0ea17fb0983a84742a6d918592c01a55
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CameraSystem/Runtime/CameraTypes/AnimatedCameraController/AnimatedCameraController.cs
+  uploadId: 871466

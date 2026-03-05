@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b1b8cfa9d17af814a971ee2224aaaaa2
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UniTask/Runtime/Linq/CombineLatest.tt
+  uploadId: 871466

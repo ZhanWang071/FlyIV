@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 74bc32c21a0056d4493e71678ec28a05
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/ShaderlessTools/Runtime/ShaderlessResourceLocationProvider.cs
+  uploadId: 871466

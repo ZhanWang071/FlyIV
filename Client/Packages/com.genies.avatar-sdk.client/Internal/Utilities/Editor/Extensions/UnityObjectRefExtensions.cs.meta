@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b45dd9d598d64cc6a43aadd085c70049
+timeCreated: 1743078766
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Editor/Extensions/UnityObjectRefExtensions.cs
+  uploadId: 871466

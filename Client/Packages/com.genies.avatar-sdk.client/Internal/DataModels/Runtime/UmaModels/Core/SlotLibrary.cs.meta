@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b0a16fef7b92feb47836d6fc3f49ca0d
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/UmaModels/Core/SlotLibrary.cs
+  uploadId: 871466

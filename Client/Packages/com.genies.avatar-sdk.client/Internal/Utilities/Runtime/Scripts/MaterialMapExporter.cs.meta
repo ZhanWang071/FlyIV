@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: a266b091b1ec47af8e50357dffb2cafc
+timeCreated: 1685540348
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/MaterialMapExporter.cs
+  uploadId: 871466

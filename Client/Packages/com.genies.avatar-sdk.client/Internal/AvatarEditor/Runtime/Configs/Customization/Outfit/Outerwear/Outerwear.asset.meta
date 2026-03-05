@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bb5f2143a4d104b2d9afe33361a16b0f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Configs/Customization/Outfit/Outerwear/Outerwear.asset
+  uploadId: 871466

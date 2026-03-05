@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 205f8c335efb434bb701dbc55487e6e2
+timeCreated: 1684442813
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/WearableRandomizer/Internal/CuratedMaterialGenerator.cs
+  uploadId: 871466

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7d7d440b21aa14cc885989af1022363e
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Telemetry/ThirdPartyNotices
+  uploadId: 871466

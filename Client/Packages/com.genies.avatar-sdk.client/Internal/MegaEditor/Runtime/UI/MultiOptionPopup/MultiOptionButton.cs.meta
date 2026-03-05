@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: efa6a90ba11446499718e87bf024b153
+timeCreated: 1679507625
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/UI/MultiOptionPopup/MultiOptionButton.cs
+  uploadId: 871466

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b596cdb85e72d463ebcc46d5c54b1735
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Samples~/SampleStarterScenes/Common/Prefabs/UI/Set
+    Save Text.prefab
+  uploadId: 871466

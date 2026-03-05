@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 71461220c8314b38b43810164f5586b9
+timeCreated: 1729591326
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/ReferenceShape/ReferenceShapes/TriangulatedShape/MeshTriangles.cs
+  uploadId: 871466

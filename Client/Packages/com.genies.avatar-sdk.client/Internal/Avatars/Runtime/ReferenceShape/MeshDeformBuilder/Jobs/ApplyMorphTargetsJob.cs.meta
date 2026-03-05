@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: d011bc3ddc3e4f33b9afb52bdc4e1dc1
+timeCreated: 1726655994
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/ReferenceShape/MeshDeformBuilder/Jobs/ApplyMorphTargetsJob.cs
+  uploadId: 871466

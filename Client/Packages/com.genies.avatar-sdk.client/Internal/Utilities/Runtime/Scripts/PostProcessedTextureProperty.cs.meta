@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 776b8d579e514b398d726102e9a71e3d
+timeCreated: 1707233613
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/PostProcessedTextureProperty.cs
+  uploadId: 871466

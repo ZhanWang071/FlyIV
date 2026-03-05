@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 5d12a6a6ccc64837a0abdefc36391a70
+timeCreated: 1736370591
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/EmojiFilter.cs
+  uploadId: 871466

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 20eade7af2db4b06a0d23b23c3a83c47
+timeCreated: 1657012127
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/SceneImporter/ImporterAnimation.cs
+  uploadId: 871466

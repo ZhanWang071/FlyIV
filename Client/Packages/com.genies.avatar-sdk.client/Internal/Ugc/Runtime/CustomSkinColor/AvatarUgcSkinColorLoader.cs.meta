@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: ca648c4b385942b8b766dea45bc2d567
+timeCreated: 1683140013
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/CustomSkinColor/AvatarUgcSkinColorLoader.cs
+  uploadId: 871466

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 61d03002de9f645d29ab3b0414563b94
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Resources/Popups/PopupDualButton.prefab
+  uploadId: 871466

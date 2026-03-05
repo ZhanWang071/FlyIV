@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7390feaad46a58a41bce18ab37fa1453
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Fonts/Roobert/Roobert-Bold
+    SDF.asset
+  uploadId: 871466

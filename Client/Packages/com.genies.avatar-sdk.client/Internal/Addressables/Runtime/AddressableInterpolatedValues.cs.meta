@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 6ab9c37936284022bbcab3dad260e433
+timeCreated: 1707947908
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Addressables/Runtime/AddressableInterpolatedValues.cs
+  uploadId: 871466

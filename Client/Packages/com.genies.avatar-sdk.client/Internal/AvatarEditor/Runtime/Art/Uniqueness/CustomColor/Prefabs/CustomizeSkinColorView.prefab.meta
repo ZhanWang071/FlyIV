@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 378f0f3242cd06e458b707ed96e5e420
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Art/Uniqueness/CustomColor/Prefabs/CustomizeSkinColorView.prefab
+  uploadId: 871466

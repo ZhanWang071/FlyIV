@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: f819565ac7b34934a0362c0eb3871a37
+timeCreated: 1683648720
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Genie/GenieBaker.cs
+  uploadId: 871466

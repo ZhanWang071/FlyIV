@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 85ebb861e7e5491aacfcaca708524eeb
+timeCreated: 1681904950
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Species/Unified/Constants/UnifiedOutfitSlot.cs
+  uploadId: 871466

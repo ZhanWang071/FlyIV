@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e35adb0d169a4046908867445f09f321
+timeCreated: 1708078060
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/Plugins/AnimationPointer/MaterialPropertiesRemapper.cs
+  uploadId: 871466

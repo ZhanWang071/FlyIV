@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 304658093e2046d1934f10a39d1d6759
+timeCreated: 1769106075
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Samples~/SampleStarterScenes/Common/Scripts/AvatarLoadedNotifier.cs
+  uploadId: 871466

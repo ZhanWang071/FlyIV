@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 505e08e8a7f0f4a7bb0b350200ba9b85
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/UIAnimation/CanvasGroupExtensions.cs
+  uploadId: 871466

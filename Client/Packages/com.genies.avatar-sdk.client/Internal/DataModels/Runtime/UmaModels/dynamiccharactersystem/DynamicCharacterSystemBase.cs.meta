@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: f4f544908028e7141bd9f915691e5b5a
+timeCreated: 1472850643
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/UmaModels/dynamiccharactersystem/DynamicCharacterSystemBase.cs
+  uploadId: 871466

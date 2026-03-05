@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 94bb63b8e8f64466a31eb51efaf5bbfd
+timeCreated: 1683904598
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Genie/GenieMonoBehaviours/CloneGenie.cs
+  uploadId: 871466

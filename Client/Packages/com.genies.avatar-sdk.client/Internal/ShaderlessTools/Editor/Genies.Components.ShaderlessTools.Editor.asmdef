@@ -1,0 +1,33 @@
+{
+    "name": "Genies.Components.ShaderlessTools.Editor",
+    "rootNamespace": "Genies.Components.ShaderlessTools.Editor",
+    "references": [
+        "GUID:8798b5f2715944c51b4a67f10a783273",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab",
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:0acc523941302664db1f4e527237feb3"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.genies.sdk.avatar",
+            "expression": "",
+            "define": "GENIES_SDK"
+        },
+        {
+            "name": "com.genies.avatar-sdk.client",
+            "expression": "",
+            "define": "GENIES_SDK"
+        }
+    ],
+    "noEngineReferences": false
+}

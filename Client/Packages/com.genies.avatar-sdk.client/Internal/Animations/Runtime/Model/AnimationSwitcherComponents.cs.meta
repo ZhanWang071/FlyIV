@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 189becc3c18047cf8ec8651afa6a3b67
+timeCreated: 1677797502
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Animations/Runtime/Model/AnimationSwitcherComponents.cs
+  uploadId: 871466

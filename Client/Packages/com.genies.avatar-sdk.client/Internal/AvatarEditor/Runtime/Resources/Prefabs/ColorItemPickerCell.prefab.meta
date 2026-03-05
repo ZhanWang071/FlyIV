@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 43970bb2c4427481283a0d9fefa75175
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Resources/Prefabs/ColorItemPickerCell.prefab
+  uploadId: 871466

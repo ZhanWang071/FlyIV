@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 5ae1d01421314548bad2b3f871aa672e
+timeCreated: 1721656520
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/EditableGenie/MeshBuilding/Builders/AtlasLayoutBuilder.cs
+  uploadId: 871466

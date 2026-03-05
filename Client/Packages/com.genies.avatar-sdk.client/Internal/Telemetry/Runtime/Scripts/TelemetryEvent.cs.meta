@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b13d2bdba4a1e4ded8dfcd00fa0afe40
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Telemetry/Runtime/Scripts/TelemetryEvent.cs
+  uploadId: 871466

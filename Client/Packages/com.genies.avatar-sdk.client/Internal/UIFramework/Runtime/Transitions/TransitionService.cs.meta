@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 71643c97ae7c85a49a8fe365f7f9d965
+timeCreated: 1601327101
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Transitions/TransitionService.cs
+  uploadId: 871466

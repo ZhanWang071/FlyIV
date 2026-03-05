@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: ab6790d69e81fee4f9e62cf2f0698969
+timeCreated: 1638690168
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/ImageUtils/SpriteCache.cs
+  uploadId: 871466

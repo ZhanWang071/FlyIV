@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6f5c80ac1194f4712b3f4ebf67298388
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/ThirdPartyNotices
+  uploadId: 871466

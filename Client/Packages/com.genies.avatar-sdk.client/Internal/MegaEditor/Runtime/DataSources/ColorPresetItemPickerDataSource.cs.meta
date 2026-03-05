@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 66b542dfe21d46d1a1a01c4690b26968
+timeCreated: 1682439191
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/DataSources/ColorPresetItemPickerDataSource.cs
+  uploadId: 871466

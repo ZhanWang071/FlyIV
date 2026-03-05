@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1eb7fb955b63f254e95a2ff836a132e5
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Shaders/Runtime/Shaders/Dependencies/Scripts/CustomLighting.hlsl
+  uploadId: 871466

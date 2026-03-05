@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 1b6d4bc4065883b45b562f693e0570f9
+timeCreated: 1683159387
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/DataSources/HairItemPickerDataSource.cs
+  uploadId: 871466

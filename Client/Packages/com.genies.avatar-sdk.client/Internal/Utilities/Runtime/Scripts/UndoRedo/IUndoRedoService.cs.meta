@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 1c991520dbb334bc19a37dd7d83d8995
+timeCreated: 1676953655
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/UndoRedo/IUndoRedoService.cs
+  uploadId: 871466

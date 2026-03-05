@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: ed0b0ac4f27fc4bd6bee14667e312ef0
+timeCreated: 1676343846
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Customizer/Runtime/ActionBar/FilterOption.cs
+  uploadId: 871466

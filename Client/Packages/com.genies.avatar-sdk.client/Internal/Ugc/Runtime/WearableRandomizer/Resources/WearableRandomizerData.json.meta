@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ae90d473bc49b7c4facbda8a084abc58
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/WearableRandomizer/Resources/WearableRandomizerData.json
+  uploadId: 871466

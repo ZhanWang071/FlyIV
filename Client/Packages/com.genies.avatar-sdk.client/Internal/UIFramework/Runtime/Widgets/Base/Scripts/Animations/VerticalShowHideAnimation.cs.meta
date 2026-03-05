@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ad1fac1e9de4d5c4b80a6bb2a683fd15
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/Base/Scripts/Animations/VerticalShowHideAnimation.cs
+  uploadId: 871466

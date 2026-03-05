@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dff81134ca3fe3444b65d078fd079a77
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Buttons/MobileButtons/Prefabs/MobileButton.prefab
+  uploadId: 871466

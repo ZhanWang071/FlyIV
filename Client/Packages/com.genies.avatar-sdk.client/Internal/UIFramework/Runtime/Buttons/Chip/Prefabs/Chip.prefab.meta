@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e9c148f6ba8dc4347a55a6961d1f6d53
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Buttons/Chip/Prefabs/Chip.prefab
+  uploadId: 871466

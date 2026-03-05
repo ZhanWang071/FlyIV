@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 6ad8ef6480f64a60948ce95dc453a407
+timeCreated: 1686839305
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/OutfitAssetLoaders/SplitTextureSettings.cs
+  uploadId: 871466

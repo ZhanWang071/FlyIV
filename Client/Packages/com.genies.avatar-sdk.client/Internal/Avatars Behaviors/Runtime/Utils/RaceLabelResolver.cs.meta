@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 68d9c0297bf94663b0d4a2051c919be6
+timeCreated: 1661377751
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars Behaviors/Runtime/Utils/RaceLabelResolver.cs
+  uploadId: 871466

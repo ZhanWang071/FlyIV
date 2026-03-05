@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c2cd1bc786a602e48b215d8dbcee905c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/ColorPickers/Prefabs/HsvColorSpectrumPicker/SvPicker.prefab
+  uploadId: 871466

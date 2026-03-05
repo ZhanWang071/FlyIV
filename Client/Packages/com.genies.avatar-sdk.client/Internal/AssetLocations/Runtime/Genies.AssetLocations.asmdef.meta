@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 20fa1900eb4334761ab0eba3c1fd3299
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AssetLocations/Runtime/Genies.AssetLocations.asmdef
+  uploadId: 871466

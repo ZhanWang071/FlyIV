@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: d8b68abec8074215a52a2583ca7aede0
+timeCreated: 1697160292
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/CustomSkinColor/CustomSkinServiceInstaller.cs
+  uploadId: 871466

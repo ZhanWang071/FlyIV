@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f4cb6d2c24715bd4884385645277f011
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/UmaModels/UMA_Core.asmdef
+  uploadId: 871466

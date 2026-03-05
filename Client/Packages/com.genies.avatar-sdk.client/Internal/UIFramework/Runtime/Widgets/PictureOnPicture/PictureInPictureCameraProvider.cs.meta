@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 24910b62428349bca690675ecc50bdc2
+timeCreated: 1696963367
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/PictureOnPicture/PictureInPictureCameraProvider.cs
+  uploadId: 871466

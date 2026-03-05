@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: cef61a6932d545e0aca7bb7cd4a819db
+timeCreated: 1657012769
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/SceneImporter/ImporterSkinning.cs
+  uploadId: 871466

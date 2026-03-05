@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 32db4466775a4403a11b3d068df87492
+timeCreated: 1687762363
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Plugins/GLTFSerialization/Extensions/EXT_meshopt_compression.cs
+  uploadId: 871466

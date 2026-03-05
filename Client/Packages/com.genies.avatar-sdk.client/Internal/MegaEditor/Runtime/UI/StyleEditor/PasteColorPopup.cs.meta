@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: e73a3fdf3d54943fcb6da5954e147e55
+timeCreated: 1680082895
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/UI/StyleEditor/PasteColorPopup.cs
+  uploadId: 871466

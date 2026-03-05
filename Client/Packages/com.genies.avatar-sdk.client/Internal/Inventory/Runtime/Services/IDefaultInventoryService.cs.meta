@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 040eb191204904777b7c518d532eb80d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Inventory/Runtime/Services/IDefaultInventoryService.cs
+  uploadId: 871466

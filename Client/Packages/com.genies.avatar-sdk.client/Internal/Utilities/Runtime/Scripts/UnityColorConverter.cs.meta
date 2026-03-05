@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 2c73f18c70e854ba4af5e0d501ae0a3e
+timeCreated: 1659348906
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/UnityColorConverter.cs
+  uploadId: 871466

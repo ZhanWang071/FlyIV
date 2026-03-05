@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: ef86016d46fa4ce2969ec81877d49e8f
+timeCreated: 1727188025
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Utilities/UnifiedDnaDeformsHelper.cs
+  uploadId: 871466

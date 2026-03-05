@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e1a1c43f6254d4bacbe54fbf0f441843
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Wearable/Runtime/Genies.Wearables.asmdef
+  uploadId: 871466

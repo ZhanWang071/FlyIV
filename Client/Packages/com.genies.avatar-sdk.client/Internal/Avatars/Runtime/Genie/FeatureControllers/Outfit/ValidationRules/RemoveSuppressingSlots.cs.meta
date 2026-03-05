@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b32f2862409b40b7ba1c8dbc2a3b1d1e
+timeCreated: 1680531847
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Genie/FeatureControllers/Outfit/ValidationRules/RemoveSuppressingSlots.cs
+  uploadId: 871466

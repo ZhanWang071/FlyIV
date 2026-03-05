@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8798b5f2715944c51b4a67f10a783273
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/ShaderlessTools/Runtime/Genies.Components.ShaderlessTools.asmdef
+  uploadId: 871466

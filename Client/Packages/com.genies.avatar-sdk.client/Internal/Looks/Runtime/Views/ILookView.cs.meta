@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: f3e881e01abc40b096bd09d000da88ab
+timeCreated: 1679527113
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Looks/Runtime/Views/ILookView.cs
+  uploadId: 871466

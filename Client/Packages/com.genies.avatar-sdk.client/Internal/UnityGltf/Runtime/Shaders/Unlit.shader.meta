@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4d20effaf200f604db8b73f8e6a2e386
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Shaders/Unlit.shader
+  uploadId: 871466

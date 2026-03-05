@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 899c7b57bc0ed134fba4827b77fac11b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CameraSystem/Runtime/Prefabs/Focus
+    Cameras/ChatFocusCamera.prefab
+  uploadId: 871466

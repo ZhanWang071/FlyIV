@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0e0b88f485b1541bbb62a4fe7964e7ee
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Resources/Prefabs/WeightScreen/HapticSlider.prefab
+  uploadId: 871466

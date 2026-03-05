@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5a384625454d00f40a6703c3e35ea146
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CameraSystem/Runtime/Prefabs/Focus
+    Cameras/LowerBodyFocusCamera.prefab
+  uploadId: 871466

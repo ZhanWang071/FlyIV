@@ -1,0 +1,32 @@
+{
+    "name": "Genies.Components.DataModels",
+    "rootNamespace": "Genies.Models",
+    "references": [
+        "GUID:8798b5f2715944c51b4a67f10a783273",
+        "GUID:b14a1d6f094294608a71c141c3e1aee6",
+        "GUID:f4cb6d2c24715bd4884385645277f011",
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.genies.sdk.avatar",
+            "expression": "",
+            "define": "GENIES_SDK"
+        },
+        {
+            "name": "com.genies.avatar-sdk.client",
+            "expression": "",
+            "define": "GENIES_SDK"
+        }
+    ],
+    "noEngineReferences": false
+}

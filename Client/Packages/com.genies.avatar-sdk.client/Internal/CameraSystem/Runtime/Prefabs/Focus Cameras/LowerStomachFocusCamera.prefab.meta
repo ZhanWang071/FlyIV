@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4b7e3991eb4fccc4bb88f56bb9e4feb8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CameraSystem/Runtime/Prefabs/Focus
+    Cameras/LowerStomachFocusCamera.prefab
+  uploadId: 871466

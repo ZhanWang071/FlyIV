@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 792f76fbc1dd409887297cdfe8aa3aa9
+timeCreated: 1653803074
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/VContainer/Runtime/Unity/DisposeLoopItem.cs
+  uploadId: 871466

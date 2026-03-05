@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 77ad4bb761964b0da3ccf68f6b649aab
+timeCreated: 1677764644
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Editor/Scripts/ShaderGraph/ShaderConverters.cs
+  uploadId: 871466

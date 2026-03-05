@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3a3f628e56879a34cae8c04646690c27
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/UmaModels/Core/RaceLibrary.cs
+  uploadId: 871466

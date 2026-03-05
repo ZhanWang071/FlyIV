@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: ac08e2f88c9740049c1ea5f1adad8b84
+timeCreated: 1727175053
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/ReferenceShape/ReferenceShapes/UniquePointsShape/ReferenceUniquePoints.Serialization.cs
+  uploadId: 871466

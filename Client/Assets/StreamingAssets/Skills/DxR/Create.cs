@@ -7,28 +7,25 @@ public class Create
         string x_field,
         string y_field)
     {
-        Debug.Log("Executing CreateSkill...");
+        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(
+        "Assets/DxR/Prefabs/DxRVis.prefab");
 
-        if (!ValidateInputs(view_id, data_path, x_field, y_field)) return;
-
-        Vis vis = FindVis(view_id);
-        if (vis == null) return;
-
-        JSONNode visSpecs = vis.GetVisSpecs();
-        if (visSpecs == null)
+        if (prefab == null)
         {
-            Debug.LogWarning($"CreateSkill: visSpecs is null for '{view_id}'.");
+            Debug.LogWarning("CreateSkill: Could not load DxRVis prefab from AssetDatabase.");
             return;
         }
 
-        string markType = ResolveMarkType(chart_type);
+        GameObject root = GameObject.Instantiate(prefab);
+        
+        
+        root.name = view_id;
 
-        ApplySpecs(visSpecs, data_path, markType, x_field, y_field);
+        Vis vis = root.GetComponent<Vis>();
+        vis.visSpecsURL = "Examples/barchart_book.json";
 
+        root.SetActive(true);
         vis.UpdateVis();
-
-        Debug.Log($"CreateSkill completed: view={view_id} data={data_path} " +
-                  $"mark={markType} x={x_field} y={y_field}");
     }
 
     // -------------------------------------------------------------------------
@@ -62,52 +59,94 @@ public class Create
     private static string ResolveMarkType(string chart_type)
     {
         string ct = chart_type?.ToLower().Trim() ?? "bar";
-
         return (ct == "point" || ct == "scatter") ? "sphere" : "bar";
     }
 
     // -------------------------------------------------------------------------
-    // Spec Application
+    // Spec Building
     // -------------------------------------------------------------------------
 
-    private static void ApplySpecs(
-        JSONNode visSpecs, string data_path, string markType, string x_field, string y_field)
+    private static JSONObject BuildSpec(string data_path, string markType, string x_field, string y_field)
     {
-        visSpecs["data"]["url"] = new JSONString(data_path);
-        visSpecs["mark"] = new JSONString(markType);
-
-        if (visSpecs["encoding"] == null)
-            visSpecs["encoding"] = new JSONObject();
-
-        visSpecs["encoding"]["x"] = BuildEncoding(x_field, "nominal");
-        visSpecs["encoding"]["y"] = BuildEncoding(y_field, "quantitative");
+        JSONObject spec = new JSONObject();
+        spec["data"] = new JSONObject();
+        spec["data"]["url"] = new JSONString(data_path);
+        spec["mark"] = new JSONString(markType);
+        spec["encoding"] = new JSONObject();
+        spec["encoding"]["x"] = BuildEncoding(x_field, "nominal");
+        spec["encoding"]["y"] = BuildEncoding(y_field, "quantitative");
+        return spec;
     }
 
-    private static JSONNode BuildEncoding(string field, string type)
+    private static JSONObject BuildEncoding(string field, string type)
     {
-        JSONNode enc = new JSONObject();
+        JSONObject enc = new JSONObject();
         enc["field"] = new JSONString(field);
         enc["type"] = new JSONString(type);
         return enc;
     }
 
     // -------------------------------------------------------------------------
-    // Shared Utilities
+    // File I/O
     // -------------------------------------------------------------------------
 
-    private static Vis FindVis(string view_id)
+    private static bool TryWriteSpec(string specFileName, JSONObject specJson)
     {
-        GameObject visObj = GameObject.Find(view_id);
-        if (visObj == null)
+        try
         {
-            Debug.LogWarning($"CreateSkill: GameObject '{view_id}' not found in the scene.");
-            return null;
+            File.WriteAllText(Parser.GetFullSpecsPath(specFileName), specJson.ToString(2));
+            return true;
         }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning($"CreateSkill: Failed to write spec file: {e.Message}");
+            return false;
+        }
+    }
 
-        Vis vis = visObj.GetComponent<Vis>();
-        if (vis == null)
-            Debug.LogWarning($"CreateSkill: No Vis component found on '{view_id}'.");
+    // -------------------------------------------------------------------------
+    // Vis Management
+    // -------------------------------------------------------------------------
 
-        return vis;
+    private static bool TryUpdateExisting(string view_id, string specFileName)
+    {
+        GameObject existingObj = GameObject.Find(view_id);
+        if (existingObj == null) return false;
+
+        Vis vis = existingObj.GetComponent<Vis>();
+        if (vis == null) return false;
+
+        vis.visSpecsURL = specFileName;
+        vis.UpdateVisSpecsFromTextSpecs();
+        Debug.Log($"CreateSkill: updated existing vis '{view_id}'.");
+        return true;
+    }
+
+    private static void CreateNewVis(string view_id, string specFileName)
+    {
+        GameObject root = new GameObject(view_id);
+        root.tag = "DxRVis";
+        root.SetActive(false);
+
+        GameObject dxrView = CreateChild(root, "DxRView");
+        CreateChild(dxrView, "DxRMarks");
+        CreateChild(dxrView, "DxRGuides");
+
+        GameObject dxrInteractions = CreateChild(root, "DxRInteractions");
+        dxrInteractions.AddComponent<Interactions>();
+
+        CreateChild(root, "DxRGUI");
+
+        Vis vis = root.AddComponent<Vis>();
+        vis.visSpecsURL = specFileName;
+
+        root.SetActive(true);
+    }
+
+    private static GameObject CreateChild(GameObject parent, string name)
+    {
+        GameObject child = new GameObject(name);
+        child.transform.SetParent(parent.transform, false);
+        return child;
     }
 }

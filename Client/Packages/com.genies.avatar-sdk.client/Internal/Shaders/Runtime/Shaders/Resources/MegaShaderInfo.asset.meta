@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: be58f09b4484bf64eafb47774f16bb91
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Shaders/Runtime/Shaders/Resources/MegaShaderInfo.asset
+  uploadId: 871466

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7d3603505953b3c4ea795e6911093030
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/CameraSystem/Runtime/Prefabs/Focus
+    Cameras/LeftSideBelowKneeFocusCamera.prefab
+  uploadId: 871466

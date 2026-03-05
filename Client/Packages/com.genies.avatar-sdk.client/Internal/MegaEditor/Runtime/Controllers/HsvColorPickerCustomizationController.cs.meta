@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 61ac54305fa02c54188b9557cb10a719
+timeCreated: 1680025074
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/Controllers/HsvColorPickerCustomizationController.cs
+  uploadId: 871466

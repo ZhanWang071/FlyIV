@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 9a27293073804d89a76a0d48026d3095
+timeCreated: 1708526439
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Plugins/GLTFSerialization/Extensions/EXT_mesh_gpu_instancing.cs
+  uploadId: 871466

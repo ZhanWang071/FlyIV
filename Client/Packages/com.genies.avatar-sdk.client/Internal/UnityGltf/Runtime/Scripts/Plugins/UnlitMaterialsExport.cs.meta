@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 9571021a85f04ddfb74e8aa5aad9cc5a
+timeCreated: 1703976148
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/Plugins/UnlitMaterialsExport.cs
+  uploadId: 871466

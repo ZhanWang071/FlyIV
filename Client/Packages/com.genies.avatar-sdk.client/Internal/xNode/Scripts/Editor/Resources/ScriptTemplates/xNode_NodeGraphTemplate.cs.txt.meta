@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8165767f64da7d94e925f61a38da668c
+timeCreated: 1519049802
+licenseType: Store
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/xNode/Scripts/Editor/Resources/ScriptTemplates/xNode_NodeGraphTemplate.cs.txt
+  uploadId: 871466

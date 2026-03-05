@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d8d9a9daf9047dda90748d4c45b068, type: 3}
+  m_Name: EyeColorItemPickerDataSource
+  m_EditorClassIdentifier: 
+  _layoutConfig:
+    horizontalOrVerticalLayoutConfig:
+      padding:
+        m_Left: 0
+        m_Right: 0
+        m_Top: 0
+        m_Bottom: 0
+      spacing: 8
+    gridLayoutConfig:
+      padding:
+        m_Left: 0
+        m_Right: 0
+        m_Top: 0
+        m_Bottom: 0
+      spacing: {x: 8, y: 8}
+      columnCount: 4
+      cellSize: {x: 88, y: 96}
+  _defaultCellView: {fileID: 6384506297289590901, guid: f013319361927784d8d276e0fb833aba,
+    type: 3}
+  _defaultCellSize: {x: 56, y: 56}
+  _Cta: {fileID: 5589219714939405532, guid: f18f25f84794dfc47a324df73958d3ba, type: 3}
+  _eyeColorSprite: {fileID: 0}

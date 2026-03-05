@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9c263951a4a214665b569cf42cb8d949
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Resources/Prefabs/WeightScreen/WeightSlider.prefab
+  uploadId: 871466

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e83f6a64504c4d1da11c1f6d046a0ecc
+timeCreated: 1612009716
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/VContainer/Runtime/Annotations/IFixedTickable.cs
+  uploadId: 871466

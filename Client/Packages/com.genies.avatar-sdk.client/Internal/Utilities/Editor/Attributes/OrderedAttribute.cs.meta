@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 40ac652ef3be44c08f1f68d20d3152e2
+timeCreated: 1713249209
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Editor/Attributes/OrderedAttribute.cs
+  uploadId: 871466

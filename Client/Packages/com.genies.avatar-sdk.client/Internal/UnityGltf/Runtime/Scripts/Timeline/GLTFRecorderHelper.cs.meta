@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: fba5af8565ac464587d0d4663f151239
+timeCreated: 1646945202
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/Timeline/GLTFRecorderHelper.cs
+  uploadId: 871466

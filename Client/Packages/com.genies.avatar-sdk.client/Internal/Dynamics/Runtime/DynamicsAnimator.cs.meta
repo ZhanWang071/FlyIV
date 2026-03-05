@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7559a7c907358174db5422fd75a7875b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Dynamics/Runtime/DynamicsAnimator.cs
+  uploadId: 871466

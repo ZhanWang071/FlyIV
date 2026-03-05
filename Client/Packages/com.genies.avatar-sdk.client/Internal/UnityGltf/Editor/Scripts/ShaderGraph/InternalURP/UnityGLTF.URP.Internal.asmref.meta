@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cd3b604407efbd641a4d40520de58a76
+AssemblyDefinitionReferenceImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Editor/Scripts/ShaderGraph/InternalURP/UnityGLTF.URP.Internal.asmref
+  uploadId: 871466

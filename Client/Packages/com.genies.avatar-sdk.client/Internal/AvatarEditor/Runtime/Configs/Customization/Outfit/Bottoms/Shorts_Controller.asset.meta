@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 58f1aa55658b14e44b2d8a07aeff72aa
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Configs/Customization/Outfit/Bottoms/Shorts_Controller.asset
+  uploadId: 871466

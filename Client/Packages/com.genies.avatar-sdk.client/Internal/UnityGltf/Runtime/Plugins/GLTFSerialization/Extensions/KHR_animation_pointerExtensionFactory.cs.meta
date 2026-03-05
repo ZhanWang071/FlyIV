@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 7f3f2eb61a4b4dd088e62138724bac85
+timeCreated: 1707827260
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Plugins/GLTFSerialization/Extensions/KHR_animation_pointerExtensionFactory.cs
+  uploadId: 871466

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 593a5b492d29ac6448b1ebf7f035ef33
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UniTask/Runtime/External/Addressables/UniTask.Addressables.asmdef
+  uploadId: 871466

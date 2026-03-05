@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dba432fb15cd543ce9bafdf71984bf8d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars Core/Runtime/Prefabs/Camera/Main
+    Camera.prefab
+  uploadId: 871466

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 4b8c4989f4cc4f5e89741c2a9f6ea816
+timeCreated: 1717584175
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/AnimatorParametersAffixMap.cs
+  uploadId: 871466

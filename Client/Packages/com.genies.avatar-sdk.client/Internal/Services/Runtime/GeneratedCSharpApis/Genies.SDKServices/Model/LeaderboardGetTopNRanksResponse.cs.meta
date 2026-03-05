@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6cec6f3efd03144b3a9a461ac119eed3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Services/Runtime/GeneratedCSharpApis/Genies.SDKServices/Model/LeaderboardGetTopNRanksResponse.cs
+  uploadId: 871466

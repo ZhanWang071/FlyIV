@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c136b910038b448f98b28c4d1314f320
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Inventory/Navigation/Outfit/Shoes/Boots.asset
+  uploadId: 871466

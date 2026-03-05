@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f51ebe6a0ceec4240a699833d6309b23
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UniTask/Runtime/UniTask.asmdef
+  uploadId: 871466

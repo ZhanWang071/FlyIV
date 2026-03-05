@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 50ef2e96653340ed907622e0364fce58
+timeCreated: 1726652402
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/ReferenceShape/MeshDeformBuilder/MeshDeformBuilder.cs
+  uploadId: 871466

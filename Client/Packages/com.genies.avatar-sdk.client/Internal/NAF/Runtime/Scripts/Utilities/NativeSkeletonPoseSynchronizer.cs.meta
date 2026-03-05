@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: dc2de69159844ef49d5a1bea9d65ce63
+timeCreated: 1763032880
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/NAF/Runtime/Scripts/Utilities/NativeSkeletonPoseSynchronizer.cs
+  uploadId: 871466

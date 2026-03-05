@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 114fa965b3814d2d9b7ddd4324820917
+timeCreated: 1693941252
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/ServiceManagement/Editor/LifetimeScopeRestrictor.cs
+  uploadId: 871466

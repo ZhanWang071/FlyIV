@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 55e2ac56390241b0ab72186599c7b0fb
+timeCreated: 1694901478
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/ServiceManagement/Editor/AutoResolver/AutoResolveSettingsEditor.cs
+  uploadId: 871466

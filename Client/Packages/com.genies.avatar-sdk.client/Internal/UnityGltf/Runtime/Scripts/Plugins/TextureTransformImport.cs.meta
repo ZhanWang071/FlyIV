@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 60bb1ecd8af04e0e864c773a2aaf6263
+timeCreated: 1703892310
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/Plugins/TextureTransformImport.cs
+  uploadId: 871466

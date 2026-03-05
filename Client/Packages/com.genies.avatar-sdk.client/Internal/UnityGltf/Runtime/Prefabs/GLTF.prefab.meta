@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5255039e40b37b14fbcc0b72a30fc62e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Prefabs/GLTF.prefab
+  uploadId: 871466

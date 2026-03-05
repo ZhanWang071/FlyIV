@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 2216d8c98a674cb1ad23291b3ba9954d
+timeCreated: 1665147596
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/Rendering/Animations/IMaterialAnimation.cs
+  uploadId: 871466

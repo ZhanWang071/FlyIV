@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 03e9f475225262443a58d795c6634190
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/ColorPickers/Prefabs/HsvColorPicker/Assets/ColorSlider.prefab
+  uploadId: 871466

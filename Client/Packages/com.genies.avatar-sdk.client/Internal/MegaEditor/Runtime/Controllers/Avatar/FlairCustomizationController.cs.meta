@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c99425d0231c54c39853605366f5f366
+timeCreated: 1678344830
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/Controllers/Avatar/FlairCustomizationController.cs
+  uploadId: 871466

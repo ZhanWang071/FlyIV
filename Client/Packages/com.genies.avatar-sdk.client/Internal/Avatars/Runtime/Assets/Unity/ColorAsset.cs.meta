@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 24205d0869004bf5b93ed32865cc6db8
+timeCreated: 1676304754
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars/Runtime/Assets/Unity/ColorAsset.cs
+  uploadId: 871466

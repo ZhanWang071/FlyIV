@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 51521f95bbd442b08bc2b53efcdeff29
+timeCreated: 1594556689
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/VContainer/Editor/ParentReferencePropertyDrawer.cs
+  uploadId: 871466

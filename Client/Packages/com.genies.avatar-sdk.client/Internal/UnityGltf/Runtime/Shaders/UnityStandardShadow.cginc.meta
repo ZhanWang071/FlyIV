@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 186b7b45309a8964e99df9437a41271e
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Shaders/UnityStandardShadow.cginc
+  uploadId: 871466

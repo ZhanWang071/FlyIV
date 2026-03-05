@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: c9e0c12f9cd04f69b2f4b788cb552437
+timeCreated: 1685969361
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Plugins/GLTFSerialization/Extensions/KHR_texture_basisu.cs
+  uploadId: 871466

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 2c8749b08171492ea0a17b0defdae53b
+timeCreated: 1678552801
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/Commands/EquipAvatarFacePresetCommand.cs
+  uploadId: 871466

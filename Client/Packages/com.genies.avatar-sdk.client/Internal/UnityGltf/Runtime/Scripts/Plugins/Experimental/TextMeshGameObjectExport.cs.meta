@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5dd4c08c7d6d71f4ca7d83fb653d4f9b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/Runtime/Scripts/Plugins/Experimental/TextMeshGameObjectExport.cs
+  uploadId: 871466

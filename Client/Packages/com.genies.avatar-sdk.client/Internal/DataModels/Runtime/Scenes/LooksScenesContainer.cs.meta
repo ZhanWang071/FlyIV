@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: c8ae59ecec2244b3b262c9b7333b2aeb
+timeCreated: 1697059803
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/Scenes/LooksScenesContainer.cs
+  uploadId: 871466

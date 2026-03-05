@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 60e2da96e6cc480b830649d33827dd06
+timeCreated: 1682336602
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Avatars Context/Runtime/Extensions/CollisionDataExtensions.cs
+  uploadId: 871466

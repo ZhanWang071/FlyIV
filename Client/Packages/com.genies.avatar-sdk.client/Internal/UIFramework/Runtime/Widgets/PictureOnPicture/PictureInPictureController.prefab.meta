@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a38ea8f477ae8d548853beca5e8c65a4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UIFramework/Runtime/Widgets/PictureOnPicture/PictureInPictureController.prefab
+  uploadId: 871466

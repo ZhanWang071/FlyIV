@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: eb9e528d3a68c3a44a6d7829322eb592
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/EditorToolbox/Editor/Drawers/Helpers/Extraction/IValueExtractor.cs
+  uploadId: 871466

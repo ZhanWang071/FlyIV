@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 7cbb84dd35e554b25821427a09a999eb
+timeCreated: 1676343816
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Customizer/Runtime/ActionBar/ActionBarFlags.cs
+  uploadId: 871466

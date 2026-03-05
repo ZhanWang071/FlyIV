@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 573895f85a1a4a0cb9a8bd44ff70fe13
+timeCreated: 1686242510
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Utilities/Runtime/Scripts/TextureChannelTool.cs
+  uploadId: 871466

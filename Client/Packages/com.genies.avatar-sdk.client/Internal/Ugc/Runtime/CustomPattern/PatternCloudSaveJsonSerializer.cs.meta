@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: fa9d3b62d61b431fa961162effb6d957
+timeCreated: 1675521699
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Ugc/Runtime/CustomPattern/PatternCloudSaveJsonSerializer.cs
+  uploadId: 871466

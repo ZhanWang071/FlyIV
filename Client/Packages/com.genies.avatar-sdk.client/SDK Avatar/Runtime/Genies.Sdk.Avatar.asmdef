@@ -1,0 +1,28 @@
+{
+    "name": "Genies.Sdk.Avatar",
+    "rootNamespace": "Genies.Sdk",
+    "references": [
+        "GUID:597bf3ce49e48486289d72b74155809c",
+        "GUID:95a50363f0eb040abba0521d583d066a",
+        "GUID:f8f58785bb34440db850cba51a9857a8",
+        "GUID:43271491f95454cc4be4b9839d8b8fca",
+        "GUID:20c046ccbf9d4c74bb47a4796aee848e",
+        "GUID:9d050d6ddbd1846c68c0b1c4cb5c1e06",
+        "GUID:03746d41388b5432d8f92249cbbd553d",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:2cf49f9b000401e4298c506ca5f00f9c",
+        "GUID:bbac8104a2d51ec4d8cc0bac4382e343",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

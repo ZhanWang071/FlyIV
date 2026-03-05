@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 75aaf03ddf0e481caefceb9fe08e3932
+timeCreated: 1680084912
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/MegaEditor/Runtime/UI/StyleEditor/IPatternPickerController.cs
+  uploadId: 871466

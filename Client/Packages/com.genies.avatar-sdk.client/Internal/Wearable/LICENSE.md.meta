@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 06691c0fc6a254ef9827e3d5c2e379fa
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Wearable/LICENSE.md
+  uploadId: 871466

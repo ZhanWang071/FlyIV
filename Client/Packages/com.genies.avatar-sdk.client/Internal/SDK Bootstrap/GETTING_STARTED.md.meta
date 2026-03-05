@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fddeff77f01254fd7ab16dc3537dd4bd
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/SDK Bootstrap/GETTING_STARTED.md
+  uploadId: 871466

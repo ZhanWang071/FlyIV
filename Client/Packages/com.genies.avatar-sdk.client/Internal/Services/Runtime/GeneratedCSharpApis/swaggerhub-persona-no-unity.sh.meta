@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 66218a3878a614b72a101ab4b58411c6
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/Services/Runtime/GeneratedCSharpApis/swaggerhub-persona-no-unity.sh
+  uploadId: 871466

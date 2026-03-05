@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e2c171cf7f0a948cd9af6f51ede4521b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Samples~/SampleStarterScenes/Common/Scripts/MobileCharacterController/UIVirtualTouchZone.cs
+  uploadId: 871466

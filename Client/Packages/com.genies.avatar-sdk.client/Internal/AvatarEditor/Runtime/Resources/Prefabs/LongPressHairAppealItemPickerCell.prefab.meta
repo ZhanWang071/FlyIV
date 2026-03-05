@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 88d90ec6319d58f47999bc40c6a69b99
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/AvatarEditor/Runtime/Resources/Prefabs/LongPressHairAppealItemPickerCell.prefab
+  uploadId: 871466

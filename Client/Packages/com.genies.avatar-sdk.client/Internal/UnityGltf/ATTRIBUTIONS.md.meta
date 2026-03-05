@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 18a5473d8fe1e48fa80f811a4df909f3
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/UnityGltf/ATTRIBUTIONS.md
+  uploadId: 871466

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: cdc7fb62946f480c9a010760bc318d31
+timeCreated: 1666380327
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/DataModels/Runtime/ColorPresetCategory.cs
+  uploadId: 871466

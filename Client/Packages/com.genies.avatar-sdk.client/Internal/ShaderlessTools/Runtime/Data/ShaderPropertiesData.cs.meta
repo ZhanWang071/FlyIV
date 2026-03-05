@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 9db04a422209407e876a6dde9899a68a
+timeCreated: 1697502058
+AssetOrigin:
+  serializedVersion: 1
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.2
+  assetPath: Packages/com.genies.avatar-sdk.client/Internal/ShaderlessTools/Runtime/Data/ShaderPropertiesData.cs
+  uploadId: 871466

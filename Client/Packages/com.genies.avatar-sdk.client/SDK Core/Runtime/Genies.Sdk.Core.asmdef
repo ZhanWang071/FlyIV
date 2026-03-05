@@ -1,0 +1,28 @@
+{
+    "name": "Genies.Sdk.Core",
+    "rootNamespace": "Genies.Sdk",
+    "references": [
+        "GUID:bbac8104a2d51ec4d8cc0bac4382e343",
+        "GUID:f8f58785bb34440db850cba51a9857a8",
+        "GUID:43271491f95454cc4be4b9839d8b8fca",
+        "GUID:bc9105d1bd11d4235a2eaa5f633d3516",
+        "GUID:cc45db82de60741e2905beea4bffb817",
+        "GUID:20c046ccbf9d4c74bb47a4796aee848e",
+        "GUID:2cf49f9b000401e4298c506ca5f00f9c",
+        "GUID:5f3ed2645ae4f4031aa8ecbf7d47e002",
+        "GUID:5bdd013ac45504995b2b999a6653f2b7",
+        "GUID:b14a1d6f094294608a71c141c3e1aee6",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
