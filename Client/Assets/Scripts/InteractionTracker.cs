@@ -18,7 +18,7 @@ public class InteractionTracker : MonoBehaviour
 
     [Header("Debug")]
     public bool showDebugRay = true;
-
+    private UserStudyController userStudyController;
     // 记录用户说话期间“指过”的所有物体
     private HashSet<GameObject> _pointedObjectsDuringSpeech = new HashSet<GameObject>();
     public GameObject _currentlyPointedObject;
@@ -29,6 +29,11 @@ public class InteractionTracker : MonoBehaviour
 
     // 当前帧最近一次有效的 Raycast 命中信息
     private RaycastHit _currentHit;
+
+    private void Start()
+    {
+        userStudyController = FindFirstObjectByType<UserStudyController>();
+    }
 
     private void Update()
     {
@@ -63,10 +68,63 @@ public class InteractionTracker : MonoBehaviour
         {
             // 记录本次命中的详细信息，供 Update 中使用
             _currentHit = hit;
-            return hit.collider.gameObject;
+            
+            // 确保返回的物体在场景第一层子物体中
+            GameObject hitObject = hit.collider.gameObject;
+            GameObject firstLevelChild = GetFirstLevelChild(hitObject);
+            
+            return firstLevelChild;
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// 获取物体在场景第一层中对应的子物体
+    /// 如果物体本身在第一层，直接返回；否则向上查找父物体直到找到第一层物体
+    /// </summary>
+    private GameObject GetFirstLevelChild(GameObject hitObject)
+    {
+        if (hitObject == null) return null;
+        
+        GameObject sceneRoot = GetSceneRoot();
+        if (sceneRoot == null) return hitObject; // 如果找不到场景根，返回原物体
+
+        // 向上遍历直到找到第一层物体（其父物体是 sceneRoot）
+        Transform current = hitObject.transform;
+        while (current != null && current.parent != sceneRoot.transform && current.parent != null)
+        {
+            current = current.parent;
+        }
+
+        // 检查是否找到了第一层物体
+        if (current != null && current.parent == sceneRoot.transform)
+        {
+            return current.gameObject;
+        }
+
+        // 如果没找到，返回原物体
+        return hitObject;
+    }
+
+    /// <summary>
+    /// 根据 UserStudyController 的 currentScene 获取场景根物体
+    /// </summary>
+    private GameObject GetSceneRoot()
+    {
+        if (userStudyController == null) return null;
+
+        UserStudyController.SceneType currentScene = userStudyController.currentScene;
+        
+        switch (currentScene)
+        {
+            case UserStudyController.SceneType.Classroom:
+                return userStudyController.classroom;
+            case UserStudyController.SceneType.City:
+                return userStudyController.city;
+            default:
+                return null;
+        }
     }
 
     // --- 由 SpeechToText 调用的生命周期钩子 ---

@@ -75,8 +75,6 @@ public class RelationDetectionDynamic: MonoBehaviour
 
     void Update()
     {
-        HandleInputAndLook(); // 处理键盘鼠标
-
         if (flag)
         {
             // 核心简化：统一的触发判定
@@ -230,28 +228,5 @@ public class RelationDetectionDynamic: MonoBehaviour
         vlmHandler.OnVLMFocusFinished?.Invoke(vlmHandler.objectsDataDisplay);
     }
     
-    private void HandleInputAndLook()
-    {
-        if (Keyboard.current?.escapeKey.wasPressedThisFrame ?? false)
-            Cursor.lockState = (Cursor.lockState == CursorLockMode.None) ? CursorLockMode.Locked : CursorLockMode.None;
-
-        if (Cursor.lockState != CursorLockMode.Locked) return;
-
-        // 简单的移动控制
-        if (Mouse.current != null)
-        {
-            Vector2 d = Mouse.current.delta.ReadValue() * 0.1f;
-            userTransform.Rotate(0, d.x, 0, Space.World);
-            userTransform.Rotate(-d.y, 0, 0, Space.Self);
-        }
-        if (Keyboard.current != null)
-        {
-            var k = Keyboard.current;
-            Vector3 dir = (userTransform.forward * (k.wKey.ReadValue() - k.sKey.ReadValue()) +
-                           userTransform.right * (k.dKey.ReadValue() - k.aKey.ReadValue()));
-            userTransform.position += dir * 3.0f * Time.deltaTime;
-        }
-    }
-
     private bool IsVisible(Renderer r, Plane[] p) => GeometryUtility.TestPlanesAABB(p, r.bounds);
 }

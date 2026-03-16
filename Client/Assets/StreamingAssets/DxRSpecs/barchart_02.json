@@ -11,6 +11,13 @@
     "y" : {
       "field" : "math_score",
       "type" : "quantitative"
+    },
+    "height" : {
+      "field" : "math_score",
+      "type" : "quantitative"
+    },
+    "yoffsetpct" : {
+      "value" : -0.5
     }
   }
 }

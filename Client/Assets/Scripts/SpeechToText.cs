@@ -44,6 +44,9 @@ public class SpeechToText : MonoBehaviour
     private float _silenceTimer = 0f;
     private string _currentDevice;
 
+    // 事件：语音开始时通知
+    public Action OnSpeechStarted;
+    
     // 事件：转录成功后通知 LLM 模块
     public Action<string> OnTranscribeFinished;
 
@@ -109,6 +112,8 @@ public class SpeechToText : MonoBehaviour
                 _isUserSpeaking = true;
                 // 语音开始，通知 Tracker
                 if (interactionTracker) interactionTracker.StartTracking();
+                // 触发语音开始事件（供 VLM 使用）
+                OnSpeechStarted?.Invoke();
                 Debug.Log("<color=cyan>[SpeechToText] 检测到语音开始...</color>");
             }
             _silenceTimer = 0f;

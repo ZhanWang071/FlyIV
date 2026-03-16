@@ -14,6 +14,15 @@ public class VLMFocus : MonoBehaviour
 {
     [Header("API Configuration")]
     private OpenAIClient openaiClient;
+    private UserStudyController userStudyController;
+
+    [Header("Detection Method")]
+    [Tooltip("true: 使用VLM模型识别, false: 使用视锥体几何判断")]
+    public bool useVLMModel = true;
+
+    [Header("Exclusion Settings")]
+    [Tooltip("需要排除的物体名称列表（根据场景自动切换）")]
+    public List<string> excludedObjectNames = new List<string>();
 
     [Header("Capture Settings")]
     public Camera targetCamera;
@@ -73,10 +82,31 @@ public class VLMFocus : MonoBehaviour
         openaiClient = new OpenAIClient(ApiConfig.Instance.Auth, ApiConfig.Instance.Settings);
 
         targetCamera = Camera.main;
+        
+        // 获取 UserStudyController 引用
+        userStudyController = FindFirstObjectByType<UserStudyController>();
+        
+        // 初始化排除列表
+        UpdateExcludedObjectsBasedOnScene();
     }
 
     [ContextMenu("Test Identify Now")]
     public async Task IdentifyFocusedObject()
+    {   
+        if (useVLMModel)
+        {
+            await IdentifyFocusedObject_WithVLM();
+        }
+        else
+        {
+            await IdentifyFocusedObject_WithoutVLM();
+        }
+    }
+
+    /// <summary>
+    /// 基于VLM模型的识别方法
+    /// </summary>
+    private async Task IdentifyFocusedObject_WithVLM()
     {   
         // 1. 扫描场景 
         List<string> candidateNames = GameObject.FindObjectsByType<GameObject>(FindObjectsSortMode.None)
@@ -142,6 +172,150 @@ public class VLMFocus : MonoBehaviour
         }
 
         // await Task.Yield();
+    }
+
+    /// <summary>
+    /// 基于视锥体几何的识别方法（不使用VLM）
+    /// </summary>
+    private async Task IdentifyFocusedObject_WithoutVLM()
+    {
+        if (targetCamera == null) targetCamera = Camera.main;
+        
+        // 动态更新排除列表（根据场景变化）
+        UpdateExcludedObjectsBasedOnScene();
+        
+        // 1. 获取摄像机的视锥体平面
+        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(targetCamera);
+        
+        // 2. 根据当前场景类型获取对应的GameObject，然后扫描其所有子物体
+        List<string> visibleObjects = new List<string>();
+        GameObject sceneRoot = GetSceneRoot();
+        
+        if (sceneRoot == null)
+        {
+            Debug.LogWarning("[VLMFocus] 无法获取当前场景的根GameObject");
+            return;
+        }
+        
+        // 获取该GameObject的所有第一层子物体（不包括自身）
+        GameObject[] allGameObjects = sceneRoot.GetComponentsInChildren<Transform>(includeInactive: false)
+            .Where(t => t.parent == sceneRoot.transform)
+            .Select(t => t.gameObject)
+            .ToArray();
+
+        Debug.Log($"[VLMFocus] 无VLM方式检测完成，识别到场景中有{allGameObjects.Length} 个物体");
+
+        foreach (var go in allGameObjects)
+        {
+            // 检查是否在排除列表中
+            if (excludedObjectNames.Contains(go.name))
+            {
+                continue;
+            }
+            
+            // 获取该物体的合并边界（包括子物体的Renderer）
+            Bounds? bounds = GetCombinedBounds(go);
+            
+            // 如果有合并边界且在视锥体内，则添加到可见列表
+            if (bounds.HasValue && IsInFrustum(bounds.Value, planes))
+            {
+                visibleObjects.Add(go.name);
+            }
+        }
+        
+        // 3. 去重并更新识别结果
+        identifiedObjects = visibleObjects.Distinct().ToList();
+        
+        Debug.Log($"[VLMFocus] 无VLM方式检测完成，识别到 {identifiedObjects.Count} 个物体");
+        
+        // 4. 获取几何数据并触发完成事件
+        if (identifiedObjects.Count > 0)
+        {
+            GetFocusedObjectsData();
+            if (OnVLMFocusFinished != null && !string.IsNullOrEmpty(objectsDataDisplay))
+            {
+                OnVLMFocusFinished.Invoke(objectsDataDisplay);
+            }
+        }
+        
+        await Task.Yield();
+    }
+
+    /// <summary>
+    /// 判断Renderer是否在视锥体内
+    /// </summary>
+    private bool IsInFrustum(Renderer renderer, Plane[] frustumPlanes)
+    {
+        return GeometryUtility.TestPlanesAABB(frustumPlanes, renderer.bounds);
+    }
+
+    /// <summary>
+    /// 判断边界是否在视锥体内
+    /// </summary>
+    private bool IsInFrustum(Bounds bounds, Plane[] frustumPlanes)
+    {
+        return GeometryUtility.TestPlanesAABB(frustumPlanes, bounds);
+    }
+
+    /// <summary>
+    /// 根据UserStudyController的current scene获取对应的根GameObject
+    /// </summary>
+    private GameObject GetSceneRoot()
+    {
+        if (userStudyController == null) return null;
+
+        UserStudyController.SceneType currentScene = userStudyController.currentScene;
+        
+        switch (currentScene)
+        {
+            case UserStudyController.SceneType.Classroom:
+                return userStudyController.classroom;
+            case UserStudyController.SceneType.City:
+                return userStudyController.city;
+            default:
+                Debug.LogWarning($"[VLMFocus] 无效的场景类型: {currentScene}");
+                return null;
+        }
+    }
+
+    /// <summary>
+    /// 根据UserStudyController的current scene更新排除物体列表
+    /// </summary>
+    private void UpdateExcludedObjectsBasedOnScene()
+    {
+        if (userStudyController == null) return;
+
+        // 清空排除列表
+        excludedObjectNames.Clear();
+
+        // 根据当前场景类型添加排除物体
+        UserStudyController.SceneType currentScene = userStudyController.currentScene;
+
+        // 所有场景都排除的物体
+        excludedObjectNames.Add("Light");
+
+        // 根据具体场景添加更多排除物体
+        switch (currentScene)
+        {
+            case UserStudyController.SceneType.Classroom:
+                // Classroom 场景特定的排除物体
+                excludedObjectNames.Add("AirConditionerVent");
+                excludedObjectNames.Add("Windows");
+                excludedObjectNames.Add("Classroom");
+                excludedObjectNames.Add("WallAndFloor");
+                break;
+
+            case UserStudyController.SceneType.City:
+                // City 场景特定的排除物体
+                // 可根据需要添加
+                break;
+
+            default:
+                // 其他场景的默认排除物体
+                break;
+        }
+
+        Debug.Log($"[VLMFocus] 更新排除列表：场景={currentScene}, 排除物体数={excludedObjectNames.Count}");
     }
 
     private async Task<string> CallOpenAICompatibleAPI(byte[] imageBytes, string candidates)

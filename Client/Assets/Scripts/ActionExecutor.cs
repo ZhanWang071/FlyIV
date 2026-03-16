@@ -198,7 +198,7 @@ public class ActionExecutor : MonoBehaviour
     [ContextMenu("Test Case: Create")]
     private async void TestCaseCreate()
     {
-        skillSequence = "CREATE(\"barchart_02\",\"education/student_scores.json\", \"bar\", \"name\", \"math_score\");\nADAPT_POS(\"barchart_02\",\"TeacherDesk\",0f,1.5f);\nORIENT_TO(\"barchart_02\",\"user\");";
+        skillSequence = "CREATE(\"barchart_02\",\"education/student_scores.json\", \"point\", \"name\", \"math_score\",\"\");\nADAPT_POS(\"barchart_02\",\"TeacherDesk\",0f,1.5f);\nORIENT_TO(\"barchart_02\",\"user\");";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Create");
         await ExecuteSkillSequence(skillSequence);
     }
@@ -224,8 +224,8 @@ public class ActionExecutor : MonoBehaviour
     [ContextMenu("Test Case: AppendSeries")]
     private async void TestCaseAppendSeries()
     {
-        if (skillsFolderPath == SkillFolderOption.XCharts) skillSequence = "APPEND_SERIES(\"BarChart\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> {\"88\", \"74\", \"95\"},1, \"bar\");";
-        else if (skillsFolderPath == SkillFolderOption.DxR) skillSequence = "APPEND_SERIES(\"BarChart_01\",new List<string> { \"x1\", \"x2\", \"x3\" },new List<string> {\"88\", \"74\", \"95\"},1, \"bar\");";
+        if (skillsFolderPath == SkillFolderOption.XCharts) skillSequence = "APPEND_SERIES(\"BarChart\",new List<string> { \"x1\", \"x2\", \"x3\", \"x4\", \"x5\"},new List<string> {\"88\", \"74\", \"95\", \"23\", \"45\"},1, \"bar\");";
+        else if (skillsFolderPath == SkillFolderOption.DxR) skillSequence = "APPEND_SERIES(\"BarChart_01\",new List<string> { \"x1\", \"x2\", \"x3\", \"x4\", \"x5\" },new List<string> {\"88\", \"74\", \"95\", \"23\", \"45\"},1, \"bar\");";
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case");
         await ExecuteSkillSequence(skillSequence);
     }
