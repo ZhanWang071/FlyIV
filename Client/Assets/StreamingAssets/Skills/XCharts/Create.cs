@@ -10,7 +10,7 @@ public class Create
         Debug.Log("Executing CreateSkill logic...");
 
         // --- Load Data ---
-        string fullPath = Path.Combine(Application.dataPath, "Resources", "DataFiles", data_path);
+        string fullPath = Path.Combine(Application.streamingAssetsPath, "DxRData", data_path);
 
         if (!File.Exists(fullPath))
         {

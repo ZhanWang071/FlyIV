@@ -61,10 +61,10 @@ public class Orchestrator : MonoBehaviour
     }
 
     [ContextMenu("Test Workflow")]
-    private void Test()
+    private async Task Test()
     {
+        await vlmHandler.IdentifyFocusedObject();
         _ = ProcessWorkflow(userRequest);
-        _vlmTask = vlmHandler.IdentifyFocusedObject();
     }
 
     /// <summary>
@@ -75,10 +75,10 @@ public class Orchestrator : MonoBehaviour
         Debug.Log("<color=cyan>[Orchestrator] 收到语音，开始执行 VLM 识别...</color>");
 
         // 等待VLM识别完成（可能在语音开始时已触发）
-        if (_vlmTask != null)
-        {
-            await _vlmTask;
-        }
+        // if (_vlmTask != null)
+        // {
+        //     await _vlmTask;
+        // }
 
         Debug.Log("<color=cyan>[Orchestrator] VLM 识别完成，开始发送user Prompt...</color>");
 
@@ -100,6 +100,8 @@ public class Orchestrator : MonoBehaviour
             user_request = speechText
         };
         userPrompt = JsonConvert.SerializeObject(userPromptJson, Formatting.Indented);
+        Debug.Log("<color=cyan>[Orchestrator] promp构建完成</color>");
+
 
         // 输入LLM得到skill sequence
         if (generateSequence) APICalls = await skillController.GenerateSkills(speechText, userPrompt);

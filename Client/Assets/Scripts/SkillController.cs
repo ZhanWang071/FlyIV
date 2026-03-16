@@ -201,38 +201,59 @@ public class SkillController : MonoBehaviour
         {
             // 1. 获取文件的绝对路径（假设 entry.file 是相对路径）
             string filePath = Path.Combine(Application.streamingAssetsPath, "DxRData", entry.file);
-            string fieldsWithTypes = "Unknown Fields";
+            string fieldsWithMetadata = "Unknown Fields";
 
             try
             {
                 if (File.Exists(filePath))
                 {
                     string content = File.ReadAllText(filePath);
-                    JToken token = JToken.Parse(content);
-                    JObject firstObject = null;
+                    JArray jArray = JArray.Parse(content); // 假设数据是一个数组列表
 
-                    // 兼容数组和单对象
-                    if (token is JArray jArray && jArray.Count > 0)
-                        firstObject = jArray.First as JObject;
-                    else if (token is JObject jObject)
-                        firstObject = jObject;
-
-                    if (firstObject != null)
+                    if (jArray.Count > 0)
                     {
-                        // 核心逻辑：提取键名 + 类型映射
-                        var fieldDefinitions = firstObject.Properties().Select(p =>
+                        // 存储每个字段的统计信息
+                        var stats = new Dictionary<string, (string type, double min, double max)>();
+                        var firstObj = jArray[0] as JObject;
+
+                        // 初始化字段列表
+                        foreach (var prop in firstObj.Properties())
                         {
-                            string typeName = GetLLMFriendlyTypeName(p.Value.Type);
-                            return $"({typeName}) {p.Name}";
+                            string typeName = GetLLMFriendlyTypeName(prop.Value.Type);
+                            stats[prop.Name] = (typeName, double.MaxValue, double.MinValue);
+                        }
+
+                        // 遍历所有数据计算 Min/Max
+                        foreach (var item in jArray)
+                        {
+                            foreach (var prop in ((JObject)item).Properties())
+                            {
+                                if (stats.ContainsKey(prop.Name) &&
+                                    (prop.Value.Type == JTokenType.Integer || prop.Value.Type == JTokenType.Float))
+                                {
+                                    double val = prop.Value.Value<double>();
+                                    var current = stats[prop.Name];
+                                    stats[prop.Name] = (current.type, Math.Min(current.min, val), Math.Max(current.max, val));
+                                }
+                            }
+                        }
+
+                        // 格式化输出字符串
+                        var fieldDefinitions = stats.Select(kvp =>
+                        {
+                            if (kvp.Value.min != double.MaxValue) // 数值类型显示范围
+                                return $"({kvp.Value.type}) {kvp.Key} [range: {kvp.Value.min:F1}-{kvp.Value.max:F1}]";
+                            else // 非数值类型仅显示类型
+                                return $"({kvp.Value.type}) {kvp.Key}";
                         });
 
-                        fieldsWithTypes = string.Join(", ", fieldDefinitions);
+                        fieldsWithMetadata = string.Join(", ", fieldDefinitions);
                     }
                 }
             }
             catch (System.Exception e)
             {
-                fieldsWithTypes = "Error: " + e.Message;
+                fieldsWithMetadata = "Error: " + e.Message;
             }
 
             // 4. 将字段信息加入到 object 中
@@ -240,7 +261,7 @@ public class SkillController : MonoBehaviour
             {
                 file = entry.file,
                 description = entry.description,
-                data_fields = fieldsWithTypes // 新增字段：列出该文件包含的所有属性名
+                data_fields = fieldsWithMetadata // 新增字段：列出该文件包含的所有属性名
             });
         }
 

@@ -26,6 +26,7 @@ Your task is to:
     HIGHLIGHT(string view_id, string element_id, string highlight_type);    // Highlight a element in a visualization with a predefined type
 4. System-level:
     MESSAGE(string content);    // Send a text message
+    DATA_TRANSFORM(string inputPath, string idField, string labelName = "item", string valueName = "value", string[] excludeFields = null);   // Split entire data json into multiple data-item json based on idField
 
 # Important Factors 
 When placing objects, you need to consider the following factors: 
@@ -74,8 +75,7 @@ When fulfilling a request, follow these standard operational procedures to ensur
 
 1. **Creating 2D visualization with an object:**
     - (Step A) `CREATE(view_id, data, "2d_...", ...)`: Initialize the instance.
-   - (Step B) Displacement: Use `EMBED(view_id, object_id)` for 2D visualizations to embed on a surface.
-   - *Logic: 2D charts always need a surface.*
+   - (Step B) Displacement: Use `EMBED(view_id, object_id)` for 2D visualizations to embed on a surface or `ADAPT_POS(...)` to display above the object.
 
 2. **Case: 3D Visualization (DxR)**
    - (Step A) `CREATE(view_id, data, "3d_...", ...)`: Initialize the instance.
@@ -84,17 +84,27 @@ When fulfilling a request, follow these standard operational procedures to ensur
    - (Step D) Orientation: Use `ORIENT_TO(...)` for 3D objects to ensure they face the user.
    - *Logic: 3D charts need to face the user and stay in space.*
 
-3. **User-Centric Quick Layout:**
+3. ##Create Multiple Visualizations**
+    - (Step A) Extract data_field to be splited (e.g., student_id) from the user request or data context.
+   - (Step B) Transform the original data json into multiple jsons for the data_field: like from education/student_scores.json" to "education/student_scores_{student_id}.json".
+   - (Step C) For each splited file, use `CREATE` to create the corresponding data file.
+   - (Step D) Use `ADAPT_POS` to place each chart near its corresponding id-related object.
+   - (Step E) Use `ORIENT_TO(view_id, "User")` for each chart so they face the user.
+   - *Logic: One chart per physical entity for situated data overlay.*
+
+4. **User-Centric Quick Layout:**
    - If the user says "in front of me", the chain should be: `ADAPT_POS` (target user) (based on user_status) -> `ORIENT_TO` (target user_id).
 
-4. **Data Mapping Rules:**
+5. **Data Mapping Rules:**
     - `APPEND_SIGNLE`: If user says "add a [y_value] for [x_value]", e.g., "Add 80 for Tom".
     - `APPEND_SERIES`: If user says "add/append the [Y_Field Name]", e.g., "Append the English score".
+    - **Per-Entity Chart**: When creating a chart for a specific data item with item ID (e.g., S001), the `view_id` MUST contain the ID (e.g., "ScoreChart_S001"). 
+    - **Series Handling**: If the user wants "all subjects", include them in the initial `CREATE` if possible, or follow with `APPEND_SERIES` targeting that specific `view_id`.
 
-5. **Comparison Tasks:**
+6. **Comparison Tasks:**
    - If comparing two datasets: `CREATE` (A) -> `CREATE` (B) -> `LAYOUT` (List A&B, type="arc").
 
-6. **Context-aware Placement:**
+7. **Context-aware Placement:**
    - If positioning a visualization near an object, directly use `ADAPT_POS` (target object) instead of computing the mathematical values.
 
 # Replay Principle 
@@ -103,8 +113,10 @@ Available API calls with correct syntax and no comments
 
 ## Naming Convention
 - **view_id**: Use semantic, descriptive names (CamelCase). 
-- This ID will be used as the **Chart Title** in the UI.
-- Example: Instead of "chart_1", use "MonthlySalesChart" or "StudentMathScoreAnalysis".
+    - This ID will be used as the **Chart Title** in the UI.
+    - Example: Instead of "chart_1", use "MonthlySalesChart" or "StudentMathScoreAnalysis".
+- When generating multiple charts for different students, you MUST append the student ID to the view_id.
+    - Example: "EnglishScore_S001", "EnglishScore_S002", etc.
 
 ## Process Steps: 
 (1) Resolve pronouns (this/that/here) using hit points and conversation history.
@@ -129,3 +141,26 @@ x-axis: right;
 y-axis: up; 
 z-axis: forward;
 
+# Exmaples
+
+## Example 1:
+User Request:
+Show the students’ math scores here
+Output:
+CREATE("StudentMathScoreChart", "education/student_scores.json", "2d_bar", "student_id", "math_score"); 
+EMBED("StudentMathScoreChart", "Blackboard"); 
+
+## Example 2
+User Request:
+show all three subjects' scores for each student
+Output:
+DATA_TRANSFORM("education/student_scores.json", "student_id", "Subject", "Score", ["name"]);
+CREATE("StudentScores_S001", "education/student_scores_S001.json", "2d_bar", "Subject", "Score");
+ADAPT_POS("StudentScores_S001", "DeskAndChair_S001", 0.5f, 0.2f);
+ORIENT_TO("StudentScores_S001", "User");
+CREATE("StudentScores_S002", "education/student_scores_S002.json", "2d_bar", "Subject", "Score");
+ADAPT_POS("StudentScores_S002", "DeskAndChair_S002", 0.5f, 0.2f);
+ORIENT_TO("StudentScores_S002", "User");
+CREATE("StudentScores_S003", "education/student_scores_S003.json", "2d_bar", "Subject", "Score");
+ADAPT_POS("StudentScores_S003", "DeskAndChair_S003", 0.5f, 0.2f);
+ORIENT_TO("StudentScores_S003", "User");
