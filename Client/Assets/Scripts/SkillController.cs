@@ -11,6 +11,7 @@ using Newtonsoft.Json.Linq;
 using OpenAI;
 using OpenAI.Chat;
 using OpenAI.Models;
+using System.Linq;
 
 public class SkillController : MonoBehaviour
 {
@@ -24,9 +25,9 @@ public class SkillController : MonoBehaviour
     [Header("Data Configuration")]
     [SerializeField] private DataFileEntry[] availableDataFiles = new DataFileEntry[]
     {
-        new DataFileEntry("DataFiles/sales/monthly_sales.json", "monthly sales data with product categories"),
-        new DataFileEntry("DataFiles/sales/quarterly_revenue.json", "quarterly revenue data by region"),
-        new DataFileEntry("DataFiles/education/student_scores.json", "student test scores and grades")
+        new DataFileEntry("DxRData/sales/monthly_sales.json", "monthly sales data with product categories"),
+        new DataFileEntry("DxRData/sales/quarterly_revenue.json", "quarterly revenue data by region"),
+        new DataFileEntry("DxRData/education/student_scores.json", "student test scores and grades")
     };
 
     [Header("Debug")]
@@ -81,7 +82,7 @@ public class SkillController : MonoBehaviour
         _chatHistory.Add(new Message(Role.System, systemInstructions));
         
         Debug.Log("<color=orange>[SkillController] 新对话开启。</color>");
-        Debug.Log($"<color=orange>[SkillController] 已加载 {availableDataFiles.Length} 个数据文件。</color>");
+        Debug.Log($"[SkillController] 已加载 {availableDataFiles.Length} 个数据文件。");
     }
 
     /// <summary>
@@ -197,7 +198,49 @@ public class SkillController : MonoBehaviour
         var dataList = new List<object>();
         foreach (var entry in availableDataFiles)
         {
-            dataList.Add(new { file = entry.file, description = entry.description });
+            // 1. 获取文件的绝对路径（假设 entry.file 是相对路径）
+            string filePath = Path.Combine(Application.streamingAssetsPath, entry.file);
+            string fieldsWithTypes = "Unknown Fields";
+
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    string content = File.ReadAllText(filePath);
+                    JToken token = JToken.Parse(content);
+                    JObject firstObject = null;
+
+                    // 兼容数组和单对象
+                    if (token is JArray jArray && jArray.Count > 0)
+                        firstObject = jArray.First as JObject;
+                    else if (token is JObject jObject)
+                        firstObject = jObject;
+
+                    if (firstObject != null)
+                    {
+                        // 核心逻辑：提取键名 + 类型映射
+                        var fieldDefinitions = firstObject.Properties().Select(p =>
+                        {
+                            string typeName = GetLLMFriendlyTypeName(p.Value.Type);
+                            return $"({typeName}) {p.Name}";
+                        });
+
+                        fieldsWithTypes = string.Join(", ", fieldDefinitions);
+                    }
+                }
+            }
+            catch (System.Exception e)
+            {
+                fieldsWithTypes = "Error: " + e.Message;
+            }
+
+            // 4. 将字段信息加入到 object 中
+            dataList.Add(new
+            {
+                file = entry.file,
+                description = entry.description,
+                data_fields = fieldsWithTypes // 新增字段：列出该文件包含的所有属性名
+            });
         }
 
         var dataInfoJson = new
@@ -206,8 +249,23 @@ public class SkillController : MonoBehaviour
         };
 
         string json = JsonConvert.SerializeObject(dataInfoJson, Formatting.Indented);
+        Debug.Log($"[SkillController] 构建的数据文件信息:\n{json}");
         
         return $"## Available Data Files\nHere are available data files and their descriptions and select to use based on user input: {json}";
+    }
+
+    // 辅助函数：将 JTokenType 转换为 LLM 易懂的类型
+    private string GetLLMFriendlyTypeName(JTokenType type)
+    {
+        return type switch
+        {
+            JTokenType.Integer => "int",
+            JTokenType.Float => "float",
+            JTokenType.Boolean => "bool",
+            JTokenType.Date => "datetime",
+            JTokenType.String => "string",
+            _ => "string" // 默认处理为字符串
+        };
     }
 
     /// -------------- Log Records ------------------

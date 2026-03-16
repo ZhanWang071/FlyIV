@@ -180,12 +180,18 @@ public class InteractionTracker : MonoBehaviour
             hits.Add(new
             {
                 hit_id = $"h{i}",
-                @object = hit.collider.gameObject.name,
+                @object = _currentlyPointedObject,
                 position = RoundVec3(hit.point),
                 normal = RoundVec3(hit.normal)
             });
         }
         return hits;
+    }
+
+    public string GetCurrentPointingObjectName()
+    {
+        var obj = GetPrimaryPointedObject();
+        return obj != null ? obj.name : "None";
     }
 
     private void DrawDebugRays()

@@ -19,6 +19,17 @@ public class Orchestrator : MonoBehaviour
     [SerializeField] private bool generateSequence = false;
     [SerializeField] private bool sequenceToExecutor = false;
 
+    [Header("Workflow Debug")]
+    [TextArea(3, 5)]
+    [SerializeField] private string userRequest = "";
+    [TextArea(2, 5)]
+    [SerializeField] private string identifiedObjects = "";
+    [TextArea(2, 5)]
+    [SerializeField] private string pointingObject = "";
+    [TextArea(5, 10)]
+    [SerializeField] private string userPrompt = "";
+    [TextArea(5, 10)]
+    [SerializeField] private string APICalls = "";
 
     private Task _vlmTask;
 
@@ -39,12 +50,21 @@ public class Orchestrator : MonoBehaviour
         // 语音结束时处理结果（VLM可能已完成）
         if (voiceSendtoVLM) sttHandler.OnTranscribeFinished += (speechText) => {
             _ = ProcessWorkflow(speechText);
+            userRequest = speechText; // 显示在Inspector中
         };
     }
 
     private void Update()
     {
         HandleInputAndLook();
+        pointingObject = interactionTracker.GetCurrentPointingObjectName();
+    }
+
+    [ContextMenu("Test Workflow")]
+    private void Test()
+    {
+        _ = ProcessWorkflow(userRequest);
+        _vlmTask = vlmHandler.IdentifyFocusedObject();
     }
 
     /// <summary>
@@ -62,6 +82,10 @@ public class Orchestrator : MonoBehaviour
 
         Debug.Log("<color=cyan>[Orchestrator] VLM 识别完成，开始发送user Prompt...</color>");
 
+        identifiedObjects = vlmHandler.identifiedObjects != null ?
+            string.Join(", ", vlmHandler.identifiedObjects) :
+            "None"; 
+            
         // 构建 user prompt JSON 数据
         var userPromptJson = new
         {
@@ -75,14 +99,13 @@ public class Orchestrator : MonoBehaviour
             hit_points = interactionTracker.GetHitPointsData(),
             user_request = speechText
         };
-        string userPrompt = JsonConvert.SerializeObject(userPromptJson, Formatting.Indented);
+        userPrompt = JsonConvert.SerializeObject(userPromptJson, Formatting.Indented);
 
-        string skillsResponse = "";
         // 输入LLM得到skill sequence
-        if (generateSequence) skillsResponse = await skillController.GenerateSkills(speechText, userPrompt);
+        if (generateSequence) APICalls = await skillController.GenerateSkills(speechText, userPrompt);
 
         // 执行skill sequence codes
-        if (sequenceToExecutor) await actionExecutor.ExecuteSkillSequence(skillsResponse);
+        if (sequenceToExecutor) await actionExecutor.ExecuteSkillSequence(APICalls);
     }
 
     private void HandleInputAndLook()

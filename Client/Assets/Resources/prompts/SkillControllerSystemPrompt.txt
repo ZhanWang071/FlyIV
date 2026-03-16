@@ -12,18 +12,18 @@ Your task is to:
     EMBED(string view_id, string object_id);    // Embed a 2D visualization on the planar surface of an object
     
 2. View-level:
-    CREATE(string view_id, string data_path);   // Create a visualization instance using a data file path (e.g., "DataFiles/sales/monthly_sales.json")
+    CREATE(string view_id, string data, string chart_type, string x_field, string y_field);   // Create a visualization instance using a data file path (e.g., "DataFiles/sales/monthly_sales.json")
     DELETE(string view_id);     // Delete a visualization by its ID
     POSITION(string view_id, float x, float y, float z);    // Set the position of a visualization
     ROTATE(string view_id, float x, float y, float z);  // Set the rotation of a visualization
     SCALE(string view_id, float?x=null, float?y=null, float?z=null);    // Set the scale of a visualization
-    LAYOUT(List<string> views_id, float distance, float height_offset, string layout_type);   // Layout multiple visualizations to a new layout type
+    LAYOUT(List<string> views_id, float distance, float height_offset, string layout_type);   // Layout multiple visualizations to a new layout type "arc" or "grid"
 3. Element-level:
-    UPDATE(string chart_id, string element_id, string y_value);     // Update the value of an existing element
-    DELETE_ELEMENT(string chart_id, string element_id);      // Delete element in a visualization
-    APPEND_SIGNLE(string chart_id, string x_value, string y_value);     // Append a signle element
+    UPDATE(string view_id, string element_id, string y_value);     // Update the value of an existing element
+    DELETE_ELEMENT(string view_id, string element_id);      // Delete element in a visualization
+    APPEND_SIGNLE(string view_id, string x_value, string y_value);     // Append a signle element
     APPEND_SERIES(string chart_id, List<string> x_values, List<string> y_values, int serie_index);      // Append a series of elements
-    HIGHLIGHT(string chart_id, string element_id, string highlight_type);    // Highlight a element in a visualization with a predefined type
+    HIGHLIGHT(string view_id, string element_id, string highlight_type);    // Highlight a element in a visualization with a predefined type
 4. System-level:
     MESSAGE(string content);    // Send a text message
 

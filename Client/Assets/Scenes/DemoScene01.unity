@@ -24154,11 +24154,11 @@ MonoBehaviour:
   promptPath: Prompts/SkillControllerSystemPrompt
   maxHistoryCount: 10
   availableDataFiles:
-  - file: DataFiles/sales/monthly_sales.json
+  - file: DxRData/sales/monthly_sales.json
     description: monthly sales data with product categories
-  - file: DataFiles/sales/quarterly_revenue.json
+  - file: DxRData/sales/quarterly_revenue.json
     description: quarterly revenue data by region
-  - file: DataFiles/education/student_scores.json
+  - file: DxRData/education/student_scores.json
     description: student test scores and grades
   lastResponse: 
   userinput: Create a visualization on the teacher desk
@@ -24206,6 +24206,11 @@ MonoBehaviour:
   voiceSendtoVLM: 1
   generateSequence: 1
   sequenceToExecutor: 0
+  userRequest: 
+  identifiedObjects: 
+  pointingObject: 
+  userPrompt: 
+  APICalls: 
 --- !u!114 &1687222473
 MonoBehaviour:
   m_ObjectHideFlags: 0
