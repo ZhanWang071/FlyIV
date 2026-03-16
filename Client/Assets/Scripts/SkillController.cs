@@ -25,9 +25,9 @@ public class SkillController : MonoBehaviour
     [Header("Data Configuration")]
     [SerializeField] private DataFileEntry[] availableDataFiles = new DataFileEntry[]
     {
-        new DataFileEntry("DxRData/sales/monthly_sales.json", "monthly sales data with product categories"),
-        new DataFileEntry("DxRData/sales/quarterly_revenue.json", "quarterly revenue data by region"),
-        new DataFileEntry("DxRData/education/student_scores.json", "student test scores and grades")
+        new DataFileEntry("sales/monthly_sales.json", "monthly sales data with product categories"),
+        new DataFileEntry("sales/quarterly_revenue.json", "quarterly revenue data by region"),
+        new DataFileEntry("education/student_scores.json", "student test scores and grades")
     };
 
     [Header("Debug")]
@@ -83,7 +83,7 @@ public class SkillController : MonoBehaviour
         _chatHistory.Add(new Message(Role.System, systemInstructions));
         
         Debug.Log("<color=orange>[SkillController] 新对话开启。</color>");
-        Debug.Log($"[SkillController] 已加载 {availableDataFiles.Length} 个数据文件。");
+        Debug.Log($"[SkillController] System Prompt:\n{systemInstructions}");
     }
 
     /// <summary>
@@ -200,7 +200,7 @@ public class SkillController : MonoBehaviour
         foreach (var entry in availableDataFiles)
         {
             // 1. 获取文件的绝对路径（假设 entry.file 是相对路径）
-            string filePath = Path.Combine(Application.streamingAssetsPath, entry.file);
+            string filePath = Path.Combine(Application.streamingAssetsPath, "DxRData", entry.file);
             string fieldsWithTypes = "Unknown Fields";
 
             try
@@ -252,7 +252,7 @@ public class SkillController : MonoBehaviour
         string json = JsonConvert.SerializeObject(dataInfoJson, Formatting.Indented);
         Debug.Log($"[SkillController] 构建的数据文件信息:\n{json}");
         
-        return $"## Available Data Files\nHere are available data files and their descriptions and select to use based on user input: {json}";
+        return $"## Available Data Files\nHere are available data files and their descriptions and select to use based on user request:\n {json}";
     }
 
     // 辅助函数：将 JTokenType 转换为 LLM 易懂的类型

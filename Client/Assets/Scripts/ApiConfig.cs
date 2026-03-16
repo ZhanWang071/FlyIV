@@ -13,7 +13,7 @@ public class ApiConfig : ScriptableObject
 
     [Header("Module Model Settings")]
     public string skillUrl = "https://vip.yi-zhan.top/v1/chat/completions";
-    public string skillModel = "gpt-4o-mini";
+    public string skillModel = "gemini-2.5-flash";
     public string vlmModel = "gpt-4o-mini";
     public string sttModel = "gpt-4o-mini-transcribe";
     public string llmModel = "gemini-2.5-flash";

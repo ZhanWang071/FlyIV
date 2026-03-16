@@ -75,7 +75,7 @@ public class Embed
                 faceNormal = bestAxis;
             }
             Vector3 faceCenter = b.center + Vector3.Scale(faceNormal.normalized, b.extents);
-            canvasRect.position = faceCenter + (hitNormal * 0.02f); // 防止 Z-Fighting 的微小偏移
+            canvasRect.position = faceCenter - (hitNormal * 0.02f); // 防止 Z-Fighting 的微小偏移
             canvasRect.rotation = Quaternion.LookRotation(-faceNormal);
 
         

@@ -5,6 +5,19 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - DxRVis
+  - DxRGuides
+  - DxRView
+  - DxRInteractions
+  - DxRGUI
+  - DxRMarks
+  - DxRAnchor
+  - CinemachineTarget
+  - FixedMarkPart
+  - DxRTooltip
+  - Visualization
+  - Visualization_2D
+  - Visualization_3D
   layers:
   - Default
   - TransparentFX
@@ -12,7 +25,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Interactable
   - 
   - 
   - 

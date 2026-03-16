@@ -48,6 +48,7 @@ public class ActionExecutor : MonoBehaviour
         Debug.Log($"[ActionExecutor] 执行skill sequence: {skillOutput}");
 
         skillSequence = skillOutput;
+        executeCodes = "";
         // 如果分号后面有空格，则删除这些空格（例如: "); CREATE(...)" -> ");CREATE(...)"）
         // skillOutput = skillOutput.Replace("; ", ";");
         // 正则表达式匹配：函数名(所有参数内容)
@@ -61,6 +62,36 @@ public class ActionExecutor : MonoBehaviour
             string rawFuncName = match.Groups[1].Value; // 例如: ORIENT_TO
             string rawArgs = match.Groups[2].Value;    // 例如: "barchart_01", "user"
 
+            // --- 新增：针对 CREATE 函数的自动路由与清洗逻辑 ---
+            if (rawFuncName.ToUpper() == "CREATE")
+            {
+                // 解析参数（这里假设参数是用逗号分隔的，且 chart_type 是第 3 个参数）
+                // 注意：复杂的参数解析建议使用更健壮的 CSV 解析逻辑，这里简化处理
+                string[] argsArray = ParseArgs(rawArgs);
+                if (argsArray.Length >= 3)
+                {
+                    string chartType = argsArray[2].Trim('\"', ' ');
+
+                    if (chartType.Contains("2d"))
+                    {
+                        skillsFolderPath = SkillFolderOption.XCharts;
+                        Debug.Log("[ActionExecutor] 自动切换至 XCharts 模式");
+                    }
+                    else if (chartType.Contains("3d"))
+                    {
+                        skillsFolderPath = SkillFolderOption.DxR;
+                        Debug.Log("[ActionExecutor] 自动切换至 DxR 模式");
+                    }
+
+                    // 修改 chart_type：删除 "2d_" 或 "3d_" 前缀
+                    string cleanedChartType = Regex.Replace(chartType, @"^[23][dD]_?", "");
+                    argsArray[2] = $"\"{cleanedChartType}\""; // 重新放回双引号
+
+                    // 重新拼接参数字符串
+                    rawArgs = string.Join(", ", argsArray);
+                }
+            }
+
             // 1. 转换名称格式: ORIENT_TO -> OrientTo / CREATE -> Create
             string className = FormatClassName(rawFuncName);
 
@@ -69,6 +100,12 @@ public class ActionExecutor : MonoBehaviour
             Debug.Log($"[ActionExecutor] 执行skill: {className}.Execute({rawArgs})");
             await RunDynamicSkill(className, rawArgs);
         }
+    }
+
+    private string[] ParseArgs(string args)
+    {
+        // 这个简单的正则处理引号内的逗号，防止 List<string> 或字符串内容导致分割错误
+        return Regex.Split(args, @",(?=(?:[^""]*""[^""]*"")*[^""]*$)");
     }
 
     private string FormatClassName(string rawName)
@@ -107,7 +144,8 @@ public class ActionExecutor : MonoBehaviour
                 typeof(System.Linq.Enumerable).Assembly,
                 typeof(Newtonsoft.Json.JsonConvert).Assembly,
                 typeof(UnityEngine.Physics).Assembly,
-                typeof(SimpleJSON.JSON).Assembly
+                typeof(SimpleJSON.JSON).Assembly,
+                typeof(System.Text.RegularExpressions.Regex).Assembly
             };
 
             var sharedImports = new[]
@@ -122,7 +160,8 @@ public class ActionExecutor : MonoBehaviour
                 "UnityEngine.UI",
                 "SimpleJSON",
                 "Newtonsoft.Json",
-                "Newtonsoft.Json.Linq"
+                "Newtonsoft.Json.Linq",
+                "System.Text.RegularExpressions"
             };
 
             var (extraAssembly, extraImport) = skillsFolderPath switch

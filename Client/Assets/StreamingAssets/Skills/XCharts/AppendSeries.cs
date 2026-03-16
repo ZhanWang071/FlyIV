@@ -1,6 +1,6 @@
 public class AppendSeries
 {
-    public static void Execute(
+    private static void Execute(
         string chart_id,
         List<string> x_values,
         List<string> y_values,
@@ -22,6 +22,47 @@ public class AppendSeries
                   $"elements to serie {serieIndex} on chart '{chart_id}'.");
 
         chart.RefreshChart();
+    }
+
+    public static void Execute(string chart_id, string data, string x_field, string y_field, string serieType)
+    {
+        Debug.Log("Executing AppendSeriesSkill logic...");
+
+        string fullPath = Path.Combine(Application.streamingAssetsPath, "DxRData", data);
+
+        // 2. 读取并解析 JSON
+        string jsonContent = File.ReadAllText(fullPath);
+        JArray dataArray = JArray.Parse(jsonContent);
+
+        if (dataArray.Count == 0)
+        {
+            Debug.LogWarning("AppendSeriesSkill: Data file is empty.");
+            return;
+        }
+
+        List<string> x_values = new List<string>();
+        List<string> y_values = new List<string>();
+
+        // 3. 提取字段数据
+        foreach (var item in dataArray)
+        {
+            // 获取 X 轴字段（如姓名），如果找不到则用索引代替
+            string xVal = item[x_field]?.ToString() ?? "";
+            // 获取 Y 轴字段（如英语成绩）
+            string yVal = item[y_field]?.ToString() ?? "0";
+
+            x_values.Add(xVal);
+            y_values.Add(yVal);
+        }
+
+        // 4. 确定新系列的索引
+        // 查找到图表后，将新系列放在当前系列列表的末尾
+        BaseChart chart = FindChart(chart_id);
+        if (chart == null) return;
+        int newSerieIndex = chart.series.Count;
+
+        // 5. 复用现有的逻辑进行数据追加
+        Execute(chart_id, x_values, y_values, newSerieIndex, serieType);
     }
 
     // -------------------------------------------------------------------------
@@ -69,7 +110,14 @@ public class AppendSeries
 
         BaseChart chart = chartObject.GetComponent<BaseChart>();
         if (chart == null)
-            Debug.LogWarning($"AppendSeriesSkill: GameObject '{chart_id}' does not have a BaseChart component.");
+        {
+            chart = chartObject.GetComponentInChildren<BaseChart>(true);
+        }
+
+        if (chart == null)
+        {
+            Debug.LogWarning($"AppendSeriesSkill: GameObject '{chart_id}' or its children do not have a BaseChart component.");
+        }
 
         return chart;
     }

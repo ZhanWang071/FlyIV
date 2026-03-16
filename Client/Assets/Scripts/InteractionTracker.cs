@@ -15,6 +15,7 @@ public class InteractionTracker : MonoBehaviour
     [Header("Raycast Settings")]
     public float maxDistance = 10f;
     public LayerMask interactableLayer = ~0; // 默认检测所有层
+    public LayerMask visLayerMask;
 
     [Header("Debug")]
     public bool showDebugRay = true;
@@ -64,6 +65,12 @@ public class InteractionTracker : MonoBehaviour
     {
         if (pointer == null) return null;
 
+        if (Physics.Raycast(pointer.position, pointer.forward, out RaycastHit hit_vis, maxDistance, visLayerMask))
+        {
+            _currentHit = hit_vis;
+            return GetFirstLevelChild(hit_vis.collider.gameObject);
+        }
+
         if (Physics.Raycast(pointer.position, pointer.forward, out RaycastHit hit, maxDistance, interactableLayer))
         {
             // 记录本次命中的详细信息，供 Update 中使用
@@ -86,24 +93,38 @@ public class InteractionTracker : MonoBehaviour
     private GameObject GetFirstLevelChild(GameObject hitObject)
     {
         if (hitObject == null) return null;
-        
-        GameObject sceneRoot = GetSceneRoot();
-        if (sceneRoot == null) return hitObject; // 如果找不到场景根，返回原物体
 
-        // 向上遍历直到找到第一层物体（其父物体是 sceneRoot）
+        GameObject sceneRoot = GetSceneRoot();
+        GameObject visRoot = GameObject.Find("VisObject"); // 寻找可视化物体的根容器
+
         Transform current = hitObject.transform;
-        while (current != null && current.parent != sceneRoot.transform && current.parent != null)
+
+        // 向上遍历层级树
+        while (current != null)
         {
+            // 策略 A: 如果物体本身带有可视化标签，它就是我们要找的“逻辑主体”
+            // 这样即使它是 VisObject 内部很深的子物体，也能被正确捕获
+            if (current.CompareTag("Visualization_2D") || current.CompareTag("Visualization_3D"))
+            {
+                return current.gameObject;
+            }
+
+            // 策略 B: 检查是否到达了场景根的第一层
+            if (sceneRoot != null && current.parent == sceneRoot.transform)
+            {
+                return current.gameObject;
+            }
+
+            if (visRoot != null && current.parent == visRoot.transform)
+            {
+                return current.gameObject;
+            }
+
+            // 继续向上追溯
             current = current.parent;
         }
 
-        // 检查是否找到了第一层物体
-        if (current != null && current.parent == sceneRoot.transform)
-        {
-            return current.gameObject;
-        }
-
-        // 如果没找到，返回原物体
+        // 如果都没有匹配到，返回原始碰撞物体（可能是静态环境物体）
         return hitObject;
     }
 
@@ -168,23 +189,35 @@ public class InteractionTracker : MonoBehaviour
     public List<object> GetHitPointsData()
     {
         List<object> hits = new List<object>();
-        for (int i = 0; i < _recordedHitDetails.Count; i++)
-        {
-            var hit = _recordedHitDetails[i];
-            // Helper function to round Vector3 to two decimal places
-            Vector3 RoundVec3(Vector3 v) => new Vector3(
-                (float)Math.Round(v.x, 2),
-                (float)Math.Round(v.y, 2),
-                (float)Math.Round(v.z, 2)
-            );
+        if (_recordedHitDetails.Count > 0){
+            for (int i = 0; i < _recordedHitDetails.Count; i++)
+            {
+                var hit = _recordedHitDetails[i];
+                // Helper function to round Vector3 to two decimal places
+                Vector3 RoundVec3(Vector3 v) => new Vector3(
+                    (float)Math.Round(v.x, 2),
+                    (float)Math.Round(v.y, 2),
+                    (float)Math.Round(v.z, 2)
+                );
+                hits.Add(new
+                {
+                    hit_id = $"h{i}",
+                    @object = hit.collider.gameObject.name,
+                    position = RoundVec3(hit.point),
+                    normal = RoundVec3(hit.normal)
+                });
+            }
+        }
+        else{
             hits.Add(new
             {
-                hit_id = $"h{i}",
-                @object = _currentlyPointedObject,
-                position = RoundVec3(hit.point),
-                normal = RoundVec3(hit.normal)
+                hit_id = "h0",
+                @object = _currentlyPointedObject.name,
+                position = _currentHit.point,
+                normal = _currentHit.normal,
             });
         }
+        
         return hits;
     }
 

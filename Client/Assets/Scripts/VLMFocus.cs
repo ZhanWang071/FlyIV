@@ -190,22 +190,33 @@ public class VLMFocus : MonoBehaviour
         // 2. 根据当前场景类型获取对应的GameObject，然后扫描其所有子物体
         List<string> visibleObjects = new List<string>();
         GameObject sceneRoot = GetSceneRoot();
-        
-        if (sceneRoot == null)
+
+        List<GameObject> combinedObjects = new List<GameObject>();
+
+        if (sceneRoot != null)
+        {
+            var rootChildren = sceneRoot.GetComponentsInChildren<Transform>(includeInactive: false)
+                .Where(t => t.parent == sceneRoot.transform)
+                .Select(t => t.gameObject);
+
+            combinedObjects.AddRange(rootChildren);
+        }
+        else
         {
             Debug.LogWarning("[VLMFocus] 无法获取当前场景的根GameObject");
-            return;
         }
-        
-        // 获取该GameObject的所有第一层子物体（不包括自身）
-        GameObject[] allGameObjects = sceneRoot.GetComponentsInChildren<Transform>(includeInactive: false)
-            .Where(t => t.parent == sceneRoot.transform)
-            .Select(t => t.gameObject)
-            .ToArray();
 
-        Debug.Log($"[VLMFocus] 无VLM方式检测完成，识别到场景中有{allGameObjects.Length} 个物体");
+        // 扫描所有动态生成的可视化物体 (Tag-based)
+        // 获取所有 2D 可视化物体
+        GameObject[] vis2D = GameObject.FindGameObjectsWithTag("Visualization_2D");
+        // 获取所有 3D 可视化物体
+        GameObject[] vis3D = GameObject.FindGameObjectsWithTag("Visualization_3D");
+        combinedObjects.AddRange(vis2D);
+        combinedObjects.AddRange(vis3D);
 
-        foreach (var go in allGameObjects)
+        Debug.Log($"[VLMFocus] 无VLM方式检测完成，识别到场景中有{combinedObjects.Count} 个物体");
+
+        foreach (var go in combinedObjects)
         {
             // 检查是否在排除列表中
             if (excludedObjectNames.Contains(go.name))
@@ -226,7 +237,8 @@ public class VLMFocus : MonoBehaviour
         // 3. 去重并更新识别结果
         identifiedObjects = visibleObjects.Distinct().ToList();
         
-        Debug.Log($"[VLMFocus] 无VLM方式检测完成，识别到 {identifiedObjects.Count} 个物体");
+        Debug.Log($"[VLMFocus] 检测完成。场景基础物体: {combinedObjects.Count - vis2D.Length - vis3D.Length} 个，" +
+          $"可视化物体: {vis2D.Length + vis3D.Length} 个。总计: {visibleObjects.Count} 个唯一物体。");
         
         // 4. 获取几何数据并触发完成事件
         if (identifiedObjects.Count > 0)
@@ -474,40 +486,37 @@ public class VLMFocus : MonoBehaviour
     /// </summary>
     private Bounds? GetCombinedBounds(GameObject go)
     {
-        List<Renderer> renderers = new List<Renderer>();
-
-        // 检查自身是否有 Renderer
-        Renderer selfRenderer = go.GetComponent<Renderer>();
-        if (selfRenderer != null)
+        // 1. 尝试获取 Renderer (针对 3D 物体)
+        Renderer[] renderers = go.GetComponentsInChildren<Renderer>();
+        if (renderers.Length > 0)
         {
-            renderers.Add(selfRenderer);
+            Bounds b = renderers[0].bounds;
+            for (int i = 1; i < renderers.Length; i++) b.Encapsulate(renderers[i].bounds);
+            return b;
         }
 
-        // 查找所有子对象中的 Renderer
-        Renderer[] childRenderers = go.GetComponentsInChildren<Renderer>();
-        foreach (Renderer childRenderer in childRenderers)
+        // 2. 尝试获取 Collider (针对你手动加了 BoxCollider 的 Canvas)
+        Collider[] colliders = go.GetComponentsInChildren<Collider>();
+        if (colliders.Length > 0)
         {
-            // 排除自身（如果自身有 Renderer，已经在上面添加了）
-            if (childRenderer != selfRenderer)
-            {
-                renderers.Add(childRenderer);
-            }
+            Bounds b = colliders[0].bounds;
+            for (int i = 1; i < colliders.Length; i++) b.Encapsulate(colliders[i].bounds);
+            return b;
         }
 
-        // 如果没有找到任何 Renderer，返回 null
-        if (renderers.Count == 0)
+        // 3. 针对纯 UI 元素 (如果没有 Collider)
+        RectTransform rectTransform = go.GetComponent<RectTransform>();
+        if (rectTransform != null)
         {
-            return null;
+            // 将 RectTransform 的四个角转换为世界坐标来计算 Bounds
+            Vector3[] corners = new Vector3[4];
+            rectTransform.GetWorldCorners(corners);
+            Bounds b = new Bounds(corners[0], Vector3.zero);
+            for (int i = 1; i < 4; i++) b.Encapsulate(corners[i]);
+            return b;
         }
 
-        // 合并所有 Renderer 的边界
-        Bounds combinedBounds = renderers[0].bounds;
-        for (int i = 1; i < renderers.Count; i++)
-        {
-            combinedBounds.Encapsulate(renderers[i].bounds);
-        }
-
-        return combinedBounds;
+        return null;
     }
 
     /// <summary>

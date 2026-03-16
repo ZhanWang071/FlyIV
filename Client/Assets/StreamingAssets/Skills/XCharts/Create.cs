@@ -29,6 +29,9 @@ public class Create
 
         // --- Build Canvas ---
         GameObject canvasObj = new GameObject(view_id);
+        canvasObj.tag = "Visualization_2D";
+        GameObject parentContainer = GameObject.Find("VisObject");
+        canvasObj.transform.SetParent(parentContainer.transform);
         Canvas canvas = canvasObj.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.WorldSpace;
         canvasObj.AddComponent<CanvasScaler>();
@@ -80,6 +83,50 @@ public class Create
 
         Debug.Log($"CreateSkill completed. Chart '{view_id}' created with type " +
                   $"'{chart_type}', {dataArray.Count} data points.");
+
+        AddColliderToCanvas(canvasObj);
+        canvasObj.layer = LayerMask.NameToLayer("Interactable");
+        SetCanvasCamera(canvasObj);
+    }
+
+    private static void SetCanvasCamera(GameObject canvasObj)
+    {
+        // 1. 获取 Canvas 组件
+        Canvas canvas = canvasObj.GetComponent<Canvas>();
+        if (canvas == null) return;
+
+        // 2. 确保 RenderMode 是 WorldSpace，否则设置 Camera 没有意义
+        canvas.renderMode = RenderMode.WorldSpace;
+
+        // 3. 将世界相机指定为主相机
+        canvas.worldCamera = Camera.main;
+    }
+
+    private static void AddColliderToCanvas(GameObject canvasObj)
+    {
+        // 1. 确保物体拥有 RectTransform（Canvas 物体通常自带）
+        RectTransform rectTransform = canvasObj.GetComponent<RectTransform>();
+        if (rectTransform == null) return;
+
+        // 2. 添加或获取 BoxCollider 组件
+        BoxCollider collider = canvasObj.GetComponent<BoxCollider>();
+        if (collider == null)
+        {
+            collider = canvasObj.AddComponent<BoxCollider>();
+        }
+
+        // 3. 将 RectTransform 的尺寸同步给 Collider
+        // sizeDelta 对应 UI 的宽高，Z 轴通常给一个微小的厚度（如 0.01f）
+        collider.size = new Vector3(rectTransform.rect.width, rectTransform.rect.height, 0.01f);
+
+        // 4. 处理中心点偏移
+        // RectTransform 的 pivot 可能不在中心，需要根据 pivot 调整 collider 的 center
+        Vector2 pivot = rectTransform.pivot;
+        collider.center = new Vector3(
+            (0.5f - pivot.x) * rectTransform.rect.width,
+            (0.5f - pivot.y) * rectTransform.rect.height,
+            0f
+        );
     }
 
     // -------------------------------------------------------------------------
@@ -110,7 +157,15 @@ public class Create
     private static void AddCommonComponents(BaseChart chart, string view_id)
     {
         chart.EnsureChartComponent<Title>().show = true;
-        chart.EnsureChartComponent<Title>().text = view_id;
+
+        // 1. 处理下划线：将 "_" 替换为空格
+        string title = view_id.Replace("_", " ");
+        // 2. 处理大驼峰：在小写字母和大写字母之间插入空格
+        // 例如：MonthlySales -> Monthly Sales
+        title = Regex.Replace(title, "([a-z])([A-Z])", "$1 $2");
+        // 3. 处理连续大写字母的情况（可选）：如 XMLParser -> XML Parser
+        title = Regex.Replace(title, "([A-Z])([A-Z][a-z])", "$1 $2");
+        chart.EnsureChartComponent<Title>().text = title;
         chart.EnsureChartComponent<Tooltip>().show = true;
         // chart.EnsureChartComponent<Legend>().show = true;
     }
@@ -131,6 +186,8 @@ public class Create
         xAxis.splitNumber = 0;
         xAxis.boundaryGap = true;
         xAxis.data.Clear();
+
+        xAxis.axisTick.alignWithLabel = true;
 
         YAxis yAxis = chart.EnsureChartComponent<YAxis>();
         yAxis.show = true;
@@ -157,6 +214,7 @@ public class Create
                 break;
         }
 
+        xAxis.splitNumber = dataArray.Count;
         for (int i = 0; i < dataArray.Count; i++)
         {
             JSONNode item = dataArray[i];

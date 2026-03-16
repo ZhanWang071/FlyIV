@@ -1,0 +1,23 @@
+{
+  "data" : {
+    "url" : "DxRData/education/student_scores.json"
+  },
+  "mark" : "cube",
+  "encoding" : {
+    "x" : {
+      "field" : "student_id",
+      "type" : "nominal"
+    },
+    "y" : {
+      "field" : "math_score",
+      "type" : "quantitative"
+    },
+    "height" : {
+      "field" : "math_score",
+      "type" : "quantitative"
+    },
+    "yoffsetpct" : {
+      "value" : -0.5
+    }
+  }
+}

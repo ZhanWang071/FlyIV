@@ -188,5 +188,9 @@ public class Create
 
         Debug.Log("CreateSkill completed: view=" + view_id + " data=" + data_path
             + " chartType=" + chartTypeLower + " x=" + x_field + " y=" + y_field);
+
+        existingObj.tag = "Visualization_3D";
+        GameObject parentContainer = GameObject.Find("VisObject");
+        existingObj.transform.SetParent(parentContainer.transform);
     }
 }
