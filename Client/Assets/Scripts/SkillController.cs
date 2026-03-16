@@ -37,6 +37,7 @@ public class SkillController : MonoBehaviour
     private List<Message> _chatHistory = new List<Message>();
 
     // 日志文件路径
+    [SerializeField] private bool logToFile = false; // 是否将关系检测结果记录到日志文件
     private static string _currentLogFilePath;
     private static readonly object _logLock = new object();
 
@@ -112,7 +113,7 @@ public class SkillController : MonoBehaviour
 
             Debug.Log($"<color=orange>[SkillController] LLM response:\n{llmOutput}</color=orange>");
 
-            LogSkillResult(userPrompt, llmOutput);
+            if (logToFile) LogSkillResult(userPrompt, llmOutput);
 
             return llmOutput;
         }

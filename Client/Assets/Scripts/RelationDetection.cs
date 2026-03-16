@@ -36,6 +36,8 @@ public class RelationDetection : MonoBehaviour
     [Tooltip("这里会实时显示最近一次的关系检测结果")]
     [TextArea(10, 20)] public string relationDataJSON;
 
+    [SerializeField] private bool logToFile = false; // 是否将关系检测结果记录到日志文件
+
     private static readonly object _logLock = new object();
     // --- 数据结构定义 ---
 
@@ -150,7 +152,7 @@ public class RelationDetection : MonoBehaviour
         string result = GetRelationData(objectsDataJSON);
 
         Debug.Log($"[RelationDetection] 关系检测完成，记录到Log文件");
-        LogRelationData(result);  
+        if (logToFile) LogRelationData(result);  
     }
 
     // --- User Node Generation ---
@@ -453,7 +455,7 @@ public class RelationDetection : MonoBehaviour
     {
         string inputJson = vlmHandler.objectsDataDisplay;
         string outputJson = GetRelationData(inputJson);
-        LogRelationData(outputJson);  
+        if (logToFile) LogRelationData(outputJson);
     }
 
     /// <summary>
@@ -476,7 +478,6 @@ public class RelationDetection : MonoBehaviour
                     writer.WriteLine($"--- Relation Detection Result ---");
                     writer.WriteLine(relationDataJSON);
                     writer.WriteLine();
-                    Debug.Log($"[RelationDetection] 关系检测完成，记录到Log文件");
                 }
             }
             catch (Exception e)
