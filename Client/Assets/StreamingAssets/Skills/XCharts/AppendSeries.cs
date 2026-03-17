@@ -5,7 +5,8 @@ public class AppendSeries
         List<string> x_values,
         List<string> y_values,
         int serieIndex,
-        string serieType)
+        string serieType,
+        string y_field)
     {
         Debug.Log("Executing AppendSeriesSkill logic...");
 
@@ -14,7 +15,7 @@ public class AppendSeries
         BaseChart chart = FindChart(chart_id);
         if (chart == null) return;
 
-        if (EnsureSerieExists(chart, serieIndex, serieType) == null) return;
+        if (EnsureSerieExists(chart, serieIndex, serieType, y_field) == null) return;
 
         int appendedCount = AppendData(chart, x_values, y_values, serieIndex);
 
@@ -62,7 +63,7 @@ public class AppendSeries
         int newSerieIndex = chart.series.Count;
 
         // 5. 复用现有的逻辑进行数据追加
-        Execute(chart_id, x_values, y_values, newSerieIndex, serieType);
+        Execute(chart_id, x_values, y_values, newSerieIndex, serieType, y_field);
     }
 
     // -------------------------------------------------------------------------
@@ -126,7 +127,7 @@ public class AppendSeries
     // Serie Management
     // -------------------------------------------------------------------------
 
-    private static Serie EnsureSerieExists(BaseChart chart, int serieIndex, string serieType)
+    private static Serie EnsureSerieExists(BaseChart chart, int serieIndex, string serieType, string y_field)
     {
         Serie serie = chart.GetSerie(serieIndex);
         if (serie != null) return serie;
@@ -137,7 +138,7 @@ public class AppendSeries
 
         for (int s = 0; s < seriesToCreate; s++)
         {
-            string serieName = "serie" + (currentCount + s);
+            string serieName = y_field;
             bool isTarget = s == seriesToCreate - 1;
 
             if (isTarget && normalizedType == "bar")

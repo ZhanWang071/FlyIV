@@ -24,11 +24,11 @@ public partial class UserStudyController : MonoBehaviour
         UpdateScene();
     }
 
-    // private void OnValidate()
-    // {
-    //     // 确保在编辑器模式下也能预览切换效果
-    //     UpdateScene();
-    // }
+    private void OnValidate()
+    {
+        // 确保在编辑器模式下也能预览切换效果
+        UpdateScene();
+    }
 
     public void UpdateScene()
     {

@@ -31,6 +31,7 @@ public class VLMFocus : MonoBehaviour
 
     [Header("Debug")]
     [Tooltip("这里会实时显示最近一次的VLM检测结果")]
+    public bool logTofile = false;
     public List<string> identifiedObjects = new List<string> { "TestCube" };
     
     [TextArea(10, 20)]
@@ -320,6 +321,8 @@ public class VLMFocus : MonoBehaviour
             case UserStudyController.SceneType.City:
                 // City 场景特定的排除物体
                 // 可根据需要添加
+                excludedObjectNames.Add("floor");
+                excludedObjectNames.Add("Wall");
                 break;
 
             default:
@@ -475,7 +478,7 @@ public class VLMFocus : MonoBehaviour
         objectsDataDisplay = JsonConvert.SerializeObject(objectsData, Formatting.Indented);
         
         // 记录 identifiedObjects, objectsDataDisplay 到日志文件
-        LogVLMResult();
+        if (logTofile) LogVLMResult();
 
         // 为了保持返回类型兼容，转换为List<object>
         return objectsData.Cast<object>().ToList();

@@ -22,11 +22,12 @@ public class SkillController : MonoBehaviour
     [SerializeField] private string promptPath = "Prompts/SkillControllerSystemPrompt"; // 存放 System Prompt
     [SerializeField] [Range(1, 20)] private int maxHistoryCount = 10;
 
+    [Header("Scene Configuration")]
+    [SerializeField] private UserStudyController userStudyController; // 引用场景控制器
+
     [Header("Data Configuration")]
     [SerializeField] private DataFileEntry[] availableDataFiles = new DataFileEntry[]
     {
-        new DataFileEntry("sales/monthly_sales.json", "monthly sales data with product categories"),
-        new DataFileEntry("sales/quarterly_revenue.json", "quarterly revenue data by region"),
         new DataFileEntry("education/student_scores.json", "student test scores and grades")
     };
 
@@ -61,7 +62,57 @@ public class SkillController : MonoBehaviour
     {
         openaiClient = new OpenAIClient(ApiConfig.Instance.Auth, ApiConfig.Instance.Settings);
         
+        // 自动查找UserStudyController（如果未手动赋值）
+        if (userStudyController == null)
+        {
+            userStudyController = FindObjectOfType<UserStudyController>();
+        }
+        
+        // 根据场景类型更新可用数据文件
+        UpdateAvailableDataFiles();
+        
         ResetConversation();
+    }
+
+    /// <summary>
+    /// 根据当前场景类型更新可用的数据文件列表
+    /// </summary>
+    public void UpdateAvailableDataFiles()
+    {
+        if (userStudyController == null)
+        {
+            Debug.LogWarning("[SkillController] UserStudyController未设置, 使用默认数据文件配置");
+            return;
+        }
+
+        switch (userStudyController.currentScene)
+        {
+            case UserStudyController.SceneType.Classroom:
+                availableDataFiles = new DataFileEntry[]
+                {
+                    new DataFileEntry("education/student_scores.json", "student test scores and grades")
+                };
+                Debug.Log("[SkillController] 场景类型Classroom - 加载学生成绩数据");
+                break;
+
+            case UserStudyController.SceneType.City:
+                // 创建包含所有18栋建筑的数据文件数组
+                var cityDataFiles = new DataFileEntry[18];
+                for (int i = 0; i < 18; i++)
+                {
+                    int buildingNum = i + 1;
+                    string fileName = $"city/building_{buildingNum:D3}.json";
+                    string description = $"building {buildingNum:D3} utility data including electricity, water, gas, and footfall for one day";
+                    cityDataFiles[i] = new DataFileEntry(fileName, description);
+                }
+                availableDataFiles = cityDataFiles;
+                Debug.Log("[SkillController] 场景类型City - 加载18栋建筑的数据文件");
+                break;
+
+            default:
+                Debug.LogWarning("[SkillController] 未知场景类型，保持当前数据文件配置");
+                break;
+        }
     }
 
     /// <summary>
@@ -72,6 +123,9 @@ public class SkillController : MonoBehaviour
     {
         _chatHistory.Clear();
         lastResponse = null;
+        
+        // 根据场景类型更新数据文件（确保每次重置对话时都使用正确的数据）
+        UpdateAvailableDataFiles();
         
         // 从 Resources 加载指令作为 System Prompt
         string systemInstructions = LoadPromptFile();

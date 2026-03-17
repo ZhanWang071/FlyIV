@@ -6,7 +6,7 @@ public class DeskOrganizerEditor : EditorWindow
 {
     [MenuItem("Tools/FlyIV/Organize Student Desks")]
     public static void OrganizeDesks()
-    {
+    {   
         // 1. 找到 Classroom 根物体
         GameObject classroom = GameObject.Find("Classroom");
         if (classroom == null)
@@ -37,6 +37,19 @@ public class DeskOrganizerEditor : EditorWindow
             }
         }
         Debug.Log($"整理完成！共处理了 {count} 个座位。");
+    }
+
+    [MenuItem("Tools/FlyIV/Parser Prefab")]
+    public static void ParserPrefab()
+    {
+        GameObject target = GameObject.Find("City");
+        if (PrefabUtility.IsPartOfPrefabInstance(target))
+        {
+            // Completely: 解除所有层级关联
+            // InteractionMode.AutomatedAction: 自动执行，不弹出确认框
+            PrefabUtility.UnpackPrefabInstance(target, PrefabUnpackMode.Completely, InteractionMode.AutomatedAction);
+            Debug.Log($"[FlyIV] 已成功解包 Prefab 实例: {target.name}");
+        }
     }
 
     private static int ExtractNumber(string name)

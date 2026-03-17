@@ -1,0 +1,44 @@
+[
+    {
+        "time": "00:00",
+        "electricity": 155,
+        "water": 23,
+        "gas": 6,
+        "footfall": 0
+    },
+    {
+        "time": "04:00",
+        "electricity": 125,
+        "water": 17,
+        "gas": 5,
+        "footfall": 1
+    },
+    {
+        "time": "08:00",
+        "electricity": 610,
+        "water": 158,
+        "gas": 33,
+        "footfall": 47
+    },
+    {
+        "time": "12:00",
+        "electricity": 2180,
+        "water": 890,
+        "gas": 350,
+        "footfall": 1260
+    },
+    {
+        "time": "16:00",
+        "electricity": 2020,
+        "water": 760,
+        "gas": 295,
+        "footfall": 1000
+    },
+    {
+        "time": "20:00",
+        "electricity": 2480,
+        "water": 930,
+        "gas": 475,
+        "footfall": 1580
+    }
+]
