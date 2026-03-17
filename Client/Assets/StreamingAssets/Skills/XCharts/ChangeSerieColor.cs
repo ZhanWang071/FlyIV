@@ -1,4 +1,4 @@
-public class ChangeColor
+public class ChangeSerieColor
 {
     /// <summary>
     /// Change the color of ALL SerieData in the serie that matches field_name.
@@ -32,14 +32,22 @@ public class ChangeColor
             return;
         }
 
-        
+        // 3. Parse the target color
+        Color targetColor;
+        if (!ColorUtility.TryParseHtmlString(color, out targetColor))
+        {
+            Debug.LogWarning(string.Format(
+                "ChangeTypeColorSkill: Failed to parse color string '{0}'. Use hex format like '#ff0000'.",
+                color));
+            return;
+        }
 
         // 2. Find the target serie by field_name (serie.serieName)
         Serie targetSerie = null;
         for (int i = 0; i < chart.series.Count; i++)
         {
             Serie s = chart.GetSerie(i);
-            if (s != null && s.serieName == field_name)
+            if (s != null && Normalize(s.serieName) == Normalize(field_name))
             {
                 targetSerie = s;
                 break;
@@ -54,16 +62,6 @@ public class ChangeColor
             return;
         }
 
-        // 3. Parse the target color
-        Color targetColor;
-        if (!ColorUtility.TryParseHtmlString(color, out targetColor))
-        {
-            Debug.LogWarning(string.Format(
-                "ChangeTypeColorSkill: Failed to parse color string '{0}'. Use hex format like '#ff0000'.",
-                color));
-            return;
-        }
-
         targetSerie.itemStyle.color = targetColor;
 
         // 4. Traverse ALL SerieData in the serie and apply color
@@ -74,11 +72,23 @@ public class ChangeColor
                 field_name));
             return;
         }
-        
+
         chart.RefreshChart();
 
         Debug.Log(string.Format(
             "[ChangeTypeColorSkill] Done. {0} data point(s) in serie '{1}' updated.",
             targetSerie.dataCount, field_name));
+    }
+
+    public static string Normalize(string input)
+    {
+        if (string.IsNullOrEmpty(input)) return string.Empty;
+
+        // 使用正则移除所有非字母数字字符
+        // \W 匹配任何非单词字符（等价于 [^a-zA-Z0-9_]）
+        // 为了彻底移除下划线，我们手动指定 [^a-zA-Z0-9]
+        string normalized = Regex.Replace(input, @"[^a-zA-Z0-9]", "");
+
+        return normalized.ToLower();
     }
 }

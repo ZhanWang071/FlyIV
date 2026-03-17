@@ -1,44 +1,40 @@
 public class OrientTo
 {
-    // 定义最大倾斜角度（例如 30 度）
-    private static float maxPitchAngle = 30f;
+    private static float maxPitchAngle = 30f; // 最大允许偏转 30 度
 
     public static void Execute(string object_name, string target_name)
     {
         GameObject actor = GameObject.Find(object_name);
         if (actor == null) return;
 
-        Vector3 targetPos = (target_name.ToLower() == "user") 
-            ? Camera.main.transform.position 
+        Vector3 targetPos = (target_name.ToLower() == "user")
+            ? Camera.main.transform.position
             : GameObject.Find(target_name)?.transform.position ?? actor.transform.position;
 
         if (targetPos == actor.transform.position) return;
 
-        // 1. 获取目标方向的完整旋转
+        // 1. 计算方向向量
         Vector3 direction = targetPos - actor.transform.position;
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-        // 2. 提取欧拉角进行限制
-        Vector3 angles = targetRotation.eulerAngles;
+        // 2. 计算水平方向的投影 (只包含 X 和 Z)
+        Vector3 horizontalDir = new Vector3(direction.x, 0, direction.z);
 
-        // Unity 的欧拉角范围是 0-360。我们需要将其转换为 -180 到 180 来进行 Clamp
-        float pitch = angles.x;
-        if (pitch > 180) pitch -= 360;
+        // 3. 计算目标向量与水平面的夹角
+        // 如果 targetPos 在 actor 上方，angle 为负；在下方为正（符合 Unity 欧拉角习惯）
+        float targetPitch = Vector3.SignedAngle(horizontalDir, direction, Vector3.Cross(horizontalDir, Vector3.up));
 
-        // 限制倾斜幅度
-        pitch = Mathf.Clamp(pitch, -maxPitchAngle, maxPitchAngle);
+        // 4. 逻辑控制：如果角度超过限制，则取限制值
+        // 这里的逻辑不是硬性的属性限制，而是“朝向决策”
+        float finalPitch = Mathf.Clamp(targetPitch, -maxPitchAngle, maxPitchAngle);
 
-        // 3. 应用新的旋转：保留计算出的 Y 轴（左右转），限制 X 轴（上下偏）
-        float yaw = angles.y;
-        // 如果 actor 是 Canvas 类型（UI），则需要在 Y 轴上额外旋转 180° 以保持正面对目标
-        // if (actor.GetComponent<Canvas>() != null)
-        // {
-        //     yaw += 180f;
-        // }
-        yaw += 180f;
+        // 5. 计算 Yaw (左右旋转)
+        // 使用水平方向向量来计算旋转，确保左右方向始终精准
+        float yaw = Quaternion.LookRotation(horizontalDir).eulerAngles.y + 180f;
 
-        actor.transform.rotation = Quaternion.Euler(pitch, yaw, 0);
+        // 6. 应用最终旋转
+        // 我们使用水平方向作为基础，叠加受限后的 Pitch
+        actor.transform.rotation = Quaternion.Euler(finalPitch, yaw, 0);
 
-        Debug.Log($"[Skill] OrientTo 完成: {object_name} 俯仰角限制在 {pitch:F1}°，yaw={yaw:F1}°");
+        Debug.Log($"[Skill] OrientTo: 目标偏角 {targetPitch:F1}°, 实际应用 {finalPitch:F1}° (Limit: {maxPitchAngle}°)");
     }
 }

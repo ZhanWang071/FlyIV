@@ -212,7 +212,7 @@ public class InteractionTracker : MonoBehaviour
             hits.Add(new
             {
                 hit_id = "h0",
-                @object = _currentlyPointedObject.name,
+                @object = GetCurrentPointingObjectName(),
                 position = _currentHit.point,
                 normal = _currentHit.normal,
             });

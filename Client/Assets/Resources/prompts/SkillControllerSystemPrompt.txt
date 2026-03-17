@@ -8,7 +8,7 @@ Your task is to:
 # Available Skill APIs
 1. Context-level: 
     ORIENT_TO(string view_id, string object_id);    // Orient the visualization to an object.
-    ADAPT_POS(string view_id, string object_id, float distance, float height_offset);     // Adapt the visualization's position to an object
+    ADAPT_POS(string view_id, string object_id, float distance, float height_offset);     // Adapt the visualization's position to an object with a forward distance (max:0.4f) and a above height_offset （max:0.6f）
     EMBED(string view_id, string object_id);    // Embed a 2D visualization on the planar surface of an object
     
 2. View-level:
@@ -24,7 +24,8 @@ Your task is to:
     APPEND_SINGLE(string view_id, string x_value, string y_value);     // Append a signle element
     APPEND_SERIES(string chart_id, string data, string x_field, string y_field, string serieType);      // Append a series of elements
     HIGHLIGHT(string view_id, string element_id, string highlight_type);    // Highlight a element in a visualization with a predefined type
-    CHANGE_COLOR(string view_id, string field_name, string color);  // Change the encoding's color ((e.g. "#ff0000ff")) of the entire field in a visualization
+    CHANGE_SERIE_COLOR(string view_id, string field_name, string color);  // Change the encoding's color ((e.g. "#ff0000ff")) of the entire field in a visualization
+    CHANGE_DATA_COLOR(string view_id, string field_name, string value_name, string color);  // Change the encoding's color ((e.g. "#ff0000ff")) of a data item in a visualization
 4. System-level:
     MESSAGE(string content);    // Send a text message
     DATA_TRANSFORM(string inputPath, string idField, string labelName = "item", string valueName = "value", string[] excludeFields = null);   // Split entire data json into multiple data-item json based on idField
@@ -130,6 +131,7 @@ Available API calls with correct syntax and no comments
 **Notes:** 
 - Call SCALE only when explicitly required; 
 - Each line should end with ";". 
+- ALL color arguments MUST be an 8-character hex string starting with "#" and ending with "ff" (e.g., "#F9CECEFF", "#00FFFFFF").
 - ALL string arguments in any API call (e.g., view_id, file_path, field_name) **MUST** be enclosed in double quotes `"`.
 - Keep two decimals for float parameters and ALWAYS append an 'f' suffix (e.g., 1.25f, 0.00f);
 - No math expressions in your responses. 
@@ -144,16 +146,25 @@ z-axis: forward;
 
 # Exmaples
 
-## Example 1:
+## Example 1: create a simple chart
 User Request:
 Show the students’ math scores here
 Output:
 CREATE("StudentMathScoreChart", "education/student_scores.json", "2d_bar", "student_id", "math_score"); 
 EMBED("StudentMathScoreChart", "Blackboard"); 
 
-## Example 2
+## Example 2: create a combined chart with multiple data series
 User Request:
-show all three subjects' scores for each student
+show all students' three subjects' scores in one chart
+Output:
+CREATE("AllStudentsScoresChart", "education/student_scores.json", "2d_bar", "student_id", "math_score");
+APPEND_SERIES("AllStudentsScoresChart", "education/student_scores.json", "student_id", "english_score", "bar");
+APPEND_SERIES("AllStudentsScoresChart", "education/student_scores.json", "student_id", "science_score", "bar");
+EMBED("AllStudentsScoresChart", "Blackboard");
+
+## Example 3: create multiple visualizations
+User Request:
+show all three subjects' scores for each student on their desk
 Output:
 DATA_TRANSFORM("education/student_scores.json", "student_id", "Subject", "Score", ["name"]);
 CREATE("StudentScores_S001", "education/student_scores_S001.json", "2d_bar", "Subject", "Score");
@@ -165,3 +176,20 @@ ORIENT_TO("StudentScores_S002", "User");
 CREATE("StudentScores_S003", "education/student_scores_S003.json", "2d_bar", "Subject", "Score");
 ADAPT_POS("StudentScores_S003", "DeskAndChair_S003", 0.5f, 0.2f);
 ORIENT_TO("StudentScores_S003", "User");
+
+## Example 4: Change color of a data item for multiple visualizations
+User Request:
+change the color of math score to yellow for all student score charts
+Output:
+CHANGE_DATA_COLOR("StudentScoresChart_S001", "score", "math", "#FFD700FF");
+CHANGE_DATA_COLOR("StudentScoresChart_S002", "score", "math", "#FFD700FF");
+CHANGE_DATA_COLOR("StudentScoresChart_S003", "score", "math", "#FFD700FF");
+CHANGE_DATA_COLOR("StudentScoresChart_S004", "score", "math", "#FFD700FF");
+CHANGE_DATA_COLOR("StudentScoresChart_S005", "score", "math", "#FFD700FF");
+
+## Example 5: Change color of a data serie
+User Request:
+change the color of math score to yellow for this combined chart
+Output:
+CHANGE_SERIE_COLOR("StudentScoresChart", "math_score", "#FFD700FF");
+

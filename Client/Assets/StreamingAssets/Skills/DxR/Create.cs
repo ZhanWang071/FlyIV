@@ -115,6 +115,10 @@ public class Create
             JSONObject yOffsetEnc = new JSONObject();
             yOffsetEnc["value"] = new JSONNumber(-0.5);
             encodingNode["yoffsetpct"] = yOffsetEnc;
+
+            JSONObject widthEnc = new JSONObject();
+            widthEnc["value"] = new JSONNumber(40);
+            encodingNode["width"] = widthEnc;
         }
 
         // ── 可选：color encoding ──────────────────────────────────────────

@@ -54,11 +54,27 @@ public class Embed
             // 如果物体有子物体，这里计算到的是整个对象（包含所有子物体）的包围盒在法线方向上的那一面中心
             // 计算物体面向摄像机一侧的面中心
             Vector3 toCamera = (userCamera.position - targetObject.transform.position).normalized;
+            Vector3 toCameraFlat = new Vector3(
+    userCamera.position.x - targetObject.transform.position.x,
+    0f,
+    userCamera.position.z - targetObject.transform.position.z
+).normalized;
             Vector3 faceNormal = Vector3.zero;
             // 找到哪个轴方向分量最大（即最朝向摄像机的局部轴）
-            Vector3[] axes = { targetObject.transform.right, targetObject.transform.up, targetObject.transform.forward };
+            // Vector3[] axes = { targetObject.transform.right, targetObject.transform.up, targetObject.transform.forward };
+            Vector3[] axes =
+                {
+                    Vector3.right,
+                    -Vector3.right,
+                    Vector3.up,
+                    -Vector3.up,
+                    Vector3.forward,
+                    -Vector3.forward
+                };
             float maxDot = -Mathf.Infinity;
             Vector3 bestAxis = Vector3.forward; // 默认使用forward
+
+            string[] axisNames = { "+right", "-right", "+up", "-up", "+forward", "-forward" };
             foreach (var axis in axes)
             {
                 float dot = Vector3.Dot(axis, toCamera);
@@ -74,11 +90,37 @@ public class Embed
             {
                 faceNormal = bestAxis;
             }
-            Vector3 faceCenter = b.center + Vector3.Scale(faceNormal.normalized, b.extents);
+
+
+            // for (int i = 0; i < axes.Length; i++)
+            // {
+            //     // Flatten each axis to horizontal before comparing
+            //     float dot = Vector3.Dot(axes[i], toCameraFlat);
+            //     Debug.Log($"[BlendCanvas] Axis {axisNames[i]} dot={dot:F3}");
+
+            //     if (dot > maxDot)
+            //     {
+            //         maxDot = dot;
+            //         faceNormal = axes[i];
+            //         Debug.Log($"[BlendCanvas] New best face: {axisNames[i]}");
+            //     }
+            
+            // }
+
+            Debug.Log($"[BlendCanvas] Selected faceNormal={faceNormal}, toCamera={toCamera}");
+
+
+            float surfaceDistance = Vector3.Dot(b.extents, AbsVec(faceNormal.normalized)); // component-wise abs
+            Vector3 faceCenter = b.center + faceNormal.normalized * surfaceDistance;
             canvasRect.position = faceCenter - (hitNormal * 0.02f); // 防止 Z-Fighting 的微小偏移
             canvasRect.rotation = Quaternion.LookRotation(-faceNormal);
 
-        
+            RectTransform chartRect = chartCanvas.transform.GetChild(0) as RectTransform;
+
+            // 获取图表原始尺寸（保持长宽比）
+            Vector2 chartOriginalSize = canvasRect.sizeDelta;
+            float chartAspectRatio = chartOriginalSize.x / Mathf.Max(chartOriginalSize.y, 1f);
+
             // 自适应平面大小
             // 这里可以直接根据法线方向排除掉不需要的轴
             Vector3 worldSize = b.size;
@@ -91,11 +133,34 @@ public class Embed
             // 如果法线指向 Y 轴（顶面），那么宽是 X，高是 Z
             else { worldW = worldSize.x; worldH = worldSize.z; }
 
-            // 计算目标像素大小
-            float targetPixelW = 0.9f * worldW * pixelsPerUnit;
-            float targetPixelH = 0.9f * worldH * pixelsPerUnit;
+            // 缩小可视化尺寸到物体面的90%，同时保持图表原始长宽比
+            float scaleFactor = 0.9f;
+            float availableW = worldW * scaleFactor;
+            float availableH = worldH * scaleFactor;
+
+            // Blend between the chart's native ratio and the face's natural ratio,
+            // allowing the chart to flex up to ±40% from its original proportions.
+            float faceAspectRatio = availableW / Mathf.Max(availableH, 0.0001f);
+            float blendFactor = 0.9f;   // 0 = strict original ratio, 1 = match face exactly
+            float maxStretch = 0.6f;   // allow up to 40% deviation from original ratio
+
+            float blendedRatio = Mathf.Lerp(chartAspectRatio, faceAspectRatio, blendFactor);
+            float clampedRatio = Mathf.Clamp(blendedRatio, chartAspectRatio * (1f - maxStretch), chartAspectRatio * (1f + maxStretch));
+
+            float targetPixelW, targetPixelH;
+
+            if (availableW / availableH > clampedRatio)
+            {
+                targetPixelH = availableH * pixelsPerUnit;
+                targetPixelW = targetPixelH * clampedRatio;
+            }
+            else
+            {
+                targetPixelW = availableW * pixelsPerUnit;
+                targetPixelH = targetPixelW / clampedRatio;
+            }
+
             // 设置chart object铺满canvas
-            RectTransform chartRect = chartCanvas.transform.GetChild(0) as RectTransform;
 
             chartRect.anchorMin = new Vector2(0, 0);
             chartRect.anchorMax = new Vector2(1, 1);
@@ -110,6 +175,9 @@ public class Embed
             
         }
     }
+
+    private static Vector3 AbsVec(Vector3 v) =>
+    new Vector3(Mathf.Abs(v.x), Mathf.Abs(v.y), Mathf.Abs(v.z));
 
     private static Bounds? GetCombinedBounds(GameObject go)
     {

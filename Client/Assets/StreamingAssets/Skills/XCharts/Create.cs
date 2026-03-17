@@ -37,10 +37,13 @@ public class Create
         canvasObj.AddComponent<CanvasScaler>();
         canvasObj.AddComponent<GraphicRaycaster>();
 
+        float dynamicWidth = Mathf.Max(400f, dataArray.Count * 160f);
+        float fixedHeight = 600f; // 高度保持不变
+
         RectTransform canvasRect = canvasObj.GetComponent<RectTransform>();
         canvasRect.anchorMin = Vector2.zero;
         canvasRect.anchorMax = Vector2.zero;
-        canvasRect.sizeDelta = new Vector2(800, 600);
+        canvasRect.sizeDelta = new Vector2(dynamicWidth, fixedHeight);
         canvasRect.localScale = new Vector3(0.001f, 0.001f, 0.001f);
         canvasRect.localPosition = Vector3.zero;
 
@@ -222,7 +225,7 @@ public class Create
             double yVal = item[y_field].AsDouble;
 
             chart.AddXAxisData(xVal);
-            chart.AddData(0, yVal, xVal);
+            chart.AddData(0, yVal, xVal, xVal);
         }
     }
 
