@@ -193,8 +193,68 @@ public class Create
         Debug.Log("CreateSkill completed: view=" + view_id + " data=" + data_path
             + " chartType=" + chartTypeLower + " x=" + x_field + " y=" + y_field);
 
-        existingObj.tag = "Visualization_3D";
+        root.tag = "Visualization_3D";
         GameObject parentContainer = GameObject.Find("VisObject");
-        existingObj.transform.SetParent(parentContainer.transform);
+        root.transform.SetParent(parentContainer.transform);
+        AddCombinedBoxCollider(root);
+    }
+
+    private static void AddCombinedBoxCollider(GameObject parent)
+    {
+        // 1. 如果已经有了，先移除旧的，防止重复叠加
+        BoxCollider oldCollider = parent.GetComponent<BoxCollider>();
+        if (oldCollider != null) UnityEngine.Object.DestroyImmediate(oldCollider);
+
+        // 2. 初始化 Bounds（以第一个找到的 Renderer 为准，或者以自身坐标为准）
+        Bounds combinedBounds = new Bounds(Vector3.zero, Vector3.zero);
+        Renderer[] renderers = parent.GetComponentsInChildren<Renderer>();
+
+        bool hasFoundBounds = false;
+
+        foreach (Renderer render in renderers)
+        {
+            // 排除某些不需要计算在内的子物体（例如 Tooltip）
+            if (render.gameObject.name.Contains("tooltip")) continue;
+
+            if (!hasFoundBounds)
+            {
+                // 将 Bounds 转换到父物体的本地空间
+                combinedBounds = GetLocalBounds(parent.transform, render);
+                hasFoundBounds = true;
+            }
+            else
+            {
+                // 扩充 Bounds
+                combinedBounds.Encapsulate(GetLocalBounds(parent.transform, render));
+            }
+        }
+
+        if (hasFoundBounds)
+        {
+            // 3. 添加并配置 BoxCollider
+            BoxCollider bc = parent.AddComponent<BoxCollider>();
+            bc.center = combinedBounds.center;
+            bc.size = combinedBounds.size;
+
+            Debug.Log($"[ColliderUtils] 已为 {parent.name} 添加合并 BoxCollider。Size: {bc.size}");
+        }
+        else
+        {
+            Debug.LogWarning($"[ColliderUtils] 在 {parent.name} 及其子物体中未找到 Renderer，无法生成 Collider。");
+        }
+    }
+
+    private static Bounds GetLocalBounds(Transform parentTransform, Renderer renderer)
+    {
+        // 关键：将世界空间的 Bounds 转换为父物体的本地空间 Bounds
+        // 否则当父物体旋转或缩放时，计算出的 Collider 会发生偏移
+        Matrix4x4 worldToLocal = parentTransform.worldToLocalMatrix;
+        Bounds b = renderer.bounds;
+
+        Vector3 localCenter = worldToLocal.MultiplyPoint(b.center);
+        Vector3 localSize = worldToLocal.MultiplyVector(b.size);
+
+        // 由于 MultiplyVector 可能产生负值，取绝对值
+        return new Bounds(localCenter, new Vector3(Mathf.Abs(localSize.x), Mathf.Abs(localSize.y), Mathf.Abs(localSize.z)));
     }
 }

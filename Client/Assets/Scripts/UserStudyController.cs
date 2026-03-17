@@ -70,39 +70,7 @@ public partial class UserStudyController : MonoBehaviour
             if (orchestrator != null)
             {
                 orchestrator.ResetConversation();
-                
-                // 建议：在此处同时清理掉场景中旧的图表
-                ClearAllVisualizations();
             }
         }
-
-
-    }
-
-    private void ClearAllVisualizations()
-    {
-        GameObject parentContainer = GameObject.Find("VisObject");
-
-        if (parentContainer == null)
-        {
-            Debug.LogWarning("[FlyIV] 找不到名为 'VisObject' 的父容器，无法清理。");
-            return;
-        }
-
-        int count = 0;
-        // 注意：必须从后往前遍历，或者使用 List 存储后统一销毁
-        // 否则在遍历过程中销毁物体会导致索引崩溃
-        for (int i = parentContainer.transform.childCount - 1; i >= 0; i--)
-        {
-            GameObject child = parentContainer.transform.GetChild(i).gameObject;
-
-            // 核心判断：只清除当前处于 Active 状态的物体
-            if (child.activeSelf)
-            {
-                Destroy(child);
-                count++;
-            }
-        }
-        Debug.Log("[FlyIV] 已清理旧场景的可视化图表");
     }
 }

@@ -7,12 +7,12 @@ public class Scale
         {
             Vector3 current = go.transform.localScale;
             // 如果传入值为 null，则保留当前缩放
-            float finalX = x ?? current.x;
-            float finalY = y ?? current.y;
-            float finalZ = z ?? current.z;
+            float finalX = (x != 0) ? x : current.x;
+            float finalY = (y != 0) ? y : current.y;
+            float finalZ = (z != 0) ? z : current.z;
 
             go.transform.localScale = new Vector3(finalX, finalY, finalZ);
-            Debug.Log($"[Skill] Scale 完成: {view_id} 缩放更新为 ({finalX},{finalY},{finalZ})");
+            Debug.Log($"[Skill] Scale 完成: {object_name} 缩放更新为 ({finalX},{finalY},{finalZ})");
         }
     }
 }

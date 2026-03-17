@@ -169,10 +169,11 @@ public class Layout
         go.transform.position = position;
 
         // Face the camera (billboard on Y axis keeps visuals upright)
-        Vector3 lookDir = position - cameraPosition;
-        lookDir.y = 0;
-        if (lookDir != Vector3.zero)
-            go.transform.rotation = Quaternion.LookRotation(lookDir);
+        // Vector3 lookDir = position - cameraPosition;
+        // lookDir.y = 0;
+        // if (lookDir != Vector3.zero)
+        //     go.transform.rotation = Quaternion.LookRotation(lookDir);
+        // OrientTo(go.name, "user");
     }
 
     /// <summary>Estimate the horizontal angular width (degrees) of a view at a given distance.</summary>

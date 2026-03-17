@@ -3,7 +3,29 @@ public class AdaptPos
     public static void Execute(string view_id, string object_id, float distance, float height_offset)
     {
         GameObject view = GameObject.Find(view_id);
+        if (object_id.ToLower() == "user")
+        {
+            Transform cam = Camera.main.transform;
+            float actualDist = distance > 0.2f ? distance : 0.2f;
+            
+            Vector3 targetBasePos = cam.position + (cam.forward * actualDist);
+            float actualHeight = height_offset < 0.1f ? height_offset : 0.1f;
+            // float offsetToBottom = GetViewOffsetToBottom(view);
+            view.transform.position = targetBasePos + (cam.up * actualHeight);
+
+            if (view.CompareTag("Visualization_3D"))
+            {
+                BoxCollider bc = view.GetComponent<BoxCollider>();
+                view.transform.position += -(cam.right * bc.center.x / 2) - (cam.up * bc.center.y / 2);
+            }
+
+                Debug.Log($"[Skill] AdaptPos 完成: {view_id} 已放置在用户正前方 {actualDist}m 处");
+            return;
+        }
+
+
         GameObject target = GameObject.Find(object_id);
+        
 
         if (view != null && target != null)
         {
@@ -32,11 +54,42 @@ public class AdaptPos
             // 4. 应用最终位置
             // 最终位置 = 顶部中心 + 向相机方向的偏移 + 垂直高度修正
             Vector3 finalPos = topCenter + (dirToCamera * distance);
-            finalPos.y += height_offset;
+            float offsetToBottom = GetViewOffsetToBottom(view);
+            finalPos.y += height_offset + offsetToBottom;
 
             view.transform.position = finalPos;
 
             Debug.Log($"[Skill] AdaptPos 完成: {view_id} 已对齐到 {object_id}");
         }
+    }
+
+    private static float GetViewOffsetToBottom(GameObject view)
+    {
+        RectTransform rectTransform = view.GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            // 对于 Canvas，高度 = rect.height * scale.y
+            // 补偿值 = 高度 * (Pivot 的 Y 轴占比)
+            // 如果 Pivot 在中心 (0.5)，则补偿 0.5 * height；如果在底部 (0)，则补偿 0
+            float worldHeight = rectTransform.rect.height * view.transform.localScale.y;
+            return worldHeight * rectTransform.pivot.y;
+        }
+
+        // 如果不是 Canvas，回退到 Renderer 逻辑
+        Renderer r = view.GetComponentInChildren<Renderer>();
+        if (r != null) return r.bounds.extents.y;
+
+        return 0f;
+    }
+
+    private static Bounds GetTargetBounds(GameObject obj)
+    {
+        Renderer r = obj.GetComponentInChildren<Renderer>();
+        if (r != null) return r.bounds;
+
+        Collider c = obj.GetComponentInChildren<Collider>();
+        if (c != null) return c.bounds;
+
+        return new Bounds(obj.transform.position, Vector3.zero);
     }
 }

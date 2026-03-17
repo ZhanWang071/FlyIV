@@ -138,7 +138,7 @@ public class Orchestrator : MonoBehaviour
             Stopwatch llmSw = Stopwatch.StartNew();
             APICalls = await skillController.GenerateSkills(speechText, userPrompt);
             llmSw.Stop();
-            UnityEngine.Debug.Log($"<color=yellow>[Timer] GenerateSkillSequence 耗时: {llmSw.Elapsed.TotalSeconds:F2} ms</color>");
+            UnityEngine.Debug.Log($"<color=yellow>[Timer] GenerateSkillSequence 耗时: {llmSw.Elapsed.TotalSeconds:F2} s</color>");
         }
 
         // 执行skill sequence codes
@@ -147,11 +147,11 @@ public class Orchestrator : MonoBehaviour
             Stopwatch executorSw = Stopwatch.StartNew();
             await actionExecutor.ExecuteSkillSequence(APICalls);
             executorSw.Stop();
-            UnityEngine.Debug.Log($"<color=yellow>[Timer] ExecuteSkillSequence 耗时: {executorSw.Elapsed.TotalSeconds:F2} ms</color>");
+            UnityEngine.Debug.Log($"<color=yellow>[Timer] ExecuteSkillSequence 耗时: {executorSw.Elapsed.TotalSeconds:F2} s</color>");
         }
 
         totalSw.Stop();
-        UnityEngine.Debug.Log($"<color=yellow>[Timer] 总耗时: {totalSw.Elapsed.TotalSeconds:F2} ms</color>");
+        UnityEngine.Debug.Log($"<color=yellow>[Timer] 总耗时: {totalSw.Elapsed.TotalSeconds:F2} s</color>");
     }
 
     private void HandleInputAndLook()
@@ -181,6 +181,34 @@ public class Orchestrator : MonoBehaviour
     public void ResetConversation()
     {
         skillController.ResetConversation();
+        ClearAllVisualizations();
+    }
+
+    private void ClearAllVisualizations()
+    {
+        GameObject parentContainer = GameObject.Find("VisObject");
+
+        if (parentContainer == null)
+        {
+            UnityEngine.Debug.LogWarning("[FlyIV] 找不到名为 'VisObject' 的父容器，无法清理。");
+            return;
+        }
+
+        int count = 0;
+        // 注意：必须从后往前遍历，或者使用 List 存储后统一销毁
+        // 否则在遍历过程中销毁物体会导致索引崩溃
+        for (int i = parentContainer.transform.childCount - 1; i >= 0; i--)
+        {
+            GameObject child = parentContainer.transform.GetChild(i).gameObject;
+
+            // 核心判断：只清除当前处于 Active 状态的物体
+            if (child.activeSelf)
+            {
+                Destroy(child);
+                count++;
+            }
+        }
+        UnityEngine.Debug.Log("[FlyIV] 已清理旧场景的可视化图表");
     }
 
 }

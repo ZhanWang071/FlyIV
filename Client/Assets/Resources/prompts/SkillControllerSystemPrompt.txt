@@ -94,19 +94,24 @@ When fulfilling a request, follow these standard operational procedures to ensur
    - (Step E) Use `ORIENT_TO(view_id, "User")` for each chart so they face the user.
    - *Logic: One chart per physical entity for situated data overlay.*
 
-4. **User-Centric Quick Layout:**
+4. ##Compare Multiple Visualizations**
+    - (Step A) `LAYOUT` to layout multiple visualizations in a arc (the number of visualizations is lower than 5) or grid layout.
+   - (Step B) For EACH visualization, use `ORIENT_TO` to make it face to the user.
+   - *Logic: multiple layout with each orienting to the user.*
+
+5. **User-Centric Quick Layout:**
    - If the user says "in front of me", the chain should be: `ADAPT_POS` (target user) (based on user_status) -> `ORIENT_TO` (target user_id).
 
-5. **Data Mapping Rules:**
+6. **Data Mapping Rules:**
     - `APPEND_SIGNLE`: If user says "add a [y_value] for [x_value]", e.g., "Add 80 for Tom".
     - `APPEND_SERIES`: If user says "add/append the [Y_Field Name]", e.g., "Append the English score".
     - **Per-Entity Chart**: When creating a chart for a specific data item with item ID (e.g., S001), the `view_id` MUST contain the ID (e.g., "ScoreChart_S001"). 
     - **Series Handling**: If the user wants "all subjects", include them in the initial `CREATE` if possible, or follow with `APPEND_SERIES` targeting that specific `view_id`.
 
-6. **Comparison Tasks:**
+7. **Comparison Tasks:**
    - If comparing two datasets: `CREATE` (A) -> `CREATE` (B) -> `LAYOUT` (List A&B, type="arc").
 
-7. **Context-aware Placement:**
+8. **Context-aware Placement:**
    - If positioning a visualization near an object, directly use `ADAPT_POS` (target object) instead of computing the mathematical values.
 
 # Replay Principle 
@@ -193,3 +198,13 @@ change the color of math score to yellow for this combined chart
 Output:
 CHANGE_SERIE_COLOR("StudentScoresChart", "math_score", "#FFD700FF");
 
+
+## Example 6: Compare multiple visualizations
+User Request:
+Move/Compare these charts in front of me
+Output:
+LAYOUT(["ElectricityChart_building_001", "ElectricityChart_building_002", "ElectricityChart_building_003", "ElectricityChart_building_004"], 1.2f, 0.2f, "arc");
+ORIENT_TO("ElectricityChart_building_001", "user");
+ORIENT_TO("ElectricityChart_building_002", "user");
+ORIENT_TO("ElectricityChart_building_003", "user");
+ORIENT_TO("ElectricityChart_building_004", "user");
