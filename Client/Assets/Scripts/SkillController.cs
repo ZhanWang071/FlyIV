@@ -76,6 +76,7 @@ public class SkillController : MonoBehaviour
 
     /// <summary>
     /// 根据当前场景类型更新可用的数据文件列表
+    /// 动态扫描对应文件夹下的所有JSON文件
     /// </summary>
     public void UpdateAvailableDataFiles()
     {
@@ -88,30 +89,82 @@ public class SkillController : MonoBehaviour
         switch (userStudyController.currentScene)
         {
             case UserStudyController.SceneType.Classroom:
-                availableDataFiles = new DataFileEntry[]
-                {
-                    new DataFileEntry("education/student_scores.json", "student test scores and grades")
-                };
-                Debug.Log("[SkillController] 场景类型Classroom - 加载学生成绩数据");
+                availableDataFiles = ScanDataFilesInFolder("education", "education data");
+                Debug.Log($"[SkillController] 场景类型Classroom - 扫描到 {availableDataFiles.Length} 个数据文件");
                 break;
 
             case UserStudyController.SceneType.City:
-                // 创建包含所有18栋建筑的数据文件数组
-                var cityDataFiles = new DataFileEntry[18];
-                for (int i = 0; i < 18; i++)
-                {
-                    int buildingNum = i + 1;
-                    string fileName = $"city/building_{buildingNum:D3}.json";
-                    string description = $"building {buildingNum:D3} utility data including electricity, water, gas, and footfall for one day";
-                    cityDataFiles[i] = new DataFileEntry(fileName, description);
-                }
-                availableDataFiles = cityDataFiles;
-                Debug.Log("[SkillController] 场景类型City - 加载18栋建筑的数据文件");
+                availableDataFiles = ScanDataFilesInFolder("city", "city building utility data");
+                Debug.Log($"[SkillController] 场景类型City - 扫描到 {availableDataFiles.Length} 个数据文件");
                 break;
 
             default:
                 Debug.LogWarning("[SkillController] 未知场景类型，保持当前数据文件配置");
                 break;
+        }
+    }
+
+    /// <summary>
+    /// 扫描指定文件夹下的所有JSON文件，并返回DataFileEntry数组
+    /// 自动去重，排除.meta文件
+    /// </summary>
+    private DataFileEntry[] ScanDataFilesInFolder(string folderName, string baseDescription)
+    {
+        string folderPath = Path.Combine(Application.streamingAssetsPath, "DxRData", folderName);
+        
+        if (!Directory.Exists(folderPath))
+        {
+            Debug.LogWarning($"[SkillController] 文件夹不存在: {folderPath}");
+            return new DataFileEntry[0];
+        }
+
+        // 获取所有JSON文件，排除.meta文件
+        var jsonFiles = Directory.GetFiles(folderPath, "*.json", SearchOption.AllDirectories)
+            .Where(f => !f.EndsWith(".meta"))
+            .Select(f => f.Replace("\\", "/")) // 统一路径分隔符
+            .Distinct() // 去重
+            .ToArray();
+
+        var dataFileList = new List<DataFileEntry>();
+        
+        foreach (var filePath in jsonFiles)
+        {
+            // 获取相对于DxRData文件夹的相对路径
+            string relativePath = filePath.Substring(filePath.IndexOf("DxRData") + 8); // +8 to skip "DxRData/"
+            
+            // 生成描述信息
+            string fileName = Path.GetFileNameWithoutExtension(relativePath);
+            string description = GenerateFileDescription(folderName, fileName);
+            
+            dataFileList.Add(new DataFileEntry(relativePath, description));
+        }
+
+        Debug.Log($"[SkillController] 从文件夹 '{folderName}' 扫描到 {dataFileList.Count} 个JSON文件");
+        
+        return dataFileList.ToArray();
+    }
+
+    /// <summary>
+    /// 根据文件夹类型和文件名生成描述信息
+    /// </summary>
+    private string GenerateFileDescription(string folderName, string fileName)
+    {
+        switch (folderName)
+        {
+            case "education":
+                return $"{fileName} - education data";
+            
+            case "city":
+                // 尝试从文件名提取建筑编号
+                if (fileName.StartsWith("building_"))
+                {
+                    string buildingNum = fileName.Replace("building_", "");
+                    return $"building {buildingNum} utility data including electricity, water, gas, and footfall";
+                }
+                return $"{fileName} - city data";
+            
+            default:
+                return $"{fileName} data";
         }
     }
 
@@ -145,6 +198,9 @@ public class SkillController : MonoBehaviour
     /// </summary>
     public async Task<string> GenerateSkills(string sttResult, string userPrompt)
     {
+        // 1. 每次生成skills时更新可用数据文件列表
+        UpdateAvailableDataFiles();
+        
         // 2. 将此轮输入存入历史
         _chatHistory.Add(new Message(Role.User, userPrompt));
 
@@ -247,76 +303,96 @@ public class SkillController : MonoBehaviour
 
     /// <summary>
     /// 构建数据文件信息，用于添加到System Prompt尾部
+    /// 如果无法处理数据信息，则跳过该文件
     /// </summary>
     private string BuildDataInformation()
     {
         var dataList = new List<object>();
+        int skippedFiles = 0;
+        
         foreach (var entry in availableDataFiles)
         {
             // 1. 获取文件的绝对路径（假设 entry.file 是相对路径）
             string filePath = Path.Combine(Application.streamingAssetsPath, "DxRData", entry.file);
-            string fieldsWithMetadata = "Unknown Fields";
 
             try
             {
-                if (File.Exists(filePath))
+                if (!File.Exists(filePath))
                 {
-                    string content = File.ReadAllText(filePath);
-                    JArray jArray = JArray.Parse(content); // 假设数据是一个数组列表
+                    Debug.LogWarning($"[SkillController] 文件不存在，跳过: {entry.file}");
+                    skippedFiles++;
+                    continue; // 文件不存在，跳过
+                }
 
-                    if (jArray.Count > 0)
+                string content = File.ReadAllText(filePath);
+                JArray jArray = JArray.Parse(content); // 假设数据是一个数组列表
+
+                if (jArray.Count == 0)
+                {
+                    Debug.LogWarning($"[SkillController] 文件为空数组，跳过: {entry.file}");
+                    skippedFiles++;
+                    continue; // 空数组，跳过
+                }
+
+                // 存储每个字段的统计信息
+                var stats = new Dictionary<string, (string type, double min, double max)>();
+                var firstObj = jArray[0] as JObject;
+
+                if (firstObj == null)
+                {
+                    Debug.LogWarning($"[SkillController] 无法解析首个对象，跳过: {entry.file}");
+                    skippedFiles++;
+                    continue;
+                }
+
+                // 初始化字段列表
+                foreach (var prop in firstObj.Properties())
+                {
+                    string typeName = GetLLMFriendlyTypeName(prop.Value.Type);
+                    stats[prop.Name] = (typeName, double.MaxValue, double.MinValue);
+                }
+
+                // 遍历所有数据计算 Min/Max
+                foreach (var item in jArray)
+                {
+                    foreach (var prop in ((JObject)item).Properties())
                     {
-                        // 存储每个字段的统计信息
-                        var stats = new Dictionary<string, (string type, double min, double max)>();
-                        var firstObj = jArray[0] as JObject;
-
-                        // 初始化字段列表
-                        foreach (var prop in firstObj.Properties())
+                        if (stats.ContainsKey(prop.Name) &&
+                            (prop.Value.Type == JTokenType.Integer || prop.Value.Type == JTokenType.Float))
                         {
-                            string typeName = GetLLMFriendlyTypeName(prop.Value.Type);
-                            stats[prop.Name] = (typeName, double.MaxValue, double.MinValue);
+                            double val = prop.Value.Value<double>();
+                            var current = stats[prop.Name];
+                            stats[prop.Name] = (current.type, Math.Min(current.min, val), Math.Max(current.max, val));
                         }
-
-                        // 遍历所有数据计算 Min/Max
-                        foreach (var item in jArray)
-                        {
-                            foreach (var prop in ((JObject)item).Properties())
-                            {
-                                if (stats.ContainsKey(prop.Name) &&
-                                    (prop.Value.Type == JTokenType.Integer || prop.Value.Type == JTokenType.Float))
-                                {
-                                    double val = prop.Value.Value<double>();
-                                    var current = stats[prop.Name];
-                                    stats[prop.Name] = (current.type, Math.Min(current.min, val), Math.Max(current.max, val));
-                                }
-                            }
-                        }
-
-                        // 格式化输出字符串
-                        var fieldDefinitions = stats.Select(kvp =>
-                        {
-                            if (kvp.Value.min != double.MaxValue) // 数值类型显示范围
-                                return $"({kvp.Value.type}) {kvp.Key} [range: {kvp.Value.min:F1}-{kvp.Value.max:F1}]";
-                            else // 非数值类型仅显示类型
-                                return $"({kvp.Value.type}) {kvp.Key}";
-                        });
-
-                        fieldsWithMetadata = string.Join(", ", fieldDefinitions);
                     }
                 }
+
+                // 格式化输出字符串
+                var fieldDefinitions = stats.Select(kvp =>
+                {
+                    if (kvp.Value.min != double.MaxValue) // 数值类型显示范围
+                        return $"({kvp.Value.type}) {kvp.Key} [range: {kvp.Value.min:F1}-{kvp.Value.max:F1}]";
+                    else // 非数值类型仅显示类型
+                        return $"({kvp.Value.type}) {kvp.Key}";
+                });
+
+                string fieldsWithMetadata = string.Join(", ", fieldDefinitions);
+
+                // 成功解析，将字段信息加入到 dataList 中
+                dataList.Add(new
+                {
+                    file = entry.file,
+                    description = entry.description,
+                    data_fields = fieldsWithMetadata
+                });
             }
             catch (System.Exception e)
             {
-                fieldsWithMetadata = "Error: " + e.Message;
+                // 发生错误，跳过该文件，不保留任何信息
+                Debug.LogWarning($"[SkillController] 无法处理文件 {entry.file}，跳过。错误: {e.Message}");
+                skippedFiles++;
+                continue;
             }
-
-            // 4. 将字段信息加入到 object 中
-            dataList.Add(new
-            {
-                file = entry.file,
-                description = entry.description,
-                data_fields = fieldsWithMetadata // 新增字段：列出该文件包含的所有属性名
-            });
         }
 
         var dataInfoJson = new
@@ -325,7 +401,7 @@ public class SkillController : MonoBehaviour
         };
 
         string json = JsonConvert.SerializeObject(dataInfoJson, Formatting.Indented);
-        Debug.Log($"[SkillController] 构建的数据文件信息:\n{json}");
+        Debug.Log($"[SkillController] 构建的数据文件信息 (成功: {dataList.Count}, 跳过: {skippedFiles}):\n{json}");
         
         return $"## Available Data Files\nHere are available data files and their descriptions and select to use based on user request:\n {json}";
     }

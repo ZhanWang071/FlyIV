@@ -7,7 +7,7 @@ public class Layout
     private const int ARC_ONLY_MAX = 6;          // Use pure arc when <= 6 views
     private const float TARGET_HEIGHT = 1.0f;    // Uniform height all visuals scale to (meters)
     private const float ARC_ANGLE_RANGE = 120f;  // Total arc spread: ±60° from camera forward
-    private const float PADDING_RATIO = 0.15f;   // Padding as fraction of visualization width
+    private const float PADDING_RATIO = 0.05f;   // Padding as fraction of visualization width
 
     public static void Execute(List<string> views_id, float distance, float height_offset, string layout_type)
     {
@@ -58,8 +58,8 @@ public class Layout
         for (int i = 0; i < n; i++)
             angularWidths[i] = GetAngularWidth(views[i], distance);
 
-        for (int i = 0; i < n - 1; i++)
-            angularPaddings[i] = GetAngularPadding(views[i], distance);
+        // for (int i = 0; i < n - 1; i++)
+        //     angularPaddings[i] = GetAngularPadding(views[i], distance);
 
         // --- Total arc span from actual content ---
         float totalAngle = 0f;
