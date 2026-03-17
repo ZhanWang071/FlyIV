@@ -25,7 +25,7 @@ Your task is to:
     APPEND_SERIES(string chart_id, string data, string x_field, string y_field, string serieType);      // Append a series of elements
     HIGHLIGHT(string view_id, string element_id, string highlight_type);    // Highlight a element in a visualization with a predefined type
     CHANGE_SERIE_COLOR(string view_id, string field_name, string color);  // Change the encoding's color ((e.g. "#ff0000ff")) of the entire field in a visualization
-    CHANGE_DATA_COLOR(string view_id, string field_name, string value_name, string color);  // Change the encoding's color ((e.g. "#ff0000ff")) of a data item in a visualization
+    CHANGE_DATA_COLOR(string view_id, string y_field_name, string y_value_name, string color);  // Change the encoding's color ((e.g. "#ff0000ff")) of a data item in a visualization
 4. System-level:
     MESSAGE(string content);    // Send a text message
     DATA_TRANSFORM(string inputPath, string idField, string labelName = "item", string valueName = "value", string[] excludeFields = null);   // Split entire data json into multiple data-item json based on idField

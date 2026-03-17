@@ -8,14 +8,14 @@ public class ChangeSerieColor
     /// </summary>
     public static void Execute(string view_id, string field_name, string color)
     {
-        Debug.Log("Executing ChangeTypeColorSkill logic...");
+        Debug.Log("Executing ChangeSerieData logic...");
 
         // 1. Find the GameObject by view_id and get the BaseChart component
         GameObject chartObject = GameObject.Find(view_id);
         if (chartObject == null)
         {
             Debug.LogWarning(string.Format(
-                "ChangeTypeColorSkill: GameObject '{0}' not found in scene.",
+                "ChangeSerieData: GameObject '{0}' not found in scene.",
                 view_id));
             return;
         }
@@ -28,7 +28,7 @@ public class ChangeSerieColor
 
         if (chart == null)
         {
-            Debug.LogWarning($"AppendSeriesSkill: GameObject '{view_id}' or its children do not have a BaseChart component.");
+            Debug.LogWarning($"ChangeSerieData: GameObject '{view_id}' or its children do not have a BaseChart component.");
             return;
         }
 
@@ -37,7 +37,7 @@ public class ChangeSerieColor
         if (!ColorUtility.TryParseHtmlString(color, out targetColor))
         {
             Debug.LogWarning(string.Format(
-                "ChangeTypeColorSkill: Failed to parse color string '{0}'. Use hex format like '#ff0000'.",
+                "ChangeSerieData: Failed to parse color string '{0}'. Use hex format like '#ff0000'.",
                 color));
             return;
         }
@@ -57,7 +57,7 @@ public class ChangeSerieColor
         if (targetSerie == null)
         {
             Debug.LogWarning(string.Format(
-                "ChangeTypeColorSkill: Serie with name '{0}' not found in chart '{1}'.",
+                "ChangeSerieData: Serie with name '{0}' not found in chart '{1}'.",
                 field_name, view_id));
             return;
         }
@@ -68,15 +68,15 @@ public class ChangeSerieColor
         if (targetSerie.dataCount == 0)
         {
             Debug.LogWarning(string.Format(
-                "ChangeTypeColorSkill: Serie '{0}' has no data points.",
+                "ChangeSerieData: Serie '{0}' has no data points.",
                 field_name));
             return;
         }
 
-        chart.RefreshChart();
+        targetSerie.SetAllDirty();
 
         Debug.Log(string.Format(
-            "[ChangeTypeColorSkill] Done. {0} data point(s) in serie '{1}' updated.",
+            "[ChangeSerieData] Done. {0} data point(s) in serie '{1}' updated.",
             targetSerie.dataCount, field_name));
     }
 

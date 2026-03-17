@@ -8,14 +8,14 @@ public class ChangeDataColor
     /// </summary>
     public static void Execute(string view_id, string field_name, string value_name, string color)
     {
-        Debug.Log("Executing ChangeTypeColorSkill logic...");
+        Debug.Log("Executing ChangeDataColor logic...");
 
         // 1. Find the GameObject by view_id and get the BaseChart component
         GameObject chartObject = GameObject.Find(view_id);
         if (chartObject == null)
         {
             Debug.LogWarning(string.Format(
-                "ChangeTypeColorSkill: GameObject '{0}' not found in scene.",
+                "ChangeDataColor: GameObject '{0}' not found in scene.",
                 view_id));
             return;
         }
@@ -37,7 +37,7 @@ public class ChangeDataColor
         if (!ColorUtility.TryParseHtmlString(color, out targetColor))
         {
             Debug.LogWarning(string.Format(
-                "ChangeTypeColorSkill: Failed to parse color string '{0}'. Use hex format like '#ff0000'.",
+                "ChangeDataColor: Failed to parse color string '{0}'. Use hex format like '#ff0000'.",
                 color));
             return;
         }
@@ -47,46 +47,50 @@ public class ChangeDataColor
         for (int i = 0; i < chart.series.Count; i++)
         {
             Serie s = chart.GetSerie(i);
-            if (s != null && s.serieName == field_name)
+            // if (s != null && s.serieName == field_name)
+            // {
+            //     targetSerie = s;
+            //     break;
+            // }
+
+            if (s != null)
             {
                 targetSerie = s;
+            }
+
+            for (int j = 0; j < targetSerie.dataCount; j++)
+            {
+                SerieData sd = targetSerie.GetSerieData(j);
+                if (Normalize(sd.name) != Normalize(value_name)) continue;
+
+                var itemStyle = sd.EnsureComponent<ItemStyle>();
+                itemStyle.color = targetColor;
+
                 break;
             }
         }
 
-        if (targetSerie == null)
-        {
-            Debug.LogWarning(string.Format(
-                "ChangeTypeColorSkill: Serie with name '{0}' not found in chart '{1}'.",
-                field_name, view_id));
-            return;
-        }
+        // if (targetSerie == null)
+        // {
+        //     Debug.LogWarning(string.Format(
+        //         "ChangeDataColor: Serie with name '{0}' not found in chart '{1}'.",
+        //         field_name, view_id));
+        //     return;
+        // }
 
         // 4. Traverse ALL SerieData in the serie and apply color
-        if (targetSerie.dataCount == 0)
-        {
-            Debug.LogWarning(string.Format(
-                "ChangeTypeColorSkill: Serie '{0}' has no data points.",
-                field_name));
-            return;
-        }
+        // if (targetSerie.dataCount == 0)
+        // {
+        //     Debug.LogWarning(string.Format(
+        //         "ChangeDataColor: Serie '{0}' has no data points.",
+        //         field_name));
+        //     return;
+        // }
 
-        for (int i = 0; i < targetSerie.dataCount; i++)
-        {
-            SerieData sd = targetSerie.GetSerieData(i);
-            if (Normalize(sd.name) != Normalize(value_name)) continue;
-
-            // Set per-data-point color via itemStyle
-            // Note: itemStyle is an extended serialized field on SerieData.
-            // chart.RefreshChart() below forces a redraw to apply the change.
-
-            var itemStyle = sd.EnsureComponent<ItemStyle>();
-            itemStyle.color = targetColor;
-        }
-        chart.RefreshChart();
+        targetSerie.SetAllDirty();
 
         Debug.Log(string.Format(
-            "[ChangeTypeColorSkill] Done. {0} data point(s) in serie '{1}' updated.",
+            "[ChangeDataColor] Done. {0} data point(s) in serie '{1}' updated.",
             targetSerie.dataCount, field_name));
     }
 

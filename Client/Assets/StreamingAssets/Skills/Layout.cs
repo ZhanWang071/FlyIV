@@ -6,8 +6,8 @@ public class Layout
     // Layout thresholds
     private const int ARC_ONLY_MAX = 6;          // Use pure arc when <= 6 views
     private const float TARGET_HEIGHT = 1.0f;    // Uniform height all visuals scale to (meters)
-    private const float ARC_ANGLE_RANGE = 120f;  // Total arc spread: ±60° from camera forward
-    private const float PADDING_RATIO = 0.05f;   // Padding as fraction of visualization width
+    private const float ARC_ANGLE_RANGE = 100f;  // Total arc spread: ±60° from camera forward
+    private const float PADDING_RATIO = 0.01f;   // Padding as fraction of visualization width
 
     public static void Execute(List<string> views_id, float distance, float height_offset, string layout_type)
     {
@@ -37,7 +37,7 @@ public class Layout
 
         // --- 2. Choose layout strategy ---
         if (distance <= 0f) distance = 1f; // Default distance if invalid
-        if (layout_type == "arc")
+        if (layout_type == "arc" && views.Count < 5) 
             LayoutArc(views, cam, distance, height_offset);
         else
             LayoutArcGrid(views, cam, distance, height_offset);
@@ -130,7 +130,7 @@ public class Layout
 
         float rowHeight = TARGET_HEIGHT * (1f + PADDING_RATIO);
         float totalAngle = Mathf.Min(ARC_ANGLE_RANGE,
-            cols * GetAngularWidth(views[0], distance) + (cols - 1) * 5f);
+            cols * GetAngularWidth(views[0], distance) + (cols - 1) * 1f);
         float colStep = (cols > 1) ? totalAngle / (cols - 1) : 0f;
         float startAngle = -totalAngle / 2f;
 

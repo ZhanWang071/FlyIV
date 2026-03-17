@@ -43,6 +43,66 @@ public class ActionExecutor : MonoBehaviour
     [SerializeField] [TextArea(5,20)] private string skillSequence;
     [SerializeField] [TextArea(5,20)] private string executeCodes;
 
+    private ScriptOptions _baseScriptOptions;
+
+    private async void Start()
+    {
+        // 1. 初始化程序集配置
+        SetupBaseScriptOptions();
+
+        // 2. 异步预热 Roslyn 引擎
+        Debug.Log("<color=cyan>[ActionExecutor] 正在预热基础 Roslyn 引擎...</color>");
+        await PrewarmRoslyn();
+
+        Debug.Log("<color=cyan>[ActionExecutor] Roslyn 引擎就绪。</color>");
+    }
+
+    private void SetupBaseScriptOptions()
+    {
+        var sharedReferences = new[]
+        {
+            typeof(UnityEngine.GameObject).Assembly,
+            typeof(UnityEngine.Component).Assembly,
+            typeof(UnityEngine.Canvas).Assembly,
+            typeof(UnityEngine.UI.Graphic).Assembly,
+            typeof(UnityEditor.Editor).Assembly,
+            typeof(System.IO.File).Assembly,
+            typeof(System.Linq.Enumerable).Assembly,
+            typeof(Newtonsoft.Json.JsonConvert).Assembly,
+            typeof(UnityEngine.Physics).Assembly,
+            typeof(SimpleJSON.JSON).Assembly,
+            typeof(System.Text.RegularExpressions.Regex).Assembly,
+            typeof(System.Collections.Generic.List<>).Assembly,
+            typeof(XCharts.Runtime.BaseChart).Assembly,
+            typeof(DxR.Vis).Assembly
+        };
+
+        var sharedImports = new[]
+        {
+            "UnityEngine", "UnityEditor", "System", "System.IO", "System.Linq",
+            "System.Collections.Generic", "System.Globalization", "UnityEngine.UI",
+            "SimpleJSON", "Newtonsoft.Json", "Newtonsoft.Json.Linq",
+            "System.Text.RegularExpressions"
+        };
+
+        _baseScriptOptions = ScriptOptions.Default
+            .WithReferences(sharedReferences)
+            .WithImports(sharedImports);
+    }
+
+    private async Task PrewarmRoslyn()
+    {
+        try
+        {
+            // 执行一个极简的计算任务来强迫 Roslyn 加载缓存中的所有引用
+            await CSharpScript.RunAsync("int prewarm = 1 + 1;", _baseScriptOptions);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"[Roslyn Prewarm Error] 预热失败: {e.Message}");
+        }
+    }
+
     public async Task ExecuteSkillSequence(string skillOutput)
     {
         Debug.Log($"[ActionExecutor] 执行skill sequence: {skillOutput}");
@@ -134,53 +194,21 @@ public class ActionExecutor : MonoBehaviour
         {
             string code = File.ReadAllText(filePath);
 
-            var sharedReferences = new[]
+            // 3. 动态确定当前模式下的【专属引用】和【专属命名空间】
+            // 这样可以确保 XCharts 模式下没有 DxR 的干扰，反之亦然
+            var currentOptions = skillsFolderPath switch
             {
-                typeof(UnityEngine.Object).Assembly,
-                typeof(UnityEngine.Canvas).Assembly,
-                typeof(UnityEngine.UI.Graphic).Assembly,
-                typeof(UnityEditor.Editor).Assembly,
-                typeof(System.IO.File).Assembly,
-                typeof(System.Linq.Enumerable).Assembly,
-                typeof(Newtonsoft.Json.JsonConvert).Assembly,
-                typeof(UnityEngine.Physics).Assembly,
-                typeof(SimpleJSON.JSON).Assembly,
-                typeof(System.Text.RegularExpressions.Regex).Assembly
+                SkillFolderOption.XCharts => _baseScriptOptions.AddImports("XCharts.Runtime"),
+                SkillFolderOption.DxR => _baseScriptOptions.AddImports("DxR"),
+                _ => _baseScriptOptions
             };
 
-            var sharedImports = new[]
-            {
-                "UnityEngine",
-                "UnityEditor",
-                "System",
-                "System.IO",
-                "System.Linq",
-                "System.Collections.Generic",
-                "System.Globalization",
-                "UnityEngine.UI",
-                "SimpleJSON",
-                "Newtonsoft.Json",
-                "Newtonsoft.Json.Linq",
-                "System.Text.RegularExpressions"
-            };
-
-            var (extraAssembly, extraImport) = skillsFolderPath switch
-            {
-                SkillFolderOption.XCharts => (typeof(XCharts.Runtime.ChartLabel).Assembly, "XCharts.Runtime"),
-                SkillFolderOption.DxR => (typeof(DxR.Vis).Assembly, "DxR"),
-                _ => throw new System.ArgumentOutOfRangeException(nameof(skillsFolderPath))
-            };
-
-            var scriptOptions = ScriptOptions.Default
-                .WithReferences(sharedReferences.Append(extraAssembly))
-                .WithImports(sharedImports.Append(extraImport));
-
-            // 2. 动态执行：直接将 rawArgs 作为参数传递给 Execute 方法
+            // 动态执行：复用预加载好的 _cachedScriptOptions
             // 拼接后的代码类似于: Create.Execute("barchart_01", "specs.json");
             string fullCodeToRun = $"{code}\n{className}.Execute({args});";
             
-            Debug.Log($"[Executing]: {className}({args})");
-            await CSharpScript.RunAsync(fullCodeToRun, scriptOptions);
+            Debug.Log($"[ActionExecutor]: {className}({args})");
+            await CSharpScript.RunAsync(fullCodeToRun, currentOptions);
         }
         catch (Exception e)
         {

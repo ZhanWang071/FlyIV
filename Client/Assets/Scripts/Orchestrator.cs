@@ -1,7 +1,10 @@
 using UnityEngine;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using UnityEngine.InputSystem;
+using System.Diagnostics;
+
 public class Orchestrator : MonoBehaviour
 {
     [Header("Reference Settings")]
@@ -72,7 +75,9 @@ public class Orchestrator : MonoBehaviour
     /// </summary>
     private async Task ProcessWorkflow(string speechText)
     {
-        Debug.Log("<color=cyan>[Orchestrator] 收到语音，开始执行 VLM 识别...</color>");
+        Stopwatch totalSw = Stopwatch.StartNew();
+
+        UnityEngine.Debug.Log("<color=cyan>[Orchestrator] 收到语音，开始执行 VLM 识别...</color>");
 
         // 等待VLM识别完成（可能在语音开始时已触发）
         // if (_vlmTask != null)
@@ -80,12 +85,31 @@ public class Orchestrator : MonoBehaviour
         //     await _vlmTask;
         // }
 
-        Debug.Log("<color=cyan>[Orchestrator] VLM 识别完成，开始发送user Prompt...</color>");
+        UnityEngine.Debug.Log("<color=cyan>[Orchestrator] VLM 识别完成，开始发送user Prompt...</color>");
 
         identifiedObjects = vlmHandler.identifiedObjects != null ?
             string.Join(", ", vlmHandler.identifiedObjects) :
             "None"; 
             
+        // 获取新增的数据文件信息
+        string newDataFilesInfo = skillController.GetNewDataFilesInformation();
+
+        object dataInfoObj = null;
+
+        if (!string.IsNullOrEmpty(newDataFilesInfo))
+        {
+            try
+            {
+                // 将字符串解析为 JToken，这样它在序列化时会保持对象格式，而不是转义字符串
+                dataInfoObj = JToken.Parse(newDataFilesInfo);
+                UnityEngine.Debug.Log("<color=cyan>[Orchestrator] 检测到新增数据文件，已作为结构化 JSON 对象添加到 userPrompt</color>");
+            }
+            catch (System.Exception e)
+            {
+                UnityEngine.Debug.LogWarning($"[Orchestrator] 解析新增数据 JSON 失败: {e.Message}");
+            }
+        }
+
         // 构建 user prompt JSON 数据
         var userPromptJson = new
         {
@@ -97,17 +121,37 @@ public class Orchestrator : MonoBehaviour
             },
             focused_objects = vlmHandler.GetFocusedObjectsData(),
             hit_points = interactionTracker.GetHitPointsData(),
-            user_request = speechText
+            user_request = speechText,
+            data_info = dataInfoObj
         };
+        
+        // 将JSON转换为字符串
         userPrompt = JsonConvert.SerializeObject(userPromptJson, Formatting.Indented);
-        Debug.Log("<color=cyan>[Orchestrator] promp构建完成</color>");
+
+
+        UnityEngine.Debug.Log("<color=cyan>[Orchestrator] promp构建完成</color>");
 
 
         // 输入LLM得到skill sequence
-        if (generateSequence) APICalls = await skillController.GenerateSkills(speechText, userPrompt);
+        if (generateSequence)
+        {
+            Stopwatch llmSw = Stopwatch.StartNew();
+            APICalls = await skillController.GenerateSkills(speechText, userPrompt);
+            llmSw.Stop();
+            UnityEngine.Debug.Log($"<color=yellow>[Timer] GenerateSkillSequence 耗时: {llmSw.Elapsed.TotalSeconds:F2} ms</color>");
+        }
 
         // 执行skill sequence codes
-        if (sequenceToExecutor) await actionExecutor.ExecuteSkillSequence(APICalls);
+        if (sequenceToExecutor && !string.IsNullOrEmpty(APICalls))
+        {
+            Stopwatch executorSw = Stopwatch.StartNew();
+            await actionExecutor.ExecuteSkillSequence(APICalls);
+            executorSw.Stop();
+            UnityEngine.Debug.Log($"<color=yellow>[Timer] ExecuteSkillSequence 耗时: {executorSw.Elapsed.TotalSeconds:F2} ms</color>");
+        }
+
+        totalSw.Stop();
+        UnityEngine.Debug.Log($"<color=yellow>[Timer] 总耗时: {totalSw.Elapsed.TotalSeconds:F2} ms</color>");
     }
 
     private void HandleInputAndLook()

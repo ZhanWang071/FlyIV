@@ -36,6 +36,9 @@ public class SkillController : MonoBehaviour
 
     // 对话历史：第一条永远是 System Prompt
     private List<Message> _chatHistory = new List<Message>();
+    
+    // 初始数据文件列表（对话开始时的文件，用于System Prompt）
+    private DataFileEntry[] _initialDataFiles = new DataFileEntry[0];
 
     // 日志文件路径
     [SerializeField] private bool logToFile = false; // 是否将关系检测结果记录到日志文件
@@ -65,7 +68,7 @@ public class SkillController : MonoBehaviour
         // 自动查找UserStudyController（如果未手动赋值）
         if (userStudyController == null)
         {
-            userStudyController = FindObjectOfType<UserStudyController>();
+            userStudyController = UnityEngine.Object.FindAnyObjectByType<UserStudyController>();
         }
         
         // 根据场景类型更新可用数据文件
@@ -180,11 +183,14 @@ public class SkillController : MonoBehaviour
         // 根据场景类型更新数据文件（确保每次重置对话时都使用正确的数据）
         UpdateAvailableDataFiles();
         
+        // 根据场景类型设置初始数据文件列表
+        SetInitialDataFilesBySceneType();
+        
         // 从 Resources 加载指令作为 System Prompt
         string systemInstructions = LoadPromptFile();
         
-        // 在System Prompt尾部添加数据文件信息
-        string dataInfo = BuildDataInformation();
+        // 在System Prompt尾部添加初始数据文件信息
+        string dataInfo = BuildDataInformation(_initialDataFiles, asJsonOnly: false);
         systemInstructions += "\n\n" + dataInfo;
         
         _chatHistory.Add(new Message(Role.System, systemInstructions));
@@ -192,16 +198,57 @@ public class SkillController : MonoBehaviour
         Debug.Log("<color=orange>[SkillController] 新对话开启。</color>");
         Debug.Log($"[SkillController] System Prompt:\n{systemInstructions}");
     }
+    
+    /// <summary>
+    /// 根据场景类型设置初始数据文件列表
+    /// </summary>
+    private void SetInitialDataFilesBySceneType()
+    {
+        if (userStudyController == null)
+        {
+            Debug.LogWarning("[SkillController] UserStudyController未设置");
+            _initialDataFiles = new DataFileEntry[0];
+            return;
+        }
+
+        switch (userStudyController.currentScene)
+        {
+            case UserStudyController.SceneType.Classroom:
+                // Classroom场景：只包含student_scores.json
+                _initialDataFiles = new DataFileEntry[]
+                {
+                    new DataFileEntry("education/student_scores.json", "student test scores and grades")
+                };
+                Debug.Log("[SkillController] 初始数据文件设置为: education/student_scores.json");
+                break;
+
+            case UserStudyController.SceneType.City:
+                // City场景：包含18栋建筑的数据文件
+                var cityInitialFiles = new DataFileEntry[18];
+                for (int i = 0; i < 18; i++)
+                {
+                    int buildingNum = i + 1;
+                    string fileName = $"city/building_{buildingNum:D3}.json";
+                    string description = $"building {buildingNum:D3} utility data including electricity, water, gas, and footfall";
+                    cityInitialFiles[i] = new DataFileEntry(fileName, description);
+                }
+                _initialDataFiles = cityInitialFiles;
+                Debug.Log("[SkillController] 初始数据文件设置为: city/building_001.json ~ city/building_018.json");
+                break;
+
+            default:
+                Debug.LogWarning("[SkillController] 未知场景类型");
+                _initialDataFiles = new DataFileEntry[0];
+                break;
+        }
+    }
 
     /// <summary>
     /// 核心逻辑：将新一轮的上下文作为 User 消息发送
     /// </summary>
     public async Task<string> GenerateSkills(string sttResult, string userPrompt)
     {
-        // 1. 每次生成skills时更新可用数据文件列表
-        UpdateAvailableDataFiles();
-        
-        // 2. 将此轮输入存入历史
+        // 将此轮输入存入历史
         _chatHistory.Add(new Message(Role.User, userPrompt));
 
         // 3. 调用 OpenAI 接口（发送包含 System 的完整历史）
@@ -302,15 +349,15 @@ public class SkillController : MonoBehaviour
     }
 
     /// <summary>
-    /// 构建数据文件信息，用于添加到System Prompt尾部
+    /// 构建数据文件信息
     /// 如果无法处理数据信息，则跳过该文件
     /// </summary>
-    private string BuildDataInformation()
+    private string BuildDataInformation(DataFileEntry[] dataFiles, bool asJsonOnly = false)
     {
         var dataList = new List<object>();
         int skippedFiles = 0;
         
-        foreach (var entry in availableDataFiles)
+        foreach (var entry in dataFiles)
         {
             // 1. 获取文件的绝对路径（假设 entry.file 是相对路径）
             string filePath = Path.Combine(Application.streamingAssetsPath, "DxRData", entry.file);
@@ -402,8 +449,39 @@ public class SkillController : MonoBehaviour
 
         string json = JsonConvert.SerializeObject(dataInfoJson, Formatting.Indented);
         Debug.Log($"[SkillController] 构建的数据文件信息 (成功: {dataList.Count}, 跳过: {skippedFiles}):\n{json}");
+
+        if (asJsonOnly)
+        {
+            return json; // 仅返回 JSON
+        }
+        else
+        {
+            // 返回带注释的 Markdown 格式，用于 System Prompt
+            return $"## Available Data Files\nHere are available data files and their descriptions and select to use based on user request:\n {json}";
+        }
+    }
+
+    /// <summary>
+    /// 获取对话过程中新增的数据文件信息（JSON格式字符串）
+    /// 供Orchestrator调用，添加到userPrompt中
+    /// </summary>
+    public string GetNewDataFilesInformation()
+    {
+        // 找出新增的文件（在当前列表中但不在初始列表中）
+        var initialFileNames = new HashSet<string>(_initialDataFiles.Select(f => f.file));
+        var newFiles = availableDataFiles.Where(f => !initialFileNames.Contains(f.file)).ToArray();
         
-        return $"## Available Data Files\nHere are available data files and their descriptions and select to use based on user request:\n {json}";
+        if (newFiles.Length == 0)
+        {
+            return ""; // 没有新文件
+        }
+        
+        // 构建新文件的信息
+        string newFilesInfo = BuildDataInformation(newFiles, asJsonOnly: true);
+        
+        Debug.Log($"[SkillController] 检测到 {newFiles.Length} 个新增数据文件");
+        
+        return newFilesInfo;
     }
 
     // 辅助函数：将 JTokenType 转换为 LLM 易懂的类型

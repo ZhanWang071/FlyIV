@@ -2015,7 +2015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &122912967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42325,8 +42325,60 @@ MonoBehaviour:
   maxHistoryCount: 10
   userStudyController: {fileID: 1687222478}
   availableDataFiles:
-  - file: education/student_scores.json
-    description: student test scores and grades
+  - file: city/building_001.json
+    description: building 001 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_002.json
+    description: building 002 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_003.json
+    description: building 003 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_004.json
+    description: building 004 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_005.json
+    description: building 005 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_006.json
+    description: building 006 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_007.json
+    description: building 007 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_008.json
+    description: building 008 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_009.json
+    description: building 009 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_010.json
+    description: building 010 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_011.json
+    description: building 011 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_012.json
+    description: building 012 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_013.json
+    description: building 013 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_014.json
+    description: building 014 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_015.json
+    description: building 015 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_016.json
+    description: building 016 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_017.json
+    description: building 017 utility data including electricity, water, gas, and
+      footfall
+  - file: city/building_018.json
+    description: building 018 utility data including electricity, water, gas, and
+      footfall
   lastResponse: 
   logToFile: 0
   userinput: Create a visualization on the teacher desk
@@ -42377,7 +42429,7 @@ MonoBehaviour:
   voiceSendtoVLM: 1
   generateSequence: 1
   sequenceToExecutor: 1
-  userRequest: show all three subjects' score for each student
+  userRequest: show the overview for all students scores on one chart
   identifiedObjects: Clock, Blackboard, Bookcase, Globe, TeacherDesk
   pointingObject: 
   userPrompt: 
@@ -42395,7 +42447,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActionExecutor
   skillsFolderPath: 0
-  skillSequence: CHANGE_COLOR("StudentMathScoreChart_step2", "math_score", "#F9CECEFF");
+  skillSequence: 'CREATE("AllStudentsScoresOverview", "education/student_scores.json",
+    "2d_bar", "student_id", "math_score");
+
+    APPEND_SERIES("AllStudentsScoresOverview",
+    "education/student_scores.json", "student_id", "science_score", "bar");
+
+    APPEND_SERIES("AllStudentsScoresOverview",
+    "education/student_scores.json", "student_id", "english_score", "bar");
+
+    EMBED("AllStudentsScoresOverview",
+    "Blackboard");'
   executeCodes: 
 --- !u!114 &1687222474
 MonoBehaviour:
@@ -42493,7 +42555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 661281bee8f7e429e9e657ed58c6c719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UserStudyController
-  currentScene: 0
+  currentScene: 1
   classroom: {fileID: 122912966}
   city: {fileID: 8771091788274259170}
 --- !u!1001 &1690539722
@@ -64605,7 +64667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8774189698161438238
 GameObject:
   m_ObjectHideFlags: 0
