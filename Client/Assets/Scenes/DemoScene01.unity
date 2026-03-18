@@ -42417,7 +42417,15 @@ MonoBehaviour:
   visLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  labelOffsetY: 0.1
+  labelFontSize: 1
+  labelColor: {r: 1, g: 0.6079551, b: 0, a: 1}
+  labelBgColor: {r: 0, g: 0, b: 0, a: 0.5254902}
   showDebugRay: 1
+  showPointingRay: 0
+  rayHitColor: {r: 1, g: 0.60784316, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 0.35}
+  rayWidth: 0.004
   _currentlyPointedObject: {fileID: 0}
 --- !u!114 &1687222472
 MonoBehaviour:

@@ -47,6 +47,7 @@ public class Orchestrator : MonoBehaviour
     private UserStudyController.SceneType _lastSceneType;
     private bool _logInitialized = false;
     private int _interactionIndex = 0; // counts ProcessWorkflow calls within this session
+    private Stopwatch _speechToFinishSw = new Stopwatch(); // starts at OnSpeechStarted, stopped at end of ProcessWorkflow
 
     private void Start()
     {
@@ -60,6 +61,7 @@ public class Orchestrator : MonoBehaviour
         if (sttHandler != null)
         {
             sttHandler.OnSpeechStarted += () => {
+                _speechToFinishSw.Restart(); // begin speech-to-finish timing
                 _vlmTask = vlmHandler.IdentifyFocusedObject();
             };
         }
@@ -113,7 +115,7 @@ public class Orchestrator : MonoBehaviour
             return;
         }
 
-        string logDir = Path.Combine(Application.dataPath, "Logs/UserStudy");
+        string logDir = Path.Combine(Application.dataPath, "Logs");
         Directory.CreateDirectory(logDir);
 
         // Find a non-colliding index: {ID}_{SceneType}_0.txt, _1.txt, ...
@@ -144,7 +146,8 @@ public class Orchestrator : MonoBehaviour
     /// Pass -1 for llmSeconds or executorSeconds when the corresponding step was skipped.
     /// </summary>
     private void AppendInteractionLog(string prompt, string apiCalls,
-        double llmSeconds, double executorSeconds, double totalSeconds)
+        double llmSeconds, double executorSeconds, double totalSeconds,
+        double voiceSeconds, double speechToFinishSeconds)
     {
         if (_currentLogPath == null) return;
 
@@ -152,10 +155,12 @@ public class Orchestrator : MonoBehaviour
         string separator = "=".PadRight(60, '=');
         string llmStr      = llmSeconds      >= 0 ? $"{llmSeconds:F2}s"      : "skipped";
         string executorStr = executorSeconds >= 0 ? $"{executorSeconds:F2}s" : "skipped";
+        string voiceStr         = voiceSeconds         >= 0 ? $"{voiceSeconds:F2}s"         : "n/a";
+        string speechToFinishStr = speechToFinishSeconds >= 0 ? $"{speechToFinishSeconds:F2}s" : "n/a";
         string entry =
             $"{System.Environment.NewLine}{separator}{System.Environment.NewLine}" +
             $"Interaction #{_interactionIndex}  |  {DateTime.Now:HH:mm:ss}{System.Environment.NewLine}" +
-            $"[Timing]  LLM: {llmStr}  |  Executor: {executorStr}  |  Total: {totalSeconds:F2}s{System.Environment.NewLine}" +
+            $"[Timing]  Voice→STT: {voiceStr}  |  LLM: {llmStr}  |  Executor: {executorStr}  |  Total(workflow): {totalSeconds:F2}s  |  Total(speech→finish): {speechToFinishStr}{System.Environment.NewLine}" +
             $"{separator}{System.Environment.NewLine}" +
             $"[User Prompt]{System.Environment.NewLine}{prompt}{System.Environment.NewLine}" +
             $"{System.Environment.NewLine}[Generated Sequence]{System.Environment.NewLine}{(string.IsNullOrEmpty(apiCalls) ? "(not generated)" : apiCalls)}{System.Environment.NewLine}";
@@ -258,10 +263,24 @@ public class Orchestrator : MonoBehaviour
         totalSw.Stop();
         double totalElapsed = totalSw.Elapsed.TotalSeconds;
 
+        // voice → STT elapsed (only meaningful when voiceSendtoVLM is true)
+        double voiceElapsed = -1;
+        double speechToFinishElapsed = -1;
+        if (voiceSendtoVLM)
+        {
+            _speechToFinishSw.Stop();
+            speechToFinishElapsed = _speechToFinishSw.Elapsed.TotalSeconds;
+            // voiceElapsed = speech-to-finish minus the workflow processing time
+            voiceElapsed = speechToFinishElapsed - totalElapsed;
+            if (voiceElapsed < 0) voiceElapsed = 0;
+        }
+
         // --- Write interaction to log ---
-        AppendInteractionLog(userPrompt, APICalls, llmElapsed, executorElapsed, totalElapsed);
+        AppendInteractionLog(userPrompt, APICalls, llmElapsed, executorElapsed, totalElapsed, voiceElapsed, speechToFinishElapsed);
 
         UnityEngine.Debug.Log($"<color=yellow>[Timer] 总耗时: {totalElapsed:F2} s</color>");
+        if (speechToFinishElapsed >= 0)
+            UnityEngine.Debug.Log($"<color=yellow>[Timer] Voice→STT: {voiceElapsed:F2} s  |  Speech→Finish: {speechToFinishElapsed:F2} s</color>");
     }
 
     private void HandleInputAndLook()
