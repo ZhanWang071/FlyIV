@@ -283,6 +283,8 @@ public class VLMFocus : MonoBehaviour
         {
             case UserStudyController.SceneType.Classroom:
                 return userStudyController.classroom;
+            case UserStudyController.SceneType.Reproduction:
+                return userStudyController.classroom;
             case UserStudyController.SceneType.City:
                 return userStudyController.city;
             default:
@@ -311,6 +313,14 @@ public class VLMFocus : MonoBehaviour
         switch (currentScene)
         {
             case UserStudyController.SceneType.Classroom:
+                // Classroom 场景特定的排除物体
+                excludedObjectNames.Add("AirConditionerVent");
+                excludedObjectNames.Add("Windows");
+                excludedObjectNames.Add("Classroom");
+                excludedObjectNames.Add("WallAndFloor");
+                break;
+
+            case UserStudyController.SceneType.Reproduction:
                 // Classroom 场景特定的排除物体
                 excludedObjectNames.Add("AirConditionerVent");
                 excludedObjectNames.Add("Windows");

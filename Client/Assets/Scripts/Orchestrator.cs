@@ -4,6 +4,8 @@ using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using UnityEngine.InputSystem;
 using System.Diagnostics;
+using System.IO;
+using System;
 
 public class Orchestrator : MonoBehaviour
 {
@@ -14,8 +16,12 @@ public class Orchestrator : MonoBehaviour
     public InteractionTracker interactionTracker;
     public SkillController skillController;
     public ActionExecutor actionExecutor;
+    public UserStudyController userStudyController;
     public Transform playerCamera;
     public GameObject Environment;
+
+    [Header("Participant Logging")]
+    public string participantID = "-1";
 
     [Header("Independent Module Test")]
     [SerializeField] private bool voiceSendtoVLM = false;
@@ -36,12 +42,20 @@ public class Orchestrator : MonoBehaviour
 
     private Task _vlmTask;
 
+    // --- Logging state ---
+    private string _currentLogPath = null;
+    private UserStudyController.SceneType _lastSceneType;
+    private bool _logInitialized = false;
+    private int _interactionIndex = 0; // counts ProcessWorkflow calls within this session
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
 
         if (playerCamera == null) playerCamera = Camera.main.transform;
-        
+
+        InitLogFile();
+
         // 语音开始时执行VLM识别，充分利用语音录制的时间
         if (sttHandler != null)
         {
@@ -49,11 +63,11 @@ public class Orchestrator : MonoBehaviour
                 _vlmTask = vlmHandler.IdentifyFocusedObject();
             };
         }
-        
+
         // 语音结束时处理结果（VLM可能已完成）
         if (voiceSendtoVLM) sttHandler.OnTranscribeFinished += (speechText) => {
             _ = ProcessWorkflow(speechText);
-            userRequest = speechText; // 显示在Inspector中
+            userRequest = speechText;
         };
     }
 
@@ -61,7 +75,104 @@ public class Orchestrator : MonoBehaviour
     {
         HandleInputAndLook();
         pointingObject = interactionTracker.GetCurrentPointingObjectName();
+
+        // Detect scene changes driven by UserStudyController
+        if (userStudyController != null &&
+            (_logInitialized == false || userStudyController.currentScene != _lastSceneType))
+        {
+            InitLogFile();
+        }
     }
+
+    // =====================================================================
+    //  Logging helpers
+    // =====================================================================
+
+    /// <summary>
+    /// Creates a new log file for the current participantID + sceneType.
+    /// Skipped entirely when participantID == "-1".
+    /// </summary>
+    private void InitLogFile()
+    {
+        _logInitialized = true;
+
+        string sceneLabel = userStudyController != null
+            ? userStudyController.currentScene.ToString()
+            : "UnknownScene";
+
+        _lastSceneType = userStudyController != null
+            ? userStudyController.currentScene
+            : default;
+
+        _interactionIndex = 0;
+
+        if (participantID == "-1")
+        {
+            _currentLogPath = null;
+            UnityEngine.Debug.Log("[Logger] participantID is -1, logging disabled.");
+            return;
+        }
+
+        string logDir = Path.Combine(Application.dataPath, "Logs/UserStudy");
+        Directory.CreateDirectory(logDir);
+
+        // Find a non-colliding index: {ID}_{SceneType}_0.txt, _1.txt, ...
+        int fileIndex = 0;
+        string path;
+        do
+        {
+            path = Path.Combine(logDir, $"{participantID}_{sceneLabel}_{fileIndex}.txt");
+            fileIndex++;
+        } while (File.Exists(path));
+
+        _currentLogPath = path;
+
+        // Write header
+        string header =
+            $"=== User Study Log ==={System.Environment.NewLine}" +
+            $"Participant : {participantID}{System.Environment.NewLine}" +
+            $"Scene       : {sceneLabel}{System.Environment.NewLine}" +
+            $"Started     : {DateTime.Now:yyyy-MM-dd HH:mm:ss}{System.Environment.NewLine}" +
+            $"{"=".PadRight(60, '=')}{System.Environment.NewLine}";
+
+        File.WriteAllText(_currentLogPath, header);
+        UnityEngine.Debug.Log($"[Logger] Log file created: {_currentLogPath}");
+    }
+
+    /// <summary>
+    /// Appends one interaction block (userPrompt + APICalls + timings) to the log file.
+    /// Pass -1 for llmSeconds or executorSeconds when the corresponding step was skipped.
+    /// </summary>
+    private void AppendInteractionLog(string prompt, string apiCalls,
+        double llmSeconds, double executorSeconds, double totalSeconds)
+    {
+        if (_currentLogPath == null) return;
+
+        _interactionIndex++;
+        string separator = "=".PadRight(60, '=');
+        string llmStr      = llmSeconds      >= 0 ? $"{llmSeconds:F2}s"      : "skipped";
+        string executorStr = executorSeconds >= 0 ? $"{executorSeconds:F2}s" : "skipped";
+        string entry =
+            $"{System.Environment.NewLine}{separator}{System.Environment.NewLine}" +
+            $"Interaction #{_interactionIndex}  |  {DateTime.Now:HH:mm:ss}{System.Environment.NewLine}" +
+            $"[Timing]  LLM: {llmStr}  |  Executor: {executorStr}  |  Total: {totalSeconds:F2}s{System.Environment.NewLine}" +
+            $"{separator}{System.Environment.NewLine}" +
+            $"[User Prompt]{System.Environment.NewLine}{prompt}{System.Environment.NewLine}" +
+            $"{System.Environment.NewLine}[Generated Sequence]{System.Environment.NewLine}{(string.IsNullOrEmpty(apiCalls) ? "(not generated)" : apiCalls)}{System.Environment.NewLine}";
+
+        try
+        {
+            File.AppendAllText(_currentLogPath, entry);
+        }
+        catch (Exception e)
+        {
+            UnityEngine.Debug.LogWarning($"[Logger] Failed to write log: {e.Message}");
+        }
+    }
+
+    // =====================================================================
+    //  Core workflow
+    // =====================================================================
 
     [ContextMenu("Test Workflow")]
     private async Task Test()
@@ -79,18 +190,12 @@ public class Orchestrator : MonoBehaviour
 
         UnityEngine.Debug.Log("<color=cyan>[Orchestrator] 收到语音，开始执行 VLM 识别...</color>");
 
-        // 等待VLM识别完成（可能在语音开始时已触发）
-        // if (_vlmTask != null)
-        // {
-        //     await _vlmTask;
-        // }
-
         UnityEngine.Debug.Log("<color=cyan>[Orchestrator] VLM 识别完成，开始发送user Prompt...</color>");
 
         identifiedObjects = vlmHandler.identifiedObjects != null ?
             string.Join(", ", vlmHandler.identifiedObjects) :
-            "None"; 
-            
+            "None";
+
         // 获取新增的数据文件信息
         string newDataFilesInfo = skillController.GetNewDataFilesInformation();
 
@@ -100,7 +205,6 @@ public class Orchestrator : MonoBehaviour
         {
             try
             {
-                // 将字符串解析为 JToken，这样它在序列化时会保持对象格式，而不是转义字符串
                 dataInfoObj = JToken.Parse(newDataFilesInfo);
                 UnityEngine.Debug.Log("<color=cyan>[Orchestrator] 检测到新增数据文件，已作为结构化 JSON 对象添加到 userPrompt</color>");
             }
@@ -124,34 +228,40 @@ public class Orchestrator : MonoBehaviour
             user_request = speechText,
             data_info = dataInfoObj
         };
-        
-        // 将JSON转换为字符串
-        userPrompt = JsonConvert.SerializeObject(userPromptJson, Formatting.Indented);
 
+        userPrompt = JsonConvert.SerializeObject(userPromptJson, Formatting.Indented);
 
         UnityEngine.Debug.Log("<color=cyan>[Orchestrator] promp构建完成</color>");
 
-
         // 输入LLM得到skill sequence
+        double llmElapsed = -1;
         if (generateSequence)
         {
             Stopwatch llmSw = Stopwatch.StartNew();
             APICalls = await skillController.GenerateSkills(speechText, userPrompt);
             llmSw.Stop();
-            UnityEngine.Debug.Log($"<color=yellow>[Timer] GenerateSkillSequence 耗时: {llmSw.Elapsed.TotalSeconds:F2} s</color>");
+            llmElapsed = llmSw.Elapsed.TotalSeconds;
+            UnityEngine.Debug.Log($"<color=yellow>[Timer] GenerateSkillSequence 耗时: {llmElapsed:F2} s</color>");
         }
 
         // 执行skill sequence codes
+        double executorElapsed = -1;
         if (sequenceToExecutor && !string.IsNullOrEmpty(APICalls))
         {
             Stopwatch executorSw = Stopwatch.StartNew();
             await actionExecutor.ExecuteSkillSequence(APICalls);
             executorSw.Stop();
-            UnityEngine.Debug.Log($"<color=yellow>[Timer] ExecuteSkillSequence 耗时: {executorSw.Elapsed.TotalSeconds:F2} s</color>");
+            executorElapsed = executorSw.Elapsed.TotalSeconds;
+            UnityEngine.Debug.Log($"<color=yellow>[Timer] ExecuteSkillSequence 耗时: {executorElapsed:F2} s</color>");
         }
 
         totalSw.Stop();
-        UnityEngine.Debug.Log($"<color=yellow>[Timer] 总耗时: {totalSw.Elapsed.TotalSeconds:F2} s</color>");
+        double totalElapsed = totalSw.Elapsed.TotalSeconds;
+
+        // --- Write interaction to log ---
+        AppendInteractionLog(userPrompt, APICalls, llmElapsed, executorElapsed, totalElapsed);
+
+        UnityEngine.Debug.Log($"<color=yellow>[Timer] 总耗时: {totalElapsed:F2} s</color>");
     }
 
     private void HandleInputAndLook()
@@ -161,7 +271,6 @@ public class Orchestrator : MonoBehaviour
 
         if (Cursor.lockState != CursorLockMode.Locked) return;
 
-        // 简单的移动控制
         if (Mouse.current != null)
         {
             Vector2 d = Mouse.current.delta.ReadValue() * 0.1f;
@@ -195,13 +304,9 @@ public class Orchestrator : MonoBehaviour
         }
 
         int count = 0;
-        // 注意：必须从后往前遍历，或者使用 List 存储后统一销毁
-        // 否则在遍历过程中销毁物体会导致索引崩溃
         for (int i = parentContainer.transform.childCount - 1; i >= 0; i--)
         {
             GameObject child = parentContainer.transform.GetChild(i).gameObject;
-
-            // 核心判断：只清除当前处于 Active 状态的物体
             if (child.activeSelf)
             {
                 Destroy(child);
@@ -210,5 +315,4 @@ public class Orchestrator : MonoBehaviour
         }
         UnityEngine.Debug.Log("[FlyIV] 已清理旧场景的可视化图表");
     }
-
 }

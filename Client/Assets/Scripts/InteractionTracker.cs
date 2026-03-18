@@ -144,7 +144,7 @@ public class InteractionTracker : MonoBehaviour
             case UserStudyController.SceneType.City:
                 return userStudyController.city;
             default:
-                return null;
+                return userStudyController.classroom;
         }
     }
 

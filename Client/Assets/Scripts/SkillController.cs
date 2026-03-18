@@ -96,6 +96,11 @@ public class SkillController : MonoBehaviour
                 Debug.Log($"[SkillController] 场景类型Classroom - 扫描到 {availableDataFiles.Length} 个数据文件");
                 break;
 
+            case UserStudyController.SceneType.Reproduction:
+                availableDataFiles = ScanDataFilesInFolder("sales", "sales data");
+                Debug.Log($"[SkillController] 场景类型Classroom - 扫描到 {availableDataFiles.Length} 个数据文件");
+                break;
+
             case UserStudyController.SceneType.City:
                 availableDataFiles = ScanDataFilesInFolder("city", "city building utility data");
                 Debug.Log($"[SkillController] 场景类型City - 扫描到 {availableDataFiles.Length} 个数据文件");
@@ -220,6 +225,15 @@ public class SkillController : MonoBehaviour
                     new DataFileEntry("education/student_scores.json", "student test scores and grades")
                 };
                 Debug.Log("[SkillController] 初始数据文件设置为: education/student_scores.json");
+                break;
+            
+            case UserStudyController.SceneType.Reproduction:
+                _initialDataFiles = new DataFileEntry[]
+                {
+                    new DataFileEntry("sales/monthly_sales.json", "monthly sales data"),
+                    new DataFileEntry("book/books.json", "book numbers data")
+                };
+                Debug.Log("[SkillController] 初始数据文件设置为: sales/monthly_sales.json和book/books.json");
                 break;
 
             case UserStudyController.SceneType.City:

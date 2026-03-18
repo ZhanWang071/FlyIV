@@ -1,32 +1,32 @@
 [
-    {
-      "month": "January",
-      "sales": 45000,
-      "category": "Electronics"
-    },
-    {
-      "month": "February",
-      "sales": 52000,
-      "category": "Electronics"
-    },
-    {
-      "month": "March",
-      "sales": 48000,
-      "category": "Electronics"
-    },
-    {
-      "month": "April",
-      "sales": 61000,
-      "category": "Electronics"
-    },
-    {
-      "month": "May",
-      "sales": 55000,
-      "category": "Electronics"
-    },
-    {
-      "month": "June",
-      "sales": 67000,
-      "category": "Electronics"
-    }
+  {
+    "month": "January",
+    "electronics": 450,
+    "clothing": 150
+  },
+  {
+    "month": "February",
+    "electronics": 520,
+    "clothing": 200
+  },
+  {
+    "month": "March",
+    "electronics": 480,
+    "clothing": 180
+  },
+  {
+    "month": "April",
+    "electronics": 610,
+    "clothing": 310
+  },
+  {
+    "month": "May",
+    "electronics": 550,
+    "clothing": 280
+  },
+  {
+    "month": "June",
+    "electronics": 670,
+    "clothing": 350
+  }
 ]

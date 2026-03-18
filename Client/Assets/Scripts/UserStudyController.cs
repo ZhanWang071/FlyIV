@@ -2,7 +2,7 @@ using UnityEngine;
 
 public partial class UserStudyController : MonoBehaviour
 {
-    public enum SceneType { Classroom, City }
+    public enum SceneType { Reproduction, Classroom, City}
 
     [Header("Scenarios")]
     public SceneType currentScene;
@@ -51,6 +51,11 @@ public partial class UserStudyController : MonoBehaviour
                 classroom.SetActive(true);
                 city.SetActive(false);
                 // if (classroomSky != null) RenderSettings.skybox = classroomSky;
+                break;
+
+            case SceneType.Reproduction:
+                classroom.SetActive(true);
+                city.SetActive(false);
                 break;
 
             case SceneType.City:
