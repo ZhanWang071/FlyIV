@@ -21,7 +21,7 @@ public class SpeechToText : MonoBehaviour
 
     [Header("Voice Activity Detection")]
     public float threshold = 0.02f;   
-    public float silenceDelay = 1.0f; 
+    public float silenceDelay = 4.0f; 
     public int frequency = 16000;
 
     [Header("Inspector Debug & Manual Input")]
@@ -95,7 +95,7 @@ public class SpeechToText : MonoBehaviour
         if (_recordingClip == null || !Microphone.IsRecording(_currentDevice))
         {
             _silenceTimer += Time.deltaTime;
-            if (_silenceTimer > 2.0f) // 每2秒尝试寻找一次设备
+            if (_silenceTimer > 4.0f) // 每2秒尝试寻找一次设备
             {
                 _silenceTimer = 0;
                 ResetMicrophone();
@@ -188,7 +188,7 @@ public class SpeechToText : MonoBehaviour
             }
             else
             {
-                Debug.Log("<color=gray>[SpeechToText] 已过滤语气词: " + response + "</color>");
+                Debug.Log("<color=gray>[SpeechToText] 请重新输入</color>");
             }
         }
         catch (Exception e)
@@ -268,6 +268,7 @@ public class SpeechToText : MonoBehaviour
         if (string.IsNullOrEmpty(text)) return false;
         string clean = text.Replace("。", "").Replace("，", "").Replace(".", "").Trim();
         if (fillerWords.Contains(clean)) return false;
+        if (clean.Length > 100) return false;
         return clean.Length > 1;
     }
 

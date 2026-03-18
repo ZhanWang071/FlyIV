@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8adc5ee1fdab8426c830ac57b7aa9ff9, type: 3}
   m_Name: GlobalApiConfig
   m_EditorClassIdentifier: Assembly-CSharp::ApiConfig
-  apiKey: sk-1tbfpLQRbZVig0pa2805B35a9e08426190A7E2Be79E76013
-  vlmUrl: https://vip.yi-zhan.top/v1/chat/completions
+  serverUrl: http://127.0.0.1:5001/generate_skill
+  baseDomain: api.shunyu.tech
+  apiKey: sk-xiMOKAnpJOvVSfzq6aC1C271FfD54e6aB444Ae82338330D9
+  skillUrl: https://api.shunyu.tech/v1/chat/completions
+  skillModel: gemini-2.5-flash
   vlmModel: gpt-4o-mini
-  sttUrl: https://vip.yi-zhan.top/v1/audio/transcriptions
-  sttModel: gpt-4o-mini-transcribe
-  llmUrl: https://vip.yi-zhan.top/v1/chat/completions
+  sttModel: whisper-1
   llmModel: gemini-2.5-flash

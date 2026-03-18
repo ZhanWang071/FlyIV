@@ -221,6 +221,10 @@ public class Orchestrator : MonoBehaviour
             }
         }
 
+        UnityEngine.Debug.Log("<color=cyan>[Orchestrator] 构建Prompt");
+
+        UnityEngine.Debug.Log("<color=cyan>[Orchestrator] user_status" + playerCamera.position + playerCamera.forward + playerCamera.right);
+
         // 构建 user prompt JSON 数据
         var userPromptJson = new
         {
@@ -237,7 +241,13 @@ public class Orchestrator : MonoBehaviour
             data_info = dataInfoObj
         };
 
-        userPrompt = JsonConvert.SerializeObject(userPromptJson, Formatting.Indented);
+        UnityEngine.Debug.Log("<color=cyan>[Orchestrator] promp构建完成</color>");
+        var settings = new JsonSerializerSettings
+        {
+            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            MaxDepth = 10 // 限制深度，防止无限递归
+        };
+        userPrompt = JsonConvert.SerializeObject(userPromptJson, Formatting.Indented, settings);
 
         UnityEngine.Debug.Log("<color=cyan>[Orchestrator] promp构建完成</color>");
 

@@ -41462,7 +41462,7 @@ GameObject:
   - component: {fileID: 1665501703}
   m_Layer: 0
   m_Name: LeftEyeAnchor
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42311,7 +42311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpeechToTex
   autoDetection: 1
   threshold: 0.02
-  silenceDelay: 4
+  silenceDelay: 1
   frequency: 16000
   lastRecognizedText: 
   manualInputText: 
@@ -42425,7 +42425,7 @@ MonoBehaviour:
   voiceSendtoVLM: 1
   generateSequence: 1
   sequenceToExecutor: 1
-  userRequest: create a line chart for all students score on board
+  userRequest: show all products sales data in one line chart
   identifiedObjects: Clock, Blackboard, Bookcase, Globe, TeacherDesk
   pointingObject: 
   userPrompt: 

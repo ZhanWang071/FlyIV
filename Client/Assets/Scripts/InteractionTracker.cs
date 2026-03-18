@@ -26,6 +26,11 @@ public class InteractionTracker : MonoBehaviour
     [Tooltip("Label background color (set alpha to 0 to disable)")]
     public Color labelBgColor = new Color(0f, 0f, 0f, 0.55f);
 
+    public Vector2 labelPadding = new Vector2(20f, 10f); // UI 像素单位的边距
+    private Canvas _labelCanvas;
+    private RectTransform _labelBgRect;
+    private TextMeshProUGUI _labelGuiTmp; // 注意这里换成了 UGUI 版本
+
     [Header("Debug")]
     public bool showDebugRay = true;
 
@@ -42,8 +47,10 @@ public class InteractionTracker : MonoBehaviour
     private UserStudyController userStudyController;
 
     // Pointing ray
-    private LineRenderer _rayLine;
-    private GameObject  _rayLineGO;
+    private LineRenderer _leftRayLine;
+    private LineRenderer _rightRayLine;
+    private GameObject _leftRayGO;
+    private GameObject _rightRayGO;
 
     // Pointing label state
     private GameObject _labelRoot;
@@ -81,7 +88,10 @@ public class InteractionTracker : MonoBehaviour
         }
 
         UpdateLabel(_currentlyPointedObject);
-        UpdateRayLine();
+
+        GameObject rightHit = TraceRay(rightPointer, out RaycastHit rHit);
+        GameObject leftHit = TraceRay(leftPointer, out RaycastHit lHit);
+        UpdateRayLinesVisual(rightHit != null, rHit, leftHit != null, lHit);
 
         if (showDebugRay) DrawDebugRays();
     }
@@ -96,39 +106,85 @@ public class InteractionTracker : MonoBehaviour
     /// </summary>
     private void CreateLabelObject()
     {
-        // --- root container (no renderer of its own) ---
-        _labelRoot = new GameObject("_PointingLabel");
-        DontDestroyOnLoad(_labelRoot);   // survives scene reloads during the study
+        // // --- root container (no renderer of its own) ---
+        // _labelRoot = new GameObject("_PointingLabel");
+        // DontDestroyOnLoad(_labelRoot);   // survives scene reloads during the study
+        // _labelRoot.SetActive(false);
+
+        // // --- background quad (faces camera via LookAt in UpdateLabel) ---
+        // _labelBgQuad = GameObject.CreatePrimitive(PrimitiveType.Quad);
+        // _labelBgQuad.name = "_PointingLabelBG";
+        // _labelBgQuad.transform.SetParent(_labelRoot.transform, false);
+        // Destroy(_labelBgQuad.GetComponent<Collider>()); // no physics on UI
+
+
+        // // 建议改为使用 URP 兼容的 Unlit Shader
+        // var bgMat = new Material(Shader.Find("Universal Render Pipeline/Unlit"));
+        // // 如果不是 URP，则使用：
+        // // var bgMat = new Material(Shader.Find("Unlit/Transparent"));
+        // bgMat.color = labelBgColor;
+
+        // // var bgMat = new Material(Shader.Find("UI/Default"));
+        // // bgMat.color = labelBgColor;
+        // var bgTex = MakeSolidTex(labelBgColor);
+        // bgMat.mainTexture = bgTex;
+        // _labelBgQuad.GetComponent<Renderer>().material = bgMat;
+
+        // // Show bg only when alpha > 0
+        // _labelBgQuad.SetActive(labelBgColor.a > 0f);
+
+        // // --- TextMeshPro text object (child of root) ---
+        // GameObject textGO = new GameObject("_PointingLabelText");
+        // textGO.transform.SetParent(_labelRoot.transform, false);
+
+        // _labelTmp = textGO.AddComponent<TextMeshPro>();
+        // _labelTmp.alignment = TextAlignmentOptions.Center;
+        // _labelTmp.fontSize = labelFontSize;
+        // _labelTmp.color = labelColor;
+        // _labelTmp.fontStyle = FontStyles.Bold;
+        // _labelTmp.overflowMode = TextOverflowModes.Overflow;
+        // _labelTmp.textWrappingMode = TextWrappingModes.NoWrap;
+        // _labelTmp.raycastTarget = false; // 优化性能
+
+        // // Bring text slightly in front of the background quad
+        // textGO.transform.localPosition = new Vector3(0f, 0f, -0.005f);
+        
+        GameObject canvasGO = new GameObject("_PointingLabelCanvas");
+        _labelCanvas = canvasGO.AddComponent<Canvas>();
+        _labelCanvas.renderMode = RenderMode.WorldSpace;
+        canvasGO.AddComponent<UnityEngine.UI.CanvasScaler>();
+        canvasGO.AddComponent<UnityEngine.UI.GraphicRaycaster>();
+
+        // 关键：为了在 VR 中看起来大小合适，Canvas 的 Scale 需要非常小
+        // 默认 1单位=1米，UI像素通常很大，所以缩放 0.001f 左右
+        canvasGO.transform.localScale = Vector3.one * 0.001f;
+        _labelRoot = canvasGO;
         _labelRoot.SetActive(false);
+        DontDestroyOnLoad(_labelRoot);
 
-        // --- background quad (faces camera via LookAt in UpdateLabel) ---
-        _labelBgQuad = GameObject.CreatePrimitive(PrimitiveType.Quad);
-        _labelBgQuad.name = "_PointingLabelBG";
-        _labelBgQuad.transform.SetParent(_labelRoot.transform, false);
-        Destroy(_labelBgQuad.GetComponent<Collider>()); // no physics on UI
+        // 2. 创建背景 Image
+        GameObject bgGO = new GameObject("Background");
+        bgGO.transform.SetParent(_labelRoot.transform, false);
+        _labelBgRect = bgGO.AddComponent<RectTransform>();
+        var bgImage = bgGO.AddComponent<UnityEngine.UI.Image>();
+        bgImage.color = labelBgColor;
 
-        var bgMat = new Material(Shader.Find("Unlit/Transparent"));
-        var bgTex = MakeSolidTex(labelBgColor);
-        bgMat.mainTexture = bgTex;
-        _labelBgQuad.GetComponent<Renderer>().material = bgMat;
+        // 3. 创建 TextMeshProUGUI
+        GameObject textGO = new GameObject("LabelText");
+        textGO.transform.SetParent(bgGO.transform, false);
+        _labelGuiTmp = textGO.AddComponent<TextMeshProUGUI>();
 
-        // Show bg only when alpha > 0
-        _labelBgQuad.SetActive(labelBgColor.a > 0f);
+        // 设置文本属性
+        _labelGuiTmp.alignment = TextAlignmentOptions.Center;
+        _labelGuiTmp.fontSize = labelFontSize * 100f; // 因为 Canvas 缩放了，字号需要放大
+        _labelGuiTmp.color = labelColor;
+        _labelGuiTmp.raycastTarget = false;
 
-        // --- TextMeshPro text object (child of root) ---
-        GameObject textGO = new GameObject("_PointingLabelText");
-        textGO.transform.SetParent(_labelRoot.transform, false);
-
-        _labelTmp = textGO.AddComponent<TextMeshPro>();
-        _labelTmp.alignment = TextAlignmentOptions.Center;
-        _labelTmp.fontSize = labelFontSize;
-        _labelTmp.color = labelColor;
-        _labelTmp.fontStyle = FontStyles.Bold;
-        _labelTmp.overflowMode = TextOverflowModes.Overflow;
-        _labelTmp.enableWordWrapping = false;
-
-        // Bring text slightly in front of the background quad
-        textGO.transform.localPosition = new Vector3(0f, 0f, -0.005f);
+        // 让 Text 填满背景并留出 Padding
+        RectTransform textRect = _labelGuiTmp.rectTransform;
+        textRect.anchorMin = Vector2.zero;
+        textRect.anchorMax = Vector2.one;
+        textRect.sizeDelta = Vector2.zero;
     }
 
     /// <summary>
@@ -137,6 +193,46 @@ public class InteractionTracker : MonoBehaviour
     /// </summary>
     private void UpdateLabel(GameObject target)
     {
+        // if (target == null)
+        // {
+        //     if (_labelRoot.activeSelf) _labelRoot.SetActive(false);
+        //     _lastLabeledObject = null;
+        //     return;
+        // }
+
+        // // Show and update text when target changes
+        // if (!_labelRoot.activeSelf) _labelRoot.SetActive(true);
+
+        // if (target != _lastLabeledObject)
+        // {
+        //     _labelTmp.text = target.name;
+        //     _lastLabeledObject = target;
+
+        //     // Resize bg quad to match text bounds with some padding
+        //     _labelTmp.ForceMeshUpdate();
+        //     var bounds = _labelTmp.textBounds;
+        //     float padX = labelFontSize * 0.2f;
+        //     float padY = labelFontSize * 0.1f;
+        //     _labelBgQuad.transform.localScale = new Vector3(
+        //         bounds.size.x + padX,
+        //         bounds.size.y + padY,
+        //         1f);
+        // }
+
+        // // Position above the object's world-space pivot
+        // Bounds objBounds = GetObjectBounds(target);
+        // Vector3 labelPos = objBounds.center + Vector3.up * (objBounds.extents.y + labelOffsetY);
+        // _labelRoot.transform.position = labelPos;
+
+        // // Billboard: face the camera
+        // Camera cam = Camera.main;
+        // if (cam != null)
+        // {
+        //     _labelRoot.transform.rotation = Camera.main.transform.rotation;
+        //     // _labelRoot.transform.rotation = Quaternion.LookRotation(
+        //     // _labelRoot.transform.position - cam.transform.position);
+        // }
+
         if (target == null)
         {
             if (_labelRoot.activeSelf) _labelRoot.SetActive(false);
@@ -144,36 +240,30 @@ public class InteractionTracker : MonoBehaviour
             return;
         }
 
-        // Show and update text when target changes
         if (!_labelRoot.activeSelf) _labelRoot.SetActive(true);
 
         if (target != _lastLabeledObject)
         {
-            _labelTmp.text = target.name;
+            _labelGuiTmp.text = target.name;
             _lastLabeledObject = target;
 
-            // Resize bg quad to match text bounds with some padding
-            _labelTmp.ForceMeshUpdate();
-            var bounds = _labelTmp.textBounds;
-            float padX = labelFontSize * 0.2f;
-            float padY = labelFontSize * 0.1f;
-            _labelBgQuad.transform.localScale = new Vector3(
-                bounds.size.x + padX,
-                bounds.size.y + padY,
-                1f);
+            // 强制刷新文本布局以获取正确尺寸
+            _labelGuiTmp.ForceMeshUpdate();
+            Vector2 textSize = _labelGuiTmp.GetRenderedValues(false);
+
+            // 调整背景 RectTransform 大小
+            _labelBgRect.sizeDelta = new Vector2(textSize.x + labelPadding.x, textSize.y + labelPadding.y);
         }
 
-        // Position above the object's world-space pivot
+        // 设置位置（在物体顶部）
         Bounds objBounds = GetObjectBounds(target);
         Vector3 labelPos = objBounds.center + Vector3.up * (objBounds.extents.y + labelOffsetY);
         _labelRoot.transform.position = labelPos;
 
-        // Billboard: face the camera
-        Camera cam = Camera.main;
-        if (cam != null)
+        // VR 优化的 Billboard：让 Canvas 正对相机
+        if (Camera.main != null)
         {
-            _labelRoot.transform.rotation = Quaternion.LookRotation(
-                _labelRoot.transform.position - cam.transform.position);
+            _labelRoot.transform.rotation = Camera.main.transform.rotation;
         }
     }
 
@@ -344,68 +434,113 @@ public class InteractionTracker : MonoBehaviour
 
     private void CreateRayLine()
     {
-        _rayLineGO = new GameObject("_PointingRay");
-        DontDestroyOnLoad(_rayLineGO);
+        _rightRayGO = CreateRayGO("_RightRay", out _rightRayLine);
+        _leftRayGO = CreateRayGO("_LeftRay", out _leftRayLine);
+    }
 
-        _rayLine = _rayLineGO.AddComponent<LineRenderer>();
-        _rayLine.positionCount  = 2;
-        _rayLine.useWorldSpace  = true;
-        _rayLine.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-        _rayLine.receiveShadows = false;
-
-        // Use a simple unlit material so it always shows clearly in VR
-        _rayLine.material = new Material(Shader.Find("Unlit/Color"));
-        _rayLine.startWidth = rayWidth;
-        _rayLine.endWidth   = rayWidth * 0.4f; // slight taper towards the tip
-        _rayLine.numCapVertices = 4;
-        _rayLineGO.SetActive(false);
+    private GameObject CreateRayGO(string name, out LineRenderer line)
+    {
+        GameObject go = new GameObject(name);
+        DontDestroyOnLoad(go);
+        line = go.AddComponent<LineRenderer>();
+        line.positionCount = 2;
+        line.useWorldSpace = true;
+        // 使用 Unlit/Transparent 解决 URP 报错问题
+        line.material = new Material(Shader.Find("Unlit/Transparent"));
+        line.startWidth = rayWidth;
+        line.endWidth = rayWidth * 0.5f;
+        go.SetActive(false);
+        return go;
     }
 
     /// <summary>
     /// Each frame: draw a line from the active pointer to either the hit point or
     /// maxDistance, tinting it based on whether something was hit.
     /// </summary>
-    private void UpdateRayLine()
+    private void UpdateRayLinesVisual(bool rHitAny, RaycastHit rHit, bool lHitAny, RaycastHit lHit)
     {
         if (!showPointingRay)
         {
-            if (_rayLineGO.activeSelf) _rayLineGO.SetActive(false);
+            _rightRayGO.SetActive(false);
+            _leftRayGO.SetActive(false);
             return;
         }
 
-        // Prefer the right pointer; fall back to left
-        Transform activePointer = rightPointer != null ? rightPointer : leftPointer;
-        if (activePointer == null)
-        {
-            if (_rayLineGO.activeSelf) _rayLineGO.SetActive(false);
-            return;
-        }
-
-        if (!_rayLineGO.activeSelf) _rayLineGO.SetActive(true);
-
-        bool hasHit    = _currentlyPointedObject != null;
-        Vector3 origin = activePointer.position;
-        Vector3 end    = hasHit
-            ? _currentHit.point
-            : origin + activePointer.forward * maxDistance;
-
-        _rayLine.SetPosition(0, origin);
-        _rayLine.SetPosition(1, end);
-
-        Color c = hasHit ? rayHitColor : rayMissColor;
-        _rayLine.startColor = c;
-        _rayLine.endColor   = new Color(c.r, c.g, c.b, c.a * 0.3f); // fade out at tip
+        UpdateSingleRay(_rightRayLine, _rightRayGO, rightPointer, rHitAny, rHit);
+        UpdateSingleRay(_leftRayLine, _leftRayGO, leftPointer, lHitAny, lHit);
     }
+
+    private void UpdateSingleRay(LineRenderer line, GameObject go, Transform pointer, bool hasHit, RaycastHit hit)
+    {
+        if (pointer == null) { go.SetActive(false); return; }
+        if (!go.activeSelf) go.SetActive(true);
+
+        Vector3 origin = pointer.position;
+        Vector3 end = hasHit ? hit.point : origin + pointer.forward * maxDistance;
+
+        line.SetPosition(0, origin);
+        line.SetPosition(1, end);
+
+        // 核心颜色逻辑：命中时变为橙色 (Color(1f, 0.5f, 0f))
+        Color orange = new Color(1.0f, 0.5f, 0.0f, 1.0f);
+        Color c = hasHit ? orange : rayMissColor;
+
+        line.startColor = c;
+        line.endColor = new Color(c.r, c.g, c.b, c.a * 0.2f);
+    }
+
+    // 辅助方法：为了同时检测两手，修改 TraceRay 返回命中物体并输出 hit
+    private GameObject TraceRay(Transform pointer, out RaycastHit hit)
+    {
+        hit = new RaycastHit();
+        if (pointer == null) return null;
+
+        if (Physics.Raycast(pointer.position, pointer.forward, out hit, maxDistance, visLayerMask))
+            return GetFirstLevelChild(hit.collider.gameObject);
+
+        if (Physics.Raycast(pointer.position, pointer.forward, out hit, maxDistance, interactableLayer))
+            return GetFirstLevelChild(hit.collider.gameObject);
+
+        return null;
+    }
+
+    // private void UpdateRayLine()
+    // {
+    //     if (!showPointingRay)
+    //     {
+    //         if (_rayLineGO.activeSelf) _rayLineGO.SetActive(false);
+    //         return;
+    //     }
+
+    //     // Prefer the right pointer; fall back to left
+    //     Transform activePointer = rightPointer != null ? rightPointer : leftPointer;
+    //     if (activePointer == null)
+    //     {
+    //         if (_rayLineGO.activeSelf) _rayLineGO.SetActive(false);
+    //         return;
+    //     }
+
+    //     if (!_rayLineGO.activeSelf) _rayLineGO.SetActive(true);
+
+    //     bool hasHit    = _currentlyPointedObject != null;
+    //     Vector3 origin = activePointer.position;
+    //     Vector3 end    = hasHit
+    //         ? _currentHit.point
+    //         : origin + activePointer.forward * maxDistance;
+
+    //     _rayLine.SetPosition(0, origin);
+    //     _rayLine.SetPosition(1, end);
+
+    //     Color c = hasHit ? rayHitColor : rayMissColor;
+    //     _rayLine.startColor = c;
+    //     _rayLine.endColor   = new Color(c.r, c.g, c.b, c.a * 0.3f); // fade out at tip
+    // }
 
     private void DrawDebugRays()
     {
-        if (rightPointer) Debug.DrawRay(rightPointer.position, rightPointer.forward * maxDistance, Color.red);
+        if (rightPointer) Debug.DrawRay(rightPointer.position, rightPointer.forward * maxDistance, Color.blue);
         if (leftPointer)  Debug.DrawRay(leftPointer.position,  leftPointer.forward  * maxDistance, Color.blue);
     }
 
-    private void OnDestroy()
-    {
-        if (_labelRoot  != null) Destroy(_labelRoot);
-        if (_rayLineGO  != null) Destroy(_rayLineGO);
-    }
+    private void OnDestroy(){}
 }
