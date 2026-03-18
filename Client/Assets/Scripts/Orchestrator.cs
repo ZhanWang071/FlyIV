@@ -231,6 +231,7 @@ public class Orchestrator : MonoBehaviour
                 right = playerCamera.right
             },
             scene_graph = relationDetector.GetSceneGraphData(),
+            // focused_objects = vlmHandler.GetFocusedObjectsData(),
             hit_points = interactionTracker.GetHitPointsData(),
             user_request = speechText,
             data_info = dataInfoObj
