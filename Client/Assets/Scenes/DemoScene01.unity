@@ -42420,10 +42420,9 @@ MonoBehaviour:
   userStudyController: {fileID: 1687222478}
   playerCamera: {fileID: 243533547}
   Environment: {fileID: 122912966}
-  participantID: 1
   voiceSendtoVLM: 1
-  generateSequence: 1
-  sequenceToExecutor: 1
+  generateSequence: 0
+  sequenceToExecutor: 0
   userRequest: show all products sales data in one line chart
   identifiedObjects: Clock, Blackboard, Bookcase, Globe, TeacherDesk
   pointingObject: 
@@ -42497,6 +42496,7 @@ MonoBehaviour:
     },\n  {\n    \"object\": \"TeacherDesk\",\n    \"target\": \"Blackboard\",\n   
     \"relation\": \"far\"\n  },\n  {\n    \"object\": \"TeacherDesk\",\n    \"target\":
     \"Bookcase\",\n    \"relation\": \"far\"\n  }\n]"
+  sceneGraphJSON: 
   logToFile: 0
 --- !u!114 &1687222476
 MonoBehaviour:
@@ -42552,6 +42552,7 @@ MonoBehaviour:
   currentScene: 1
   classroom: {fileID: 122912966}
   city: {fileID: 8771091788274259170}
+  participantID: -1
 --- !u!1001 &1690539722
 PrefabInstance:
   m_ObjectHideFlags: 0

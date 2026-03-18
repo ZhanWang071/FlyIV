@@ -230,7 +230,7 @@ public class Orchestrator : MonoBehaviour
                 forward = playerCamera.forward,
                 right = playerCamera.right
             },
-            focused_objects = vlmHandler.GetFocusedObjectsData(),
+            scene_graph = relationDetector.GetSceneGraphData(),
             hit_points = interactionTracker.GetHitPointsData(),
             user_request = speechText,
             data_info = dataInfoObj

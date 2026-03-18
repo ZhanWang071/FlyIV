@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using System.IO;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 
 public class RelationDetection : MonoBehaviour
 {
@@ -35,6 +37,8 @@ public class RelationDetection : MonoBehaviour
     [Header("Result Display")]
     [Tooltip("这里会实时显示最近一次的关系检测结果")]
     [TextArea(10, 20)] public string relationDataJSON;
+    [TextArea(10, 20)] public string sceneGraphJSON;
+    private SceneGraph _currentSceneGraph;
 
     [SerializeField] private bool logToFile = false; // 是否将关系检测结果记录到日志文件
 
@@ -81,6 +85,13 @@ public class RelationDetection : MonoBehaviour
         public string @object;
         public string target;
         public string relation;
+    }
+
+    [Serializable]
+    public class SceneGraph
+    {
+        public List<ObjectNode> objects;   // 原始物体属性数据
+        public List<RelationOutput> relations; // 计算出的空间关系
     }
 
     // --- 生命周期方法 ---
@@ -141,18 +152,34 @@ public class RelationDetection : MonoBehaviour
                 Debug.Log($"[RelationDetection] 成功加入user node");
             }
 
-            finalInputJson = JsonConvert.SerializeObject(nodeList, Formatting.Indented);
+            // finalInputJson = JsonConvert.SerializeObject(nodeList, Formatting.Indented);
+
+            // 3. 计算关系 (传入包含 User 的新列表)
+            // 我们重构一下 GetRelationData 的内部逻辑，使其返回 List 而不是 JSON 字符串
+            List<RelationOutput> relationList = GetRelationData(nodeList);
+
+            // 4. 构建 Scene Graph
+            _currentSceneGraph = new SceneGraph
+            {
+                objects = nodeList,
+                relations = relationList
+            };
+
+            // 5. 序列化为最终的 JSON
+            sceneGraphJSON = JsonConvert.SerializeObject(_currentSceneGraph, Formatting.Indented);
+
+            if (logToFile) LogRelationData(sceneGraphJSON);
         }
         catch (Exception e)
         {
             Debug.LogError($"[RelationDetection] 合并user节点失败: {e.Message}");
         }
         
-        // 自动执行关系检测
-        string result = GetRelationData(objectsDataJSON);
+        // // 自动执行关系检测
+        // string result = GetRelationData(objectsDataJSON);
 
-        Debug.Log($"[RelationDetection] 关系检测完成，记录到Log文件");
-        if (logToFile) LogRelationData(result);  
+        // Debug.Log($"[RelationDetection] 关系检测完成，记录到Log文件");
+        // if (logToFile) LogRelationData(result);  
     }
 
     // --- User Node Generation ---
@@ -188,26 +215,11 @@ public class RelationDetection : MonoBehaviour
         return userNode;
     }
 
-    // --- 核心接口 ---
-
-    public string GetRelationData(string jsonInput)
+    public List<RelationOutput> GetRelationData(List<ObjectNode> nodes)
     {
-        if (string.IsNullOrEmpty(jsonInput)) return null;
-
-        List<ObjectNode> nodes;
-        try
-        {
-            nodes = JsonConvert.DeserializeObject<List<ObjectNode>>(jsonInput);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"[RelationDetection] JSON 解析错误: {e.Message}");
-            return null;
-        }
-
-        if (nodes == null || nodes.Count < 2) return null;
-
         List<RelationOutput> relations = new List<RelationOutput>();
+
+        if (nodes == null || nodes.Count < 2) return relations;
 
         // 获取 User 位置和 Forward 方向, add user node
         Vector3? userFwd = null;
@@ -241,9 +253,14 @@ public class RelationDetection : MonoBehaviour
             }
         }
 
-        relationDataJSON = JsonConvert.SerializeObject(relations, Formatting.Indented);  
+        // relationDataJSON = JsonConvert.SerializeObject(relations, Formatting.Indented);  
 
-        return relationDataJSON;
+        return relations;
+    }
+
+    public object GetSceneGraphData()
+    {
+        return _currentSceneGraph;
     }
 
     // --- 几何计算逻辑 ---
@@ -450,13 +467,13 @@ public class RelationDetection : MonoBehaviour
 
     // --- 独立测试代码 ---
 
-    [ContextMenu("Get Relation Data")]
-    public void RunTest()
-    {
-        string inputJson = vlmHandler.objectsDataDisplay;
-        string outputJson = GetRelationData(inputJson);
-        if (logToFile) LogRelationData(outputJson);
-    }
+    // [ContextMenu("Get Relation Data")]
+    // public void RunTest()
+    // {
+    //     string inputJson = vlmHandler.objectsDataDisplay;
+    //     string outputJson = JsonConvert.SerializeObject(GetRelationData(inputJson));
+    //     if (logToFile) LogRelationData(outputJson);
+    // }
 
     /// <summary>
     /// 记录关系检测结果到日志文件

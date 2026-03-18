@@ -11,6 +11,7 @@ using XCharts.Runtime;
 using SimpleJSON;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Threading;
 
 public class ActionExecutor : MonoBehaviour
 {
@@ -45,8 +46,32 @@ public class ActionExecutor : MonoBehaviour
 
     private ScriptOptions _baseScriptOptions;
 
+    private CancellationTokenSource _cts = new CancellationTokenSource();
+
+    private void OnDisable()
+    {
+        // 1. 触发取消信号，终止所有正在运行的 Roslyn 任务
+        if (_cts != null)
+        {
+            _cts.Cancel();
+            _cts.Dispose();
+            _cts = null;
+        }
+
+        // 2. 清理基础配置引用，断开与 Assembly-CSharp 的强关联
+        _baseScriptOptions = null;
+
+        // 3. 强制触发垃圾回收（可选，但在处理 DLL 占用时有效）
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+
+        Debug.Log("<color=orange>[ActionExecutor] 已清理 Roslyn 资源并释放程序集引用。</color>");
+    }
+
     private async void Start()
     {
+        _cts = new CancellationTokenSource(); // 重新初始化
+        
         // 1. 初始化程序集配置
         SetupBaseScriptOptions();
 
@@ -95,12 +120,10 @@ public class ActionExecutor : MonoBehaviour
         try
         {
             // 执行一个极简的计算任务来强迫 Roslyn 加载缓存中的所有引用
-            await CSharpScript.RunAsync("int prewarm = 1 + 1;", _baseScriptOptions);
+            await CSharpScript.RunAsync("int prewarm = 1 + 1;", _baseScriptOptions, cancellationToken: _cts.Token);
         }
-        catch (Exception e)
-        {
-            Debug.LogError($"[Roslyn Prewarm Error] 预热失败: {e.Message}");
-        }
+        catch (OperationCanceledException) { /* 正常停止 */ }
+        catch (Exception e) { Debug.LogError($"预热失败: {e.Message}"); }
     }
 
     public async Task ExecuteSkillSequence(string skillOutput)
@@ -208,7 +231,11 @@ public class ActionExecutor : MonoBehaviour
             string fullCodeToRun = $"{code}\n{className}.Execute({args});";
             
             Debug.Log($"[ActionExecutor]: {className}({args})");
-            await CSharpScript.RunAsync(fullCodeToRun, currentOptions);
+            await CSharpScript.RunAsync(fullCodeToRun, currentOptions, cancellationToken: _cts.Token);
+        }
+        catch (OperationCanceledException)
+        {
+            Debug.Log($"[ActionExecutor] {className} 执行已被用户停止。");
         }
         catch (Exception e)
         {
