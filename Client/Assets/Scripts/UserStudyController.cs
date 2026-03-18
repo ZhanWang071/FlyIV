@@ -10,6 +10,9 @@ public partial class UserStudyController : MonoBehaviour
     public GameObject classroom;
     public GameObject city;
 
+    [Header("Participant Logging")]
+    public string participantID = "-1";
+
     // [Header("天空盒设置 (可选)")]
     // public Material classroomSky;
     // public Material citySky;

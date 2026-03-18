@@ -21,7 +21,7 @@ public class Orchestrator : MonoBehaviour
     public GameObject Environment;
 
     [Header("Participant Logging")]
-    public string participantID = "-1";
+    private string participantID = "-1";
 
     [Header("Independent Module Test")]
     [SerializeField] private bool voiceSendtoVLM = false;
@@ -54,6 +54,8 @@ public class Orchestrator : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         if (playerCamera == null) playerCamera = Camera.main.transform;
+
+        participantID = userStudyController.participantID;
 
         InitLogFile();
 
