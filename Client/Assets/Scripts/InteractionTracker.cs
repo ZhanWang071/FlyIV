@@ -353,9 +353,12 @@ public class InteractionTracker : MonoBehaviour
 
         switch (userStudyController.currentScene)
         {
-            case UserStudyController.SceneType.Classroom: return userStudyController.classroom;
-            case UserStudyController.SceneType.City:      return userStudyController.city;
-            default:                                      return userStudyController.classroom;
+            case UserStudyController.SceneType.Classroom: 
+                return userStudyController.classroom;
+            case UserStudyController.SceneType.City:
+                return userStudyController.city;
+            default:
+                return userStudyController.classroom;
         }
     }
 

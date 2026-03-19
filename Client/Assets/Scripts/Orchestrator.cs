@@ -24,6 +24,7 @@ public class Orchestrator : MonoBehaviour
     public Transform cameraRig;
     public GameObject Environment;
     public bool mouseControl = true;
+    private float moveSpeed = 1.0f;
 
     [Header("Participant Logging")]
     private string participantID = "-1";
@@ -61,6 +62,7 @@ public class Orchestrator : MonoBehaviour
     private GameObject _feedbackPanel;
     private TextMeshProUGUI _feedbackText;
     private CanvasGroup _panelCanvasGroup;
+    
 
     private void Start()
     {
@@ -139,7 +141,7 @@ public class Orchestrator : MonoBehaviour
             Vector3 moveDirection = (forward * thumbstick.y + right * thumbstick.x).normalized;
 
             // 4. 移动整个 Camera Rig 
-            cameraRig.position += moveDirection * 1.0f * Time.deltaTime;
+            cameraRig.position += moveDirection * moveSpeed * Time.deltaTime;
         }
     }
 
