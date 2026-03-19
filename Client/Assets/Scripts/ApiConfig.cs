@@ -8,11 +8,11 @@ public class ApiConfig : ScriptableObject
     public string serverUrl = "http://127.0.0.1:5001/generate_skill";
 
     [Header("Common Settings")]
-    public string baseDomain = "api.shunyu.tech";
-    public string apiKey = "sk-xiMOKAnpJOvVSfzq6aC1C271FfD54e6aB444Ae82338330D9";
+    public string baseDomain = "bj.yi-zhan.top";
+    public string apiKey = "sk-1tbfpLQRbZVig0pa2805B35a9e08426190A7E2Be79E76013";
 
     [Header("Module Model Settings")]
-    public string skillUrl = "https://api.shunyu.tech/v1/chat/completions";
+    public string skillUrl = "https://bj.yi-zhan.top/v1/chat/completions";
     public string skillModel = "gemini-2.5-flash";
     public string vlmModel = "gpt-4o-mini";
     public string sttModel = "whisper-1";

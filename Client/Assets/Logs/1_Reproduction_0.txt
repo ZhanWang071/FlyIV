@@ -1,0 +1,1046 @@
+=== User Study Log ===
+Participant : 1
+Scene       : Reproduction
+Started     : 2026-03-19 10:25:31
+============================================================
+
+============================================================
+Interaction #1  |  10:27:10
+[Timing]  Voice→STT: 16.05s  |  LLM: 4.35s  |  Executor: 1.64s  |  Total(workflow): 6.02s  |  Total(speech→finish): 22.07s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": -0.0180226211,
+      "y": 1.43515456,
+      "z": -0.672267437,
+      "normalized": {
+        "x": -0.0113713909,
+        "y": 0.9055122,
+        "z": -0.4241678,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 1.58490908,
+      "sqrMagnitude": 2.511937
+    },
+    "forward": {
+      "x": -0.318398,
+      "y": -0.0593065172,
+      "z": -0.946100056,
+      "normalized": {
+        "x": -0.318398029,
+        "y": -0.05930652,
+        "z": -0.9461001,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 0.99999994,
+      "sqrMagnitude": 0.9999999
+    },
+    "right": {
+      "x": -0.947768331,
+      "y": 1.3038516E-08,
+      "z": 0.318959415,
+      "normalized": {
+        "x": -0.9477684,
+        "y": 1.30385169E-08,
+        "z": 0.318959445,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 0.99999994,
+      "sqrMagnitude": 0.99999994
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "Chair",
+        "position": {
+          "x": 3.82,
+          "y": 1.0,
+          "z": -3.65
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 3.82,
+            "y": 0.5,
+            "z": -3.65
+          },
+          "size": {
+            "x": 0.59,
+            "y": 1.0,
+            "z": 0.57
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "TeacherDesk",
+        "position": {
+          "x": 0.0,
+          "y": 0.92,
+          "z": -2.3
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 0.46,
+            "z": -2.3
+          },
+          "size": {
+            "x": 1.8,
+            "y": 0.92,
+            "z": 0.8
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Globe",
+        "position": {
+          "x": 4.73,
+          "y": 1.8,
+          "z": -3.69
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.73,
+            "y": 1.48,
+            "z": -3.69
+          },
+          "size": {
+            "x": 0.45,
+            "y": 0.63,
+            "z": 0.42
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Blackboard",
+        "position": {
+          "x": 0.0,
+          "y": 2.6,
+          "z": -3.93
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 1.8,
+            "z": -3.93
+          },
+          "size": {
+            "x": 6.1,
+            "y": 1.6,
+            "z": 0.14
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Chalks",
+        "position": {
+          "x": 1.78,
+          "y": 1.04,
+          "z": -3.89
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.78,
+            "y": 1.03,
+            "z": -3.89
+          },
+          "size": {
+            "x": 0.16,
+            "y": 0.01,
+            "z": 0.05
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Brush",
+        "position": {
+          "x": 2.16,
+          "y": 1.09,
+          "z": -3.9
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 2.16,
+            "y": 1.06,
+            "z": -3.9
+          },
+          "size": {
+            "x": 0.16,
+            "y": 0.07,
+            "z": 0.08
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Clock",
+        "position": {
+          "x": 0.0,
+          "y": 3.7,
+          "z": -3.95
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 3.4,
+            "z": -3.95
+          },
+          "size": {
+            "x": 0.6,
+            "y": 0.6,
+            "z": 0.08
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Bookcase",
+        "position": {
+          "x": 4.75,
+          "y": 1.2,
+          "z": -3.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.75,
+            "y": 0.6,
+            "z": -3.0
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.2,
+            "z": 2.0
+          },
+          "forward": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Books",
+        "position": {
+          "x": 4.65,
+          "y": 1.07,
+          "z": -3.27
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.65,
+            "y": 0.7,
+            "z": -3.27
+          },
+          "size": {
+            "x": 0.25,
+            "y": 0.73,
+            "z": 1.39
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Switch",
+        "position": {
+          "x": -4.0,
+          "y": 1.6,
+          "z": -4.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -4.0,
+            "y": 1.55,
+            "z": -4.0
+          },
+          "size": {
+            "x": 0.1,
+            "y": 0.1,
+            "z": 0.01
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": 0.05,
+          "y": 2.69,
+          "z": -0.63
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.05,
+            "y": 1.84,
+            "z": -0.63
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": 0.08,
+            "y": -0.02,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": -0.04,
+            "z": -0.08
+          },
+          "up": {
+            "x": -0.04,
+            "y": 1.0,
+            "z": -0.02
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "Chair",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chair",
+        "target": "Blackboard",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chair",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chair",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Switch",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "Chair",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "Blackboard",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "Bookcase",
+        "relation": "above"
+      },
+      {
+        "object": "Globe",
+        "target": "Books",
+        "relation": "above"
+      },
+      {
+        "object": "Globe",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Chalks",
+        "relation": "above"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Brush",
+        "relation": "above"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Clock",
+        "relation": "below"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "Chalks",
+        "target": "Chair",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "Blackboard",
+        "relation": "below"
+      },
+      {
+        "object": "Chalks",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "Brush",
+        "target": "Chair",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Blackboard",
+        "relation": "below"
+      },
+      {
+        "object": "Brush",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "Clock",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Blackboard",
+        "relation": "above"
+      },
+      {
+        "object": "Clock",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Globe",
+        "relation": "below"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Switch",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Globe",
+        "relation": "below"
+      },
+      {
+        "object": "Books",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Switch",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Switch",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Switch",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "Blackboard",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "Chalks",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Clock",
+        "relation": "right"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "Blackboard",
+      "position": {
+        "x": -0.184386969,
+        "y": 2.16299772,
+        "z": -3.86000037,
+        "normalized": {
+          "x": -0.04163586,
+          "y": 0.48841992,
+          "z": -0.871614933,
+          "normalized": {
+            "x": -0.041635856,
+            "y": 0.488419861,
+            "z": -0.8716148,
+            "normalized": {
+              "x": -0.04163586,
+              "y": 0.4884199,
+              "z": -0.8716149,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.42856169,
+        "sqrMagnitude": 19.61216
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    }
+  ],
+  "user_request": "Show product's sales in one line chat.",
+  "data_info": null
+}
+
+[Generated Sequence]
+CREATE("ProductSalesLineChart", "sales/monthly_sales.json", "2d_line", "month", "electronics");
+APPEND_SERIES("ProductSalesLineChart", "sales/monthly_sales.json", "month", "clothing", "line");
+EMBED("ProductSalesLineChart", "Blackboard");
