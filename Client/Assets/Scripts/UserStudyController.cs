@@ -39,6 +39,12 @@ public partial class UserStudyController : MonoBehaviour
 
     private void Update()
     {
+        // if (Time.frameCount % 60 == 0)
+        // { // 每秒打印一次，避免刷屏
+        //     bool isConnected = OVRInput.IsControllerConnected(OVRInput.Controller.LTouch);
+        //     Debug.Log($"<color=white>左手手柄连接状态: {isConnected}</color>");
+        // }
+
         if (currentScene != lastScene)
         {
             UpdateScene(forceReset: true);

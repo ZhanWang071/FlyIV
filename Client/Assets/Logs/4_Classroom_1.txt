@@ -1,0 +1,7751 @@
+=== User Study Log ===
+Participant : 4
+Scene       : Classroom
+Started     : 2026-03-19 18:51:31
+============================================================
+
+============================================================
+Interaction #1  |  18:52:44
+[Timing]  Voice→STT: 12.70s  |  LLM: 5.13s  |  Executor: 0.00s  |  Total(workflow): 5.18s  |  Total(speech→finish): 17.89s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": -0.5517124,
+      "y": 3.28052187,
+      "z": -0.20974955,
+      "normalized": {
+        "x": -0.165520474,
+        "y": 0.9841967,
+        "z": -0.06292743,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 3.33319736,
+      "sqrMagnitude": 11.1102057
+    },
+    "forward": {
+      "x": 0.139784232,
+      "y": -0.334176332,
+      "z": -0.932087243,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.00000012
+    },
+    "right": {
+      "x": -0.9875187,
+      "y": 0.02194634,
+      "z": -0.155965552,
+      "normalized": {
+        "x": -0.9875186,
+        "y": 0.0219463389,
+        "z": -0.155965537,
+        "normalized": {
+          "x": -0.987518668,
+          "y": 0.02194634,
+          "z": -0.155965552,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 0.99999994,
+        "sqrMagnitude": 0.9999999
+      },
+      "magnitude": 1.00000012,
+      "sqrMagnitude": 1.00000012
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "Chair",
+        "position": {
+          "x": 3.82,
+          "y": 1.0,
+          "z": -3.65
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 3.82,
+            "y": 0.5,
+            "z": -3.65
+          },
+          "size": {
+            "x": 0.59,
+            "y": 1.0,
+            "z": 0.57
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "FrontDoor",
+        "position": {
+          "x": -5.13,
+          "y": 2.5,
+          "z": -2.25
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -5.13,
+            "y": 1.25,
+            "z": -2.25
+          },
+          "size": {
+            "x": 0.23,
+            "y": 2.5,
+            "z": 1.5
+          },
+          "forward": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "TeacherDesk",
+        "position": {
+          "x": 0.0,
+          "y": 0.92,
+          "z": -2.3
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 0.46,
+            "z": -2.3
+          },
+          "size": {
+            "x": 1.8,
+            "y": 0.92,
+            "z": 0.8
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Globe",
+        "position": {
+          "x": 4.73,
+          "y": 1.8,
+          "z": -3.69
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.73,
+            "y": 1.48,
+            "z": -3.69
+          },
+          "size": {
+            "x": 0.45,
+            "y": 0.63,
+            "z": 0.42
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Blackboard",
+        "position": {
+          "x": 0.0,
+          "y": 2.6,
+          "z": -3.93
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 1.8,
+            "z": -3.93
+          },
+          "size": {
+            "x": 6.1,
+            "y": 1.6,
+            "z": 0.14
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Chalks",
+        "position": {
+          "x": 1.78,
+          "y": 1.04,
+          "z": -3.89
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.78,
+            "y": 1.03,
+            "z": -3.89
+          },
+          "size": {
+            "x": 0.16,
+            "y": 0.01,
+            "z": 0.05
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Brush",
+        "position": {
+          "x": 2.16,
+          "y": 1.09,
+          "z": -3.9
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 2.16,
+            "y": 1.06,
+            "z": -3.9
+          },
+          "size": {
+            "x": 0.16,
+            "y": 0.07,
+            "z": 0.08
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Clock",
+        "position": {
+          "x": 0.0,
+          "y": 3.7,
+          "z": -3.95
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 3.4,
+            "z": -3.95
+          },
+          "size": {
+            "x": 0.6,
+            "y": 0.6,
+            "z": 0.08
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Bookcase",
+        "position": {
+          "x": 4.75,
+          "y": 1.2,
+          "z": -3.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.75,
+            "y": 0.6,
+            "z": -3.0
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.2,
+            "z": 2.0
+          },
+          "forward": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Books",
+        "position": {
+          "x": 4.65,
+          "y": 1.07,
+          "z": -3.27
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.65,
+            "y": 0.7,
+            "z": -3.27
+          },
+          "size": {
+            "x": 0.25,
+            "y": 0.73,
+            "z": 1.39
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Switch",
+        "position": {
+          "x": -4.0,
+          "y": 1.6,
+          "z": -4.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -4.0,
+            "y": 1.55,
+            "z": -4.0
+          },
+          "size": {
+            "x": 0.1,
+            "y": 0.1,
+            "z": 0.01
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": -0.55,
+          "y": 3.28,
+          "z": -0.21
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.55,
+            "y": 2.43,
+            "z": -0.21
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": 0.14,
+            "y": -0.35,
+            "z": -0.93
+          },
+          "right": {
+            "x": -0.99,
+            "y": 0.03,
+            "z": -0.16
+          },
+          "up": {
+            "x": 0.08,
+            "y": 0.94,
+            "z": -0.34
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "Chair",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chair",
+        "target": "Blackboard",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chair",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "TeacherDesk",
+        "relation": "in front of"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "Switch",
+        "relation": "in front of"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "FrontDoor",
+        "relation": "behind"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Switch",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "Globe",
+        "target": "Chair",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "Blackboard",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "Brush",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "Bookcase",
+        "relation": "above"
+      },
+      {
+        "object": "Globe",
+        "target": "Books",
+        "relation": "above"
+      },
+      {
+        "object": "Globe",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Chalks",
+        "relation": "above"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Brush",
+        "relation": "above"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Clock",
+        "relation": "below"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "Chalks",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "Blackboard",
+        "relation": "below"
+      },
+      {
+        "object": "Chalks",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "Brush",
+        "target": "Chair",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "Brush",
+        "target": "Blackboard",
+        "relation": "below"
+      },
+      {
+        "object": "Brush",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Blackboard",
+        "relation": "above"
+      },
+      {
+        "object": "Clock",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Globe",
+        "relation": "below"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Globe",
+        "relation": "below"
+      },
+      {
+        "object": "Books",
+        "target": "Blackboard",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Switch",
+        "relation": "behind"
+      },
+      {
+        "object": "Switch",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "FrontDoor",
+        "relation": "behind"
+      },
+      {
+        "object": "Switch",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Switch",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "Switch",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "User",
+        "target": "TeacherDesk",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "Blackboard",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Clock",
+        "relation": "left"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.11,
+        "y": 1.93,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0254805814,
+          "y": 0.4470684,
+          "z": -0.8941368,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.317013,
+        "sqrMagnitude": 18.6365986
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h1",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.11,
+        "y": 1.93,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0254805814,
+          "y": 0.4470684,
+          "z": -0.8941368,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.317013,
+        "sqrMagnitude": 18.6365986
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h2",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.1,
+        "y": 1.93,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0231654719,
+          "y": 0.447093576,
+          "z": -0.894187152,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.3167696,
+        "sqrMagnitude": 18.6344986
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h3",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.1,
+        "y": 1.93,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0231654719,
+          "y": 0.447093576,
+          "z": -0.894187152,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.3167696,
+        "sqrMagnitude": 18.6344986
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h4",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.11,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0255069416,
+          "y": 0.445212066,
+          "z": -0.895061731,
+          "normalized": {
+            "x": -0.0255069435,
+            "y": 0.4452121,
+            "z": -0.8950618,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 4.3125515,
+        "sqrMagnitude": 18.5980988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h5",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.1,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0232133567,
+          "y": 0.4433751,
+          "z": -0.896035552,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30786467,
+        "sqrMagnitude": 18.5577
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h6",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.1,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0232133567,
+          "y": 0.4433751,
+          "z": -0.896035552,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30786467,
+        "sqrMagnitude": 18.5577
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h7",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.1,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.02318944,
+          "y": 0.445237219,
+          "z": -0.895112336,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.312308,
+        "sqrMagnitude": 18.5959988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h8",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208715629,
+          "y": 0.445259959,
+          "z": -0.895158052,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31208754,
+        "sqrMagnitude": 18.594099
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h9",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208715629,
+          "y": 0.445259959,
+          "z": -0.895158052,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31208754,
+        "sqrMagnitude": 18.594099
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h10",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.93,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208499879,
+          "y": 0.4471164,
+          "z": -0.8942328,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.3165493,
+        "sqrMagnitude": 18.6325989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h11",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.93,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208499879,
+          "y": 0.4471164,
+          "z": -0.8942328,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.3165493,
+        "sqrMagnitude": 18.6325989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h12",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208715629,
+          "y": 0.445259959,
+          "z": -0.895158052,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31208754,
+        "sqrMagnitude": 18.594099
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h13",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208715629,
+          "y": 0.445259959,
+          "z": -0.895158052,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31208754,
+        "sqrMagnitude": 18.594099
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h14",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.93,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208499879,
+          "y": 0.4471164,
+          "z": -0.8942328,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.3165493,
+        "sqrMagnitude": 18.6325989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h15",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.93,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185341667,
+          "y": 0.4471368,
+          "z": -0.8942736,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31635237,
+        "sqrMagnitude": 18.6309
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h16",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.93,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185341667,
+          "y": 0.4471368,
+          "z": -0.8942736,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31635237,
+        "sqrMagnitude": 18.6309
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h17",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.93,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185341667,
+          "y": 0.4471368,
+          "z": -0.8942736,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31635237,
+        "sqrMagnitude": 18.6309
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h18",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185533464,
+          "y": 0.4452803,
+          "z": -0.895198941,
+          "normalized": {
+            "x": -0.0185533483,
+            "y": 0.445280343,
+            "z": -0.895199,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.3118906,
+        "sqrMagnitude": 18.5924
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h19",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185533464,
+          "y": 0.4452803,
+          "z": -0.895198941,
+          "normalized": {
+            "x": -0.0185533483,
+            "y": 0.445280343,
+            "z": -0.895199,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.3118906,
+        "sqrMagnitude": 18.5924
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h20",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185533464,
+          "y": 0.4452803,
+          "z": -0.895198941,
+          "normalized": {
+            "x": -0.0185533483,
+            "y": 0.445280343,
+            "z": -0.895199,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.3118906,
+        "sqrMagnitude": 18.5924
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h21",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185533464,
+          "y": 0.4452803,
+          "z": -0.895198941,
+          "normalized": {
+            "x": -0.0185533483,
+            "y": 0.445280343,
+            "z": -0.895199,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.3118906,
+        "sqrMagnitude": 18.5924
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h22",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185533464,
+          "y": 0.4452803,
+          "z": -0.895198941,
+          "normalized": {
+            "x": -0.0185533483,
+            "y": 0.445280343,
+            "z": -0.895199,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.3118906,
+        "sqrMagnitude": 18.5924
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h23",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185533464,
+          "y": 0.4452803,
+          "z": -0.895198941,
+          "normalized": {
+            "x": -0.0185533483,
+            "y": 0.445280343,
+            "z": -0.895199,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.3118906,
+        "sqrMagnitude": 18.5924
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h24",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185533464,
+          "y": 0.4452803,
+          "z": -0.895198941,
+          "normalized": {
+            "x": -0.0185533483,
+            "y": 0.445280343,
+            "z": -0.895199,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.3118906,
+        "sqrMagnitude": 18.5924
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h25",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208715629,
+          "y": 0.445259959,
+          "z": -0.895158052,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31208754,
+        "sqrMagnitude": 18.594099
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h26",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208715629,
+          "y": 0.445259959,
+          "z": -0.895158052,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31208754,
+        "sqrMagnitude": 18.594099
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h27",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208715629,
+          "y": 0.445259959,
+          "z": -0.895158052,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31208754,
+        "sqrMagnitude": 18.594099
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h28",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208715629,
+          "y": 0.445259959,
+          "z": -0.895158052,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31208754,
+        "sqrMagnitude": 18.594099
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h29",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208715629,
+          "y": 0.445259959,
+          "z": -0.895158052,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31208754,
+        "sqrMagnitude": 18.594099
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h30",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h31",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h32",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h33",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h34",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h35",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h36",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h37",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h38",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h39",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h40",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h41",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h42",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h43",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h44",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h45",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185724851,
+          "y": 0.443418115,
+          "z": -0.896122456,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.307447,
+        "sqrMagnitude": 18.5540981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h46",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185724851,
+          "y": 0.443418115,
+          "z": -0.896122456,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.307447,
+        "sqrMagnitude": 18.5540981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h47",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.09,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0208930913,
+          "y": 0.4433978,
+          "z": -0.8960814,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30764437,
+        "sqrMagnitude": 18.5558
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h48",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185724851,
+          "y": 0.443418115,
+          "z": -0.896122456,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.307447,
+        "sqrMagnitude": 18.5540981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h49",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185724851,
+          "y": 0.443418115,
+          "z": -0.896122456,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.307447,
+        "sqrMagnitude": 18.5540981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h50",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185724851,
+          "y": 0.443418115,
+          "z": -0.896122456,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.307447,
+        "sqrMagnitude": 18.5540981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h51",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h52",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h53",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h54",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h55",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h56",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h57",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h58",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h59",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h60",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h61",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h62",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h63",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h64",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h65",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h66",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h67",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h68",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h69",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h70",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h71",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h72",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h73",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h74",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h75",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h76",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.08,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0185915846,
+          "y": 0.441550165,
+          "z": -0.897044,
+          "normalized": {
+            "x": -0.0185915828,
+            "y": 0.4415501,
+            "z": -0.8970439,
+            "normalized": {
+              "x": -0.0185915846,
+              "y": 0.441550136,
+              "z": -0.897043943,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.303022,
+        "sqrMagnitude": 18.5159988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h77",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h78",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h79",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h80",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h81",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h82",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h83",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h84",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h85",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h86",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h87",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0162682962,
+          "y": 0.441568017,
+          "z": -0.897080243,
+          "normalized": {
+            "x": -0.016268298,
+            "y": 0.441568047,
+            "z": -0.8970803,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302848,
+        "sqrMagnitude": 18.5145
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h88",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h89",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h90",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h91",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h92",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h93",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h94",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h95",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h96",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h97",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h98",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h99",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h100",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h101",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h102",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h103",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h104",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h105",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h106",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h107",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h108",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h109",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h110",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h111",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h112",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h113",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h114",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h115",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h116",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h117",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h118",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h119",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h120",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h121",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h122",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h123",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h124",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h125",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h126",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h127",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h128",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h129",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h130",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h131",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139447432,
+          "y": 0.4415835,
+          "z": -0.8971118,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.3026967,
+        "sqrMagnitude": 18.5131989
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h132",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h133",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h134",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h135",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h136",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h137",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h138",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h139",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h140",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h141",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h142",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h143",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h144",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h145",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h146",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h147",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h148",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h149",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h150",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h151",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h152",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0139304167,
+          "y": 0.443451583,
+          "z": -0.8961901,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30712175,
+        "sqrMagnitude": 18.5512981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h153",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h154",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h155",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0115970587,
+          "y": 0.445327044,
+          "z": -0.8952929,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.311438,
+        "sqrMagnitude": 18.5885
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h156",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0115970587,
+          "y": 0.445327044,
+          "z": -0.8952929,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.311438,
+        "sqrMagnitude": 18.5885
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h157",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0115970587,
+          "y": 0.445327044,
+          "z": -0.8952929,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.311438,
+        "sqrMagnitude": 18.5885
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h158",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0115970587,
+          "y": 0.445327044,
+          "z": -0.8952929,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.311438,
+        "sqrMagnitude": 18.5885
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h159",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0115970587,
+          "y": 0.445327044,
+          "z": -0.8952929,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.311438,
+        "sqrMagnitude": 18.5885
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h160",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0115970587,
+          "y": 0.445327044,
+          "z": -0.8952929,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.311438,
+        "sqrMagnitude": 18.5885
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h161",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h162",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h163",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h164",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h165",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h166",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h167",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h168",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h169",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h170",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h171",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h172",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h173",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h174",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h175",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h176",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h177",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h178",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h179",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h180",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h181",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h182",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h183",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h184",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h185",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h186",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h187",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h188",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h189",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h190",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h191",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h192",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h193",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h194",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h195",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h196",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h197",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h198",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h199",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116090234,
+          "y": 0.4434647,
+          "z": -0.8962166,
+          "normalized": {
+            "x": -0.0116090244,
+            "y": 0.443464726,
+            "z": -0.896216631,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999998
+        },
+        "magnitude": 4.30699444,
+        "sqrMagnitude": 18.5502
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h200",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116209649,
+          "y": 0.441596627,
+          "z": -0.8971384,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302569,
+        "sqrMagnitude": 18.5120983
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h201",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116209649,
+          "y": 0.441596627,
+          "z": -0.8971384,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302569,
+        "sqrMagnitude": 18.5120983
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h202",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116209649,
+          "y": 0.441596627,
+          "z": -0.8971384,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302569,
+        "sqrMagnitude": 18.5120983
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h203",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116209649,
+          "y": 0.441596627,
+          "z": -0.8971384,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302569,
+        "sqrMagnitude": 18.5120983
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h204",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.9,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0116209649,
+          "y": 0.441596627,
+          "z": -0.8971384,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.302569,
+        "sqrMagnitude": 18.5120983
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h205",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.009287445,
+          "y": 0.443475485,
+          "z": -0.896238446,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.30688953,
+        "sqrMagnitude": 18.5493
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h206",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.009277872,
+          "y": 0.445337832,
+          "z": -0.8953146,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31133366,
+        "sqrMagnitude": 18.5875988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h207",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.93,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.009268277,
+          "y": 0.4471944,
+          "z": -0.8943888,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31579638,
+        "sqrMagnitude": 18.6260986
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h208",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.03,
+        "y": 1.95,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.00693690265,
+          "y": 0.4508987,
+          "z": -0.892548144,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.32469654,
+        "sqrMagnitude": 18.703
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h209",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.01,
+        "y": 1.96,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.002309937,
+          "y": 0.4527477,
+          "z": -0.8916357,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.329122,
+        "sqrMagnitude": 18.7412987
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h210",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": 0.0,
+        "y": 1.96,
+        "z": -3.86,
+        "normalized": {
+          "x": 0.0,
+          "y": 0.4527489,
+          "z": -0.8916381,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.32911062,
+        "sqrMagnitude": 18.7412
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h211",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": 0.0,
+        "y": 1.98,
+        "z": -3.86,
+        "normalized": {
+          "x": 0.0,
+          "y": 0.456410229,
+          "z": -0.889769435,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.33820248,
+        "sqrMagnitude": 18.82
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h212",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": 0.0,
+        "y": 1.98,
+        "z": -3.86,
+        "normalized": {
+          "x": 0.0,
+          "y": 0.456410229,
+          "z": -0.889769435,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.33820248,
+        "sqrMagnitude": 18.82
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h213",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.02,
+        "y": 1.98,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.00461015571,
+          "y": 0.456405431,
+          "z": -0.88976,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.33824825,
+        "sqrMagnitude": 18.8203983
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h214",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.02,
+        "y": 1.96,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.00461983727,
+          "y": 0.452744067,
+          "z": -0.891628563,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.329157,
+        "sqrMagnitude": 18.7416
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h215",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.02,
+        "y": 1.96,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.00461983727,
+          "y": 0.452744067,
+          "z": -0.891628563,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.329157,
+        "sqrMagnitude": 18.7416
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h216",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.02,
+        "y": 1.96,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.00461983727,
+          "y": 0.452744067,
+          "z": -0.891628563,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.329157,
+        "sqrMagnitude": 18.7416
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h217",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.01,
+        "y": 1.96,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.002309937,
+          "y": 0.4527477,
+          "z": -0.8916357,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.329122,
+        "sqrMagnitude": 18.7412987
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h218",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.01,
+        "y": 1.96,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.002309937,
+          "y": 0.4527477,
+          "z": -0.8916357,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.329122,
+        "sqrMagnitude": 18.7412987
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h219",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.01,
+        "y": 1.96,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.002309937,
+          "y": 0.4527477,
+          "z": -0.8916357,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 4.329122,
+        "sqrMagnitude": 18.7412987
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h220",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.009277872,
+          "y": 0.445337832,
+          "z": -0.8953146,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31133366,
+        "sqrMagnitude": 18.5875988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h221",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0115970587,
+          "y": 0.445327044,
+          "z": -0.8952929,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.311438,
+        "sqrMagnitude": 18.5885
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h222",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.009277872,
+          "y": 0.445337832,
+          "z": -0.8953146,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31133366,
+        "sqrMagnitude": 18.5875988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h223",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.03,
+        "y": 1.91,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.006965715,
+          "y": 0.443483829,
+          "z": -0.8962553,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.30680847,
+        "sqrMagnitude": 18.5486
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h224",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.03,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.00695853448,
+          "y": 0.4453462,
+          "z": -0.895331442,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31125259,
+        "sqrMagnitude": 18.5868988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h225",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.03,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.00695853448,
+          "y": 0.4453462,
+          "z": -0.895331442,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31125259,
+        "sqrMagnitude": 18.5868988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h226",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.03,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.00695853448,
+          "y": 0.4453462,
+          "z": -0.895331442,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31125259,
+        "sqrMagnitude": 18.5868988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h227",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.03,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.00695853448,
+          "y": 0.4453462,
+          "z": -0.895331442,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31125259,
+        "sqrMagnitude": 18.5868988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h228",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.03,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.00695853448,
+          "y": 0.4453462,
+          "z": -0.895331442,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31125259,
+        "sqrMagnitude": 18.5868988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h229",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.03,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.00695853448,
+          "y": 0.4453462,
+          "z": -0.895331442,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31125259,
+        "sqrMagnitude": 18.5868988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h230",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.009277872,
+          "y": 0.445337832,
+          "z": -0.8953146,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.31133366,
+        "sqrMagnitude": 18.5875988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h231",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.92,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0115970587,
+          "y": 0.445327044,
+          "z": -0.8952929,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.311438,
+        "sqrMagnitude": 18.5885
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h232",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.07,
+        "y": 1.95,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0161843766,
+          "y": 0.4508505,
+          "z": -0.8924527,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 4.325159,
+        "sqrMagnitude": 18.7069988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h233",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.06,
+        "y": 1.96,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.0138583286,
+          "y": 0.4527054,
+          "z": -0.891552448,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.32952642,
+        "sqrMagnitude": 18.7447987
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h234",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.95,
+        "z": -3.86,
+        "normalized": {
+          "x": -0.01156101,
+          "y": 0.450879425,
+          "z": -0.89251,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.32488155,
+        "sqrMagnitude": 18.7046
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    }
+  ],
+  "user_request": "Show product sales data in one line chart.",
+  "data_info": {
+    "available_data": [
+      {
+        "file": "education/student_scores_S001.json",
+        "description": "student_scores_S001 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 78.0-92.0]"
+      },
+      {
+        "file": "education/student_scores_S002.json",
+        "description": "student_scores_S002 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 68.0-81.0]"
+      },
+      {
+        "file": "education/student_scores_S003.json",
+        "description": "student_scores_S003 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 89.0-95.0]"
+      },
+      {
+        "file": "education/student_scores_S004.json",
+        "description": "student_scores_S004 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 85.0-91.0]"
+      },
+      {
+        "file": "education/student_scores_S005.json",
+        "description": "student_scores_S005 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 73.0-79.0]"
+      },
+      {
+        "file": "education/student_scores_S006.json",
+        "description": "student_scores_S006 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 87.0-91.0]"
+      },
+      {
+        "file": "education/student_scores_S007.json",
+        "description": "student_scores_S007 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 64.0-72.0]"
+      },
+      {
+        "file": "education/student_scores_S008.json",
+        "description": "student_scores_S008 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 80.0-85.0]"
+      },
+      {
+        "file": "education/student_scores_S009.json",
+        "description": "student_scores_S009 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 93.0-96.0]"
+      },
+      {
+        "file": "education/student_scores_S010.json",
+        "description": "student_scores_S010 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 62.0-75.0]"
+      },
+      {
+        "file": "education/student_scores_S011.json",
+        "description": "student_scores_S011 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 88.0-90.0]"
+      },
+      {
+        "file": "education/student_scores_S012.json",
+        "description": "student_scores_S012 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 71.0-76.0]"
+      }
+    ]
+  }
+}
+
+[Generated Sequence]
+MESSAGE("I cannot find any data related to 'product sales'. I only have data about 'student test scores and grades'.");
