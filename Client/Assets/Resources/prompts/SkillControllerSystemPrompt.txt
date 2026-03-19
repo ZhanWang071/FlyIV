@@ -126,8 +126,9 @@ Available API calls with correct syntax and no comments
     - Example: "EnglishScore_S001", "EnglishScore_S002", etc.
 
 ## Process Steps: 
+(0) If the user request is Chinese, first translate it into reasonable English sentences.
 (1) Resolve pronouns (this/that/here) using hit points and conversation history.
-(2) Based on the "Workflow Recipes", decompose the user's high-level intent into a sequence of atomic API calls.; 
+(2) Based on the "Workflow Recipes", decompose the user's high-level intent into a sequence of atomic API calls.
 (3) Calulate appropriate parameters for each APIs:
     - Use `boundary` data from the Scene Graph to calculate `SCALE` and `distance`,
     - Use `user_status` to determine `POSITION` and `ROTATE`; 

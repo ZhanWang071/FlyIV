@@ -46,7 +46,8 @@ public class SpeechToText : MonoBehaviour
 
     // 事件：语音开始时通知
     public Action OnSpeechStarted;
-    
+    public Action OnSpeechFinished;
+
     // 事件：转录成功后通知 LLM 模块
     public Action<string> OnTranscribeFinished;
 
@@ -85,6 +86,16 @@ public class SpeechToText : MonoBehaviour
 
     void Update()
     {
+        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch))
+        {
+            StartManualRecording();
+        }
+
+        if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch))
+        {
+            StopManualRecording();
+        }
+
         // 如果自动检测未启用，直接返回
         if (!autoDetection)
         {
@@ -130,6 +141,34 @@ public class SpeechToText : MonoBehaviour
                 HandleSpeechEnd();
             }
         }
+    }
+
+    private void StartManualRecording()
+    {
+        _isUserSpeaking = true;
+        if (interactionTracker) interactionTracker.StartTracking();
+
+        // 触发 Orchestrator 显示 UI（例如显示 "Listening..."）
+        OnSpeechStarted?.Invoke();
+
+        // 确保从头开始录音
+        ResetMicrophone();
+        Debug.Log("<color=cyan>[SpeechToText] 开始录音...</color>");
+    }
+
+    private void StopManualRecording()
+    {
+        if (!_isUserSpeaking) return;
+
+        _isUserSpeaking = false;
+        if (interactionTracker) interactionTracker.StopTracking();
+
+        OnSpeechFinished?.Invoke();
+
+        Debug.Log("<color=cyan>[SpeechToText] 语音结束，开始处理...</color>");
+
+        // 调用你原本的音频处理和上传逻辑
+        HandleSpeechEnd();
     }
 
     private float GetCurrentMaxAmplitude()

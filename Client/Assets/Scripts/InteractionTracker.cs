@@ -168,6 +168,7 @@ public class InteractionTracker : MonoBehaviour
         _labelBgRect = bgGO.AddComponent<RectTransform>();
         var bgImage = bgGO.AddComponent<UnityEngine.UI.Image>();
         bgImage.color = labelBgColor;
+        bgImage.sprite = null;
 
         // 3. 创建 TextMeshProUGUI
         GameObject textGO = new GameObject("LabelText");
@@ -426,6 +427,43 @@ public class InteractionTracker : MonoBehaviour
     {
         var obj = GetPrimaryPointedObject();
         return obj != null ? obj.name : "None";
+    }
+
+    public List<object> GetPrimaryHitDataDuringSpeech()
+    {
+        List<object> hits = new List<object>();
+
+        // 获取主要指向的物体
+        GameObject primaryObj = GetPrimaryPointedObject();
+
+        // 确定对应的 Hit 信息
+        RaycastHit primaryHit;
+
+        if (_recordedHitDetails.Count > 0)
+        {
+            // 如果当前没指东西，取语音期间记录的最后一个命中信息
+            primaryHit = _recordedHitDetails.Last();
+        }
+        else
+        {
+            // 如果整个过程都没指到东西，返回
+            return hits;
+        }
+
+        Vector3 RoundVec3(Vector3 v) => new Vector3(
+            (float)Math.Round(v.x, 2),
+            (float)Math.Round(v.y, 2),
+            (float)Math.Round(v.z, 2));
+
+        hits.Add(new
+        {
+            hit_id = "h0",
+            @object = primaryObj != null ? primaryObj.name : "None",
+            position = RoundVec3(primaryHit.point),
+            normal = RoundVec3(primaryHit.normal)
+        });
+
+        return hits;
     }
 
     // =========================================================================

@@ -21,6 +21,7 @@ public class AppendSeries
 
         Debug.Log($"AppendSeriesSkill: Appended {appendedCount} of {x_values.Count} " +
                   $"elements to serie {serieIndex} on chart '{chart_id}'.");
+        // chart.AddChartComponent<Legend>().show = true;
 
         chart.RefreshChart();
     }
