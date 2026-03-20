@@ -103,8 +103,8 @@ public class Orchestrator : MonoBehaviour
 
     private void Update()
     {
-        if (mouseControl) HandleInputAndLook();
-        ControllerInput();
+        // if (mouseControl) HandleInputAndLook();
+        // ControllerInput();
         pointingObject = interactionTracker.GetCurrentPointingObjectName();
 
         // Detect scene changes driven by UserStudyController
@@ -366,27 +366,27 @@ public class Orchestrator : MonoBehaviour
             UnityEngine.Debug.Log($"<color=yellow>[Timer] Voice→STT: {voiceElapsed:F2} s  |  Speech→Finish: {speechToFinishElapsed:F2} s</color>");
     }
 
-    private void HandleInputAndLook()
-    {
-        if (Keyboard.current?.escapeKey.wasPressedThisFrame ?? false)
-            Cursor.lockState = (Cursor.lockState == CursorLockMode.None) ? CursorLockMode.Locked : CursorLockMode.None;
+    // private void HandleInputAndLook()
+    // {
+    //     if (Keyboard.current?.escapeKey.wasPressedThisFrame ?? false)
+    //         Cursor.lockState = (Cursor.lockState == CursorLockMode.None) ? CursorLockMode.Locked : CursorLockMode.None;
 
-        if (Cursor.lockState != CursorLockMode.Locked) return;
+    //     if (Cursor.lockState != CursorLockMode.Locked) return;
 
-        if (Mouse.current != null)
-        {
-            Vector2 d = Mouse.current.delta.ReadValue() * 0.1f;
-            cameraRig.Rotate(0, d.x, 0, Space.World);
-            cameraRig.Rotate(-d.y, 0, 0, Space.Self);
-        }
-        if (Keyboard.current != null)
-        {
-            var k = Keyboard.current;
-            Vector3 dir = (cameraRig.forward * (k.wKey.ReadValue() - k.sKey.ReadValue()) +
-                           cameraRig.right * (k.dKey.ReadValue() - k.aKey.ReadValue()));
-            cameraRig.position += dir * 3.0f * Time.deltaTime;
-        }
-    }
+    //     if (Mouse.current != null)
+    //     {
+    //         Vector2 d = Mouse.current.delta.ReadValue() * 0.1f;
+    //         cameraRig.Rotate(0, d.x, 0, Space.World);
+    //         cameraRig.Rotate(-d.y, 0, 0, Space.Self);
+    //     }
+    //     if (Keyboard.current != null)
+    //     {
+    //         var k = Keyboard.current;
+    //         Vector3 dir = (cameraRig.forward * (k.wKey.ReadValue() - k.sKey.ReadValue()) +
+    //                        cameraRig.right * (k.dKey.ReadValue() - k.aKey.ReadValue()));
+    //         cameraRig.position += dir * 3.0f * Time.deltaTime;
+    //     }
+    // }
 
     /// ---------- Debug Buttons --------------
     public void ResetConversation()

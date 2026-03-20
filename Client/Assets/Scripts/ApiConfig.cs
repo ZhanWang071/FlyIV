@@ -8,15 +8,20 @@ public class ApiConfig : ScriptableObject
     public string serverUrl = "http://127.0.0.1:5001/generate_skill";
 
     [Header("Common Settings")]
+    // public string baseDomain = "bj.yi-zhan.top";
+    // public string apiKey = "sk-1tbfpLQRbZVig0pa2805B35a9e08426190A7E2Be79E76013";
     public string baseDomain = "bj.yi-zhan.top";
     public string apiKey = "sk-1tbfpLQRbZVig0pa2805B35a9e08426190A7E2Be79E76013";
 
+
     [Header("Module Model Settings")]
     public string skillUrl = "https://bj.yi-zhan.top/v1/chat/completions";
-    public string skillModel = "gemini-2.5-flash";
+    public string skillModel = "gemini-3-flash-preview";
     public string vlmModel = "gpt-4o-mini";
     public string sttModel = "whisper-1";
-    public string llmModel = "gemini-2.5-flash";
+    // public string llmModel = "gemini-2.5-flash";
+    public string llmModel = "gemini-3-flash-preview";
+
 
     // --- 自动化单例访问逻辑 ---
     private static ApiConfig _instance;

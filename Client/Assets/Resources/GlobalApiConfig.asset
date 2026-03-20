@@ -16,7 +16,7 @@ MonoBehaviour:
   baseDomain: bj.yi-zhan.top
   apiKey: sk-1tbfpLQRbZVig0pa2805B35a9e08426190A7E2Be79E76013
   skillUrl: https://bj.yi-zhan.top/v1/chat/completions
-  skillModel: gemini-2.5-flash
+  skillModel: gemini-3-flash-preview
   vlmModel: gpt-4o-mini
   sttModel: whisper-1
-  llmModel: claude-3-sonnet-20240229
+  llmModel: gemini-3-flash-preview

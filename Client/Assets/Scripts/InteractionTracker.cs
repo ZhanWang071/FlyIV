@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class InteractionTracker : MonoBehaviour
 {
@@ -79,6 +80,10 @@ public class InteractionTracker : MonoBehaviour
 
     private void Update()
     {
+        if (mouseControl) HandleInputAndLook();
+        ControllerInput();
+
+
         _currentlyPointedObject = PerformPointingDetection();
 
         if (_isRecordingSpeech && _currentlyPointedObject != null)
@@ -94,6 +99,58 @@ public class InteractionTracker : MonoBehaviour
         UpdateRayLinesVisual(rightHit != null, rHit, leftHit != null, lHit);
 
         if (showDebugRay) DrawDebugRays();
+    }
+
+
+    public bool mouseControl = true;
+    private float moveSpeed = 1.0f;
+    public Transform cameraRig;
+    public Transform playerCamera;
+    private void HandleInputAndLook()
+    {
+        if (Keyboard.current?.escapeKey.wasPressedThisFrame ?? false)
+            Cursor.lockState = (Cursor.lockState == CursorLockMode.None) ? CursorLockMode.Locked : CursorLockMode.None;
+
+        if (Cursor.lockState != CursorLockMode.Locked) return;
+
+        if (Mouse.current != null)
+        {
+            Vector2 d = Mouse.current.delta.ReadValue() * 0.1f;
+            cameraRig.Rotate(0, d.x, 0, Space.World);
+            cameraRig.Rotate(-d.y, 0, 0, Space.Self);
+        }
+        if (Keyboard.current != null)
+        {
+            var k = Keyboard.current;
+            Vector3 dir = (cameraRig.forward * (k.wKey.ReadValue() - k.sKey.ReadValue()) +
+                           cameraRig.right * (k.dKey.ReadValue() - k.aKey.ReadValue()));
+            cameraRig.position += dir * 3.0f * Time.deltaTime;
+        }
+    }
+
+    private void ControllerInput()
+    {
+        // 1. 获取左手摇杆输入 (PrimaryThumbstick 对应左手)
+        // 返回的是 Vector2 (x 为左右, y 为前后)
+        Vector2 thumbstick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+
+        if (thumbstick.sqrMagnitude > 0.01f)
+        {
+            // 2. 获取相机的方向，并抹平 Y 轴（防止抬头时往天上飞）
+            Vector3 forward = playerCamera.forward;
+            Vector3 right = playerCamera.right;
+            // forward.y = 0;
+            right.y = 0;
+            forward.Normalize();
+            right.Normalize();
+
+            // 3. 计算最终移动向量
+            // 摇杆 y 对应相机的 forward，摇杆 x 对应相机的 right
+            Vector3 moveDirection = (forward * thumbstick.y + right * thumbstick.x).normalized;
+
+            // 4. 移动整个 Camera Rig 
+            cameraRig.position += moveDirection * moveSpeed * Time.deltaTime;
+        }
     }
 
     // =========================================================================
