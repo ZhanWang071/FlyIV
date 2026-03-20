@@ -1,0 +1,5 @@
+=== User Study Log ===
+Participant : 2
+Scene       : Reproduction
+Started     : 2026-03-20 10:20:20
+============================================================

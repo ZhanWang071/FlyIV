@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using OpenAI;
 using OpenAI.Chat;
 using OpenAI.Audio;
-
+using UnityEngine.InputSystem;
 public class SpeechToText : MonoBehaviour
 {
     [Header("API Configuration")]
@@ -20,8 +20,8 @@ public class SpeechToText : MonoBehaviour
     [SerializeField] private bool autoDetection = false;
 
     [Header("Voice Activity Detection")]
-    public float threshold = 0.02f;   
-    public float silenceDelay = 4.0f; 
+    public float threshold = 0.02f;
+    public float silenceDelay = 4.0f;
     public int frequency = 16000;
 
     [Header("Inspector Debug & Manual Input")]
@@ -43,6 +43,7 @@ public class SpeechToText : MonoBehaviour
     private bool _isUserSpeaking = false;
     private float _silenceTimer = 0f;
     private string _currentDevice;
+    private int _startSamplePos;
 
     // 事件：语音开始时通知
     public Action OnSpeechStarted;
@@ -54,7 +55,7 @@ public class SpeechToText : MonoBehaviour
     private void Start()
     {
         openaiClient = new OpenAIClient(ApiConfig.Instance.Auth, ApiConfig.Instance.Settings);
-        
+
         StartCoroutine(DelayedStart());
     }
 
@@ -67,14 +68,16 @@ public class SpeechToText : MonoBehaviour
     [ContextMenu("Reset Microphone")]
     public void ResetMicrophone()
     {
-        if (Microphone.IsRecording(_currentDevice))
-        {
-            Microphone.End(_currentDevice);
-        }
+        // if (Microphone.IsRecording(_currentDevice))
+        // {
+        //     Microphone.End(_currentDevice);
+        // }
 
         if (Microphone.devices.Length > 0)
         {
             _currentDevice = Microphone.devices[0]; // 使用默认设备
+            Microphone.GetDeviceCaps(_currentDevice, out int minFreq, out int maxFreq);
+            Debug.Log($"设备 {_currentDevice} 支持频率范围: {minFreq} - {maxFreq}");
             _recordingClip = Microphone.Start(_currentDevice, true, 20, frequency);
             Debug.Log($"<color=green>麦克风已重置: {_currentDevice}</color>");
         }
@@ -86,12 +89,22 @@ public class SpeechToText : MonoBehaviour
 
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch))
+        // if (Microphone.IsRecording(_currentDevice))
+        // {
+        //     // 每一秒打印一次位置，看它是不是 0
+        //     if (Time.frameCount % 60 == 0)
+        //         Debug.Log($"麦克风实时位置: {Microphone.GetPosition(_currentDevice)}");
+        // }
+
+        bool spaceDown = Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame;
+        bool spaceUp = Keyboard.current != null && Keyboard.current.spaceKey.wasReleasedThisFrame;
+
+        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch) || spaceDown)
         {
             StartManualRecording();
         }
 
-        if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch))
+        if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch) || spaceUp)
         {
             StopManualRecording();
         }
@@ -152,8 +165,12 @@ public class SpeechToText : MonoBehaviour
         OnSpeechStarted?.Invoke();
 
         // 确保从头开始录音
-        ResetMicrophone();
-        Debug.Log("<color=cyan>[SpeechToText] 开始录音...</color>");
+        if (!Microphone.IsRecording(_currentDevice))
+        {
+            ResetMicrophone();
+        }
+        _startSamplePos = Microphone.GetPosition(_currentDevice);
+        Debug.Log($"<color=cyan>[SpeechToText] 开始录音...起始位置: {_startSamplePos}</color>");
     }
 
     private void StopManualRecording()
@@ -165,7 +182,7 @@ public class SpeechToText : MonoBehaviour
 
         OnSpeechFinished?.Invoke();
 
-        Debug.Log("<color=cyan>[SpeechToText] 语音结束，开始处理...</color>");
+        Debug.Log($"<color=cyan>[SpeechToText] 语音结束，开始处理...</color>");
 
         // 调用你原本的音频处理和上传逻辑
         HandleSpeechEnd();
@@ -177,7 +194,7 @@ public class SpeechToText : MonoBehaviour
         int pos = Microphone.GetPosition(null);
         if (pos < 128) return 0;
         _recordingClip.GetData(samples, pos - 128);
-        
+
         float max = 0;
         foreach (var s in samples) if (Mathf.Abs(s) > max) max = Mathf.Abs(s);
         return max;
@@ -185,10 +202,31 @@ public class SpeechToText : MonoBehaviour
 
     private void HandleSpeechEnd()
     {
-        byte[] audioData = WavUtility.FromAudioClip(_recordingClip);
-        string audioFile = SaveAudioData(audioData);
-        Destroy(_recordingClip);
-        _ = UploadAudio(audioFile);
+        int endSamplePos = Microphone.GetPosition(_currentDevice);
+
+        // 计算实际长度
+        int lastSamplePos = endSamplePos - _startSamplePos;
+
+        // 2. 停止录音
+        // Microphone.End(_currentDevice);
+        if (lastSamplePos < 0)
+            lastSamplePos = _recordingClip.samples - _startSamplePos + endSamplePos;
+
+        Debug.Log($"<color=cyan>[SpeechToText] 语音结束，结束位置: {endSamplePos},录音实际长度: {lastSamplePos} 采样点</color>");
+
+        if (lastSamplePos > 0)
+        {
+            // 3. 传入实际长度进行转换，而不是处理整个 Clip
+            byte[] audioData = WavUtility.FromAudioClip(_recordingClip, lastSamplePos, _startSamplePos, frequency);
+            string audioFile = SaveAudioData(audioData);
+
+            _ = UploadAudio(audioFile);
+        }
+
+        // byte[] audioData = WavUtility.FromAudioClip(_recordingClip);
+        // string audioFile = SaveAudioData(audioData);
+        // Destroy(_recordingClip);
+        // _ = UploadAudio(audioFile);
     }
 
     /// <summary>
@@ -228,13 +266,14 @@ public class SpeechToText : MonoBehaviour
             else
             {
                 Debug.Log("<color=gray>[SpeechToText] 请重新输入</color>");
+                OnTranscribeFinished?.Invoke("");
             }
         }
         catch (Exception e)
         {
             Debug.LogError($"[SpeechToText] OpenAI API 调用失败: {e.Message}");
         }
-        
+
         /// ------------- Old Version (UnityWebRequest) ----------
         // WWWForm form = new WWWForm();
         // form.AddBinaryData("file", wavBytes, "audio.wav", "audio/wav");
@@ -281,18 +320,18 @@ public class SpeechToText : MonoBehaviour
             Directory.CreateDirectory(directoryPath);
             Debug.Log($"创建目录: {directoryPath}");
         }
-        
+
         // 构建完整文件路径
         string filePath = Path.Combine(directoryPath, fileName);
-        
+
         try
         {
             // 写入音频数据到文件
             File.WriteAllBytes(filePath, audioData);
-            
+
             Debug.Log($"音频文件已保存: {filePath}");
             Debug.Log($"文件大小: {audioData.Length} 字节");
-            
+
             return filePath;
         }
         catch (System.Exception e)
