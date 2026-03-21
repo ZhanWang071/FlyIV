@@ -109,7 +109,7 @@ When fulfilling a request, follow these standard operational procedures to ensur
     - **Series Handling**: If the user wants "all subjects", include them in the initial `CREATE` if possible, or follow with `APPEND_SERIES` targeting that specific `view_id`.
 
 7. **Comparison Tasks:**
-   - If comparing two datasets: `CREATE` (A) -> `CREATE` (B) -> `LAYOUT` (List A&B, type="arc").
+   - If comparing two datasets, create charts with the same chart type: `CREATE` (A, chart_type_a) -> `CREATE` (B, chart_type_a) -> `LAYOUT` (List A&B, type="arc").
 
 8. **Context-aware Placement:**
    - If positioning a visualization near an object, directly use `ADAPT_POS` (target object) instead of computing the mathematical values.
@@ -209,3 +209,15 @@ ORIENT_TO("ElectricityChart_building_001", "user");
 ORIENT_TO("ElectricityChart_building_002", "user");
 ORIENT_TO("ElectricityChart_building_003", "user");
 ORIENT_TO("ElectricityChart_building_004", "user");
+
+
+## Example 7: Create a chart to compare with the before chart with the same chart type
+User Request:
+Show the electricity data of this building_001
+Output:
+CREATE("ElectricityChart_building_001", "ElectricityChart_building_001.json", "3d_bar", "time", "gas");
+User Request:
+Compare the electricity data of building_002 with the building before
+Output:
+CREATE("ElectricityChart_building_002", "ElectricityChart_building_002.json", "3d_bar", "time", "gas");
+LAYOUT(["ElectricityChart_building_001", "ElectricityChart_building_002"], 1.2f, 0.2f, "arc");

@@ -20758,11 +20758,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604102919}
   m_CullTransparentMesh: 1
---- !u!4 &605508288 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
-  m_PrefabInstance: {fileID: 1952708205}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &607783440
 GameObject:
   m_ObjectHideFlags: 0
@@ -41123,7 +41118,6 @@ Transform:
   - {fileID: 214909100}
   - {fileID: 1768579}
   - {fileID: 1023215647}
-  - {fileID: 605508288}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1135745088
@@ -60360,7 +60354,7 @@ MonoBehaviour:
   currentScene: 2
   classroom: {fileID: 122912966}
   city: {fileID: 8771091788274259170}
-  participantID: 0
+  participantID: 8
   cameraRig: {fileID: 243533547}
   teleportConfigs:
   - scene: 0
@@ -68677,15 +68671,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1135499301}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1346337909612740, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_Name
       value: DxRVis_P08
-      objectReference: {fileID: 0}
-    - target: {fileID: 1346337909612740, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68705,15 +68695,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -86537,4 +86527,5 @@ SceneRoots:
   - {fileID: 132006724}
   - {fileID: 1715426177}
   - {fileID: 1181756635}
+  - {fileID: 1952708205}
   - {fileID: 1135499301}

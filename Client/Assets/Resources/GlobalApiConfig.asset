@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ApiConfig
   serverUrl: http://127.0.0.1:5001/generate_skill
   baseDomain: bj.yi-zhan.top
-  apiKey: sk-1tbfpLQRbZVig0pa2805B35a9e08426190A7E2Be79E76013
+  apiKey: sk-m1YRJlrBqgG6Y3ZJ2aCb9aFbB07b485e8eC885526a920c29
   skillUrl: https://bj.yi-zhan.top/v1/chat/completions
   skillModel: gemini-3-flash-preview
   vlmModel: gpt-4o-mini

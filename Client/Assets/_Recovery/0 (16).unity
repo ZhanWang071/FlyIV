@@ -2928,7 +2928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &122912967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8609,8 +8609,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243533542}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07316, y: 2.37812, z: -4.2599998}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  m_LocalPosition: {x: 0.07316, y: 1.72812, z: -0.9699998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20758,11 +20758,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604102919}
   m_CullTransparentMesh: 1
---- !u!4 &605508288 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
-  m_PrefabInstance: {fileID: 1952708205}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &607783440
 GameObject:
   m_ObjectHideFlags: 0
@@ -41123,7 +41118,6 @@ Transform:
   - {fileID: 214909100}
   - {fileID: 1768579}
   - {fileID: 1023215647}
-  - {fileID: 605508288}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1135745088
@@ -60101,60 +60095,8 @@ MonoBehaviour:
   maxHistoryCount: 10
   userStudyController: {fileID: 1687222478}
   availableDataFiles:
-  - file: city/building_001.json
-    description: building 001 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_002.json
-    description: building 002 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_003.json
-    description: building 003 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_004.json
-    description: building 004 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_005.json
-    description: building 005 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_006.json
-    description: building 006 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_007.json
-    description: building 007 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_008.json
-    description: building 008 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_009.json
-    description: building 009 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_010.json
-    description: building 010 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_011.json
-    description: building 011 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_012.json
-    description: building 012 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_013.json
-    description: building 013 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_014.json
-    description: building 014 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_015.json
-    description: building 015 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_016.json
-    description: building 016 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_017.json
-    description: building 017 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_018.json
-    description: building 018 utility data including electricity, water, gas, and
-      footfall
+  - file: sales/monthly_sales.json
+    description: monthly_sales data
   lastResponse: 
   logToFile: 0
   userinput: Create a visualization on the teacher desk
@@ -60352,15 +60294,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687222466}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 661281bee8f7e429e9e657ed58c6c719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UserStudyController
-  currentScene: 2
+  currentScene: 0
   classroom: {fileID: 122912966}
   city: {fileID: 8771091788274259170}
-  participantID: 0
+  participantID: 8
   cameraRig: {fileID: 243533547}
   teleportConfigs:
   - scene: 0
@@ -68677,15 +68619,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1135499301}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1346337909612740, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_Name
       value: DxRVis_P08
-      objectReference: {fileID: 0}
-    - target: {fileID: 1346337909612740, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68705,15 +68643,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -86107,7 +86045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &8774189698161438238
 GameObject:
   m_ObjectHideFlags: 0
@@ -86537,4 +86475,5 @@ SceneRoots:
   - {fileID: 132006724}
   - {fileID: 1715426177}
   - {fileID: 1181756635}
+  - {fileID: 1952708205}
   - {fileID: 1135499301}

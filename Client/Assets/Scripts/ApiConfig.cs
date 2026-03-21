@@ -11,7 +11,7 @@ public class ApiConfig : ScriptableObject
     // public string baseDomain = "bj.yi-zhan.top";
     // public string apiKey = "sk-1tbfpLQRbZVig0pa2805B35a9e08426190A7E2Be79E76013";
     public string baseDomain = "bj.yi-zhan.top";
-    public string apiKey = "sk-1tbfpLQRbZVig0pa2805B35a9e08426190A7E2Be79E76013";
+    public string apiKey = "sk-m1YRJlrBqgG6Y3ZJ2aCb9aFbB07b485e8eC885526a920c29";
 
 
     [Header("Module Model Settings")]
