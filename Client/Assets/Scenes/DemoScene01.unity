@@ -1614,6 +1614,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40722627}
   m_CullTransparentMesh: 1
+--- !u!4 &43609434 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+  m_PrefabInstance: {fileID: 779997936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &50565608
 GameObject:
   m_ObjectHideFlags: 1
@@ -2928,7 +2933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &122912967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8373,7 +8378,7 @@ Camera:
   near clip plane: 0.1
   far clip plane: 1000
   field of view: 90
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -8609,8 +8614,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243533542}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07316, y: 2.37812, z: -4.2599998}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  m_LocalPosition: {x: 0.07316, y: 1.72812, z: -0.9699998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20085,7 +20090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4315020382452678, guid: b60aa87a55eea5042921a710cf4de1b1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: -3.088
       objectReference: {fileID: 0}
     - target: {fileID: 4315020382452678, guid: b60aa87a55eea5042921a710cf4de1b1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28353,6 +28358,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778807339}
   m_CullTransparentMesh: 1
+--- !u!1001 &779997936
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1135499301}
+    m_Modifications:
+    - target: {fileID: 1346337909612740, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_Name
+      value: DxRVis_P07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346337909612740, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.709
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.297
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.651
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7107869
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7034075
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 89.402
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330225958459428, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114296463438019874, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
+      propertyPath: visSpecsURL
+      value: barchart.json
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 3}
 --- !u!1 &785279702
 GameObject:
   m_ObjectHideFlags: 0
@@ -41120,6 +41190,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 43609434}
   - {fileID: 214909100}
   - {fileID: 1768579}
   - {fileID: 1023215647}
@@ -60101,60 +60172,32 @@ MonoBehaviour:
   maxHistoryCount: 10
   userStudyController: {fileID: 1687222478}
   availableDataFiles:
-  - file: city/building_001.json
-    description: building 001 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_002.json
-    description: building 002 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_003.json
-    description: building 003 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_004.json
-    description: building 004 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_005.json
-    description: building 005 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_006.json
-    description: building 006 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_007.json
-    description: building 007 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_008.json
-    description: building 008 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_009.json
-    description: building 009 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_010.json
-    description: building 010 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_011.json
-    description: building 011 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_012.json
-    description: building 012 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_013.json
-    description: building 013 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_014.json
-    description: building 014 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_015.json
-    description: building 015 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_016.json
-    description: building 016 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_017.json
-    description: building 017 utility data including electricity, water, gas, and
-      footfall
-  - file: city/building_018.json
-    description: building 018 utility data including electricity, water, gas, and
-      footfall
+  - file: education/student_scores.json
+    description: student_scores - education data
+  - file: education/student_scores_S001.json
+    description: student_scores_S001 - education data
+  - file: education/student_scores_S002.json
+    description: student_scores_S002 - education data
+  - file: education/student_scores_S003.json
+    description: student_scores_S003 - education data
+  - file: education/student_scores_S004.json
+    description: student_scores_S004 - education data
+  - file: education/student_scores_S005.json
+    description: student_scores_S005 - education data
+  - file: education/student_scores_S006.json
+    description: student_scores_S006 - education data
+  - file: education/student_scores_S007.json
+    description: student_scores_S007 - education data
+  - file: education/student_scores_S008.json
+    description: student_scores_S008 - education data
+  - file: education/student_scores_S009.json
+    description: student_scores_S009 - education data
+  - file: education/student_scores_S010.json
+    description: student_scores_S010 - education data
+  - file: education/student_scores_S011.json
+    description: student_scores_S011 - education data
+  - file: education/student_scores_S012.json
+    description: student_scores_S012 - education data
   lastResponse: 
   logToFile: 0
   userinput: Create a visualization on the teacher desk
@@ -60220,7 +60263,7 @@ MonoBehaviour:
   voiceSendtoVLM: 1
   generateSequence: 1
   sequenceToExecutor: 1
-  userRequest: create a line chart for all students score on board
+  userRequest: create a bar chart for all students score on board
   identifiedObjects: 
   pointingObject: 
   pointingObjectDuringSpeech: None
@@ -60357,10 +60400,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 661281bee8f7e429e9e657ed58c6c719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UserStudyController
-  currentScene: 2
+  currentScene: 1
   classroom: {fileID: 122912966}
   city: {fileID: 8771091788274259170}
-  participantID: 0
+  participantID: -1
   cameraRig: {fileID: 243533547}
   teleportConfigs:
   - scene: 0
@@ -86107,7 +86150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &8774189698161438238
 GameObject:
   m_ObjectHideFlags: 0

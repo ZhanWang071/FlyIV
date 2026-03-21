@@ -1,0 +1,3308 @@
+=== User Study Log ===
+Participant : 07
+Scene       : City
+Started     : 2026-03-21 17:56:33
+============================================================
+
+============================================================
+Interaction #1  |  17:58:09
+[Timing]  Voice→STT: 14.40s  |  LLM: 21.49s  |  Executor: 29.25s  |  Total(workflow): 50.77s  |  Total(speech→finish): 65.16s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": 0.117648229,
+      "y": 2.32034469,
+      "z": -4.557455,
+      "normalized": {
+        "x": 0.022998428,
+        "y": 0.453591883,
+        "z": -0.8909127,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 5.11549,
+      "sqrMagnitude": 26.1682377
+    },
+    "forward": {
+      "x": -0.02593775,
+      "y": -0.311233,
+      "z": 0.9499796,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "right": {
+      "x": 0.999328852,
+      "y": -0.0326628722,
+      "z": 0.0165841226,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "building_001",
+        "position": {
+          "x": -1.02,
+          "y": 1.81,
+          "z": 1.21
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.02,
+            "y": 0.91,
+            "z": 1.21
+          },
+          "size": {
+            "x": 1.09,
+            "y": 1.78,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_002",
+        "position": {
+          "x": 0.99,
+          "y": 1.23,
+          "z": -3.48
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.99,
+            "y": 0.67,
+            "z": -3.48
+          },
+          "size": {
+            "x": 1.27,
+            "y": 1.14,
+            "z": 0.65
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_003",
+        "position": {
+          "x": 1.94,
+          "y": 2.33,
+          "z": -2.42
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.94,
+            "y": 1.21,
+            "z": -2.42
+          },
+          "size": {
+            "x": 0.61,
+            "y": 2.24,
+            "z": 1.25
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_004",
+        "position": {
+          "x": 2.31,
+          "y": 1.62,
+          "z": -1.16
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 2.31,
+            "y": 0.82,
+            "z": -1.16
+          },
+          "size": {
+            "x": 1.27,
+            "y": 1.6,
+            "z": 0.65
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_005",
+        "position": {
+          "x": -2.41,
+          "y": 1.39,
+          "z": 1.32
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.41,
+            "y": 0.7,
+            "z": 1.32
+          },
+          "size": {
+            "x": 1.29,
+            "y": 1.37,
+            "z": 0.88
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_006",
+        "position": {
+          "x": -0.19,
+          "y": 0.54,
+          "z": 2.27
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.19,
+            "y": 0.26,
+            "z": 2.27
+          },
+          "size": {
+            "x": 1.47,
+            "y": 0.56,
+            "z": 2.24
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_007",
+        "position": {
+          "x": -4.03,
+          "y": 0.67,
+          "z": -1.23
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -4.03,
+            "y": 0.35,
+            "z": -1.23
+          },
+          "size": {
+            "x": 0.86,
+            "y": 0.64,
+            "z": 0.68
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_008",
+        "position": {
+          "x": -2.41,
+          "y": 2.06,
+          "z": -3.58
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.41,
+            "y": 1.16,
+            "z": -3.58
+          },
+          "size": {
+            "x": 1.15,
+            "y": 1.79,
+            "z": 0.48
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_009",
+        "position": {
+          "x": -5.24,
+          "y": 1.96,
+          "z": 3.52
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -5.24,
+            "y": 1.06,
+            "z": 3.52
+          },
+          "size": {
+            "x": 1.15,
+            "y": 1.79,
+            "z": 0.48
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_010",
+        "position": {
+          "x": -6.75,
+          "y": 1.92,
+          "z": 2.4
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -6.75,
+            "y": 1.03,
+            "z": 2.4
+          },
+          "size": {
+            "x": 0.48,
+            "y": 1.79,
+            "z": 1.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_011",
+        "position": {
+          "x": -2.67,
+          "y": 2.02,
+          "z": -2.59
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.67,
+            "y": 1.12,
+            "z": -2.59
+          },
+          "size": {
+            "x": 0.48,
+            "y": 1.79,
+            "z": 1.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_012",
+        "position": {
+          "x": 5.51,
+          "y": 1.97,
+          "z": -2.21
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 5.51,
+            "y": 1.08,
+            "z": -2.21
+          },
+          "size": {
+            "x": 0.48,
+            "y": 1.79,
+            "z": 1.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_013",
+        "position": {
+          "x": 7.42,
+          "y": 2.7,
+          "z": -1.26
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 7.42,
+            "y": 1.37,
+            "z": -1.26
+          },
+          "size": {
+            "x": 1.35,
+            "y": 2.65,
+            "z": 1.35
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_014",
+        "position": {
+          "x": 0.75,
+          "y": 1.23,
+          "z": -1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.75,
+            "y": 0.62,
+            "z": -1.0
+          },
+          "size": {
+            "x": 0.84,
+            "y": 1.23,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_015",
+        "position": {
+          "x": 0.64,
+          "y": 0.54,
+          "z": -1.71
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.64,
+            "y": 0.29,
+            "z": -1.71
+          },
+          "size": {
+            "x": 0.59,
+            "y": 0.5,
+            "z": 0.9
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_016",
+        "position": {
+          "x": -0.68,
+          "y": 0.4,
+          "z": 3.51
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.68,
+            "y": 0.21,
+            "z": 3.51
+          },
+          "size": {
+            "x": 0.47,
+            "y": 0.38,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_017",
+        "position": {
+          "x": 1.35,
+          "y": 1.52,
+          "z": -1.36
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.35,
+            "y": 0.77,
+            "z": -1.36
+          },
+          "size": {
+            "x": 0.39,
+            "y": 1.49,
+            "z": 1.18
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_018",
+        "position": {
+          "x": -2.12,
+          "y": 1.5,
+          "z": 2.22
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.12,
+            "y": 0.76,
+            "z": 2.22
+          },
+          "size": {
+            "x": 1.17,
+            "y": 1.48,
+            "z": 0.39
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": 0.12,
+          "y": 2.35,
+          "z": -4.57
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.12,
+            "y": 1.5,
+            "z": -4.57
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": -0.01,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": -0.06,
+            "z": 0.01
+          },
+          "up": {
+            "x": 0.06,
+            "y": 1.0,
+            "z": 0.01
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "building_001",
+        "target": "building_002",
+        "relation": "left"
+      },
+      {
+        "object": "building_001",
+        "target": "building_005",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "building_006",
+        "relation": "above"
+      },
+      {
+        "object": "building_001",
+        "target": "building_008",
+        "relation": "right"
+      },
+      {
+        "object": "building_001",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "building_011",
+        "relation": "right"
+      },
+      {
+        "object": "building_001",
+        "target": "building_014",
+        "relation": "left"
+      },
+      {
+        "object": "building_001",
+        "target": "building_015",
+        "relation": "left"
+      },
+      {
+        "object": "building_001",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_001",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_002",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_002",
+        "target": "building_003",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_004",
+        "relation": "left"
+      },
+      {
+        "object": "building_002",
+        "target": "building_006",
+        "relation": "right"
+      },
+      {
+        "object": "building_002",
+        "target": "building_008",
+        "relation": "behind"
+      },
+      {
+        "object": "building_002",
+        "target": "building_011",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_012",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_014",
+        "relation": "right"
+      },
+      {
+        "object": "building_002",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_016",
+        "relation": "right"
+      },
+      {
+        "object": "building_002",
+        "target": "building_017",
+        "relation": "left"
+      },
+      {
+        "object": "building_002",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_003",
+        "target": "building_004",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_007",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_008",
+        "relation": "behind"
+      },
+      {
+        "object": "building_003",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_003",
+        "target": "building_012",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_013",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_017",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_004",
+        "target": "building_002",
+        "relation": "right"
+      },
+      {
+        "object": "building_004",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_004",
+        "target": "building_007",
+        "relation": "behind"
+      },
+      {
+        "object": "building_004",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_004",
+        "target": "building_012",
+        "relation": "behind"
+      },
+      {
+        "object": "building_004",
+        "target": "building_013",
+        "relation": "behind"
+      },
+      {
+        "object": "building_004",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_004",
+        "target": "building_015",
+        "relation": "behind"
+      },
+      {
+        "object": "building_004",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "building_006",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "building_007",
+        "relation": "right"
+      },
+      {
+        "object": "building_005",
+        "target": "building_008",
+        "relation": "right"
+      },
+      {
+        "object": "building_005",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "building_011",
+        "relation": "right"
+      },
+      {
+        "object": "building_005",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_001",
+        "relation": "below"
+      },
+      {
+        "object": "building_006",
+        "target": "building_002",
+        "relation": "left"
+      },
+      {
+        "object": "building_006",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_006",
+        "target": "building_009",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_014",
+        "relation": "left"
+      },
+      {
+        "object": "building_006",
+        "target": "building_015",
+        "relation": "left"
+      },
+      {
+        "object": "building_006",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_017",
+        "relation": "left"
+      },
+      {
+        "object": "building_006",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_006",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_007",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_007",
+        "target": "building_004",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_007",
+        "target": "building_005",
+        "relation": "left"
+      },
+      {
+        "object": "building_007",
+        "target": "building_008",
+        "relation": "left"
+      },
+      {
+        "object": "building_007",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_007",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_007",
+        "target": "building_012",
+        "relation": "behind"
+      },
+      {
+        "object": "building_007",
+        "target": "building_013",
+        "relation": "behind"
+      },
+      {
+        "object": "building_007",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_007",
+        "target": "building_015",
+        "relation": "behind"
+      },
+      {
+        "object": "building_007",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_007",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_008",
+        "target": "building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_008",
+        "target": "building_002",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_008",
+        "target": "building_003",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_008",
+        "target": "building_005",
+        "relation": "left"
+      },
+      {
+        "object": "building_008",
+        "target": "building_007",
+        "relation": "right"
+      },
+      {
+        "object": "building_008",
+        "target": "building_011",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_008",
+        "target": "building_012",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_008",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_008",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_008",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_008",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_009",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_009",
+        "target": "building_007",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_010",
+        "relation": "behind"
+      },
+      {
+        "object": "building_009",
+        "target": "building_016",
+        "relation": "behind"
+      },
+      {
+        "object": "building_009",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_009",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_010",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_010",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_011",
+        "target": "building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_011",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_011",
+        "target": "building_003",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_004",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_005",
+        "relation": "left"
+      },
+      {
+        "object": "building_011",
+        "target": "building_007",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_008",
+        "relation": "behind"
+      },
+      {
+        "object": "building_011",
+        "target": "building_012",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_013",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_017",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_012",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_012",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_012",
+        "target": "building_004",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_012",
+        "target": "building_007",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_012",
+        "target": "building_008",
+        "relation": "behind"
+      },
+      {
+        "object": "building_012",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_012",
+        "target": "building_013",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_012",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_012",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_012",
+        "target": "building_017",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_013",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_013",
+        "target": "building_004",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_013",
+        "target": "building_007",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_013",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_013",
+        "target": "building_012",
+        "relation": "behind"
+      },
+      {
+        "object": "building_013",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_013",
+        "target": "building_015",
+        "relation": "behind"
+      },
+      {
+        "object": "building_013",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_014",
+        "target": "building_002",
+        "relation": "left"
+      },
+      {
+        "object": "building_014",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_004",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_006",
+        "relation": "right"
+      },
+      {
+        "object": "building_014",
+        "target": "building_007",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_012",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_013",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_015",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_016",
+        "relation": "right"
+      },
+      {
+        "object": "building_014",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_015",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_015",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_004",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_015",
+        "target": "building_006",
+        "relation": "right"
+      },
+      {
+        "object": "building_015",
+        "target": "building_007",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_015",
+        "target": "building_008",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_012",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_013",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_015",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_015",
+        "target": "building_016",
+        "relation": "right"
+      },
+      {
+        "object": "building_015",
+        "target": "building_017",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_015",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_002",
+        "relation": "left"
+      },
+      {
+        "object": "building_016",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_008",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_009",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_016",
+        "target": "building_010",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_014",
+        "relation": "left"
+      },
+      {
+        "object": "building_016",
+        "target": "building_015",
+        "relation": "left"
+      },
+      {
+        "object": "building_016",
+        "target": "building_017",
+        "relation": "left"
+      },
+      {
+        "object": "building_016",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_017",
+        "target": "building_002",
+        "relation": "right"
+      },
+      {
+        "object": "building_017",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_017",
+        "target": "building_004",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_006",
+        "relation": "right"
+      },
+      {
+        "object": "building_017",
+        "target": "building_007",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_017",
+        "target": "building_012",
+        "relation": "behind"
+      },
+      {
+        "object": "building_017",
+        "target": "building_013",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_015",
+        "relation": "behind"
+      },
+      {
+        "object": "building_017",
+        "target": "building_016",
+        "relation": "right"
+      },
+      {
+        "object": "building_017",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_006",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_018",
+        "target": "building_007",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_008",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_009",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_018",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_018",
+        "target": "building_011",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "User",
+        "target": "building_002",
+        "relation": "near"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.78,
+        "z": 1.46,
+        "normalized": {
+          "x": -0.200028986,
+          "y": 0.757556558,
+          "z": 0.6213667,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 2.34965944,
+        "sqrMagnitude": 5.5209
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h1",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.78,
+        "z": 1.44,
+        "normalized": {
+          "x": -0.201088026,
+          "y": 0.7615674,
+          "z": 0.616099536,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.3372848,
+        "sqrMagnitude": 5.4629
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h2",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.78,
+        "z": 1.44,
+        "normalized": {
+          "x": -0.201088026,
+          "y": 0.7615674,
+          "z": 0.616099536,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.3372848,
+        "sqrMagnitude": 5.4629
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h3",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.78,
+        "z": 1.32,
+        "normalized": {
+          "x": -0.207475692,
+          "y": 0.785759032,
+          "z": 0.582697749,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 2.26532555,
+        "sqrMagnitude": 5.1317
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h4",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 1.25,
+        "normalized": {
+          "x": -0.210453629,
+          "y": 0.801514864,
+          "z": 0.559717059,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.23327112,
+        "sqrMagnitude": 4.98749971
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h5",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 1.21,
+        "normalized": {
+          "x": -0.212560922,
+          "y": 0.8095405,
+          "z": 0.5472313,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 2.21113086,
+        "sqrMagnitude": 4.8891
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h6",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 1.18,
+        "normalized": {
+          "x": -0.2141369,
+          "y": 0.815542638,
+          "z": 0.537620246,
+          "normalized": {
+            "x": -0.214136913,
+            "y": 0.8155427,
+            "z": 0.5376203,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.1948576,
+        "sqrMagnitude": 4.8173995
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h7",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 1.11,
+        "normalized": {
+          "x": -0.21779108,
+          "y": 0.8294596,
+          "z": 0.5143577,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.15803146,
+        "sqrMagnitude": 4.65709972
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h8",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 1.04,
+        "normalized": {
+          "x": -0.221397817,
+          "y": 0.8431959,
+          "z": 0.489901543,
+          "normalized": {
+            "x": -0.221397832,
+            "y": 0.843196,
+            "z": 0.489901572,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 2.12287545,
+        "sqrMagnitude": 4.5066
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h9",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 1.01,
+        "normalized": {
+          "x": -0.222924143,
+          "y": 0.849009,
+          "z": 0.479049742,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 2.1083405,
+        "sqrMagnitude": 4.4451
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h10",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.99,
+        "normalized": {
+          "x": -0.223933965,
+          "y": 0.852854848,
+          "z": 0.471690685,
+          "normalized": {
+            "x": -0.22393398,
+            "y": 0.8528549,
+            "z": 0.4716907,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.098833,
+        "sqrMagnitude": 4.4051
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h11",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.95,
+        "normalized": {
+          "x": -0.225932822,
+          "y": 0.860467553,
+          "z": 0.456672728,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.08026433,
+        "sqrMagnitude": 4.3275
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h12",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.94,
+        "normalized": {
+          "x": -0.226427808,
+          "y": 0.8623527,
+          "z": 0.452855617,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.07571673,
+        "sqrMagnitude": 4.3086
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h13",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.94,
+        "normalized": {
+          "x": -0.226427808,
+          "y": 0.8623527,
+          "z": 0.452855617,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.07571673,
+        "sqrMagnitude": 4.3086
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h14",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.93,
+        "normalized": {
+          "x": -0.2269208,
+          "y": 0.8642302,
+          "z": 0.4490135,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.07120728,
+        "sqrMagnitude": 4.2899
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h15",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.93,
+        "normalized": {
+          "x": -0.2269208,
+          "y": 0.8642302,
+          "z": 0.4490135,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.07120728,
+        "sqrMagnitude": 4.2899
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h16",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.93,
+        "normalized": {
+          "x": -0.2269208,
+          "y": 0.8642302,
+          "z": 0.4490135,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.07120728,
+        "sqrMagnitude": 4.2899
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h17",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.227411672,
+          "y": 0.8660998,
+          "z": 0.445146263,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 2.06673646,
+        "sqrMagnitude": 4.2714
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h18",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h19",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h20",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h21",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h22",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.78,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.232965782,
+          "y": 0.8639148,
+          "z": 0.446517766,
+          "normalized": {
+            "x": -0.2329658,
+            "y": 0.863914847,
+            "z": 0.4465178,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06038833,
+        "sqrMagnitude": 4.24519968
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h23",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.78,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.232965782,
+          "y": 0.8639148,
+          "z": 0.446517766,
+          "normalized": {
+            "x": -0.2329658,
+            "y": 0.863914847,
+            "z": 0.4465178,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06038833,
+        "sqrMagnitude": 4.24519968
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h24",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h25",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.227411672,
+          "y": 0.8660998,
+          "z": 0.445146263,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 2.06673646,
+        "sqrMagnitude": 4.2714
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h26",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.94,
+        "normalized": {
+          "x": -0.226427808,
+          "y": 0.8623527,
+          "z": 0.452855617,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.07571673,
+        "sqrMagnitude": 4.3086
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h27",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.95,
+        "normalized": {
+          "x": -0.225932822,
+          "y": 0.860467553,
+          "z": 0.456672728,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.08026433,
+        "sqrMagnitude": 4.3275
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h28",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.94,
+        "normalized": {
+          "x": -0.226427808,
+          "y": 0.8623527,
+          "z": 0.452855617,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.07571673,
+        "sqrMagnitude": 4.3086
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h29",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.93,
+        "normalized": {
+          "x": -0.2269208,
+          "y": 0.8642302,
+          "z": 0.4490135,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.07120728,
+        "sqrMagnitude": 4.2899
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h30",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.227411672,
+          "y": 0.8660998,
+          "z": 0.445146263,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 2.06673646,
+        "sqrMagnitude": 4.2714
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h31",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.227411672,
+          "y": 0.8660998,
+          "z": 0.445146263,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 2.06673646,
+        "sqrMagnitude": 4.2714
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h32",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h33",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h34",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h35",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h36",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h37",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h38",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h39",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h40",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h41",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h42",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h43",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h44",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h45",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h46",
+      "object": "building_001",
+      "position": {
+        "x": -0.48,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.231992364,
+          "y": 0.8651382,
+          "z": 0.444652051,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.06903362,
+        "sqrMagnitude": 4.2809
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h47",
+      "object": "building_001",
+      "position": {
+        "x": -0.49,
+        "y": 1.79,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.236557692,
+          "y": 0.8641597,
+          "z": 0.444149137,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.07137632,
+        "sqrMagnitude": 4.2906
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h48",
+      "object": "building_001",
+      "position": {
+        "x": -0.49,
+        "y": 1.8,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.235574216,
+          "y": 0.8653746,
+          "z": 0.442302585,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.080024,
+        "sqrMagnitude": 4.3265
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h49",
+      "object": "building_001",
+      "position": {
+        "x": -0.49,
+        "y": 1.8,
+        "z": 0.92,
+        "normalized": {
+          "x": -0.235574216,
+          "y": 0.8653746,
+          "z": 0.442302585,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.080024,
+        "sqrMagnitude": 4.3265
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h50",
+      "object": "building_001",
+      "position": {
+        "x": -0.5,
+        "y": 1.81,
+        "z": 0.99,
+        "normalized": {
+          "x": -0.235540077,
+          "y": 0.852655053,
+          "z": 0.466369361,
+          "normalized": {
+            "x": -0.235540047,
+            "y": 0.852654934,
+            "z": 0.4663693,
+            "normalized": {
+              "x": -0.235540062,
+              "y": 0.852655,
+              "z": 0.466369331,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 2.122781,
+        "sqrMagnitude": 4.5062
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h51",
+      "object": "building_001",
+      "position": {
+        "x": -0.5,
+        "y": 1.81,
+        "z": 1.06,
+        "normalized": {
+          "x": -0.231876925,
+          "y": 0.83939445,
+          "z": 0.491579056,
+          "normalized": {
+            "x": -0.23187694,
+            "y": 0.8393945,
+            "z": 0.4915791,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 2.15631628,
+        "sqrMagnitude": 4.64969969
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h52",
+      "object": "building_001",
+      "position": {
+        "x": -0.51,
+        "y": 1.81,
+        "z": 1.05,
+        "normalized": {
+          "x": -0.23679474,
+          "y": 0.8403892,
+          "z": 0.487518579,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 2.153764,
+        "sqrMagnitude": 4.63869953
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h53",
+      "object": "building_001",
+      "position": {
+        "x": -0.51,
+        "y": 1.81,
+        "z": 1.11,
+        "normalized": {
+          "x": -0.233554572,
+          "y": 0.8288897,
+          "z": 0.5083247,
+          "normalized": {
+            "x": -0.233554587,
+            "y": 0.8288898,
+            "z": 0.508324742,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 2.18364382,
+        "sqrMagnitude": 4.76829958
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h54",
+      "object": "building_001",
+      "position": {
+        "x": -0.52,
+        "y": 1.81,
+        "z": 1.39,
+        "normalized": {
+          "x": -0.222161382,
+          "y": 0.7732925,
+          "z": 0.5938545,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 2.34064078,
+        "sqrMagnitude": 5.47859955
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h55",
+      "object": "building_001",
+      "position": {
+        "x": -0.47,
+        "y": 1.8,
+        "z": 1.23,
+        "normalized": {
+          "x": -0.210743263,
+          "y": 0.807101846,
+          "z": 0.551519632,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.23020172,
+        "sqrMagnitude": 4.97379971
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    }
+  ],
+  "user_request": "Create line chart for each building to show their electricity, water and gas.",
+  "data_info": null
+}
+
+[Generated Sequence]
+CREATE("UtilityChart_building_001", "city/building_001.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_001", "city/building_001.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_001", "city/building_001.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_001", "building_001", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_001", "User");
+CREATE("UtilityChart_building_002", "city/building_002.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_002", "city/building_002.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_002", "city/building_002.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_002", "building_002", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_002", "User");
+CREATE("UtilityChart_building_003", "city/building_003.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_003", "city/building_003.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_003", "city/building_003.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_003", "building_003", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_003", "User");
+CREATE("UtilityChart_building_004", "city/building_004.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_004", "city/building_004.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_004", "city/building_004.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_004", "building_004", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_004", "User");
+CREATE("UtilityChart_building_005", "city/building_005.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_005", "city/building_005.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_005", "city/building_005.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_005", "building_005", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_005", "User");
+CREATE("UtilityChart_building_006", "city/building_006.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_006", "city/building_006.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_006", "city/building_006.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_006", "building_006", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_006", "User");
+CREATE("UtilityChart_building_007", "city/building_007.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_007", "city/building_007.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_007", "city/building_007.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_007", "building_007", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_007", "User");
+CREATE("UtilityChart_building_008", "city/building_008.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_008", "city/building_008.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_008", "city/building_008.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_008", "building_008", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_008", "User");
+CREATE("UtilityChart_building_009", "city/building_009.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_009", "city/building_009.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_009", "city/building_009.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_009", "building_009", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_009", "User");
+CREATE("UtilityChart_building_010", "city/building_010.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_010", "city/building_010.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_010", "city/building_010.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_010", "building_010", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_010", "User");
+CREATE("UtilityChart_building_011", "city/building_011.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_011", "city/building_011.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_011", "city/building_011.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_011", "building_011", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_011", "User");
+CREATE("UtilityChart_building_012", "city/building_012.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_012", "city/building_012.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_012", "city/building_012.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_012", "building_012", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_012", "User");
+CREATE("UtilityChart_building_013", "city/building_013.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_013", "city/building_013.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_013", "city/building_013.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_013", "building_013", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_013", "User");
+CREATE("UtilityChart_building_014", "city/building_014.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_014", "city/building_014.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_014", "city/building_014.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_014", "building_014", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_014", "User");
+CREATE("UtilityChart_building_015", "city/building_015.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_015", "city/building_015.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_015", "city/building_015.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_015", "building_015", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_015", "User");
+CREATE("UtilityChart_building_016", "city/building_016.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_016", "city/building_016.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_016", "city/building_016.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_016", "building_016", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_016", "User");
+CREATE("UtilityChart_building_017", "city/building_017.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_017", "city/building_017.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_017", "city/building_017.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_017", "building_017", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_017", "User");
+CREATE("UtilityChart_building_018", "city/building_018.json", "2d_line", "time", "electricity");
+APPEND_SERIES("UtilityChart_building_018", "city/building_018.json", "time", "water", "line");
+APPEND_SERIES("UtilityChart_building_018", "city/building_018.json", "time", "gas", "line");
+ADAPT_POS("UtilityChart_building_018", "building_018", 0.40f, 0.50f);
+ORIENT_TO("UtilityChart_building_018", "User");

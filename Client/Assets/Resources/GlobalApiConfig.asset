@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GlobalApiConfig
   m_EditorClassIdentifier: Assembly-CSharp::ApiConfig
   serverUrl: http://127.0.0.1:5001/generate_skill
-  baseDomain: bj.yi-zhan.top
+  baseDomain: vip.yi-zhan.top
   apiKey: sk-m1YRJlrBqgG6Y3ZJ2aCb9aFbB07b485e8eC885526a920c29
   skillUrl: https://bj.yi-zhan.top/v1/chat/completions
   skillModel: gemini-3-flash-preview
