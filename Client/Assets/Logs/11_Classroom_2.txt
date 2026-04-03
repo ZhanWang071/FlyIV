@@ -1,0 +1,3380 @@
+=== User Study Log ===
+Participant : 11
+Scene       : Classroom
+Started     : 2026-03-24 18:33:37
+============================================================
+
+============================================================
+Interaction #1  |  18:36:56
+[Timing]  Voice→STT: 7.39s  |  LLM: 2.12s  |  Executor: 0.01s  |  Total(workflow): 2.17s  |  Total(speech→finish): 9.56s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": 0.00281261653,
+      "y": 3.00681734,
+      "z": -1.907496,
+      "normalized": {
+        "x": 0.000789877,
+        "y": 0.8444151,
+        "z": -0.5356888,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 3.56082845,
+      "sqrMagnitude": 12.6795
+    },
+    "forward": {
+      "x": -0.05334292,
+      "y": -0.5377023,
+      "z": -0.841445744,
+      "normalized": {
+        "x": -0.0533429123,
+        "y": -0.537702262,
+        "z": -0.8414456,
+        "normalized": {
+          "x": -0.0533429161,
+          "y": -0.5377023,
+          "z": -0.8414457,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 0.99999994,
+        "sqrMagnitude": 0.99999994
+      },
+      "magnitude": 1.00000012,
+      "sqrMagnitude": 1.00000024
+    },
+    "right": {
+      "x": -0.9968325,
+      "y": -0.0211044885,
+      "z": 0.076679796,
+      "normalized": {
+        "x": -0.9968324,
+        "y": -0.0211044867,
+        "z": 0.07667979,
+        "magnitude": 1.0,
+        "sqrMagnitude": 0.99999994
+      },
+      "magnitude": 1.00000012,
+      "sqrMagnitude": 1.00000024
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "DeskAndChair_S001",
+        "position": {
+          "x": -3.0,
+          "y": 1.0,
+          "z": 0.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -3.0,
+            "y": 0.5,
+            "z": 0.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S002",
+        "position": {
+          "x": -1.0,
+          "y": 1.0,
+          "z": 0.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.0,
+            "y": 0.5,
+            "z": 0.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S003",
+        "position": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.06
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.0,
+            "y": -0.03,
+            "z": 1.06
+          },
+          "size": {
+            "x": 1.0,
+            "y": 2.05,
+            "z": 2.72
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Chair",
+        "position": {
+          "x": 3.82,
+          "y": 1.0,
+          "z": -3.65
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 3.82,
+            "y": 0.5,
+            "z": -3.65
+          },
+          "size": {
+            "x": 0.59,
+            "y": 1.0,
+            "z": 0.57
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "FrontDoor",
+        "position": {
+          "x": -5.13,
+          "y": 2.5,
+          "z": -2.25
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -5.13,
+            "y": 1.25,
+            "z": -2.25
+          },
+          "size": {
+            "x": 0.23,
+            "y": 2.5,
+            "z": 1.5
+          },
+          "forward": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "TeacherDesk",
+        "position": {
+          "x": 0.0,
+          "y": 0.92,
+          "z": -2.3
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 0.46,
+            "z": -2.3
+          },
+          "size": {
+            "x": 1.8,
+            "y": 0.92,
+            "z": 0.8
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Globe",
+        "position": {
+          "x": 4.73,
+          "y": -0.07,
+          "z": -1.34
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.73,
+            "y": -0.39,
+            "z": -1.34
+          },
+          "size": {
+            "x": 0.45,
+            "y": 0.63,
+            "z": 0.42
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Blackboard",
+        "position": {
+          "x": 0.0,
+          "y": 2.6,
+          "z": -3.93
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 1.8,
+            "z": -3.93
+          },
+          "size": {
+            "x": 6.1,
+            "y": 1.6,
+            "z": 0.14
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Chalks",
+        "position": {
+          "x": 1.78,
+          "y": 1.04,
+          "z": -3.89
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.78,
+            "y": 1.03,
+            "z": -3.89
+          },
+          "size": {
+            "x": 0.16,
+            "y": 0.01,
+            "z": 0.05
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Brush",
+        "position": {
+          "x": 2.16,
+          "y": 1.09,
+          "z": -3.9
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 2.16,
+            "y": 1.06,
+            "z": -3.9
+          },
+          "size": {
+            "x": 0.16,
+            "y": 0.07,
+            "z": 0.08
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Clock",
+        "position": {
+          "x": 0.0,
+          "y": 3.7,
+          "z": -3.95
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 3.4,
+            "z": -3.95
+          },
+          "size": {
+            "x": 0.6,
+            "y": 0.6,
+            "z": 0.08
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Bookcase",
+        "position": {
+          "x": 4.75,
+          "y": 1.2,
+          "z": -3.09
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.75,
+            "y": 0.6,
+            "z": -3.09
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.2,
+            "z": 2.0
+          },
+          "forward": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Books",
+        "position": {
+          "x": 4.65,
+          "y": 1.07,
+          "z": -2.1
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.65,
+            "y": -0.23,
+            "z": -2.1
+          },
+          "size": {
+            "x": 0.25,
+            "y": 2.6,
+            "z": 3.74
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Switch",
+        "position": {
+          "x": -4.0,
+          "y": 1.6,
+          "z": -4.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -4.0,
+            "y": 1.55,
+            "z": -4.0
+          },
+          "size": {
+            "x": 0.1,
+            "y": 0.1,
+            "z": 0.01
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": 0.06,
+          "y": 3.07,
+          "z": -1.8
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.06,
+            "y": 2.22,
+            "z": -1.8
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": -0.18,
+            "y": -0.63,
+            "z": -0.75
+          },
+          "right": {
+            "x": -0.98,
+            "y": 0.03,
+            "z": 0.21
+          },
+          "up": {
+            "x": -0.11,
+            "y": 0.77,
+            "z": -0.62
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S002",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S003",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "FrontDoor",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "TeacherDesk",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "Switch",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "User",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S001",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S003",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "TeacherDesk",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "Blackboard",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "Clock",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "Switch",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "User",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S001",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S002",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "TeacherDesk",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "Blackboard",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "Chalks",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "Clock",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "Chair",
+        "target": "FrontDoor",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chair",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Globe",
+        "relation": "right"
+      },
+      {
+        "object": "Chair",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chair",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chair",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chair",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chair",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "DeskAndChair_S001",
+        "relation": "right"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "Chair",
+        "relation": "behind"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "Brush",
+        "relation": "behind"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "Switch",
+        "relation": "in front of"
+      },
+      {
+        "object": "FrontDoor",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "DeskAndChair_S001",
+        "relation": "behind"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "DeskAndChair_S002",
+        "relation": "left"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "DeskAndChair_S003",
+        "relation": "right"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "FrontDoor",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "DeskAndChair_S001",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "DeskAndChair_S002",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "DeskAndChair_S003",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "Chair",
+        "relation": "left"
+      },
+      {
+        "object": "Globe",
+        "target": "Brush",
+        "relation": "left"
+      },
+      {
+        "object": "Globe",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "User",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "DeskAndChair_S002",
+        "relation": "left"
+      },
+      {
+        "object": "Blackboard",
+        "target": "DeskAndChair_S003",
+        "relation": "left"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Chair",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "FrontDoor",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Chalks",
+        "relation": "above"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Brush",
+        "relation": "above"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Clock",
+        "relation": "below"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Switch",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "Chalks",
+        "target": "DeskAndChair_S003",
+        "relation": "left"
+      },
+      {
+        "object": "Chalks",
+        "target": "Chair",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "FrontDoor",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Blackboard",
+        "relation": "below"
+      },
+      {
+        "object": "Chalks",
+        "target": "Brush",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Switch",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "Brush",
+        "target": "Chair",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "FrontDoor",
+        "relation": "in front of"
+      },
+      {
+        "object": "Brush",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Globe",
+        "relation": "right"
+      },
+      {
+        "object": "Brush",
+        "target": "Blackboard",
+        "relation": "below"
+      },
+      {
+        "object": "Brush",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Brush",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "Brush",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Switch",
+        "relation": "in front of"
+      },
+      {
+        "object": "Brush",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "DeskAndChair_S002",
+        "relation": "left"
+      },
+      {
+        "object": "Clock",
+        "target": "DeskAndChair_S003",
+        "relation": "left"
+      },
+      {
+        "object": "Clock",
+        "target": "Chair",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "FrontDoor",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Blackboard",
+        "relation": "above"
+      },
+      {
+        "object": "Clock",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Brush",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Switch",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "Bookcase",
+        "target": "DeskAndChair_S001",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "DeskAndChair_S002",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "FrontDoor",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "TeacherDesk",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Books",
+        "relation": "above"
+      },
+      {
+        "object": "Bookcase",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "DeskAndChair_S001",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "DeskAndChair_S002",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "TeacherDesk",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Bookcase",
+        "relation": "below"
+      },
+      {
+        "object": "Books",
+        "target": "User",
+        "relation": "behind"
+      },
+      {
+        "object": "Switch",
+        "target": "DeskAndChair_S001",
+        "relation": "right"
+      },
+      {
+        "object": "Switch",
+        "target": "DeskAndChair_S002",
+        "relation": "right"
+      },
+      {
+        "object": "Switch",
+        "target": "FrontDoor",
+        "relation": "behind"
+      },
+      {
+        "object": "Switch",
+        "target": "Blackboard",
+        "relation": "behind"
+      },
+      {
+        "object": "Switch",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Switch",
+        "target": "Brush",
+        "relation": "behind"
+      },
+      {
+        "object": "Switch",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S001",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S002",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S003",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Chair",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "FrontDoor",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "User",
+        "target": "Blackboard",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "Chalks",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Clock",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "Bookcase",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "Books",
+        "relation": "in front of"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.89,
+        "y": 3.33,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.168552741,
+          "y": 0.630652368,
+          "z": -0.7575404,
+          "normalized": {
+            "x": 0.168552756,
+            "y": 0.6306524,
+            "z": -0.757540464,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 5.28024626,
+        "sqrMagnitude": 27.8809986
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h1",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.87,
+        "y": 3.58,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.159981355,
+          "y": 0.658314049,
+          "z": -0.73554647,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.43813372,
+        "sqrMagnitude": 29.5733
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h2",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.89,
+        "y": 3.61,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.162969232,
+          "y": 0.6610325,
+          "z": -0.732446,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.46115351,
+        "sqrMagnitude": 29.8242
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h3",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.9,
+        "y": 3.58,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.165349573,
+          "y": 0.657723844,
+          "z": -0.734887,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.44301367,
+        "sqrMagnitude": 29.6264
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h4",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.87,
+        "y": 3.59,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.159787774,
+          "y": 0.6593541,
+          "z": -0.7346564,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.444722,
+        "sqrMagnitude": 29.6449986
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h5",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.87,
+        "y": 3.6,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.159594357,
+          "y": 0.660390437,
+          "z": -0.733767152,
+          "normalized": {
+            "x": 0.159594342,
+            "y": 0.6603904,
+            "z": -0.7337671,
+            "magnitude": 1.0,
+            "sqrMagnitude": 0.99999994
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.45132065,
+        "sqrMagnitude": 29.7169
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h6",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.87,
+        "y": 3.6,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.159594357,
+          "y": 0.660390437,
+          "z": -0.733767152,
+          "normalized": {
+            "x": 0.159594342,
+            "y": 0.6603904,
+            "z": -0.7337671,
+            "magnitude": 1.0,
+            "sqrMagnitude": 0.99999994
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.45132065,
+        "sqrMagnitude": 29.7169
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h7",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.88,
+        "y": 3.57,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.161968157,
+          "y": 0.6570754,
+          "z": -0.7362189,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.4331665,
+        "sqrMagnitude": 29.5193
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h8",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.88,
+        "y": 3.55,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.162360236,
+          "y": 0.654975951,
+          "z": -0.738001049,
+          "normalized": {
+            "x": 0.162360251,
+            "y": 0.654976,
+            "z": -0.7380011,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 5.42004633,
+        "sqrMagnitude": 29.3769
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h9",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.9,
+        "y": 3.54,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.166150108,
+          "y": 0.653523743,
+          "z": -0.7384449,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.41678858,
+        "sqrMagnitude": 29.3416
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h10",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.91,
+        "y": 3.53,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.168147013,
+          "y": 0.652262568,
+          "z": -0.7391077,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.411931,
+        "sqrMagnitude": 29.289
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h11",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.91,
+        "y": 3.51,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.168552637,
+          "y": 0.6501316,
+          "z": -0.7408907,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.398907,
+        "sqrMagnitude": 29.1482
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h12",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.91,
+        "y": 3.51,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.168552637,
+          "y": 0.6501316,
+          "z": -0.7408907,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.398907,
+        "sqrMagnitude": 29.1482
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h13",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.91,
+        "y": 3.53,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.168147013,
+          "y": 0.652262568,
+          "z": -0.7391077,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.411931,
+        "sqrMagnitude": 29.289
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h14",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.91,
+        "y": 3.53,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.168147013,
+          "y": 0.652262568,
+          "z": -0.7391077,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.411931,
+        "sqrMagnitude": 29.289
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h15",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.92,
+        "y": 3.55,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.169532627,
+          "y": 0.6541748,
+          "z": -0.7370984,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.426684,
+        "sqrMagnitude": 29.4489
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h16",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.93,
+        "y": 3.58,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.170703128,
+          "y": 0.6571153,
+          "z": -0.734207034,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.448055,
+        "sqrMagnitude": 29.6813
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h17",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.93,
+        "y": 3.6,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.170291692,
+          "y": 0.659193635,
+          "z": -0.7324374,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.461218,
+        "sqrMagnitude": 29.8249
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h18",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.63,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.171446949,
+          "y": 0.662077069,
+          "z": -0.729561448,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.48274565,
+        "sqrMagnitude": 30.0605011
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h19",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.96,
+        "y": 3.66,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.174351886,
+          "y": 0.6647166,
+          "z": -0.726466238,
+          "normalized": {
+            "x": 0.1743519,
+            "y": 0.664716661,
+            "z": -0.7264663,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.506106,
+        "sqrMagnitude": 30.3172
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h20",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.99,
+        "y": 3.68,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.179194689,
+          "y": 0.666097462,
+          "z": -0.724018931,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.52471733,
+        "sqrMagnitude": 30.522501
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h21",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.98,
+        "y": 3.7,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.177014172,
+          "y": 0.6683188,
+          "z": -0.722506762,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.53628,
+        "sqrMagnitude": 30.6504
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h22",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.96,
+        "y": 3.73,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.172883183,
+          "y": 0.671723247,
+          "z": -0.7203466,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.552882,
+        "sqrMagnitude": 30.8345
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h23",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.77,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.168566823,
+          "y": 0.676060557,
+          "z": -0.7173056,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.57642365,
+        "sqrMagnitude": 31.0965
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h24",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.93,
+        "y": 3.8,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.166217521,
+          "y": 0.679168344,
+          "z": -0.7149141,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.595078,
+        "sqrMagnitude": 31.3049
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h25",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.92,
+        "y": 3.83,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.163880438,
+          "y": 0.6822414,
+          "z": -0.712523639,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.61384869,
+        "sqrMagnitude": 31.5152988
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h26",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.86,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.166735873,
+          "y": 0.684681356,
+          "z": -0.7095143,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.637659,
+        "sqrMagnitude": 31.7832
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h27",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.93,
+        "y": 3.89,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.16441004,
+          "y": 0.6876936,
+          "z": -0.7071399,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.656589,
+        "sqrMagnitude": 31.9970016
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h28",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.92,
+        "y": 3.91,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.162293836,
+          "y": 0.6897488,
+          "z": -0.7056254,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.66873026,
+        "sqrMagnitude": 32.1345024
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h29",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.92,
+        "y": 3.93,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.161899343,
+          "y": 0.69159174,
+          "z": -0.7039102,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.68254328,
+        "sqrMagnitude": 32.2913
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h30",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.91,
+        "y": 3.95,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.159795269,
+          "y": 0.6936168,
+          "z": -0.70239675,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.694787,
+        "sqrMagnitude": 32.4306
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h31",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.89,
+        "y": 3.96,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.156179518,
+          "y": 0.6949112,
+          "z": -0.701930463,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.69857025,
+        "sqrMagnitude": 32.4737
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h32",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.88,
+        "y": 3.97,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.154278442,
+          "y": 0.6960062,
+          "z": -0.7012657,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.70397234,
+        "sqrMagnitude": 32.5353
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h33",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.87,
+        "y": 3.98,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.152380168,
+          "y": 0.697095454,
+          "z": -0.7005985,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.70940447,
+        "sqrMagnitude": 32.5973
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h34",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.86,
+        "y": 3.99,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.150484711,
+          "y": 0.698179,
+          "z": -0.6999288,
+          "normalized": {
+            "x": 0.150484726,
+            "y": 0.698179066,
+            "z": -0.6999289,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.71486664,
+        "sqrMagnitude": 32.6597
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h35",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.84,
+        "y": 4.0,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.146881878,
+          "y": 0.6994375,
+          "z": -0.6994375,
+          "normalized": {
+            "x": 0.1468819,
+            "y": 0.699437559,
+            "z": -0.699437559,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.718881,
+        "sqrMagnitude": 32.7056
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h36",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.85,
+        "y": 3.99,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.148773834,
+          "y": 0.6983619,
+          "z": -0.700112164,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.71337032,
+        "sqrMagnitude": 32.6426
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h37",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.85,
+        "y": 3.95,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.149502918,
+          "y": 0.6947489,
+          "z": -0.7035431,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.685508,
+        "sqrMagnitude": 32.325
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h38",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.85,
+        "y": 3.92,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.1500519,
+          "y": 0.6920041,
+          "z": -0.7061266,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.66470671,
+        "sqrMagnitude": 32.0889
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h39",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.87,
+        "y": 3.89,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.154063165,
+          "y": 0.688857138,
+          "z": -0.708336353,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.64703465,
+        "sqrMagnitude": 31.889
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h40",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.9,
+        "y": 3.85,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.160020545,
+          "y": 0.684532344,
+          "z": -0.711202443,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.62427759,
+        "sqrMagnitude": 31.6325
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h41",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.93,
+        "y": 3.81,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.166015849,
+          "y": 0.6801294,
+          "z": -0.714046657,
+          "normalized": {
+            "x": 0.166015863,
+            "y": 0.680129468,
+            "z": -0.7140467,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 5.601875,
+        "sqrMagnitude": 31.381
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h42",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.96,
+        "y": 3.77,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.172048256,
+          "y": 0.675647855,
+          "z": -0.716867745,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.57982969,
+        "sqrMagnitude": 31.1345
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h43",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.99,
+        "y": 3.73,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.178116918,
+          "y": 0.671086967,
+          "z": -0.719664335,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.558147,
+        "sqrMagnitude": 30.893
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h44",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.02,
+        "y": 3.7,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.18399924,
+          "y": 0.6674483,
+          "z": -0.721565664,
+          "normalized": {
+            "x": 0.183999255,
+            "y": 0.667448342,
+            "z": -0.7215657,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.543501,
+        "sqrMagnitude": 30.7304
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h45",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.05,
+        "y": 3.68,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.189675033,
+          "y": 0.664765835,
+          "z": -0.722571552,
+          "normalized": {
+            "x": 0.189675048,
+            "y": 0.6647659,
+            "z": -0.7225716,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 5.535784,
+        "sqrMagnitude": 30.6449013
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h46",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.09,
+        "y": 3.66,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.197097659,
+          "y": 0.661814153,
+          "z": -0.723294139,
+          "normalized": {
+            "x": 0.197097674,
+            "y": 0.6618142,
+            "z": -0.7232942,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 5.53025341,
+        "sqrMagnitude": 30.5837
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h47",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.16,
+        "y": 3.66,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.2092173,
+          "y": 0.6601167,
+          "z": -0.721438944,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.5444746,
+        "sqrMagnitude": 30.7412014
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h48",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.26,
+        "y": 3.64,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.226899251,
+          "y": 0.655486763,
+          "z": -0.7203151,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.55312538,
+        "sqrMagnitude": 30.8372
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h49",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.32,
+        "y": 3.65,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.236831218,
+          "y": 0.6548742,
+          "z": -0.7176703,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.57359,
+        "sqrMagnitude": 31.0649014
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h50",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.37,
+        "y": 3.65,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.2452717,
+          "y": 0.6534611,
+          "z": -0.716121733,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.58564234,
+        "sqrMagnitude": 31.1994
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h51",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.42,
+        "y": 3.67,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.253066361,
+          "y": 0.6540518,
+          "z": -0.712862968,
+          "normalized": {
+            "x": 0.2530664,
+            "y": 0.65405184,
+            "z": -0.712863,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.61117649,
+        "sqrMagnitude": 31.4853
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h52",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.48,
+        "y": 3.69,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.262424141,
+          "y": 0.6542872,
+          "z": -0.709254444,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.639725,
+        "sqrMagnitude": 31.8065014
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h53",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.55,
+        "y": 3.71,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.273293376,
+          "y": 0.654140949,
+          "z": -0.7052732,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.671561,
+        "sqrMagnitude": 32.1666
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h54",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.61,
+        "y": 3.73,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.282390952,
+          "y": 0.654234946,
+          "z": -0.701592445,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.701316,
+        "sqrMagnitude": 32.505
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h55",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.68,
+        "y": 3.76,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.292627871,
+          "y": 0.654929042,
+          "z": -0.696733057,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.74108,
+        "sqrMagnitude": 32.96
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h56",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.74,
+        "y": 3.78,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.30145523,
+          "y": 0.65488553,
+          "z": -0.693000555,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.77200127,
+        "sqrMagnitude": 33.3159981
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h57",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.79,
+        "y": 3.81,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.308253467,
+          "y": 0.656114936,
+          "z": -0.688834548,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.80690956,
+        "sqrMagnitude": 33.7202
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h58",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.83,
+        "y": 3.83,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.3137603,
+          "y": 0.6566677,
+          "z": -0.685814857,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.832478,
+        "sqrMagnitude": 34.0178
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h59",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.88,
+        "y": 3.86,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.320379049,
+          "y": 0.657799542,
+          "z": -0.681657553,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.868049,
+        "sqrMagnitude": 34.434
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h60",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.92,
+        "y": 3.87,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.3261116,
+          "y": 0.6573187,
+          "z": -0.6793992,
+          "normalized": {
+            "x": 0.326111645,
+            "y": 0.6573188,
+            "z": -0.679399252,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 5.88755465,
+        "sqrMagnitude": 34.6633
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h61",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.96,
+        "y": 3.89,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.331425,
+          "y": 0.65777725,
+          "z": -0.6763776,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.91385651,
+        "sqrMagnitude": 34.9737
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h62",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 1.98,
+        "y": 3.91,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.333688647,
+          "y": 0.6589508,
+          "z": -0.674118459,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.93367529,
+        "sqrMagnitude": 35.2085
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h63",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 2.01,
+        "y": 3.92,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.337796062,
+          "y": 0.658786356,
+          "z": -0.672230959,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.950336,
+        "sqrMagnitude": 35.4065
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h64",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 2.03,
+        "y": 3.93,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.340392321,
+          "y": 0.6589861,
+          "z": -0.6707238,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.963707,
+        "sqrMagnitude": 35.5658
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h65",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 2.04,
+        "y": 3.94,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.341496378,
+          "y": 0.659556746,
+          "z": -0.6696007,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.973709,
+        "sqrMagnitude": 35.6852
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h66",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 2.06,
+        "y": 3.95,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.34406957,
+          "y": 0.6597451,
+          "z": -0.668096244,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 5.987161,
+        "sqrMagnitude": 35.8461
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h67",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 2.07,
+        "y": 3.95,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.345540822,
+          "y": 0.659365356,
+          "z": -0.667711735,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 5.990609,
+        "sqrMagnitude": 35.8874
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h68",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 2.1,
+        "y": 3.96,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.349555552,
+          "y": 0.6591619,
+          "z": -0.6658201,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 6.00762844,
+        "sqrMagnitude": 36.0916
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h69",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 2.12,
+        "y": 3.97,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.35208708,
+          "y": 0.659332931,
+          "z": -0.6643153,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 6.02123737,
+        "sqrMagnitude": 36.2553
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h70",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 2.14,
+        "y": 3.98,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.354604155,
+          "y": 0.6594974,
+          "z": -0.662811458,
+          "normalized": {
+            "x": 0.354604185,
+            "y": 0.65949744,
+            "z": -0.6628115,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 6.03489876,
+        "sqrMagnitude": 36.420002
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    },
+    {
+      "hit_id": "h71",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 2.15,
+        "y": 3.99,
+        "z": -4.0,
+        "normalized": {
+          "x": 0.355663031,
+          "y": 0.660044432,
+          "z": -0.661698639,
+          "normalized": {
+            "x": 0.355663061,
+            "y": 0.6600445,
+            "z": -0.6616987,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 6.04504776,
+        "sqrMagnitude": 36.5426
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      }
+    }
+  ],
+  "user_request": "Hello, hello, hello, hello, 你好。",
+  "data_info": {
+    "available_data": [
+      {
+        "file": "education/student_scores_S001.json",
+        "description": "student_scores_S001 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 78.0-92.0]"
+      },
+      {
+        "file": "education/student_scores_S002.json",
+        "description": "student_scores_S002 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 68.0-81.0]"
+      },
+      {
+        "file": "education/student_scores_S003.json",
+        "description": "student_scores_S003 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 89.0-95.0]"
+      },
+      {
+        "file": "education/student_scores_S004.json",
+        "description": "student_scores_S004 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 85.0-91.0]"
+      },
+      {
+        "file": "education/student_scores_S005.json",
+        "description": "student_scores_S005 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 73.0-79.0]"
+      },
+      {
+        "file": "education/student_scores_S006.json",
+        "description": "student_scores_S006 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 87.0-91.0]"
+      },
+      {
+        "file": "education/student_scores_S007.json",
+        "description": "student_scores_S007 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 64.0-72.0]"
+      },
+      {
+        "file": "education/student_scores_S008.json",
+        "description": "student_scores_S008 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 80.0-85.0]"
+      },
+      {
+        "file": "education/student_scores_S009.json",
+        "description": "student_scores_S009 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 93.0-96.0]"
+      },
+      {
+        "file": "education/student_scores_S010.json",
+        "description": "student_scores_S010 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 62.0-75.0]"
+      },
+      {
+        "file": "education/student_scores_S011.json",
+        "description": "student_scores_S011 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 88.0-90.0]"
+      },
+      {
+        "file": "education/student_scores_S012.json",
+        "description": "student_scores_S012 - education data",
+        "data_fields": "(string) Subject, (int) Score [range: 71.0-76.0]"
+      }
+    ]
+  }
+}
+
+[Generated Sequence]
+MESSAGE("Hello! I am your virtual assistant. How can I help you with your visualizations today?");

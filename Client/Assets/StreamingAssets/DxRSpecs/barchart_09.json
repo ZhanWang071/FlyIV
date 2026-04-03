@@ -1,0 +1,28 @@
+{
+  "width": 400,
+  "height": 500,
+  "data": {
+    "url": "book/books.json"
+  },
+  "mark": "cube",
+  "encoding": {
+    "x": {
+      "field": "keyword",
+      "type": "nominal"
+    },
+    "y": {
+      "field": "counts",
+      "type": "quantitative"
+    },
+    "height": {
+      "field": "counts",
+      "type": "quantitative"
+    },
+    "yoffsetpct": {
+      "value": -0.5
+    },
+    "width": {
+      "value": 30
+    }
+  }
+}

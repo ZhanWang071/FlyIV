@@ -1,0 +1,26 @@
+{
+  "data" : {
+    "url" : "city/building_001.json"
+  },
+  "mark" : "cube",
+  "encoding" : {
+    "x" : {
+      "field" : "time",
+      "type" : "nominal"
+    },
+    "y" : {
+      "field" : "gas",
+      "type" : "quantitative"
+    },
+    "height" : {
+      "field" : "gas",
+      "type" : "quantitative"
+    },
+    "yoffsetpct" : {
+      "value" : -0.5
+    },
+    "width" : {
+      "value" : 40
+    }
+  }
+}
