@@ -1,0 +1,143 @@
+================================================================================
+EVALUATION SUMMARY: Evaluation_General_gpt-4o_20260327_152825.json
+================================================================================
+
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+Total Tests: 30
+Success Rate: 100.0%
+Avg LLM Time: 6.515s
+Avg Execution Time: 0.024s
+Avg Total Time: 6.591s
+
+TASK TYPE BREAKDOWN
+--------------------------------------------------------------------------------
+
+Single Tasks (1-22):
+  Count: 22
+  Success Rate: 100.0%
+  Avg LLM Time: 5.838s
+  Avg Execution Time: 0.033s
+  Avg Total Time: 5.913s
+
+Combined Tasks (23-30):
+  Count: 8
+  Success Rate: 100.0%
+  Avg LLM Time: 8.375s
+  Avg Execution Time: 0.000s
+  Avg Total Time: 8.458s
+
+SINGLE TASK CATEGORY BREAKDOWN
+--------------------------------------------------------------------------------
+
+Environment-Level Operations:
+  ORIENT_TO:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 4.271s
+    Avg Execution Time: 0.206s
+    Avg Total Time: 4.476s
+  ADAPT_POS:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 11.830s
+    Avg Execution Time: 0.000s
+    Avg Total Time: 11.930s
+  EMBED:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 3.863s
+    Avg Execution Time: 0.050s
+    Avg Total Time: 3.913s
+
+Vis-Level Operations:
+  CREATE:
+    Count: 5
+    Success Rate: 100.0%
+    Avg LLM Time: 5.568s
+    Avg Execution Time: 0.000s
+    Avg Total Time: 5.659s
+  DELETE:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 4.036s
+    Avg Execution Time: 0.060s
+    Avg Total Time: 4.096s
+  ROTATE:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 1.845s
+    Avg Execution Time: 0.046s
+    Avg Total Time: 1.891s
+  SCALE:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 2.464s
+    Avg Execution Time: 0.042s
+    Avg Total Time: 2.506s
+  LAYOUT:
+    Count: 2
+    Success Rate: 100.0%
+    Avg LLM Time: 6.966s
+    Avg Execution Time: 0.049s
+    Avg Total Time: 7.015s
+  POSITION:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 4.336s
+    Avg Execution Time: 0.044s
+    Avg Total Time: 4.380s
+  HIGHLIGHT:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 5.164s
+    Avg Execution Time: 0.000s
+    Avg Total Time: 5.223s
+  CHANGE_SERIE_COLOR:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 4.287s
+    Avg Execution Time: 0.045s
+    Avg Total Time: 4.333s
+  CHANGE_DATA_COLOR:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 9.882s
+    Avg Execution Time: 0.000s
+    Avg Total Time: 9.953s
+
+data-Level Operations:
+  DATA_TRANSFORM:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 4.397s
+    Avg Execution Time: 0.000s
+    Avg Total Time: 4.462s
+  UPDATE:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 8.832s
+    Avg Execution Time: 0.000s
+    Avg Total Time: 8.905s
+  DELETE_ELEMENT:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 5.316s
+    Avg Execution Time: 0.088s
+    Avg Total Time: 5.405s
+  APPEND_SINGLE:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 9.113s
+    Avg Execution Time: 0.000s
+    Avg Total Time: 9.194s
+  APPEND_SERIES:
+    Count: 1
+    Success Rate: 100.0%
+    Avg LLM Time: 7.029s
+    Avg Execution Time: 0.054s
+    Avg Total Time: 7.084s
+
+================================================================================
+Report generated at: 2026-03-27 16:04:10
+================================================================================

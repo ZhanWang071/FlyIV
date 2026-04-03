@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "description": "Create a 2D bar chart for math scores",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"Blackboard\",\"position\":{\"x\":0.0,\"y\":2.6,\"z\":-3.93},\"boundary\":{\"center\":{\"x\":0.0,\"y\":1.8,\"z\":-3.93},\"size\":{\"x\":6.1,\"y\":1.6,\"z\":0.14}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create a 2D bar chart for math score\"}",
+    "expected_api": "CREATE",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 2,
+    "description": "Create a 2D line chart for science scores",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"Blackboard\",\"position\":{\"x\":0.0,\"y\":2.6,\"z\":-3.93},\"boundary\":{\"center\":{\"x\":0.0,\"y\":1.8,\"z\":-3.93},\"size\":{\"x\":6.1,\"y\":1.6,\"z\":0.14}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create a 2D line chart for science score\"}",
+    "expected_api": "CREATE",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 3,
+    "description": "Create a 2D pie chart for english scores",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"Blackboard\",\"position\":{\"x\":0.0,\"y\":2.6,\"z\":-3.93},\"boundary\":{\"center\":{\"x\":0.0,\"y\":1.8,\"z\":-3.93},\"size\":{\"x\":6.1,\"y\":1.6,\"z\":0.14}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create a 2D pie chart for english score\"}",
+    "expected_api": "CREATE",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 4,
+    "description": "Create a 3D bar chart for building electricity",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create a 3D bar chart for building 001 electricity data\"}",
+    "expected_api": "CREATE",
+    "data_file": "city/building_001.json"
+  },
+  {
+    "id": 5,
+    "description": "Create a 3D scatter plot for building water usage",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create a 3D scatter plot for building 001 water usage\"}",
+    "expected_api": "CREATE",
+    "data_file": "city/building_001.json"
+  },
+  {
+    "id": 7,
+    "description": "Update an element value",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"update student S001 math score to 90 in MathScoreChart\"}",
+    "expected_api": "UPDATE",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 9,
+    "description": "Append a single element",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"add a new student S007 with math score 88\"}",
+    "expected_api": "APPEND_SINGLE",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 10,
+    "description": "Append a series",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"append the english score series to the MathScoreChart\"}",
+    "expected_api": "APPEND_SERIES",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 11,
+    "description": "Highlight an element",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"highlight student S001 in the MathScoreChart\"}",
+    "expected_api": "HIGHLIGHT",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 12,
+    "description": "Change series color",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"change the math score color to red in MathScoreChart\"}",
+    "expected_api": "CHANGE_SERIE_COLOR",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 13,
+    "description": "Change data color",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"change student S001 color to blue in MathScoreChart\"}",
+    "expected_api": "CHANGE_DATA_COLOR",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 14,
+    "description": "Position a visualization",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"move the MathScoreChart to position 1, 2, 3\"}",
+    "expected_api": "POSITION",
+    "data_file": null
+  },
+  {
+    "id": 15,
+    "description": "Rotate a visualization",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"rotate the MathScoreChart by 45 degrees on y axis\"}",
+    "expected_api": "ROTATE",
+    "data_file": null
+  },
+  {
+    "id": 16,
+    "description": "Scale a visualization",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"scale the MathScoreChart to 1.5 times\"}",
+    "expected_api": "SCALE",
+    "data_file": null
+  },
+  {
+    "id": 17,
+    "description": "Orient to user",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"orient the MathScoreChart to face me\"}",
+    "expected_api": "ORIENT_TO",
+    "data_file": null
+  },
+  {
+    "id": 18,
+    "description": "Adapt position to object",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"TeacherDesk\",\"position\":{\"x\":0.0,\"y\":0.92,\"z\":-2.3},\"boundary\":{\"center\":{\"x\":0.0,\"y\":0.46,\"z\":-2.3},\"size\":{\"x\":1.8,\"y\":0.92,\"z\":0.8}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create a bar chart for student scores and place it above the teacher desk\"}",
+    "expected_api": "ADAPT_POS",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 19,
+    "description": "Embed on surface",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"Blackboard\",\"position\":{\"x\":0.0,\"y\":2.6,\"z\":-3.93},\"boundary\":{\"center\":{\"x\":0.0,\"y\":1.8,\"z\":-3.93},\"size\":{\"x\":6.1,\"y\":1.6,\"z\":0.14}}},{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[{\"hit_id\":\"h0\",\"object\":\"Blackboard\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.86},\"normal\":{\"x\":0.0,\"y\":0.0,\"z\":1.0}}],\"user_request\":\"embed the MathScoreChart on the blackboard\"}",
+    "expected_api": "EMBED",
+    "data_file": null
+  },
+  {
+    "id": 20,
+    "description": "Layout multiple charts in arc",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":-1.0,\"y\":2.0,\"z\":-3.0},\"boundary\":{\"center\":{\"x\":-1.0,\"y\":2.0,\"z\":-3.0},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}},{\"name\":\"ScienceScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.0},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.0},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}},{\"name\":\"EnglishScoreChart\",\"position\":{\"x\":1.0,\"y\":2.0,\"z\":-3.0},\"boundary\":{\"center\":{\"x\":1.0,\"y\":2.0,\"z\":-3.0},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"arrange MathScoreChart, ScienceScoreChart, and EnglishScoreChart in an arc layout\"}",
+    "expected_api": "LAYOUT",
+    "data_file": null
+  },
+  {
+    "id": 21,
+    "description": "Layout multiple charts in grid",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":-1.0,\"y\":2.5,\"z\":-3.0},\"boundary\":{\"center\":{\"x\":-1.0,\"y\":2.5,\"z\":-3.0},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}},{\"name\":\"ScienceScoreChart\",\"position\":{\"x\":1.0,\"y\":2.5,\"z\":-3.0},\"boundary\":{\"center\":{\"x\":1.0,\"y\":2.5,\"z\":-3.0},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}},{\"name\":\"EnglishScoreChart\",\"position\":{\"x\":-1.0,\"y\":1.5,\"z\":-3.0},\"boundary\":{\"center\":{\"x\":-1.0,\"y\":1.5,\"z\":-3.0},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}},{\"name\":\"HistoryScoreChart\",\"position\":{\"x\":1.0,\"y\":1.5,\"z\":-3.0},\"boundary\":{\"center\":{\"x\":1.0,\"y\":1.5,\"z\":-3.0},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"arrange MathScoreChart, ScienceScoreChart, EnglishScoreChart, and HistoryScoreChart in a grid layout\"}",
+    "expected_api": "LAYOUT",
+    "data_file": null
+  },
+  {
+    "id": 22,
+    "description": "Data transform for multiple visualizations",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"split student scores by student id\"}",
+    "expected_api": "DATA_TRANSFORM",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 23,
+    "description": "Create combined chart with multiple series",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create a bar chart showing math, science, and english scores for all students\"}",
+    "expected_api": "CREATE,APPEND_SERIES",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 24,
+    "description": "Create and position chart",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"Blackboard\",\"position\":{\"x\":0.0,\"y\":2.6,\"z\":-3.93},\"boundary\":{\"center\":{\"x\":0.0,\"y\":1.8,\"z\":-3.93},\"size\":{\"x\":6.1,\"y\":1.6,\"z\":0.14}}}],\"relations\":[]},\"hit_points\":[{\"hit_id\":\"h0\",\"object\":\"Blackboard\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.86},\"normal\":{\"x\":0.0,\"y\":0.0,\"z\":1.0}}],\"user_request\":\"create a bar chart for math scores and place it on the blackboard\"}",
+    "expected_api": "CREATE,EMBED",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 25,
+    "description": "Create 3D chart with positioning",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"Building002\",\"position\":{\"x\":2.0,\"y\":0.0,\"z\":-5.0},\"boundary\":{\"center\":{\"x\":2.0,\"y\":1.5,\"z\":-5.0},\"size\":{\"x\":2.0,\"y\":3.0,\"z\":2.0}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create a 3D bar chart for building 002 electricity and place it above the building\"}",
+    "expected_api": "CREATE,ADAPT_POS,ORIENT_TO",
+    "data_file": "city/building_002.json"
+  },
+  {
+    "id": 26,
+    "description": "Compare two buildings data",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create bar charts to compare electricity usage between building 001 and building 002\"}",
+    "expected_api": "CREATE,CREATE,LAYOUT",
+    "data_file": "city/building_001.json,city/building_002.json"
+  },
+  {
+    "id": 27,
+    "description": "Create multiple charts for each student",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create a chart for each student showing their scores\"}",
+    "expected_api": "DATA_TRANSFORM,CREATE",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 28,
+    "description": "Update and highlight",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"update student S002 math score to 85 and highlight it in MathScoreChart\"}",
+    "expected_api": "UPDATE,HIGHLIGHT",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 29,
+    "description": "Create chart with color customization",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create a bar chart for science scores and make it green\"}",
+    "expected_api": "CREATE,CHANGE_SERIE_COLOR",
+    "data_file": "education/student_scores.json"
+  },
+  {
+    "id": 30,
+    "description": "Complex workflow: create, position, scale, orient",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"create a 3D scatter plot for building 003 gas usage, place it above the building, scale it to 2 times, and orient it to me\"}",
+    "expected_api": "CREATE,ADAPT_POS,SCALE,ORIENT_TO",
+    "data_file": "city/building_003.json"
+  },
+  {
+    "id": 6,
+    "description": "Delete a visualization",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"delete the MathScoreChart\"}",
+    "expected_api": "DELETE",
+    "data_file": null
+  },
+  {
+    "id": 8,
+    "description": "Delete an element",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[{\"name\":\"MathScoreChart\",\"position\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"boundary\":{\"center\":{\"x\":0.0,\"y\":2.0,\"z\":-3.5},\"size\":{\"x\":1.0,\"y\":1.0,\"z\":0.1}}}],\"relations\":[]},\"hit_points\":[],\"user_request\":\"delete student S006 from the MathScoreChart\"}",
+    "expected_api": "DELETE_ELEMENT",
+    "data_file": "education/student_scores.json"
+  }
+]

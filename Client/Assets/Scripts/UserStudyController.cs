@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public partial class UserStudyController : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public partial class UserStudyController : MonoBehaviour
         }
 
         // 2. 监听左手 Y 按钮 (Meta SDK: Button.Two)
-        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch))
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch) || Keyboard.current.downArrowKey.wasPressedThisFrame)
         {
             CycleTeleportPoint();
         }

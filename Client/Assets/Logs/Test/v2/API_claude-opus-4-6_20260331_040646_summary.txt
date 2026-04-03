@@ -1,0 +1,7 @@
+[Evaluation] Summary:
+Mode: API
+Model: claude-opus-4-6
+Success Rate: 150/150 (100.0%)
+Avg LLM Time: 4.30s
+Avg Execution Time: 0.18s
+Avg Total Time: 4.48s

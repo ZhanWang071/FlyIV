@@ -1,0 +1,14 @@
+[
+  {
+    "item": "water",
+    "value": 900
+  },
+  {
+    "item": "gas",
+    "value": 340
+  },
+  {
+    "item": "footfall",
+    "value": 1280
+  }
+]

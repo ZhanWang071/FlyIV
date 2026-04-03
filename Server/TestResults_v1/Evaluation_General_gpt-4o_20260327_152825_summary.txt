@@ -1,0 +1,56 @@
+================================================================================
+EVALUATION SUMMARY: Evaluation_General_gpt-4o_20260327_152825.json
+================================================================================
+
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+Total Tests: 30
+Success Rate: 36.7%
+Avg LLM Time: 6.515s
+Avg Execution Time: 0.024s
+Avg Total Time: 6.591s
+
+TASK TYPE BREAKDOWN
+--------------------------------------------------------------------------------
+
+Single Tasks (1-22):
+  Count: 22
+  Success Rate: 50.0%
+  Avg LLM Time: 5.838s
+  Avg Execution Time: 0.033s
+  Avg Total Time: 5.913s
+
+Combined Tasks (23-30):
+  Count: 8
+  Success Rate: 0.0%
+  Avg LLM Time: 8.375s
+  Avg Execution Time: 0.000s
+  Avg Total Time: 8.458s
+
+SINGLE TASK CATEGORY BREAKDOWN
+--------------------------------------------------------------------------------
+
+Environment-Level Operations:
+  Count: 3
+  Success Rate: 66.7%
+  Avg LLM Time: 6.655s
+  Avg Execution Time: 0.085s
+  Avg Total Time: 6.773s
+
+Visualization-Level Operations:
+  Count: 14
+  Success Rate: 50.0%
+  Avg LLM Time: 5.270s
+  Avg Execution Time: 0.024s
+  Avg Total Time: 5.336s
+
+Data-Level Operations:
+  Count: 5
+  Success Rate: 40.0%
+  Avg LLM Time: 6.938s
+  Avg Execution Time: 0.028s
+  Avg Total Time: 7.010s
+
+================================================================================
+Report generated at: 2026-03-27 22:29:14
+================================================================================

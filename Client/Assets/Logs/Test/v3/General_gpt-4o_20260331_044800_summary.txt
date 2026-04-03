@@ -1,0 +1,7 @@
+[Evaluation] Summary:
+Mode: GeneralLLM
+Model: gpt-4o
+Success Rate: 45/100 (45.0%)
+Avg LLM Time: 2.73s
+Avg Execution Time: 0.02s
+Avg Total Time: 2.79s

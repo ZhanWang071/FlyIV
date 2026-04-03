@@ -11,11 +11,15 @@ public class ApiConfig : ScriptableObject
     // public string baseDomain = "bj.yi-zhan.top";
     // public string apiKey = "sk-1tbfpLQRbZVig0pa2805B35a9e08426190A7E2Be79E76013";
     public string baseDomain = "vip.yi-zhan.top";
-    public string apiKey = "sk-m1YRJlrBqgG6Y3ZJ2aCb9aFbB07b485e8eC885526a920c29";
+    // public string apiKey = "sk-m1YRJlrBqgG6Y3ZJ2aCb9aFbB07b485e8eC885526a920c29";
+    // public string baseDomain = "api.shunyu.tech";
+    // public string apiKey = "sk-0phAeU3XbFb7PqcK2bAcA88b10754d9899935d734d511b7d";
+    public string apiKey = "sk-XbGJsPHgHH60nbr443Eb25558eB64c10Ad85047b9aC7BdDa";
+
 
 
     [Header("Module Model Settings")]
-    public string skillUrl = "https://bj.yi-zhan.top/v1/chat/completions";
+    public string skillUrl = "https://vip.yi-zhan.top/v1/chat/completions";
     public string skillModel = "gemini-3-flash-preview";
     public string vlmModel = "gpt-4o-mini";
     public string sttModel = "whisper-1";

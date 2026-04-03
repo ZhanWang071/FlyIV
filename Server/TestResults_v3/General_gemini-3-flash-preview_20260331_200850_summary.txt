@@ -1,0 +1,35 @@
+================================================================================
+EVALUATION SUMMARY: General_gemini-3-flash-preview_20260331_200850.json
+================================================================================
+
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+Total Tests: 0
+Success Rate: N/A
+Avg LLM Time: N/A
+Avg Execution Time: N/A
+Avg Total Time: N/A
+
+TASK TYPE BREAKDOWN
+--------------------------------------------------------------------------------
+
+Single Tasks (1-22):
+  Count: 0
+  Success Rate: N/A
+  Avg LLM Time: N/A
+  Avg Execution Time: N/A
+  Avg Total Time: N/A
+
+Combined Tasks (23-30):
+  Count: 0
+  Success Rate: N/A
+  Avg LLM Time: N/A
+  Avg Execution Time: N/A
+  Avg Total Time: N/A
+
+SINGLE TASK CATEGORY BREAKDOWN
+--------------------------------------------------------------------------------
+
+================================================================================
+Report generated at: 2026-04-01 01:11:08
+================================================================================

@@ -1,0 +1,41 @@
+[
+  {
+    "test_id": 2,
+    "description": "Data transform: split electricity data by time",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"split the electricity consumption data by time\"}",
+    "use_api": true,
+    "model": "gemini-3-flash-preview",
+    "llm_time": 220.0135158,
+    "execution_time": 0.5600003,
+    "total_time": 220.57615479999998,
+    "success": true,
+    "error_message": null,
+    "generated_code": "DATA_TRANSFORM(\"city/building_001.json\", \"time\", \"electricity\", \"value\");\nMESSAGE(\"The electricity consumption data has been split by time.\");"
+  },
+  {
+    "test_id": 3,
+    "description": "Data transform: split gas data by time)",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"split the gas consumption data by time\"}",
+    "use_api": true,
+    "model": "gemini-3-flash-preview",
+    "llm_time": 222.9169838,
+    "execution_time": 0.70162629999999993,
+    "total_time": 223.61886969999998,
+    "success": true,
+    "error_message": null,
+    "generated_code": "DATA_TRANSFORM(\"city/building_001.json\", \"time\", \"item\", \"gas\", [\"electricity\", \"water\", \"footfall\"]);\nCREATE(\"GasConsumptionByTime\", \"city/building_001.json\", \"2d_bar\", \"time\", \"gas\");\nPOSITION(\"GasConsumptionByTime\", 0.00f, 1.70f, -1.20f);\nMESSAGE(\"I have split the gas consumption data by time and created a bar chart for you.\");"
+  },
+  {
+    "test_id": 5,
+    "description": "Data transform: split building water usage by time",
+    "input": "{\"user_status\":{\"position\":{\"x\":0.0,\"y\":1.7,\"z\":0.0},\"forward\":{\"x\":0.0,\"y\":0.0,\"z\":-1.0},\"right\":{\"x\":-1.0,\"y\":0.0,\"z\":0.0}},\"scene_graph\":{\"objects\":[],\"relations\":[]},\"hit_points\":[],\"user_request\":\"split the water consumption data by time\"}",
+    "use_api": true,
+    "model": "gemini-3-flash-preview",
+    "llm_time": 221.18445219999998,
+    "execution_time": 0.48777109999999996,
+    "total_time": 221.672508,
+    "success": true,
+    "error_message": null,
+    "generated_code": "CREATE(\"WaterConsumptionByTime\", \"city/building_001.json\", \"2d_line\", \"time\", \"water\");\nPOSITION(\"WaterConsumptionByTime\", 0.00f, 2.00f, -1.20f);\nROTATE(\"WaterConsumptionByTime\", 0.00f, 0.00f, 0.00f);"
+  }
+]

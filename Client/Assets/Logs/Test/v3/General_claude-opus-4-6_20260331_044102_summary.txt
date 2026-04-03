@@ -1,0 +1,7 @@
+[Evaluation] Summary:
+Mode: GeneralLLM
+Model: claude-opus-4-6
+Success Rate: 37/100 (37.0%)
+Avg LLM Time: 5.93s
+Avg Execution Time: 0.02s
+Avg Total Time: 5.98s

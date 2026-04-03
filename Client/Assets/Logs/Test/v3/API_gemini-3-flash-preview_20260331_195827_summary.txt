@@ -1,0 +1,7 @@
+[Evaluation] Summary:
+Mode: API
+Model: gemini-3-flash-preview
+Success Rate: 3/3 (100.0%)
+Avg LLM Time: 221.37s
+Avg Execution Time: 0.58s
+Avg Total Time: 221.96s

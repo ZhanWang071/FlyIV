@@ -1,0 +1,7 @@
+[Evaluation] Summary:
+Mode: API
+Model: gpt-4o
+Success Rate: 100/100 (100.0%)
+Avg LLM Time: 1.40s
+Avg Execution Time: 0.16s
+Avg Total Time: 1.57s

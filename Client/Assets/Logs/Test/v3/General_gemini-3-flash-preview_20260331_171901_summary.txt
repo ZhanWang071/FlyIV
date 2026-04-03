@@ -1,0 +1,7 @@
+[Evaluation] Summary:
+Mode: GeneralLLM
+Model: gemini-3-flash-preview
+Success Rate: 51/100 (51.0%)
+Avg LLM Time: 43.97s
+Avg Execution Time: 0.04s
+Avg Total Time: 44.05s

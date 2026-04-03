@@ -1,86 +1,100 @@
 [
-    {
-        "student_id": "S001",
-        "name": "Alice",
-        "math_score": 85,
-        "science_score": 92,
-        "english_score": 78
-    },
-    {
-        "student_id": "S002",
-        "name": "Bob",
-        "math_score": 72,
-        "science_score": 68,
-        "english_score": 81
-    },
-    {
-        "student_id": "S003",
-        "name": "Charlie",
-        "math_score": 95,
-        "science_score": 89,
-        "english_score": 93
-    },
-    {
-        "student_id": "S004",
-        "name": "Diana",
-        "math_score": 88,
-        "science_score": 91,
-        "english_score": 85
-    },
-    {
-        "student_id": "S005",
-        "name": "Eve",
-        "math_score": 76,
-        "science_score": 73,
-        "english_score": 79
-    },
-    {
-        "student_id": "S006",
-        "name": "Frank",
-        "math_score": 91,
-        "science_score": 87,
-        "english_score": 90
-    },
-    {
-        "student_id": "S007",
-        "name": "Grace",
-        "math_score": 64,
-        "science_score": 70,
-        "english_score": 72
-    },
-    {
-        "student_id": "S008",
-        "name": "Hank",
-        "math_score": 82,
-        "science_score": 85,
-        "english_score": 80
-    },
-    {
-        "student_id": "S009",
-        "name": "Ivy",
-        "math_score": 93,
-        "science_score": 96,
-        "english_score": 94
-    },
-    {
-        "student_id": "S010",
-        "name": "Jack",
-        "math_score": 67,
-        "science_score": 62,
-        "english_score": 75
-    },
-    {
-        "student_id": "S011",
-        "name": "Karen",
-        "math_score": 89,
-        "science_score": 90,
-        "english_score": 88
-    },
-    {
-        "student_id": "S012",
-        "name": "Leo",
-        "math_score": 74,
-        "science_score": 76,
-        "english_score": 71
-    }
+  {
+    "student_id": "S001",
+    "name": "Alice",
+    "math_score": 90,
+    "science_score": 92,
+    "english_score": 78
+  },
+  {
+    "student_id": "S002",
+    "name": "Bob",
+    "math_score": 72,
+    "science_score": 68,
+    "english_score": 81
+  },
+  {
+    "student_id": "S003",
+    "name": "Charlie",
+    "math_score": 95,
+    "science_score": 92,
+    "english_score": 93
+  },
+  {
+    "student_id": "S004",
+    "name": "Diana",
+    "math_score": 88,
+    "science_score": 91,
+    "english_score": 85
+  },
+  {
+    "student_id": "S005",
+    "name": "Eve",
+    "math_score": 78,
+    "science_score": 73,
+    "english_score": 79
+  },
+  {
+    "student_id": "S006",
+    "name": "Frank",
+    "math_score": 91,
+    "science_score": 87,
+    "english_score": 90
+  },
+  {
+    "student_id": "S007",
+    "name": "Grace",
+    "math_score": 64,
+    "science_score": 70,
+    "english_score": 72
+  },
+  {
+    "student_id": "S008",
+    "name": "Hank",
+    "math_score": 82,
+    "science_score": 85,
+    "english_score": 80
+  },
+  {
+    "student_id": "S009",
+    "name": "Ivy",
+    "math_score": 93,
+    "science_score": 96,
+    "english_score": 94
+  },
+  {
+    "student_id": "S010",
+    "name": "Jack",
+    "math_score": 67,
+    "science_score": 62,
+    "english_score": 75
+  },
+  {
+    "student_id": "S011",
+    "name": "Karen",
+    "math_score": 89,
+    "science_score": 90,
+    "english_score": 88
+  },
+  {
+    "student_id": "S012",
+    "name": "Leo",
+    "math_score": 74,
+    "science_score": 76,
+    "english_score": 71
+  },
+  {
+    "student_id": "S007",
+    "name": "Student S007",
+    "math_score": 88,
+    "science_score": 75,
+    "english_score": 80
+  },
+  {
+    "student_id": "S007",
+    "name": "New Student",
+    "math_score": 88,
+    "science_score": 0,
+    "english_score": 0
+  }
 ]

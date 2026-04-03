@@ -1,0 +1,28 @@
+[
+  {
+    "test_id": 1,
+    "description": "Create a 2D bar chart for math scores",
+    "input": "create a 2D bar chart for math score",
+    "use_api": true,
+    "model": "gpt-4o",
+    "llm_time": 5.1851262,
+    "execution_time": 4.1556923999999995,
+    "total_time": 9.3419586,
+    "success": true,
+    "error_message": null,
+    "generated_code": "CREATE(\"MathScoreChart\", \"education/student_scores.json\", \"2d_bar\", \"student_id\", \"math_score\");"
+  },
+  {
+    "test_id": 2,
+    "description": "Create a 2D line chart for science scores",
+    "input": "create a 2D line chart for science score",
+    "use_api": true,
+    "model": "gpt-4o",
+    "llm_time": 1.834639,
+    "execution_time": 0.1323918,
+    "total_time": 1.9670523,
+    "success": true,
+    "error_message": null,
+    "generated_code": "CREATE(\"ScienceScoreChart\", \"education/student_scores.json\", \"2d_line\", \"student_id\", \"science_score\");"
+  }
+]

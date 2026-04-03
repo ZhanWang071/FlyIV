@@ -1,14 +1,14 @@
 [
   {
-    "Subject": "math",
-    "Score": 89
+    "item": "math",
+    "value": 89
   },
   {
-    "Subject": "science",
-    "Score": 90
+    "item": "science",
+    "value": 90
   },
   {
-    "Subject": "english",
-    "Score": 88
+    "item": "english",
+    "value": 88
   }
 ]

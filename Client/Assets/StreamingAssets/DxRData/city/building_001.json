@@ -1,44 +1,48 @@
 [
-    {
-        "time": "00:00",
-        "electricity": 150,
-        "water": 20,
-        "gas": 5,
-        "footfall": 0
-    },
-    {
-        "time": "04:00",
-        "electricity": 120,
-        "water": 15,
-        "gas": 5,
-        "footfall": 2
-    },
-    {
-        "time": "08:00",
-        "electricity": 600,
-        "water": 150,
-        "gas": 30,
-        "footfall": 45
-    },
-    {
-        "time": "12:00",
-        "electricity": 2100,
-        "water": 850,
-        "gas": 320,
-        "footfall": 1200
-    },
-    {
-        "time": "16:00",
-        "electricity": 1950,
-        "water": 720,
-        "gas": 280,
-        "footfall": 950
-    },
-    {
-        "time": "20:00",
-        "electricity": 2400,
-        "water": 900,
-        "gas": 450,
-        "footfall": 1500
-    }
+  {
+    "time": "00:00",
+    "electricity": 150,
+    "water": 20,
+    "gas": 5,
+    "footfall": 0
+  },
+  {
+    "time": "04:00",
+    "electricity": 120,
+    "water": 15,
+    "gas": 5,
+    "footfall": 2
+  },
+  {
+    "time": "08:00",
+    "electricity": 600,
+    "water": 150,
+    "gas": 30,
+    "footfall": 45
+  },
+  {
+    "time": "12:00",
+    "electricity": 2100,
+    "water": 850,
+    "gas": 320,
+    "footfall": 1200
+  },
+  {
+    "time": "16:00",
+    "electricity": 1950,
+    "water": 720,
+    "gas": 280,
+    "footfall": 950
+  },
+  {
+    "time": "20:00",
+    "electricity": 2400,
+    "water": 120,
+    "gas": 450,
+    "footfall": 1500
+  },
+  {
+    "time": "24:00",
+    "gas": 12000
+  }
 ]

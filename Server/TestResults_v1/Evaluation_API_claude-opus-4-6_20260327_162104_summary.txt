@@ -1,0 +1,56 @@
+================================================================================
+EVALUATION SUMMARY: Evaluation_API_claude-opus-4-6_20260327_162104.json
+================================================================================
+
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+Total Tests: 30
+Success Rate: 100.0%
+Avg LLM Time: 10.915s
+Avg Execution Time: 0.426s
+Avg Total Time: 11.342s
+
+TASK TYPE BREAKDOWN
+--------------------------------------------------------------------------------
+
+Single Tasks (1-22):
+  Count: 22
+  Success Rate: 100.0%
+  Avg LLM Time: 11.607s
+  Avg Execution Time: 0.426s
+  Avg Total Time: 12.034s
+
+Combined Tasks (23-30):
+  Count: 8
+  Success Rate: 100.0%
+  Avg LLM Time: 9.011s
+  Avg Execution Time: 0.428s
+  Avg Total Time: 9.440s
+
+SINGLE TASK CATEGORY BREAKDOWN
+--------------------------------------------------------------------------------
+
+Environment-Level Operations:
+  Count: 3
+  Success Rate: 100.0%
+  Avg LLM Time: 11.783s
+  Avg Execution Time: 0.201s
+  Avg Total Time: 11.984s
+
+Visualization-Level Operations:
+  Count: 14
+  Success Rate: 100.0%
+  Avg LLM Time: 10.545s
+  Avg Execution Time: 0.500s
+  Avg Total Time: 11.045s
+
+Data-Level Operations:
+  Count: 5
+  Success Rate: 100.0%
+  Avg LLM Time: 14.475s
+  Avg Execution Time: 0.355s
+  Avg Total Time: 14.831s
+
+================================================================================
+Report generated at: 2026-03-27 22:29:14
+================================================================================

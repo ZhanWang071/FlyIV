@@ -341,4 +341,252 @@ public class ActionExecutor : MonoBehaviour
         Debug.Log("[ActionExecutor] 测试Skill Sequence执行: Test Case Highlight");
         await ExecuteSkillSequence(skillSequence);
     }
+
+    [ContextMenu("C1-T1")]
+    private async void TestCaseT1()
+    {
+        skillsFolderPath = SkillFolderOption.XCharts;
+        skillSequence = "CREATE(\"AllStudentsMainScoresChart\", \"education/student_scores.json\", \"2d_bar\", \"student_id\", \"math_score\");" +
+                            "EMBED(\"AllStudentsMainScoresChart\", \"Blackboard\");";
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("C1-T2")]
+    private async void TestCaseT2()
+    {
+        skillsFolderPath = SkillFolderOption.XCharts;
+        skillSequence = "APPEND_SERIES(\"AllStudentsMainScoresChart\", \"education/student_scores.json\", \"student_id\", \"science_score\", \"bar\");" +
+                            "APPEND_SERIES(\"AllStudentsMainScoresChart\", \"education/student_scores.json\", \"student_id\", \"english_score\", \"bar\");";
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("C1-T3")]
+    private async void TestCaseT3()
+    {
+        skillsFolderPath = SkillFolderOption.XCharts;
+        skillSequence = @"
+DATA_TRANSFORM(""education / student_scores.json"", ""student_id"", ""subject"", ""score"", [""name""]);
+CREATE(""StudentScores_S001"", ""education/student_scores_S001.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S001"", ""DeskAndChair_S001"", 0.1f, 0.1f);
+ORIENT_TO(""StudentScores_S001"", ""User"");
+CREATE(""StudentScores_S002"", ""education/student_scores_S002.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S002"", ""DeskAndChair_S002"", 0.1f, 0.1f);
+ORIENT_TO(""StudentScores_S002"", ""User"");
+CREATE(""StudentScores_S003"", ""education/student_scores_S003.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S003"", ""DeskAndChair_S003"", 0.1f, 0.1f);
+ORIENT_TO(""StudentScores_S003"", ""User"");
+CREATE(""StudentScores_S004"", ""education/student_scores_S004.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S004"", ""DeskAndChair_S004"", 0.1f, 0.1f);
+ORIENT_TO(""StudentScores_S004"", ""User"");
+CREATE(""StudentScores_S005"", ""education/student_scores_S005.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S005"", ""DeskAndChair_S005"", 0.1f, 0.2f);
+ORIENT_TO(""StudentScores_S005"", ""User"");
+CREATE(""StudentScores_S006"", ""education/student_scores_S006.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S006"", ""DeskAndChair_S006"", 0.1f, 0.2f);
+ORIENT_TO(""StudentScores_S006"", ""User"");
+CREATE(""StudentScores_S007"", ""education/student_scores_S007.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S007"", ""DeskAndChair_S007"", 0.1f, 0.2f);
+ORIENT_TO(""StudentScores_S007"", ""User"");
+CREATE(""StudentScores_S008"", ""education/student_scores_S008.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S008"", ""DeskAndChair_S008"", 0.1f, 0.2f);
+ORIENT_TO(""StudentScores_S008"", ""User"");
+CREATE(""StudentScores_S009"", ""education/student_scores_S009.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S009"", ""DeskAndChair_S009"", 0.1f, 0.3f);
+ORIENT_TO(""StudentScores_S009"", ""User"");
+CREATE(""StudentScores_S010"", ""education/student_scores_S010.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S010"", ""DeskAndChair_S010"", 0.1f, 0.3f);
+ORIENT_TO(""StudentScores_S010"", ""User"");
+CREATE(""StudentScores_S011"", ""education/student_scores_S011.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S011"", ""DeskAndChair_S011"", 0.1f, 0.3f);
+ORIENT_TO(""StudentScores_S011"", ""User"");
+CREATE(""StudentScores_S012"", ""education/student_scores_S012.json"", ""2d_bar"", ""subject"", ""score"");
+ADAPT_POS(""StudentScores_S012"", ""DeskAndChair_S012"", 0.1f, 0.3f);
+ORIENT_TO(""StudentScores_S012"", ""User"");
+";
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("C1-T4")]
+    private async void TestCaseT4()
+    {
+        skillsFolderPath = SkillFolderOption.XCharts;
+        skillSequence = @"
+CHANGE_DATA_COLOR(""StudentScores_S001"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S001"", ""score"", ""english"", ""#F7C15BFF"");
+CHANGE_DATA_COLOR(""StudentScores_S002"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S002"", ""score"", ""english"", ""#F7C15BFF"");
+CHANGE_DATA_COLOR(""StudentScores_S003"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S003"", ""score"", ""english"", ""#F7C15BFF"");
+CHANGE_DATA_COLOR(""StudentScores_S004"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S004"", ""score"", ""english"", ""#F7C15BFF"");
+CHANGE_DATA_COLOR(""StudentScores_S005"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S005"", ""score"", ""english"", ""#F7C15BFF"");
+CHANGE_DATA_COLOR(""StudentScores_S006"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S006"", ""score"", ""english"", ""#F7C15BFF"");
+CHANGE_DATA_COLOR(""StudentScores_S007"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S007"", ""score"", ""english"", ""#F7C15BFF"");
+CHANGE_DATA_COLOR(""StudentScores_S008"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S008"", ""score"", ""english"", ""#F7C15BFF"");
+CHANGE_DATA_COLOR(""StudentScores_S009"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S009"", ""score"", ""english"", ""#F7C15BFF"");
+CHANGE_DATA_COLOR(""StudentScores_S010"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S010"", ""score"", ""english"", ""#F7C15BFF"");
+CHANGE_DATA_COLOR(""StudentScores_S011"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S011"", ""score"", ""english"", ""#F7C15BFF"");
+CHANGE_DATA_COLOR(""StudentScores_S012"", ""score"", ""science"", ""#8AC471FF"");
+CHANGE_DATA_COLOR(""StudentScores_S012"", ""score"", ""english"", ""#F7C15BFF"");
+";
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("C2-T1")]
+    private async void TestCaseT5()
+    {
+        skillsFolderPath = SkillFolderOption.DxR;
+        skillSequence = @"
+CREATE(""UtilityData_building_001"", ""city / building_001.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_001"", ""city/building_001.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_001"", ""city/building_001.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_001"", ""building_001"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_001"", ""User"");
+CREATE(""UtilityData_building_002"", ""city/building_002.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_002"", ""city/building_002.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_002"", ""city/building_002.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_002"", ""building_002"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_002"", ""User"");
+CREATE(""UtilityData_building_003"", ""city/building_003.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_003"", ""city/building_003.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_003"", ""city/building_003.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_003"", ""building_003"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_003"", ""User"");
+CREATE(""UtilityData_building_004"", ""city/building_004.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_004"", ""city/building_004.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_004"", ""city/building_004.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_004"", ""building_004"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_004"", ""User"");
+CREATE(""UtilityData_building_005"", ""city/building_005.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_005"", ""city/building_005.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_005"", ""city/building_005.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_005"", ""building_005"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_005"", ""User"");
+CREATE(""UtilityData_building_006"", ""city/building_006.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_006"", ""city/building_006.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_006"", ""city/building_006.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_006"", ""building_006"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_006"", ""User"");
+CREATE(""UtilityData_building_007"", ""city/building_007.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_007"", ""city/building_007.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_007"", ""city/building_007.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_007"", ""building_007"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_007"", ""User"");
+CREATE(""UtilityData_building_008"", ""city/building_008.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_008"", ""city/building_008.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_008"", ""city/building_008.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_008"", ""building_008"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_008"", ""User"");
+CREATE(""UtilityData_building_009"", ""city/building_009.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_009"", ""city/building_009.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_009"", ""city/building_009.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_009"", ""building_009"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_009"", ""User"");
+CREATE(""UtilityData_building_010"", ""city/building_010.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_010"", ""city/building_010.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_010"", ""city/building_010.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_010"", ""building_010"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_010"", ""User"");
+CREATE(""UtilityData_building_011"", ""city/building_011.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_011"", ""city/building_011.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_011"", ""city/building_011.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_011"", ""building_011"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_011"", ""User"");
+CREATE(""UtilityData_building_012"", ""city/building_012.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_012"", ""city/building_012.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_012"", ""city/building_012.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_012"", ""building_012"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_012"", ""User"");
+CREATE(""UtilityData_building_013"", ""city/building_013.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_013"", ""city/building_013.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_013"", ""city/building_013.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_013"", ""building_013"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_013"", ""User"");
+CREATE(""UtilityData_building_014"", ""city/building_014.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_014"", ""city/building_014.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_014"", ""city/building_014.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_014"", ""building_014"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_014"", ""User"");
+CREATE(""UtilityData_building_015"", ""city/building_015.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_015"", ""city/building_015.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_015"", ""city/building_015.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_015"", ""building_015"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_015"", ""User"");
+CREATE(""UtilityData_building_016"", ""city/building_016.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_016"", ""city/building_016.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_016"", ""city/building_016.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_016"", ""building_016"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_016"", ""User"");
+CREATE(""UtilityData_building_017"", ""city/building_017.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_017"", ""city/building_017.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_017"", ""city/building_017.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_017"", ""building_017"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_017"", ""User"");
+CREATE(""UtilityData_building_018"", ""city/building_018.json"", ""2d_line"", ""time"", ""electricity"");
+APPEND_SERIES(""UtilityData_building_018"", ""city/building_018.json"", ""time"", ""water"", ""line"");
+APPEND_SERIES(""UtilityData_building_018"", ""city/building_018.json"", ""time"", ""gas"", ""line"");
+ADAPT_POS(""UtilityData_building_018"", ""building_018"", 0.40f, 0.20f);
+ORIENT_TO(""UtilityData_building_018"", ""User"");
+";
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("C2-T2")]
+    private async void TestCaseT6()
+    {
+        skillsFolderPath = SkillFolderOption.DxR;
+        skillSequence = @"
+LAYOUT([""UtilityData_building_001"", ""UtilityData_building_003"", ""UtilityData_building_004"", ""UtilityData_building_005"", ""UtilityData_building_006"", ""UtilityData_building_007"", ""UtilityData_building_009"", ""UtilityData_building_010"", ""UtilityData_building_011"", ""UtilityData_building_012"", ""UtilityData_building_013"", ""UtilityData_building_014"", ""UtilityData_building_016""], 1.50f, 0.2f, ""grid"");
+ORIENT_TO(""UtilityData_building_001"", ""User"");
+ORIENT_TO(""UtilityData_building_003"", ""User"");
+ORIENT_TO(""UtilityData_building_004"", ""User"");
+ORIENT_TO(""UtilityData_building_005"", ""User"");
+ORIENT_TO(""UtilityData_building_006"", ""User"");
+ORIENT_TO(""UtilityData_building_007"", ""User"");
+ORIENT_TO(""UtilityData_building_009"", ""User"");
+ORIENT_TO(""UtilityData_building_010"", ""User"");
+ORIENT_TO(""UtilityData_building_011"", ""User"");
+ORIENT_TO(""UtilityData_building_012"", ""User"");
+ORIENT_TO(""UtilityData_building_013"", ""User"");
+ORIENT_TO(""UtilityData_building_014"", ""User"");
+ORIENT_TO(""UtilityData_building_016"", ""User"");
+";
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("C2-T3")]
+    private async void TestCaseT7()
+    {
+        skillsFolderPath = SkillFolderOption.DxR;
+        skillSequence = @"
+CREATE(""ElectricityChart_building_001"", ""city/building_001.json"", ""3d_bar"", ""time"", ""electricity"");
+CREATE(""WaterChart_building_001"", ""city/building_001.json"", ""3d_bar"", ""time"", ""water"");
+CREATE(""GasChart_building_001"", ""city/building_001.json"", ""3d_bar"", ""time"", ""gas"");
+LAYOUT([""ElectricityChart_building_001"", ""WaterChart_building_001"", ""GasChart_building_001""], 1.20f, 0.40f, ""arc"");
+ORIENT_TO(""ElectricityChart_building_001"", ""User"");
+ORIENT_TO(""WaterChart_building_001"", ""User"");
+ORIENT_TO(""GasChart_building_001"", ""User"");
+";
+        await ExecuteSkillSequence(skillSequence);
+    }
+
+    [ContextMenu("C2-T4")]
+    private async void TestCaseT8()
+    {
+        skillsFolderPath = SkillFolderOption.DxR;
+        skillSequence = @"
+CREATE(""WaterChart_building_005"", ""city/building_005.json"", ""3d_bar"", ""time"", ""water"");
+LAYOUT([""WaterChart_building_001"", ""WaterChart_building_005""], 1.20f, 0.40f, ""arc"");
+ORIENT_TO(""WaterChart_building_001"", ""User"");
+ORIENT_TO(""WaterChart_building_005"", ""User"");
+";
+        await ExecuteSkillSequence(skillSequence);
+    }
 }

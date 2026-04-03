@@ -3004,11 +3004,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 81710940}
-  - component: {fileID: 81710942}
-  - component: {fileID: 81710941}
-  m_Layer: 5
-  m_Name: axis_3
+  - component: {fileID: 82135862}
+  - component: {fileID: 82135861}
+  m_Layer: 0
+  m_Name: Evaluation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11262,7 +11261,7 @@ Camera:
   near clip plane: 0.1
   far clip plane: 1000
   field of view: 90
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -89644,7 +89643,7 @@ MonoBehaviour:
   labelBgColor: {r: 0, g: 0, b: 0, a: 0.5254902}
   labelPadding: {x: 20, y: 10}
   showDebugRay: 0
-  showPointingRay: 1
+  showPointingRay: 0
   rayHitColor: {r: 1, g: 0.60784316, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 0.35}
   rayWidth: 0.004
@@ -89675,9 +89674,9 @@ MonoBehaviour:
   cameraRig: {fileID: 243533547}
   Environment: {fileID: 122912966}
   mouseControl: 1
-  voiceSendtoVLM: 1
-  generateSequence: 1
-  sequenceToExecutor: 1
+  voiceSendtoVLM: 0
+  generateSequence: 0
+  sequenceToExecutor: 0
   userRequest: create a bar chart for all students score on board
   identifiedObjects: 
   pointingObject: 
@@ -125561,3 +125560,4 @@ SceneRoots:
   - {fileID: 1715426177}
   - {fileID: 1181756635}
   - {fileID: 1135499301}
+  - {fileID: 82135862}

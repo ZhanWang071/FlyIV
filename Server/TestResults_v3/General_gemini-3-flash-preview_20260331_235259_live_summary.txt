@@ -1,0 +1,56 @@
+================================================================================
+EVALUATION SUMMARY: General_gemini-3-flash-preview_20260331_235259_live.json
+================================================================================
+
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+Total Tests: 75
+Success Rate: 61.3%
+Avg LLM Time: 14.287s
+Avg Execution Time: 0.032s
+Avg Total Time: 14.348s
+
+TASK TYPE BREAKDOWN
+--------------------------------------------------------------------------------
+
+Single Tasks (1-22):
+  Count: 63
+  Success Rate: 68.3%
+  Avg LLM Time: 13.457s
+  Avg Execution Time: 0.036s
+  Avg Total Time: 13.516s
+
+Combined Tasks (23-30):
+  Count: 12
+  Success Rate: 25.0%
+  Avg LLM Time: 18.642s
+  Avg Execution Time: 0.015s
+  Avg Total Time: 18.716s
+
+SINGLE TASK CATEGORY BREAKDOWN
+--------------------------------------------------------------------------------
+
+Environment-Level Operations:
+  Count: 8
+  Success Rate: 62.5%
+  Avg LLM Time: 20.499s
+  Avg Execution Time: 0.033s
+  Avg Total Time: 20.556s
+
+Visualization-Level Operations:
+  Count: 34
+  Success Rate: 73.5%
+  Avg LLM Time: 10.692s
+  Avg Execution Time: 0.034s
+  Avg Total Time: 10.745s
+
+Data-Level Operations:
+  Count: 21
+  Success Rate: 61.9%
+  Avg LLM Time: 15.252s
+  Avg Execution Time: 0.038s
+  Avg Total Time: 15.321s
+
+================================================================================
+Report generated at: 2026-04-01 01:11:08
+================================================================================

@@ -1,0 +1,16 @@
+{
+  "data" : {
+    "url" : "city/building_001.json"
+  },
+  "mark" : "sphere",
+  "encoding" : {
+    "x" : {
+      "field" : "time",
+      "type" : "quantitative"
+    },
+    "y" : {
+      "field" : "water",
+      "type" : "quantitative"
+    }
+  }
+}
