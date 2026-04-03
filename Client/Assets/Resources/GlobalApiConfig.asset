@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GlobalApiConfig
   m_EditorClassIdentifier: Assembly-CSharp::ApiConfig
   serverUrl: http://127.0.0.1:5001/generate_skill
-  baseDomain: vip.yi-zhan.top
-  apiKey: sk-XbGJsPHgHH60nbr443Eb25558eB64c10Ad85047b9aC7BdDa
-  skillUrl: https://vip.yi-zhan.top/v1/chat/completions
+  baseDomain: https://api.shunyu.tech
+  apiKey: sk-0phAeU3XbFb7PqcK2bAcA88b10754d9899935d734d511b7d
+  skillUrl: https://api.shunyu.tech/v1/chat/completions
   skillModel: gemini-3-flash-preview
   vlmModel: gpt-4o-mini
   sttModel: whisper-1
