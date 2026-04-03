@@ -485,7 +485,7 @@ public class Orchestrator : MonoBehaviour
         DontDestroyOnLoad(_feedbackPanel);
     }
 
-    private void ShowFeedback(string message, bool keepVisible = true)
+    public void ShowFeedback(string message, bool keepVisible = true)
     {
         if (_feedbackPanel == null) return;
         if (!_feedbackPanel.activeSelf) _feedbackPanel.SetActive(true);

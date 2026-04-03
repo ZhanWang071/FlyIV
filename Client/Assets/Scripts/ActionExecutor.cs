@@ -343,7 +343,7 @@ public class ActionExecutor : MonoBehaviour
     }
 
     [ContextMenu("C1-T1")]
-    private async void TestCaseT1()
+    public async Task TestCaseT1()
     {
         skillsFolderPath = SkillFolderOption.XCharts;
         skillSequence = "CREATE(\"AllStudentsMainScoresChart\", \"education/student_scores.json\", \"2d_bar\", \"student_id\", \"math_score\");" +
@@ -352,7 +352,7 @@ public class ActionExecutor : MonoBehaviour
     }
 
     [ContextMenu("C1-T2")]
-    private async void TestCaseT2()
+    public async Task TestCaseT2()
     {
         skillsFolderPath = SkillFolderOption.XCharts;
         skillSequence = "APPEND_SERIES(\"AllStudentsMainScoresChart\", \"education/student_scores.json\", \"student_id\", \"science_score\", \"bar\");" +
@@ -361,7 +361,7 @@ public class ActionExecutor : MonoBehaviour
     }
 
     [ContextMenu("C1-T3")]
-    private async void TestCaseT3()
+    public async Task TestCaseT3()
     {
         skillsFolderPath = SkillFolderOption.XCharts;
         skillSequence = @"
@@ -407,7 +407,7 @@ ORIENT_TO(""StudentScores_S012"", ""User"");
     }
 
     [ContextMenu("C1-T4")]
-    private async void TestCaseT4()
+    public async Task TestCaseT4()
     {
         skillsFolderPath = SkillFolderOption.XCharts;
         skillSequence = @"
@@ -440,7 +440,7 @@ CHANGE_DATA_COLOR(""StudentScores_S012"", ""score"", ""english"", ""#F7C15BFF"")
     }
 
     [ContextMenu("C2-T1")]
-    private async void TestCaseT5()
+    public async Task TestCaseT5()
     {
         skillsFolderPath = SkillFolderOption.DxR;
         skillSequence = @"
@@ -539,7 +539,7 @@ ORIENT_TO(""UtilityData_building_018"", ""User"");
     }
 
     [ContextMenu("C2-T2")]
-    private async void TestCaseT6()
+    public async Task TestCaseT6()
     {
         skillsFolderPath = SkillFolderOption.DxR;
         skillSequence = @"
@@ -562,7 +562,7 @@ ORIENT_TO(""UtilityData_building_016"", ""User"");
     }
 
     [ContextMenu("C2-T3")]
-    private async void TestCaseT7()
+    public async Task TestCaseT7()
     {
         skillsFolderPath = SkillFolderOption.DxR;
         skillSequence = @"
@@ -578,7 +578,7 @@ ORIENT_TO(""GasChart_building_001"", ""User"");
     }
 
     [ContextMenu("C2-T4")]
-    private async void TestCaseT8()
+    public async Task TestCaseT8()
     {
         skillsFolderPath = SkillFolderOption.DxR;
         skillSequence = @"
