@@ -570,6 +570,9 @@ CREATE(""ElectricityChart_building_001"", ""city/building_001.json"", ""3d_bar""
 CREATE(""WaterChart_building_001"", ""city/building_001.json"", ""3d_bar"", ""time"", ""water"");
 CREATE(""GasChart_building_001"", ""city/building_001.json"", ""3d_bar"", ""time"", ""gas"");
 LAYOUT([""ElectricityChart_building_001"", ""WaterChart_building_001"", ""GasChart_building_001""], 1.20f, 0.40f, ""arc"");
+POSITION(""ElectricityChart_building_001"", -2.0f, 2.0f, 0.01f);
+POSITION(""WaterChart_building_001"", -1.0f, 2.0f, 0.01f);
+POSITION(""GasChart_building_001"", 0f, 2.0f, 0.01f);
 ORIENT_TO(""ElectricityChart_building_001"", ""User"");
 ORIENT_TO(""WaterChart_building_001"", ""User"");
 ORIENT_TO(""GasChart_building_001"", ""User"");
@@ -584,6 +587,8 @@ ORIENT_TO(""GasChart_building_001"", ""User"");
         skillSequence = @"
 CREATE(""WaterChart_building_005"", ""city/building_005.json"", ""3d_bar"", ""time"", ""water"");
 LAYOUT([""WaterChart_building_001"", ""WaterChart_building_005""], 1.20f, 0.40f, ""arc"");
+POSITION(""WaterChart_building_001"", -3.3f, 1.0f, 0.5f);
+POSITION(""WaterChart_building_005"", -2.3f, 1.0f, 0.5f);
 ORIENT_TO(""WaterChart_building_001"", ""User"");
 ORIENT_TO(""WaterChart_building_005"", ""User"");
 ";

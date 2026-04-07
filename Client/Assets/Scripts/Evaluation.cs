@@ -74,9 +74,9 @@ public class Evaluation : MonoBehaviour
         if (Keyboard.current[Key.Digit1].wasPressedThisFrame)
         {
             orchestrator.ShowFeedback("Recording...", true);
-            await Task.Delay(3000);
+            await Task.Delay(2000);
             orchestrator.ShowFeedback("Stop Recording. Translating...", true);
-            await Task.Delay(3000);
+            await Task.Delay(1000);
             orchestrator.ShowFeedback("Show all students' math scores here.\nThinking...");
             await Task.Delay(3000);
             await actionExecutor.TestCaseT1();
@@ -88,7 +88,7 @@ public class Evaluation : MonoBehaviour
             orchestrator.ShowFeedback("Recording...", true);
             await Task.Delay(3000);
             orchestrator.ShowFeedback("Stop Recording. Translating...", true);
-            await Task.Delay(3000);
+            await Task.Delay(2000);
             orchestrator.ShowFeedback("Append the science score and English score on this chart.\nThinking...");
             await Task.Delay(3000);
             await actionExecutor.TestCaseT2();
@@ -101,7 +101,7 @@ public class Evaluation : MonoBehaviour
             orchestrator.ShowFeedback("Recording...", true);
             await Task.Delay(3000);
             orchestrator.ShowFeedback("Stop Recording. Translating...", true);
-            await Task.Delay(3000);
+            await Task.Delay(2000);
             orchestrator.ShowFeedback("Show all subjects' scores for each student on their desk.\nThinking...");
             await Task.Delay(3000);
             await actionExecutor.TestCaseT3();
@@ -112,9 +112,9 @@ public class Evaluation : MonoBehaviour
         if (Keyboard.current[Key.Digit4].wasPressedThisFrame)
         {
             orchestrator.ShowFeedback("Recording...", true);
-            await Task.Delay(3000);
+            await Task.Delay(5000);
             orchestrator.ShowFeedback("Stop Recording. Translating...", true);
-            await Task.Delay(3000);
+            await Task.Delay(2000);
             orchestrator.ShowFeedback("Change the color of math score to orange and English score to green for all these charts.\nThinking...");
             await Task.Delay(3000);
             await actionExecutor.TestCaseT4();
@@ -125,9 +125,9 @@ public class Evaluation : MonoBehaviour
         if (Keyboard.current[Key.Digit5].wasPressedThisFrame)
         {
             orchestrator.ShowFeedback("Recording...", true);
-            await Task.Delay(3000);
+            await Task.Delay(5000);
             orchestrator.ShowFeedback("Stop Recording. Translating...", true);
-            await Task.Delay(3000);
+            await Task.Delay(2000);
             orchestrator.ShowFeedback("Create line charts to show electricity, water, and gas data for each building.\nThinking...");
             await Task.Delay(3000);
             await actionExecutor.TestCaseT5();
@@ -138,9 +138,9 @@ public class Evaluation : MonoBehaviour
         if (Keyboard.current[Key.Digit6].wasPressedThisFrame)
         {
             orchestrator.ShowFeedback("Recording...", true);
-            await Task.Delay(3000);
+            await Task.Delay(5000);
             orchestrator.ShowFeedback("Stop Recording. Translating...", true);
-            await Task.Delay(3000);
+            await Task.Delay(2000);
             orchestrator.ShowFeedback("Show electricity, water, and gas data with three 3D bar charts of this building.\nThinking...");
             await Task.Delay(3000);
             await actionExecutor.TestCaseT6();
@@ -151,9 +151,9 @@ public class Evaluation : MonoBehaviour
         if (Keyboard.current[Key.Digit7].wasPressedThisFrame)
         {
             orchestrator.ShowFeedback("Recording...", true);
-            await Task.Delay(3000);
+            await Task.Delay(2000);
             orchestrator.ShowFeedback("Stop Recording. Translating...", true);
-            await Task.Delay(3000);
+            await Task.Delay(1000);
             orchestrator.ShowFeedback("Show all students' math scores here.\nThinking...");
             await Task.Delay(3000);
             await actionExecutor.TestCaseT7();
@@ -164,7 +164,7 @@ public class Evaluation : MonoBehaviour
         if (Keyboard.current[Key.Digit8].wasPressedThisFrame)
         {
             orchestrator.ShowFeedback("Recording...", true);
-            await Task.Delay(3000);
+            await Task.Delay(5000);
             orchestrator.ShowFeedback("Stop Recording. Translating...", true);
             await Task.Delay(3000);
             orchestrator.ShowFeedback("Compare the electricity data of the building before and this building with same chart type.\nThinking...");
