@@ -138,10 +138,10 @@ public class Evaluation : MonoBehaviour
         if (Keyboard.current[Key.Digit6].wasPressedThisFrame)
         {
             orchestrator.ShowFeedback("Recording...", true);
-            await Task.Delay(5000);
+            await Task.Delay(2000);
             orchestrator.ShowFeedback("Stop Recording. Translating...", true);
             await Task.Delay(2000);
-            orchestrator.ShowFeedback("Show electricity, water, and gas data with three 3D bar charts of this building.\nThinking...");
+            orchestrator.ShowFeedback("Move all these charts in front of me.\nThinking...");
             await Task.Delay(3000);
             await actionExecutor.TestCaseT6();
             orchestrator.ShowFeedback("Task done. Input next command...");
@@ -151,10 +151,10 @@ public class Evaluation : MonoBehaviour
         if (Keyboard.current[Key.Digit7].wasPressedThisFrame)
         {
             orchestrator.ShowFeedback("Recording...", true);
-            await Task.Delay(2000);
+            await Task.Delay(5000);
             orchestrator.ShowFeedback("Stop Recording. Translating...", true);
             await Task.Delay(1000);
-            orchestrator.ShowFeedback("Show all students' math scores here.\nThinking...");
+            orchestrator.ShowFeedback("Show electricity, water, and gas data with three 3D bar charts of this building.\nThinking...");
             await Task.Delay(3000);
             await actionExecutor.TestCaseT7();
             orchestrator.ShowFeedback("Task done. Input next command...");
@@ -167,7 +167,7 @@ public class Evaluation : MonoBehaviour
             await Task.Delay(5000);
             orchestrator.ShowFeedback("Stop Recording. Translating...", true);
             await Task.Delay(3000);
-            orchestrator.ShowFeedback("Compare the electricity data of the building before and this building with same chart type.\nThinking...");
+            orchestrator.ShowFeedback("Compare the water data of the building before and this building with same chart type.\nThinking...");
             await Task.Delay(3000);
             await actionExecutor.TestCaseT8();
             orchestrator.ShowFeedback("Task done. Input next command...");
