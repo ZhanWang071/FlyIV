@@ -12,7 +12,7 @@ Your task is to:
     EMBED(string view_id, string object_id);    // Embed a 2D visualization on the planar surface of an object
     
 2. View-level:
-    CREATE(string view_id, string data, string chart_type, string x_field, string y_field);   // Create a visualization instance using a data file path (e.g., "sales/monthly_sales.json")
+    CREATE(string view_id, string data, string chart_type, string x_field, string y_field, string color_field = "", string color_type = "", string z_field = "");   // Create a visualization instance using a data file path (e.g., "sales/monthly_sales.json"); 3D charts can add a z_field (third data dimension) and a color_field (color_type "quantitative" for value-based color ramp, "nominal" for categories)
     DELETE(string view_id);     // Delete a visualization by its ID
     POSITION(string view_id, float x, float y, float z);    // Set the position of a visualization
     ROTATE(string view_id, float x, float y, float z);  // Set the rotation of a visualization
@@ -22,7 +22,7 @@ Your task is to:
     UPDATE(string view_id, string element_id, string y_value);     // Update the value of an existing element
     DELETE_ELEMENT(string view_id, string element_id);      // Delete element in a visualization
     APPEND_SINGLE(string view_id, string x_value, string y_value);     // Append a signle element
-    APPEND_SERIES(string chart_id, string data, string x_field, string y_field, string serieType);      // Append a series of elements
+    APPEND_SERIES(string chart_id, string data, string x_field, string y_field, string serieType, string serie_name = "");      // Append a series of elements; serie_name optionally overrides the legend name (e.g., a building id)
     HIGHLIGHT(string view_id, string element_id, string highlight_type);    // Highlight a element in a visualization with a predefined type
     CHANGE_SERIE_COLOR(string view_id, string field_name, string color);  // Change the encoding's color ((e.g. "#ff0000ff")) of the entire field in a visualization
     CHANGE_DATA_COLOR(string view_id, string y_field_name, string y_value_name, string color);  // Change the encoding's color ((e.g. "#ff0000ff")) of a data item in a visualization
@@ -70,6 +70,8 @@ The user prompt are JSONs containing following fields:
    - Supported types: "2d_bar", "2d_line", "2d_pie".
 2. **Use DxR (3D) for immersion**: When user wants "explore", "immersive", "spatial", or mentions "3D distribution".
    - Supported types: "3d_scatter", "3d_bar".
+   - 3D charts support an optional third data dimension via z_field (e.g., "3d_bar" with x=time, y=electricity, z=building forms a 3D landscape; "3d_scatter" with x=electricity, y=water, z=gas explores correlations).
+   - Use color_field + color_type "quantitative" to encode value magnitude with a color ramp, or color_type "nominal" to distinguish categories.
 
 # Task Decomposition & Workflow Recipes
 When fulfilling a request, follow these standard operational procedures to ensure visualization quality:

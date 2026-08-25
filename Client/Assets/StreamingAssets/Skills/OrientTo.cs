@@ -39,7 +39,27 @@ public class OrientTo
         }
 
         // --- Rule 1: Direction from object center to target ---
-        Vector3 toTarget = (targetPosition - obj.transform.position).normalized;
+        // DxR 图表的 transform 原点位于数据坐标 (0,0,0)（即图表左下角），
+        // 直接用 transform.position 计算朝向会让图表"用左下角对准用户"而产生倾斜。
+        // 因此改为使用渲染包围盒的中心作为朝向参考点。
+        Vector3 objCenter = obj.transform.position;
+        Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
+        if (renderers.Length > 0)
+        {
+            Bounds combined = renderers[0].bounds;
+            for (int i = 1; i < renderers.Length; i++)
+            {
+                combined.Encapsulate(renderers[i].bounds);
+            }
+            objCenter = combined.center;
+        }
+        else
+        {
+            Collider c = obj.GetComponentInChildren<Collider>();
+            if (c != null) objCenter = c.bounds.center;
+        }
+
+        Vector3 toTarget = (targetPosition - objCenter).normalized;
 
         // --- Rule 3: Clamp pitch to ±30 degrees ---
         // Decompose into horizontal and vertical components

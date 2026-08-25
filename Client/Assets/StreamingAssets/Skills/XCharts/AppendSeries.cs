@@ -6,7 +6,8 @@ public class AppendSeries
         List<string> y_values,
         int serieIndex,
         string serieType,
-        string y_field)
+        string y_field,
+        string serie_name = null)
     {
         Debug.Log("Executing AppendSeriesSkill logic...");
 
@@ -15,7 +16,8 @@ public class AppendSeries
         BaseChart chart = FindChart(chart_id);
         if (chart == null) return;
 
-        if (EnsureSerieExists(chart, serieIndex, serieType, y_field) == null) return;
+        if (EnsureSerieExists(chart, serieIndex, serieType,
+                string.IsNullOrEmpty(serie_name) ? y_field : serie_name) == null) return;
 
         int appendedCount = AppendData(chart, x_values, y_values, serieIndex);
 
@@ -26,7 +28,13 @@ public class AppendSeries
         chart.RefreshChart();
     }
 
-    public static void Execute(string chart_id, string data, string x_field, string y_field, string serieType)
+    public static void Execute(
+        string chart_id,
+        string data,
+        string x_field,
+        string y_field,
+        string serieType,
+        string serie_name = null)
     {
         Debug.Log("Executing AppendSeriesSkill logic...");
 
@@ -64,7 +72,7 @@ public class AppendSeries
         int newSerieIndex = chart.series.Count;
 
         // 5. 复用现有的逻辑进行数据追加
-        Execute(chart_id, x_values, y_values, newSerieIndex, serieType, y_field);
+        Execute(chart_id, x_values, y_values, newSerieIndex, serieType, y_field, serie_name);
     }
 
     // -------------------------------------------------------------------------

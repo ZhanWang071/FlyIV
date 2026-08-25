@@ -10,21 +10,23 @@ public class ApiConfig : ScriptableObject
     [Header("Common Settings")]
     // public string baseDomain = "bj.yi-zhan.top";
     // public string apiKey = "sk-1tbfpLQRbZVig0pa2805B35a9e08426190A7E2Be79E76013";
-    public string baseDomain = "vip.yi-zhan.top";
+    public string baseDomain = "api.rcouyi.com";
     // public string apiKey = "sk-m1YRJlrBqgG6Y3ZJ2aCb9aFbB07b485e8eC885526a920c29";
     // public string baseDomain = "api.shunyu.tech";
     // public string apiKey = "sk-0phAeU3XbFb7PqcK2bAcA88b10754d9899935d734d511b7d";
-    public string apiKey = "sk-XbGJsPHgHH60nbr443Eb25558eB64c10Ad85047b9aC7BdDa";
+    public string apiKey = "sk-BoFstBiwDPKf3fcmF32cB1A3E4C343C380763aDbB8E60f7c";
 
 
 
     [Header("Module Model Settings")]
-    public string skillUrl = "https://vip.yi-zhan.top/v1/chat/completions";
-    public string skillModel = "gemini-3-flash-preview";
+    public string skillUrl = "https://api.rcouyi.com/v1/chat/completions";
+    // public string skillModel = "gemini-3-flash-preview";
+    public string skillModel = "gpt-4o-mini";
     public string vlmModel = "gpt-4o-mini";
     public string sttModel = "whisper-1";
     // public string llmModel = "gemini-2.5-flash";
-    public string llmModel = "gemini-3-flash-preview";
+    // public string llmModel = "gemini-3-flash-preview";
+    public string llmModel = "gpt-4o-mini";
 
 
     // --- 自动化单例访问逻辑 ---

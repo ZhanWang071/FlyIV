@@ -11,12 +11,19 @@ public class AdaptPos
             Vector3 targetBasePos = cam.position + (cam.forward * actualDist);
             float actualHeight = height_offset < 0.1f ? height_offset : 0.1f;
             // float offsetToBottom = GetViewOffsetToBottom(view);
-            view.transform.position = targetBasePos + (cam.up * actualHeight);
+            Vector3 desiredPos = targetBasePos + (cam.up * actualHeight);
+            view.transform.position = desiredPos;
 
             if (view.CompareTag("Visualization_3D"))
             {
                 BoxCollider bc = view.GetComponent<BoxCollider>();
-                view.transform.position += -(cam.right * bc.center.x / 2) - (cam.up * bc.center.y / 2);
+                if (bc != null)
+                {
+                    // DxR 图表默认以数据原点（左下角）为锚点，
+                    // 这里额外平移，让整张图表的中心（包围盒中心）对准目标点
+                    Vector3 worldCenter = view.transform.TransformPoint(bc.center);
+                    view.transform.position += desiredPos - worldCenter;
+                }
             }
 
                 Debug.Log($"[Skill] AdaptPos 完成: {view_id} 已放置在用户正前方 {actualDist}m 处");

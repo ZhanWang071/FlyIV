@@ -168,6 +168,18 @@ public class Layout
     {
         go.transform.position = position;
 
+        // 与 ADAPT_POS 保持一致：DxR 3D 图表的 transform 原点在数据坐标 (0,0,0)（左下角），
+        // 这里将包围盒中心对准布局位置，避免图表中心偏离目标槽位
+        if (go.CompareTag("Visualization_3D"))
+        {
+            BoxCollider bc = go.GetComponent<BoxCollider>();
+            if (bc != null)
+            {
+                Vector3 worldCenter = go.transform.TransformPoint(bc.center);
+                go.transform.position += position - worldCenter;
+            }
+        }
+
         // Face the camera (billboard on Y axis keeps visuals upright)
         // Vector3 lookDir = position - cameraPosition;
         // lookDir.y = 0;

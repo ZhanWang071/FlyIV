@@ -1,0 +1,27 @@
+{
+  "data" : {
+    "url" : "city/city_all.json"
+  },
+  "mark" : "sphere",
+  "encoding" : {
+    "x" : {
+      "field" : "electricity",
+      "type" : "quantitative"
+    },
+    "y" : {
+      "field" : "water",
+      "type" : "quantitative"
+    },
+    "z" : {
+      "field" : "gas",
+      "type" : "quantitative"
+    },
+    "size" : {
+      "value" : "30"
+    },
+    "color" : {
+      "field" : "electricity",
+      "type" : "quantitative"
+    }
+  }
+}

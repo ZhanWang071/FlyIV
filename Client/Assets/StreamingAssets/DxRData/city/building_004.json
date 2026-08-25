@@ -1,44 +1,44 @@
 [
-    {
-        "time": "00:00",
-        "electricity": 140,
-        "water": 19,
-        "gas": 5,
-        "footfall": 0
-    },
-    {
-        "time": "04:00",
-        "electricity": 110,
-        "water": 14,
-        "gas": 4,
-        "footfall": 2
-    },
-    {
-        "time": "08:00",
-        "electricity": 590,
-        "water": 155,
-        "gas": 31,
-        "footfall": 48
-    },
-    {
-        "time": "12:00",
-        "electricity": 2150,
-        "water": 870,
-        "gas": 330,
-        "footfall": 1220
-    },
-    {
-        "time": "16:00",
-        "electricity": 1980,
-        "water": 740,
-        "gas": 285,
-        "footfall": 970
-    },
-    {
-        "time": "20:00",
-        "electricity": 2450,
-        "water": 910,
-        "gas": 460,
-        "footfall": 1520
-    }
+  {
+    "time": "00:00",
+    "electricity": 91,
+    "water": 15,
+    "gas": 6,
+    "footfall": 10
+  },
+  {
+    "time": "04:00",
+    "electricity": 79,
+    "water": 11,
+    "gas": 4,
+    "footfall": 4
+  },
+  {
+    "time": "08:00",
+    "electricity": 300,
+    "water": 98,
+    "gas": 32,
+    "footfall": 84
+  },
+  {
+    "time": "12:00",
+    "electricity": 432,
+    "water": 267,
+    "gas": 84,
+    "footfall": 184
+  },
+  {
+    "time": "16:00",
+    "electricity": 998,
+    "water": 358,
+    "gas": 137,
+    "footfall": 296
+  },
+  {
+    "time": "20:00",
+    "electricity": 1210,
+    "water": 434,
+    "gas": 165,
+    "footfall": 258
+  }
 ]

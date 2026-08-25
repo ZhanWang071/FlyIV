@@ -5,7 +5,8 @@ public class Create
             string data_path,
             string chart_type,
             string x_field,
-            string y_field)
+            string y_field,
+            string serie_name = "")
     {
         Debug.Log("Executing CreateSkill logic...");
 
@@ -76,11 +77,11 @@ public class Create
         bool isRadar = ct == "radar";
 
         if (isPie)
-            PopulatePieChart(chart, dataArray, x_field, y_field, view_id);
+            PopulatePieChart(chart, dataArray, x_field, y_field, view_id, serie_name);
         else if (isRadar)
-            PopulateRadarChart(chart, dataArray, x_field, y_field, view_id);
+            PopulateRadarChart(chart, dataArray, x_field, y_field, view_id, serie_name);
         else
-            PopulateCartesianChart(chart, dataArray, x_field, y_field, view_id, ct);
+            PopulateCartesianChart(chart, dataArray, x_field, y_field, view_id, ct, serie_name);
 
         chart.RefreshChart();
 
@@ -157,7 +158,7 @@ public class Create
     // Population Helpers
     // -------------------------------------------------------------------------
 
-    private static void AddCommonComponents(BaseChart chart, string view_id)
+    private static void AddCommonComponents(BaseChart chart, string view_id, bool showLegend = false)
     {
         chart.EnsureChartComponent<Title>().show = true;
 
@@ -170,7 +171,14 @@ public class Create
         title = Regex.Replace(title, "([A-Z])([A-Z][a-z])", "$1 $2");
         chart.EnsureChartComponent<Title>().text = title;
         chart.EnsureChartComponent<Tooltip>().show = true;
-        // chart.EnsureChartComponent<Legend>().show = true;
+
+        // 多系列图表（如双建筑对比折线图）需要显示图例
+        if (showLegend)
+        {
+            // 注意：必须使用全限定名 XCharts.Runtime.Legend，
+            // 因为 DxR 在全局命名空间也有一个 Legend 类，会与 using 导入产生歧义
+            chart.EnsureChartComponent<XCharts.Runtime.Legend>().show = true;
+        }
     }
 
     private static void PopulateCartesianChart(
@@ -179,9 +187,13 @@ public class Create
         string x_field,
         string y_field,
         string view_id,
-        string ct)
+        string ct,
+        string serie_name)
     {
-        AddCommonComponents(chart, view_id);
+        AddCommonComponents(chart, view_id, !string.IsNullOrEmpty(serie_name));
+
+        // 系列名缺省时使用 y 字段名，否则用调用方传入的名称（例如建筑编号）
+        string serieName = string.IsNullOrEmpty(serie_name) ? y_field : serie_name;
 
         XAxis xAxis = chart.EnsureChartComponent<XAxis>();
         xAxis.show = true;
@@ -192,6 +204,20 @@ public class Create
 
         xAxis.axisTick.alignWithLabel = true;
 
+        // x 轴刻度文字自适应图表大小：
+        // - 类别很多（图表大，如全班 14 名学生）：缩小字号并倾斜 45 度，避免拥挤/显示不全
+        // - 类别较少（图表小，如每名学生的 3-4 个科目）：放大字号，保证在 VR 中清晰可读
+        if (dataArray.Count > 8)
+        {
+            xAxis.axisLabel.rotate = 45f;
+            xAxis.axisLabel.textStyle.fontSize = 10;
+        }
+        else
+        {
+            xAxis.axisLabel.rotate = 0f;
+            xAxis.axisLabel.textStyle.fontSize = 24;
+        }
+
         YAxis yAxis = chart.EnsureChartComponent<YAxis>();
         yAxis.show = true;
         yAxis.type = Axis.AxisType.Value;
@@ -199,21 +225,21 @@ public class Create
         chart.EnsureChartComponent<GridCoord>();
 
         // Add the appropriate serie type
-        chart.AddSerie<Bar>(y_field);   // default; overridden below
+        chart.AddSerie<Bar>(serieName);   // default; overridden below
 
         switch (ct)
         {
             case "line":
                 chart.RemoveAllSerie();
-                chart.AddSerie<Line>(y_field);
+                chart.AddSerie<Line>(serieName);
                 break;
             case "scatter":
                 chart.RemoveAllSerie();
-                chart.AddSerie<Scatter>(y_field);
+                chart.AddSerie<Scatter>(serieName);
                 break;
             case "heatmap":
                 chart.RemoveAllSerie();
-                chart.AddSerie<Heatmap>(y_field);
+                chart.AddSerie<Heatmap>(serieName);
                 break;
         }
 
@@ -234,10 +260,11 @@ public class Create
         JSONArray dataArray,
         string x_field,
         string y_field,
-        string view_id)
+        string view_id,
+        string serie_name)
     {
         AddCommonComponents(chart, view_id);
-        chart.AddSerie<Pie>(y_field);
+        chart.AddSerie<Pie>(string.IsNullOrEmpty(serie_name) ? y_field : serie_name);
 
         for (int i = 0; i < dataArray.Count; i++)
         {
@@ -251,7 +278,8 @@ public class Create
         JSONArray dataArray,
         string x_field,
         string y_field,
-        string view_id)
+        string view_id,
+        string serie_name)
     {
         AddCommonComponents(chart, view_id);
 
@@ -269,7 +297,7 @@ public class Create
             radarValues.Add(yVal);
         }
 
-        chart.AddSerie<Radar>(y_field);
+        chart.AddSerie<Radar>(string.IsNullOrEmpty(serie_name) ? y_field : serie_name);
         chart.AddData(0, radarValues, y_field);
     }
 }

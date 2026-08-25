@@ -116,6 +116,15 @@ public class Legend : MonoBehaviour {
                 Vector3 pos = Vector3.zero;
                 pos.x = width * pct;
                 pos.y = 0.04f;             // TODO: Get this from text size.
+                // 首尾两个刻度文字再沿 X 轴向色条外侧推出
+                if (i == 0)
+                {
+                    pos.x -= 0.020f;
+                }
+                else if (i == domainCount - 1)
+                {
+                    pos.x += 0.030f;
+                }
                 tick.transform.Translate(pos);
 
                 tick.GetComponent<TextMesh>().text = channelEncoding.scale.domain[i];

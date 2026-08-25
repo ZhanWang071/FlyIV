@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: GlobalApiConfig
   m_EditorClassIdentifier: Assembly-CSharp::ApiConfig
   serverUrl: http://127.0.0.1:5001/generate_skill
-  baseDomain: https://api.shunyu.tech
-  apiKey: sk-0phAeU3XbFb7PqcK2bAcA88b10754d9899935d734d511b7d
-  skillUrl: https://api.shunyu.tech/v1/chat/completions
-  skillModel: gemini-3-flash-preview
+  baseDomain: https://api.rcouyi.com
+  apiKey: sk-BoFstBiwDPKf3fcmF32cB1A3E4C343C380763aDbB8E60f7c
+  skillUrl: https://api.rcouyi.com/v1/chat/completions
+  skillModel: gpt-4o-mini
   vlmModel: gpt-4o-mini
   sttModel: whisper-1
-  llmModel: gemini-3-flash-preview
+  llmModel: gpt-4o-mini

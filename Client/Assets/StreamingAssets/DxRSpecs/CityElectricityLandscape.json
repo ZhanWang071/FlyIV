@@ -1,0 +1,34 @@
+{
+  "data" : {
+    "url" : "city/city_electricity.json"
+  },
+  "mark" : "cube",
+  "encoding" : {
+    "x" : {
+      "field" : "time",
+      "type" : "nominal"
+    },
+    "y" : {
+      "field" : "electricity",
+      "type" : "quantitative"
+    },
+    "height" : {
+      "field" : "electricity",
+      "type" : "quantitative"
+    },
+    "yoffsetpct" : {
+      "value" : -0.5
+    },
+    "width" : {
+      "value" : 40
+    },
+    "z" : {
+      "field" : "building",
+      "type" : "nominal"
+    },
+    "color" : {
+      "field" : "electricity",
+      "type" : "quantitative"
+    }
+  }
+}

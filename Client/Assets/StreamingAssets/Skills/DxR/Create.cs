@@ -1,6 +1,14 @@
 public class Create
 {
-    public static void Execute(string view_id, string data_path, string chart_type,string x_field, string y_field, string color_field="")
+    public static void Execute(
+        string view_id,
+        string data_path,
+        string chart_type,
+        string x_field,
+        string y_field,
+        string color_field = "",
+        string color_type = "",
+        string z_field = "")
     {
         Debug.Log("Executing CreateSkill...");
 
@@ -46,6 +54,20 @@ public class Create
             yEnc["field"] = new JSONString(y_field);
             yEnc["type"] = new JSONString("quantitative");
             encodingNode["y"] = yEnc;
+
+            // ── 3D Scatter：可选 z 通道（quantitative）────────────────────
+            if (!string.IsNullOrEmpty(z_field))
+            {
+                JSONObject zEnc = new JSONObject();
+                zEnc["field"] = new JSONString(z_field);
+                zEnc["type"] = new JSONString("quantitative");
+                encodingNode["z"] = zEnc;
+            }
+
+            // ── Scatter 点大小：固定值，让散点更醒目（单位 0.001m）───────
+            JSONObject sizeEnc = new JSONObject();
+            sizeEnc["value"] = new JSONString("30");
+            encodingNode["size"] = sizeEnc;
         }
         else if (chartTypeLower == "bar_horizontal")
         {
@@ -119,6 +141,15 @@ public class Create
             JSONObject widthEnc = new JSONObject();
             widthEnc["value"] = new JSONNumber(40);
             encodingNode["width"] = widthEnc;
+
+            // ── 3D Bar：可选 z 通道（nominal，自动映射为 depth）──────────
+            if (!string.IsNullOrEmpty(z_field))
+            {
+                JSONObject zEnc = new JSONObject();
+                zEnc["field"] = new JSONString(z_field);
+                zEnc["type"] = new JSONString("nominal");
+                encodingNode["z"] = zEnc;
+            }
         }
 
         // ── 可选：color encoding ──────────────────────────────────────────
@@ -126,7 +157,9 @@ public class Create
         {
             JSONObject colorEnc = new JSONObject();
             colorEnc["field"] = new JSONString(color_field);
-            colorEnc["type"] = new JSONString("nominal");
+            // color_type 可传 "nominal"/"ordinal"/"quantitative"，
+            // 缺省时按 nominal 处理（DxR 会自动推断 domain 与配色方案）
+            colorEnc["type"] = new JSONString(string.IsNullOrEmpty(color_type) ? "nominal" : color_type);
             encodingNode["color"] = colorEnc;
         }
 
