@@ -88,10 +88,12 @@ Roslyn 动态执行 Skills/*.cs → 场景中出现图表
 | 左手 Y / 右手 B（Button.Two）单击 | 循环切换当前场景的传送点 | `UserStudyController.cs` |
 | 左手 Y / 右手 B 长按（默认 0.8s） | 重置对话 + 清空当前场景所有可视化 | `UserStudyController.cs` |
 | 左摇杆 | 平滑移动（以头显朝向为基准） | `InteractionTracker.cs` |
-| 右摇杆（左右推） | 平滑原地转向（`turnSpeed` 可调，默认 90°/s） | `InteractionTracker.cs` |
+| 右摇杆（左右推） | 平滑原地转向（`turnSpeed` 默认 40°/s，带指数平滑 `turnSmoothing`，降低眩晕） | `InteractionTracker.cs` |
 | 左右手射线 | 指向高亮；语音期间**双手命中物体都记录**为 hit points（供 LLM 理解"这个/那个"） | `InteractionTracker.cs`（`rightPointer` 已绑定 RightHandAnchor） |
 
 说明：`HandLocomotionController` 的"双手捏合前进"属于手部追踪模式，戴控制器时通常不生效，不影响上述手柄操作。键盘等效键：空格=按住说话、WASD+鼠标=移动视角、↓=切换传送点。
+
+**传送点高度说明**：`TeleportToCurrentPoint` 先把 Rig 旋转到目标朝向，再把"眼睛"（CenterEyeAnchor）精确平移到传送点位置。由于 OVRCameraRig 每帧把 `CenterEyeAnchor.localPosition` 设为头显追踪位姿（FloorLevel 下 Y 含离地眼高），传送时必须扣除该偏移，否则视角会比设定点高约一个眼高（表现为"很高的视角"）。如果 Play 后视角仍偏高，请先确认 Meta 守护者/地板高度校准正确。
 
 ---
 

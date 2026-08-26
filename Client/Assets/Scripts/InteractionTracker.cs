@@ -117,8 +117,11 @@ public class InteractionTracker : MonoBehaviour
 
     public bool mouseControl = true;
     private float moveSpeed = 1.0f;
-    [Tooltip("右摇杆水平方向的最大转向速度（度/秒）")]
-    public float turnSpeed = 90f;
+    [Tooltip("右摇杆水平方向的最大转向速度（度/秒），越小越不易晕")]
+    public float turnSpeed = 40f;
+    [Tooltip("转向平滑系数（越大响应越快，越小越柔和）")]
+    public float turnSmoothing = 6f;
+    private float _smoothedTurnRate = 0f;
     public Transform cameraRig;
     public Transform playerCamera;
     private void HandleInputAndLook()
@@ -168,11 +171,16 @@ public class InteractionTracker : MonoBehaviour
         }
 
         // 2. 右摇杆：平滑转向（左右推 = 原地旋转，戴着头盔微调视角用）
+        //    使用指数平滑：起步柔和、松杆后缓慢停止，避免突然转动引起眩晕
         Vector2 rightThumb = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
-        if (Mathf.Abs(rightThumb.x) > 0.2f)
+        float targetTurnRate = 0f;
+        if (Mathf.Abs(rightThumb.x) > 0.25f)
         {
-            cameraRig.Rotate(0f, rightThumb.x * turnSpeed * Time.deltaTime, 0f, Space.World);
+            targetTurnRate = rightThumb.x * turnSpeed;
         }
+        float smoothingFactor = 1f - Mathf.Exp(-turnSmoothing * Time.deltaTime);
+        _smoothedTurnRate = Mathf.Lerp(_smoothedTurnRate, targetTurnRate, smoothingFactor);
+        cameraRig.Rotate(0f, _smoothedTurnRate * Time.deltaTime, 0f, Space.World);
     }
 
     // =========================================================================

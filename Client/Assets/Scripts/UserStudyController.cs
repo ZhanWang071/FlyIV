@@ -179,15 +179,16 @@ public partial class UserStudyController : MonoBehaviour
             Transform target = config.points[config.currentPointIndex];
             if (target != null)
             {
-                Vector3 cameraOffset = Camera.main.transform.localPosition;
-                cameraOffset.x = 0;
-                cameraOffset.z = 0;
-                cameraRig.position = target.position - cameraOffset;
-
-                // 让 Rig 的旋转 = 目标旋转 - 相机的偏航角
-                // 这样：Rig转完后 + 相机自带的偏航 = 目标朝向
+                // 1. 先旋转：让 Rig 的旋转 = 目标旋转 - 相机本地偏航角
+                //    这样 Rig 转完后 + 相机自带偏航 = 目标朝向
                 float currentYaw = Camera.main.transform.localEulerAngles.y;
                 cameraRig.rotation = Quaternion.Euler(0, target.eulerAngles.y - currentYaw, 0);
+
+                // 2. 再平移：把"眼睛"（CenterEyeAnchor）精确平移到目标点。
+                //    注意 CenterEyeAnchor.localPosition 每帧由 OVRCameraRig 设为头显追踪位姿
+                //    （FloorLevel 下 Y 包含离地眼高），所以 Rig 不能直接放到 target.position，
+                //    否则会把 Rig 高度与头显高度叠加，导致视角偏高。
+                cameraRig.position += target.position - Camera.main.transform.position;
             }
         }
 
