@@ -27,6 +27,11 @@ public partial class UserStudyController : MonoBehaviour
     public Transform cameraRig; // 拖入 [BuildingBlock] Camera Rig
     public List<SceneTeleportPoints> teleportConfigs; // 在 Inspector 中配置每个场景的点位
 
+    [Header("Controller Input")]
+    [Tooltip("长按 Y/B 键多久触发“重置对话并清空可视化”（秒）")]
+    public float longPressResetSeconds = 2f;
+    private float _teleportButtonPressTime = -1f;
+
     // [Header("天空盒设置 (可选)")]
     // public Material classroomSky;
     // public Material citySky;
@@ -52,10 +57,47 @@ public partial class UserStudyController : MonoBehaviour
             lastScene = currentScene; // 更新快照
         }
 
-        // 2. 监听左手 Y 按钮 (Meta SDK: Button.Two)
-        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch) || Keyboard.current.downArrowKey.wasPressedThisFrame)
+        // 2. 监听 Y/B 按钮（左右手均可）：单击切换传送点，长按重置对话并清空可视化
+        bool yDown = OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch) ||
+                     OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch);
+        bool yUp = OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.LTouch) ||
+                   OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.RTouch);
+
+        if (yDown)
+        {
+            _teleportButtonPressTime = Time.time;
+        }
+
+        if (yUp && _teleportButtonPressTime >= 0f)
+        {
+            if (Time.time - _teleportButtonPressTime >= longPressResetSeconds)
+            {
+                ResetSceneConversation();
+            }
+            else
+            {
+                CycleTeleportPoint();
+            }
+            _teleportButtonPressTime = -1f;
+        }
+
+        // 键盘 ↓ 等价于单击切换传送点（桌面调试用）
+        if (Keyboard.current.downArrowKey.wasPressedThisFrame)
         {
             CycleTeleportPoint();
+        }
+    }
+
+    /// <summary>
+    /// 长按 Y/B 触发：重置 LLM 对话并清空当前场景的所有可视化图表。
+    /// </summary>
+    private void ResetSceneConversation()
+    {
+        Orchestrator orchestrator = Object.FindAnyObjectByType<Orchestrator>();
+        if (orchestrator != null)
+        {
+            orchestrator.ResetConversation();
+            Debug.Log("<color=orange>[UserStudy] 长按 Y/B：已重置对话并清空可视化。</color>");
         }
     }
 

@@ -78,6 +78,21 @@ Roslyn 动态执行 Skills/*.cs → 场景中出现图表
 - **手动评测**：在 `DemoScene01.unity` 中 Play 后按键盘 `1`–`8`，每个数字对应一个任务。`Evaluation.VideoRecording()` 会先模拟“Recording... → Translating... → 显示用户指令 → Thinking...”，再调用 `ActionExecutor.TestCaseT1()~T8()`。
 - **LLM 自动评测**：`Evaluation.RunAllTests()` 读取 `Resources/TestCasesComplete.json`（100 条用例，也可切到 `TestCases.json` 的 30 条），向 LLM 发送提示词后执行生成结果，并输出日志到 `Logs/Test/v3/`。
 
+### 4.3 控制器交互（左右手对称）
+
+左右手控制器均可正常使用，交互逻辑为双手对称设计：
+
+| 输入 | 功能 | 实现位置 |
+|---|---|---|
+| 左手 X / 右手 A（Button.One）按住 | 语音指令 push-to-talk：按住录音，松开发送 | `SpeechToText.cs` |
+| 左手 Y / 右手 B（Button.Two）单击 | 循环切换当前场景的传送点 | `UserStudyController.cs` |
+| 左手 Y / 右手 B 长按（默认 0.8s） | 重置对话 + 清空当前场景所有可视化 | `UserStudyController.cs` |
+| 左摇杆 | 平滑移动（以头显朝向为基准） | `InteractionTracker.cs` |
+| 右摇杆（左右推） | 平滑原地转向（`turnSpeed` 可调，默认 90°/s） | `InteractionTracker.cs` |
+| 左右手射线 | 指向高亮；语音期间**双手命中物体都记录**为 hit points（供 LLM 理解"这个/那个"） | `InteractionTracker.cs`（`rightPointer` 已绑定 RightHandAnchor） |
+
+说明：`HandLocomotionController` 的"双手捏合前进"属于手部追踪模式，戴控制器时通常不生效，不影响上述手柄操作。键盘等效键：空格=按住说话、WASD+鼠标=移动视角、↓=切换传送点。
+
 ---
 
 ## 5. 两个场景

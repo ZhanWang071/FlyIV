@@ -99,12 +99,16 @@ public class SpeechToText : MonoBehaviour
         bool spaceDown = Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame;
         bool spaceUp = Keyboard.current != null && Keyboard.current.spaceKey.wasReleasedThisFrame;
 
-        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch) || spaceDown)
+        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch) ||
+            OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch) ||
+            spaceDown)
         {
             StartManualRecording();
         }
 
-        if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch) || spaceUp)
+        if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch) ||
+            OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch) ||
+            spaceUp)
         {
             StopManualRecording();
         }

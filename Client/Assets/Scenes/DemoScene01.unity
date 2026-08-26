@@ -89824,7 +89824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionTracker
   leftPointer: {fileID: 265047187}
-  rightPointer: {fileID: 0}
+  rightPointer: {fileID: 91259188}
   maxDistance: 10
   interactableLayer:
     serializedVersion: 2
@@ -89844,6 +89844,7 @@ MonoBehaviour:
   rayWidth: 0.004
   _currentlyPointedObject: {fileID: 0}
   mouseControl: 1
+  turnSpeed: 90
   cameraRig: {fileID: 243533547}
   playerCamera: {fileID: 243335067}
 --- !u!114 &1687222472
@@ -90034,6 +90035,7 @@ MonoBehaviour:
     - {fileID: 1512978036}
     - {fileID: 419324116}
     currentPointIndex: 0
+  longPressResetSeconds: 2
 --- !u!114 &1687222479
 MonoBehaviour:
   m_ObjectHideFlags: 0

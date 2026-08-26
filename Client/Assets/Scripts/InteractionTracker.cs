@@ -84,19 +84,32 @@ public class InteractionTracker : MonoBehaviour
         ControllerInput();
 
 
-        _currentlyPointedObject = PerformPointingDetection();
+        // 左右手射线各自检测命中（互不干扰）
+        GameObject rightHitObj = TraceRay(rightPointer, out RaycastHit rHit);
+        GameObject leftHitObj = TraceRay(leftPointer, out RaycastHit lHit);
 
-        if (_isRecordingSpeech && _currentlyPointedObject != null)
+        // 主指向（用于标签显示）：优先右手，其次左手
+        _currentlyPointedObject = rightHitObj != null ? rightHitObj : leftHitObj;
+        _currentHit = rightHitObj != null ? rHit : lHit;
+
+        // 语音期间：左右手指向的物体都会被记录为 hit points（供 LLM 理解“这个/那个”）
+        if (_isRecordingSpeech)
         {
-            _pointedObjectsDuringSpeech.Add(_currentlyPointedObject);
-            _recordedHitDetails.Add(_currentHit);
+            if (leftHitObj != null)
+            {
+                _pointedObjectsDuringSpeech.Add(leftHitObj);
+                _recordedHitDetails.Add(lHit);
+            }
+            if (rightHitObj != null)
+            {
+                _pointedObjectsDuringSpeech.Add(rightHitObj);
+                _recordedHitDetails.Add(rHit);
+            }
         }
 
         UpdateLabel(_currentlyPointedObject);
 
-        GameObject rightHit = TraceRay(rightPointer, out RaycastHit rHit);
-        GameObject leftHit = TraceRay(leftPointer, out RaycastHit lHit);
-        UpdateRayLinesVisual(rightHit != null, rHit, leftHit != null, lHit);
+        UpdateRayLinesVisual(rightHitObj != null, rHit, leftHitObj != null, lHit);
 
         if (showDebugRay) DrawDebugRays();
     }
@@ -104,6 +117,8 @@ public class InteractionTracker : MonoBehaviour
 
     public bool mouseControl = true;
     private float moveSpeed = 1.0f;
+    [Tooltip("右摇杆水平方向的最大转向速度（度/秒）")]
+    public float turnSpeed = 90f;
     public Transform cameraRig;
     public Transform playerCamera;
     private void HandleInputAndLook()
@@ -130,7 +145,7 @@ public class InteractionTracker : MonoBehaviour
 
     private void ControllerInput()
     {
-        // 1. 获取左手摇杆输入 (PrimaryThumbstick 对应左手)
+        // 1. 左摇杆：平滑移动 (PrimaryThumbstick 对应左手)
         // 返回的是 Vector2 (x 为左右, y 为前后)
         Vector2 thumbstick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
 
@@ -150,6 +165,13 @@ public class InteractionTracker : MonoBehaviour
 
             // 4. 移动整个 Camera Rig 
             cameraRig.position += moveDirection * moveSpeed * Time.deltaTime;
+        }
+
+        // 2. 右摇杆：平滑转向（左右推 = 原地旋转，戴着头盔微调视角用）
+        Vector2 rightThumb = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
+        if (Mathf.Abs(rightThumb.x) > 0.2f)
+        {
+            cameraRig.Rotate(0f, rightThumb.x * turnSpeed * Time.deltaTime, 0f, Space.World);
         }
     }
 
@@ -350,34 +372,6 @@ public class InteractionTracker : MonoBehaviour
     // =========================================================================
 
     [ContextMenu("Detect Pointing Object")]
-    private GameObject PerformPointingDetection()
-    {
-        GameObject hitObj = TraceRay(rightPointer);
-        if (hitObj == null) hitObj = TraceRay(leftPointer);
-        else if (_currentlyPointedObject != null && _currentlyPointedObject.name != hitObj.name)
-            Debug.Log("[InteractionTracker] The current pointing object is: " + hitObj.name);
-        return hitObj;
-    }
-
-    private GameObject TraceRay(Transform pointer)
-    {
-        if (pointer == null) return null;
-
-        if (Physics.Raycast(pointer.position, pointer.forward, out RaycastHit hit_vis, maxDistance, visLayerMask))
-        {
-            _currentHit = hit_vis;
-            return GetFirstLevelChild(hit_vis.collider.gameObject);
-        }
-
-        if (Physics.Raycast(pointer.position, pointer.forward, out RaycastHit hit, maxDistance, interactableLayer))
-        {
-            _currentHit = hit;
-            return GetFirstLevelChild(hit.collider.gameObject);
-        }
-
-        return null;
-    }
-
     private GameObject GetFirstLevelChild(GameObject hitObject)
     {
         if (hitObject == null) return null;
