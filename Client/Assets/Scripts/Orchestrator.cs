@@ -30,7 +30,7 @@ public class Orchestrator : MonoBehaviour
     private string participantID = "-1";
 
     [Header("Independent Module Test")]
-    [SerializeField] private bool voiceSendtoVLM = false;
+    [SerializeField] private bool voiceSendtoVLM = true;
     [SerializeField] private bool generateSequence = false;
     [SerializeField] private bool sequenceToExecutor = false;
 
@@ -291,13 +291,30 @@ public class Orchestrator : MonoBehaviour
         UnityEngine.Debug.Log("<color=cyan>[Orchestrator] 构建Prompt");
 
         // 构建 user prompt JSON 数据
+        // 注意：不要直接序列化 UnityEngine.Vector3 —— Newtonsoft 会把 normalized/magnitude/
+        // sqrMagnitude 等递归属性都序列化出来，导致 prompt 膨胀数倍；这里用四舍五入的 {x,y,z}。
         var userPromptJson = new
         {
             user_status = new
             {
-                position = playerCamera.position,
-                forward = playerCamera.forward,
-                right = playerCamera.right
+                position = new
+                {
+                    x = (float)Math.Round(playerCamera.position.x, 2),
+                    y = (float)Math.Round(playerCamera.position.y, 2),
+                    z = (float)Math.Round(playerCamera.position.z, 2)
+                },
+                forward = new
+                {
+                    x = (float)Math.Round(playerCamera.forward.x, 2),
+                    y = (float)Math.Round(playerCamera.forward.y, 2),
+                    z = (float)Math.Round(playerCamera.forward.z, 2)
+                },
+                right = new
+                {
+                    x = (float)Math.Round(playerCamera.right.x, 2),
+                    y = (float)Math.Round(playerCamera.right.y, 2),
+                    z = (float)Math.Round(playerCamera.right.z, 2)
+                }
             },
             scene_graph = relationDetector.GetSceneGraphData(),
             // focused_objects = vlmHandler.GetFocusedObjectsData(),
@@ -307,6 +324,7 @@ public class Orchestrator : MonoBehaviour
         };
 
         UnityEngine.Debug.Log("<color=cyan>[Orchestrator] promp构建完成</color>");
+        UnityEngine.Debug.Log($"[Orchestrator] userPrompt 长度: {userPrompt.Length} 字符");
         var settings = new JsonSerializerSettings
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore,

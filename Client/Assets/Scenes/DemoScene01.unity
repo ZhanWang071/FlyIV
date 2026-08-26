@@ -89952,7 +89952,7 @@ MonoBehaviour:
   cameraRig: {fileID: 243533547}
   Environment: {fileID: 122912966}
   mouseControl: 1
-  voiceSendtoVLM: 0
+  voiceSendtoVLM: 1
   generateSequence: 1
   sequenceToExecutor: 1
   userRequest: "show all students\u2019 math scores here\n"

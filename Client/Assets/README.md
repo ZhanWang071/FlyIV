@@ -73,6 +73,8 @@ ActionExecutor.ExecuteSkillSequence(APICalls)
 Roslyn 动态执行 Skills/*.cs → 场景中出现图表
 ```
 
+> **注意**：完整语音流程依赖 Orchestrator Inspector 上的三个开关——`voiceSendtoVLM`（转写完成后触发工作流，必须开启）、`generateSequence`（调用 LLM 生成序列）、`sequenceToExecutor`（执行生成的序列）。其中 `voiceSendtoVLM` 若关闭，语音转写后流程不会继续（只会在 Console 打印转写结果）。
+
 ### 4.2 评测流程（Evaluation）
 
 - **手动评测**：在 `DemoScene01.unity` 中 Play 后按键盘 `1`–`8`，每个数字对应一个任务。`Evaluation.VideoRecording()` 会先模拟“Recording... → Translating... → 显示用户指令 → Thinking...”，再调用 `ActionExecutor.TestCaseT1()~T8()`。
@@ -351,13 +353,14 @@ ORIENT_TO("ElectricityCompareChart", "User");
 1. **T4 配色说明**：代码将 science 数据点设为绿色（#8AC471FF）、english 设为橙色（#F7C15BFF）；新版模拟指令 `Recolor science and English scores across all charts.` 不指定具体颜色，避免了口径不一致。
 2. **T5/T6 使用 3D x/y/z 编码**：合并文件 `city_all.json` 不再预生成，而是由 `DATA_TRANSFORM("city", "building", type: "merge")` 在运行时动态生成（T5/T6 序列开头已包含该调用）；若单独执行 T5/T6 请确保先运行 merge。
 3. **运行时文件自动清理**：`DATA_TRANSFORM`（split/merge）在 play 期间新增的数据文件（写入前不存在的，如 `city/city_all.json`）会在**停止运行时自动删除**（`Scripts/RuntimeFileRegistry.cs` 登记，`ActionExecutor.OnDisable` 清理，连同 .meta）。仓库中已有的预生成文件（如 `student_scores_S001.json`）即使被覆盖也不会被删除。
-4. **T3 的 DATA_TRANSFORM 路径有空格**：`"education / student_scores.json"`（斜杠两侧有空格）会导致文件找不到并静默返回；但仓库已预生成 `student_scores_S001~S012.json`，所以后续 CREATE 仍能成功。若删除生成文件后重新执行 T3 需先修复该路径。
-5. **T3 只用到 S001–S012**：数据源有 14 名学生，S013/S014 未参与。
-6. **任务依赖**：T2←T1、T4←T3；T5–T8 建议按顺序执行（总览→关联→钻取→对比）以获得完整分析体验，但每个任务自身均可独立创建图表。
-7. **构建列表**：`ProjectSettings/EditorBuildSettings.asset` 目前只包含旧的 `SampleScene.unity`；实际开发/评测应打开 `Scenes/DemoScene01.unity`。
-8. `ActionExecutor.OnDisable()` 会取消所有 Roslyn 任务并触发 GC，场景停止/切换时可能有短暂卡顿属正常。
-9. **细节微调点**：DxR 图例 tick 文字偏移量在 `DxR/Resources/Legend/Legend.cs`（`pos.y`/首尾 `pos.x`）；散点大小在 `DxR/Create.cs` 的 scatter 分支 `size.value`；x 轴标签字号/倾斜在 `XCharts/Create.cs`（>8 类别 → 10px+45°，否则 24px）；3D 朝向参考点在 `StreamingAssets/Skills/OrientTo.cs`（包围盒中心）。
-10. **VR 卡顿优化**：`ExecuteSkillSequence` 保持**每个函数单独编译、单独执行**（单个函数出错只影响它自己，后续函数继续执行），同时用 `_compiledSkillCache` 按 Skill 文件缓存编译结果——同一个 Skill 文件只完整编译一次，后续调用通过 Roslyn `ContinueWith` 只追加编译一行调用代码，显著减少重复编译开销；每步之间 `await Task.Yield()` 让出一帧。剩余瓶颈：DxR 单张图一次创建上百个 mark 仍在同一帧完成，若仍感明显冻结，可进一步做 prefab/着色器预热或把 mark 创建分批到多帧。
+4. **语音流程 POST 400 排查**：已确认根因——语音期间 `InteractionTracker` 每帧都往 `_recordedHitDetails` 追加命中点，说话几十秒可积累几千条（实测 6800+ 条、约 360 万字符），全量塞进 user prompt 导致 400（Test Workflow 无语音记录所以正常）。已修复：① 命中点改为**变化去重 + 上限 30 条**（`InteractionTracker.RecordHitPoint`）；② 命中点坐标改为四舍五入的匿名 `{x,y,z}`，消除 Vector3 的 normalized/magnitude 膨胀（`RoundToObj`）；③ `RelationDetection` 场景图两两关系截断到 80 条；④ `SkillController` 失败日志保存到 `Assets/Logs/SkillController/API_Error_*.txt` 并记录消息总字符数。
+5. **T3 的 DATA_TRANSFORM 路径有空格**：`"education / student_scores.json"`（斜杠两侧有空格）会导致文件找不到并静默返回；但仓库已预生成 `student_scores_S001~S012.json`，所以后续 CREATE 仍能成功。若删除生成文件后重新执行 T3 需先修复该路径。
+6. **T3 只用到 S001–S012**：数据源有 14 名学生，S013/S014 未参与。
+7. **任务依赖**：T2←T1、T4←T3；T5–T8 建议按顺序执行（总览→关联→钻取→对比）以获得完整分析体验，但每个任务自身均可独立创建图表。
+8. **构建列表**：`ProjectSettings/EditorBuildSettings.asset` 目前只包含旧的 `SampleScene.unity`；实际开发/评测应打开 `Scenes/DemoScene01.unity`。
+9. `ActionExecutor.OnDisable()` 会取消所有 Roslyn 任务并触发 GC，场景停止/切换时可能有短暂卡顿属正常。
+10. **细节微调点**：DxR 图例 tick 文字偏移量在 `DxR/Resources/Legend/Legend.cs`（`pos.y`/首尾 `pos.x`）；散点大小在 `DxR/Create.cs` 的 scatter 分支 `size.value`；x 轴标签字号/倾斜在 `XCharts/Create.cs`（>8 类别 → 10px+45°，否则 24px）；3D 朝向参考点在 `StreamingAssets/Skills/OrientTo.cs`（包围盒中心）。
+11. **VR 卡顿优化**：`ExecuteSkillSequence` 保持**每个函数单独编译、单独执行**（单个函数出错只影响它自己，后续函数继续执行），同时用 `_compiledSkillCache` 按 Skill 文件缓存编译结果——同一个 Skill 文件只完整编译一次，后续调用通过 Roslyn `ContinueWith` 只追加编译一行调用代码，显著减少重复编译开销；每步之间 `await Task.Yield()` 让出一帧。剩余瓶颈：DxR 单张图一次创建上百个 mark 仍在同一帧完成，若仍感明显冻结，可进一步做 prefab/着色器预热或把 mark 创建分批到多帧。
 
 ---
 

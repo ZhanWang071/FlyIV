@@ -324,7 +324,35 @@ public class SkillController : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.LogError($"[SkillController] OpenAI API 调用失败: {e.Message}");
+            // 输出完整异常（含 HTTP 状态码与 API 返回体，便于定位 400 的具体原因）
+            string errorText = $"[SkillController] OpenAI API 调用失败: {e}";
+            Debug.LogError(errorText);
+
+            // 把完整异常保存到本地文件，便于排查（请求体/响应体较长时 Console 看不全）
+            try
+            {
+                int messageCount = _chatHistory?.Count ?? 0;
+                long totalChars = _chatHistory?.Sum(m => m.Content?.ToString().Length ?? 0) ?? 0;
+                string header =
+                    $"=== SkillController API 错误日志 ==={System.Environment.NewLine}" +
+                    $"时间      : {DateTime.Now:yyyy-MM-dd HH:mm:ss}{System.Environment.NewLine}" +
+                    $"模型      : {ApiConfig.Instance.skillModel}{System.Environment.NewLine}" +
+                    $"消息条数  : {messageCount}{System.Environment.NewLine}" +
+                    $"消息总字符: {totalChars}{System.Environment.NewLine}" +
+                    $"{"=".PadRight(60, '=')}{System.Environment.NewLine}";
+
+                string logDir = Path.Combine(Application.dataPath, "Logs", "SkillController");
+                Directory.CreateDirectory(logDir);
+                string fileName = $"API_Error_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+                string filePath = Path.Combine(logDir, fileName);
+                File.WriteAllText(filePath, header + errorText);
+                Debug.Log($"[SkillController] API 错误详情已保存: {filePath}");
+            }
+            catch (Exception fileEx)
+            {
+                Debug.LogWarning($"[SkillController] 保存错误日志失败: {fileEx.Message}");
+            }
+
             return null;
         }
 

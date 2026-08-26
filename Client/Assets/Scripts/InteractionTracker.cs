@@ -35,6 +35,9 @@ public class InteractionTracker : MonoBehaviour
     [Header("Debug")]
     public bool showDebugRay = true;
 
+    /// <summary>语音期间最多保留的命中点数量（防止长时间说话导致 user prompt 爆炸）</summary>
+    private const int MaxRecordedHits = 30;
+
     [Header("Pointing Ray")]
     [Tooltip("Show a visible ray line from the active pointer")]
     public bool showPointingRay = true;
@@ -95,16 +98,8 @@ public class InteractionTracker : MonoBehaviour
         // 语音期间：左右手指向的物体都会被记录为 hit points（供 LLM 理解“这个/那个”）
         if (_isRecordingSpeech)
         {
-            if (leftHitObj != null)
-            {
-                _pointedObjectsDuringSpeech.Add(leftHitObj);
-                _recordedHitDetails.Add(lHit);
-            }
-            if (rightHitObj != null)
-            {
-                _pointedObjectsDuringSpeech.Add(rightHitObj);
-                _recordedHitDetails.Add(rHit);
-            }
+            RecordHitPoint(leftHitObj, lHit);
+            RecordHitPoint(rightHitObj, rHit);
         }
 
         UpdateLabel(_currentlyPointedObject);
@@ -112,6 +107,33 @@ public class InteractionTracker : MonoBehaviour
         UpdateRayLinesVisual(rightHitObj != null, rHit, leftHitObj != null, lHit);
 
         if (showDebugRay) DrawDebugRays();
+    }
+
+    /// <summary>
+    /// 记录一个命中点（供 LLM 理解“这个/那个”）。
+    /// 只在指向的物体或位置发生明显变化时才追加，避免每帧重复记录同一个点；
+    /// 总量限制为 MaxRecordedHits，防止长时间语音把 user prompt 撑爆（曾导致 POST 400）。
+    /// </summary>
+    private void RecordHitPoint(GameObject hitObj, RaycastHit hit)
+    {
+        if (hitObj == null) return;
+
+        if (_recordedHitDetails.Count > 0)
+        {
+            RaycastHit last = _recordedHitDetails[_recordedHitDetails.Count - 1];
+            bool sameObject = last.collider != null && hit.collider != null &&
+                              last.collider.gameObject == hit.collider.gameObject;
+            bool samePosition = Vector3.Distance(last.point, hit.point) < 0.05f;
+            if (sameObject && samePosition) return;
+        }
+
+        _pointedObjectsDuringSpeech.Add(hitObj);
+        _recordedHitDetails.Add(hit);
+
+        while (_recordedHitDetails.Count > MaxRecordedHits)
+        {
+            _recordedHitDetails.RemoveAt(0);
+        }
     }
 
 
@@ -459,30 +481,42 @@ public class InteractionTracker : MonoBehaviour
             for (int i = 0; i < _recordedHitDetails.Count; i++)
             {
                 var hit = _recordedHitDetails[i];
-                Vector3 RoundVec3(Vector3 v) => new Vector3(
-                    (float)Math.Round(v.x, 2),
-                    (float)Math.Round(v.y, 2),
-                    (float)Math.Round(v.z, 2));
                 hits.Add(new
                 {
                     hit_id   = $"h{i}",
                     @object  = hit.collider.gameObject.name,
-                    position = RoundVec3(hit.point),
-                    normal   = RoundVec3(hit.normal)
+                    position = RoundToObj(hit.point),
+                    normal   = RoundToObj(hit.normal)
                 });
             }
         }
         else
         {
+            // 没有记录到命中点时的兜底：只输出当前指向（用匿名 {x,y,z}，避免 Vector3 膨胀）
             hits.Add(new
             {
                 hit_id   = "h0",
                 @object  = GetCurrentPointingObjectName(),
-                position = _currentHit.point,
-                normal   = _currentHit.normal,
+                position = RoundToObj(_currentHit.point),
+                normal   = RoundToObj(_currentHit.normal),
             });
         }
         return hits;
+    }
+
+    /// <summary>
+    /// 把 Vector3 转成四舍五入的匿名 {x,y,z}。
+    /// 不要直接返回 Vector3：Newtonsoft 会把 normalized/magnitude/sqrMagnitude
+    /// 也序列化出来，导致 prompt 膨胀数倍。
+    /// </summary>
+    private static object RoundToObj(Vector3 v)
+    {
+        return new
+        {
+            x = (float)Math.Round(v.x, 2),
+            y = (float)Math.Round(v.y, 2),
+            z = (float)Math.Round(v.z, 2)
+        };
     }
 
     public string GetCurrentPointingObjectName()
@@ -512,17 +546,12 @@ public class InteractionTracker : MonoBehaviour
             return hits;
         }
 
-        Vector3 RoundVec3(Vector3 v) => new Vector3(
-            (float)Math.Round(v.x, 2),
-            (float)Math.Round(v.y, 2),
-            (float)Math.Round(v.z, 2));
-
         hits.Add(new
         {
             hit_id = "h0",
             @object = primaryObj != null ? primaryObj.name : "None",
-            position = RoundVec3(primaryHit.point),
-            normal = RoundVec3(primaryHit.normal)
+            position = RoundToObj(primaryHit.point),
+            normal = RoundToObj(primaryHit.normal)
         });
 
         return hits;
