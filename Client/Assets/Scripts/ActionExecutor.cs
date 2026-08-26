@@ -3,6 +3,7 @@ using UnityEditor;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -48,6 +49,13 @@ public class ActionExecutor : MonoBehaviour
 
     private CancellationTokenSource _cts = new CancellationTokenSource();
 
+    /// <summary>
+    /// 按 Skill 文件缓存的已编译脚本。每个函数单独执行、单独编译，
+    /// 但同一个 Skill 文件只完整编译一次，后续调用通过 ContinueWith
+    /// 只追加编译一行调用代码，兼顾“单函数隔离”与执行性能。
+    /// </summary>
+    private readonly Dictionary<string, Script> _compiledSkillCache = new Dictionary<string, Script>();
+
     private void OnDisable()
     {
         // 1. 触发取消信号，终止所有正在运行的 Roslyn 任务
@@ -60,6 +68,7 @@ public class ActionExecutor : MonoBehaviour
 
         // 2. 清理基础配置引用，断开与 Assembly-CSharp 的强关联
         _baseScriptOptions = null;
+        _compiledSkillCache.Clear();
 
         // 3. 强制触发垃圾回收（可选，但在处理 DLL 占用时有效）
         GC.Collect();
@@ -132,24 +141,24 @@ public class ActionExecutor : MonoBehaviour
 
         skillSequence = skillOutput;
         executeCodes = "";
-        // 如果分号后面有空格，则删除这些空格（例如: "); CREATE(...)" -> ");CREATE(...)"）
-        // skillOutput = skillOutput.Replace("; ", ";");
+
         // 正则表达式匹配：函数名(所有参数内容)
-        // 匹配格式如：ORIENT_TO("barchart_01", "user");
-        // string pattern = @"(\w+)\s*\(([^)]*)\);";
         string pattern = @"(\w+)\s*\((.*?)\);";
         MatchCollection matches = Regex.Matches(skillOutput, pattern);
 
+        // 每个函数单独解析、单独编译、单独执行：
+        // 任何一个函数出错只会影响它自己（内部 try/catch 记录错误后继续执行后续函数），
+        // 不会像“拼接成一个大脚本”那样让整条序列全部失败。
+        // 性能方面通过 _compiledSkillCache 缓存每个 Skill 文件的编译结果来优化。
         foreach (Match match in matches)
         {
             string rawFuncName = match.Groups[1].Value; // 例如: ORIENT_TO
             string rawArgs = match.Groups[2].Value;    // 例如: "barchart_01", "user"
 
-            // --- 新增：针对 CREATE 函数的自动路由与清洗逻辑 ---
+            // 针对 CREATE 函数的自动路由与清洗逻辑
             if (rawFuncName.ToUpper() == "CREATE")
             {
                 // 解析参数（这里假设参数是用逗号分隔的，且 chart_type 是第 3 个参数）
-                // 注意：复杂的参数解析建议使用更健壮的 CSV 解析逻辑，这里简化处理
                 string[] argsArray = ParseArgs(rawArgs);
                 if (argsArray.Length >= 3)
                 {
@@ -166,23 +175,38 @@ public class ActionExecutor : MonoBehaviour
                         Debug.Log("[ActionExecutor] 自动切换至 DxR 模式");
                     }
 
-                    // 修改 chart_type：删除 "2d_" 或 "3d_" 前缀
+                    // 删除 "2d_" 或 "3d_" 前缀
                     string cleanedChartType = Regex.Replace(chartType, @"^[23][dD]_?", "");
                     argsArray[2] = $"\"{cleanedChartType}\""; // 重新放回双引号
 
-                    // 重新拼接参数字符串
                     rawArgs = string.Join(", ", argsArray);
                 }
             }
 
-            // 1. 转换名称格式: ORIENT_TO -> OrientTo / CREATE -> Create
+            // 转换名称格式: ORIENT_TO -> OrientTo / CREATE -> Create
             string className = FormatClassName(rawFuncName);
+            string codeLine = $"{className}.Execute({rawArgs});";
 
-            executeCodes += $"{className}.Execute({rawArgs});\n";
-            
+            executeCodes += codeLine + "\n";
             Debug.Log($"[ActionExecutor] 执行skill: {className}.Execute({rawArgs})");
-            await RunDynamicSkill(className, rawArgs);
+
+            await RunDynamicSkill(className, codeLine);
+            await Task.Yield(); // 每步之间让出一帧，避免主线程连续被占用
         }
+    }
+
+    /// <summary>
+    /// 解析 Skill 类名对应的脚本文件：优先 Skills/ 根目录（通用 Skill），
+    /// 否则使用当前 2D/3D 模式对应的 Skills/XCharts 或 Skills/DxR 目录。
+    /// </summary>
+    private string ResolveSkillFilePath(string className)
+    {
+        string filePath = Path.Combine(Application.streamingAssetsPath, "Skills", $"{className}.cs");
+        if (!File.Exists(filePath))
+        {
+            filePath = Path.Combine(Application.streamingAssetsPath, skillsFolder, $"{className}.cs");
+        }
+        return filePath;
     }
 
     private string[] ParseArgs(string args)
@@ -199,47 +223,45 @@ public class ActionExecutor : MonoBehaviour
             m => m.Groups[1].Value.ToUpper());
     }
 
-    private async Task RunDynamicSkill(string className, string args)
+    private async Task RunDynamicSkill(string className, string codeLine)
     {
-        string filePath = Path.Combine(Application.streamingAssetsPath, "Skills", $"{className}.cs");
-
+        string filePath = ResolveSkillFilePath(className);
         if (!File.Exists(filePath))
         {
-            filePath = Path.Combine(Application.streamingAssetsPath, skillsFolder, $"{className}.cs");
-            if (!File.Exists(filePath))
-            {
-                Debug.LogError($"[ActionExecutor] 找不到 Skill 文件: {filePath}");
-                return;
-            }
+            Debug.LogError($"[ActionExecutor] 找不到 Skill 文件: {filePath}");
+            return;
         }
 
         try
         {
-            string code = File.ReadAllText(filePath);
-
-            // 3. 动态确定当前模式下的【专属引用】和【专属命名空间】
-            // 这样可以确保 XCharts 模式下没有 DxR 的干扰，反之亦然
-            var currentOptions = skillsFolderPath switch
+            // 首次遇到该 Skill 文件：完整编译一次并缓存；
+            // 之后同文件的调用通过 ContinueWith 只追加编译一行调用代码，
+            // 大幅减少重复编译开销，同时保持“每个函数独立执行、互不影响”。
+            if (!_compiledSkillCache.TryGetValue(filePath, out Script skillScript))
             {
-                SkillFolderOption.XCharts => _baseScriptOptions.AddImports("XCharts.Runtime"),
-                SkillFolderOption.DxR => _baseScriptOptions.AddImports("DxR"),
-                _ => _baseScriptOptions
-            };
+                // 动态确定当前模式下的【专属命名空间】，
+                // 确保 XCharts 模式下没有 DxR 的干扰，反之亦然
+                var currentOptions = skillsFolderPath switch
+                {
+                    SkillFolderOption.XCharts => _baseScriptOptions.AddImports("XCharts.Runtime"),
+                    SkillFolderOption.DxR => _baseScriptOptions.AddImports("DxR"),
+                    _ => _baseScriptOptions
+                };
 
-            // 动态执行：复用预加载好的 _cachedScriptOptions
-            // 拼接后的代码类似于: Create.Execute("barchart_01", "specs.json");
-            string fullCodeToRun = $"{code}\n{className}.Execute({args});";
-            
-            Debug.Log($"[ActionExecutor]: {className}({args})");
-            await CSharpScript.RunAsync(fullCodeToRun, currentOptions, cancellationToken: _cts.Token);
+                skillScript = CSharpScript.Create(File.ReadAllText(filePath), currentOptions);
+                _compiledSkillCache[filePath] = skillScript;
+            }
+
+            Debug.Log($"[ActionExecutor]: {codeLine}");
+            await skillScript.ContinueWith(codeLine).RunAsync(cancellationToken: _cts.Token);
         }
         catch (OperationCanceledException)
         {
-            Debug.Log($"[ActionExecutor] {className} 执行已被用户停止。");
+            Debug.Log("[ActionExecutor] 执行已被用户停止。");
         }
         catch (Exception e)
         {
-            Debug.LogError($"[Roslyn Error] 执行 {className} 失败: {e.Message}");
+            Debug.LogError($"[Roslyn Error] 执行失败: {e.Message}");
         }
     }
 
@@ -444,7 +466,8 @@ CHANGE_DATA_COLOR(""StudentScores_S012"", ""score"", ""english"", ""#F7C15BFF"")
     {
         skillsFolderPath = SkillFolderOption.DxR;
         skillSequence = @"
-CREATE(""CityElectricityLandscape"", ""city/city_electricity.json"", ""3d_bar"", ""time"", ""electricity"", ""electricity"", ""quantitative"", ""building"");
+DATA_TRANSFORM(""city"", ""building"", type: ""merge"");
+CREATE(""CityElectricityLandscape"", ""city/city_all.json"", ""3d_bar"", ""time"", ""electricity"", ""electricity"", ""quantitative"", ""building"");
 SCALE(""CityElectricityLandscape"", 3f, 3f, 3f);
 ADAPT_POS(""CityElectricityLandscape"", ""User"", 1.5f, 0.2f);
 ORIENT_TO(""CityElectricityLandscape"", ""User"");
@@ -457,6 +480,7 @@ ORIENT_TO(""CityElectricityLandscape"", ""User"");
     {
         skillsFolderPath = SkillFolderOption.DxR;
         skillSequence = @"
+DATA_TRANSFORM(""city"", ""building"", type: ""merge"");
 CREATE(""UtilityCorrelation3D"", ""city/city_all.json"", ""3d_scatter"", ""electricity"", ""water"", ""electricity"", ""quantitative"", ""gas"");
 SCALE(""UtilityCorrelation3D"", 3f, 3f, 3f);
 LAYOUT([""CityElectricityLandscape"", ""UtilityCorrelation3D""], 1.50f, 0.2f, ""arc"");

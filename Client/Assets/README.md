@@ -191,13 +191,14 @@ CHANGE_DATA_COLOR("StudentScores_S001", "score", "english", "#F7C15BFF");  // �
 - Skill 序列（DxR 3D，一张图代替原来的 18 张折线图）：
 
 ```csharp
-CREATE("CityElectricityLandscape", "city/city_electricity.json", "3d_bar", "time", "electricity", "electricity", "quantitative", "building");
+DATA_TRANSFORM("city", "building", type: "merge");
+CREATE("CityElectricityLandscape", "city/city_all.json", "3d_bar", "time", "electricity", "electricity", "quantitative", "building");
 SCALE("CityElectricityLandscape", 3f, 3f, 3f);
 ADAPT_POS("CityElectricityLandscape", "User", 1.5f, 0.2f);
 ORIENT_TO("CityElectricityLandscape", "User");
 ```
 
-- 数据：`city/city_electricity.json`（18 栋 × 6 个时段 = 108 行，字段 `building / time / electricity`）。
+- 数据：先由 `DATA_TRANSFORM("city", "building", type: "merge")` 把 18 个 `building_XXX.json` 运行时合并为 `city/city_all.json`（108 行，字段 `building / time / electricity / water / gas / footfall`），再创建图表。
 - 效果：**x=time、z=building、y=electricity** 的 3D 柱状网格，柱高表示用电量、**颜色（quantitative ramp）表示用电高低**，一眼看出"哪个时段、哪栋楼用电最高"。
 - 涉及 Skill：`DxR/Create.cs`（z 通道 + 量化颜色）、`Scale.cs`、`AdaptPos.cs`、`OrientTo.cs`。
 - 细节调整：3D 图用 `ADAPT_POS(..., "User", ...)` 放置时会**自动将整张图的中心对准目标点**（不再以数据原点/左下角为锚）；DxR 渐变图例的刻度文字已向外偏移，避免与 LegendMark 重叠（见 `DxR/Resources/Legend/Legend.cs`）。
@@ -208,6 +209,7 @@ ORIENT_TO("CityElectricityLandscape", "User");
 - Skill 序列（DxR 模式）：
 
 ```csharp
+DATA_TRANSFORM("city", "building", type: "merge");
 CREATE("UtilityCorrelation3D", "city/city_all.json", "3d_scatter", "electricity", "water", "electricity", "quantitative", "gas");
 SCALE("UtilityCorrelation3D", 3f, 3f, 3f);
 LAYOUT(["CityElectricityLandscape", "UtilityCorrelation3D"], 1.50f, 0.2f, "arc");
@@ -215,7 +217,7 @@ ORIENT_TO("CityElectricityLandscape", "User");
 ORIENT_TO("UtilityCorrelation3D", "User");
 ```
 
-- 数据：`city/city_all.json`（108 行，字段 `building / time / electricity / water / gas / footfall`）。
+- 数据：复用 T5 合并生成的 `city/city_all.json`（若单独执行 T6 会先执行 merge 类型的 DATA_TRANSFORM）。
 - 效果：**x=electricity、y=water、z=gas** 的 3D 散点，每个点代表"某建筑某时段的三种能耗组合"，颜色按用电量（quantitative ramp）渐变色，用于探索电/水/气之间是否同涨同跌；同时把 T5 的 `CityElectricityLandscape` 一起放入 **arc 布局**，两张图并排、分别朝向用户，便于总览图与关联图对照查看。
 - 涉及 Skill：`DxR/Create.cs`（scatter + z + 量化颜色 + 固定点大小）、`Scale.cs`、`Layout.cs`、`OrientTo.cs`。
 - 细节调整：散点通过 `size` 通道固定放大（`{"value": 30}`，约 3cm/点，再乘 SCALE 3x），让点在 VR 中更醒目；`LAYOUT` 会把两张 3D 图的高度统一归一化到 1m，并将包围盒中心对准布局槽位（与 ADAPT_POS 的居中逻辑一致）。
@@ -277,13 +279,17 @@ ORIENT_TO("ElectricityCompareChart", "User");
 - `DELETE(view_id)` / `POSITION(view_id, x, y, z)` / `ROTATE(...)` / `SCALE(...)`
 - `LAYOUT(List<view_id>, distance, height_offset, "arc"|"grid")` — 批量布局
 
+> **SCALE 语义**：`SCALE(view_id, x, y, z)` 是**相对倍率**（传入值乘以当前 localScale，0 = 该轴不变），例如 `SCALE(2f,2f,2f)` 放大一倍、`SCALE(0.5f,0.5f,0.5f)` 缩小一半。**不要**把 SCALE 设置成物体的世界尺寸（如黑板的 6.1×1.6）——那会把图表撑爆；2D 图表"贴合黑板/墙面"应使用 `EMBED`（自动适配表面大小），prompt 中已明确此规则（见 `Resources/prompts/*.txt`）。
+
 **元素级**：
 - `UPDATE` / `DELETE_ELEMENT` / `APPEND_SINGLE` / `APPEND_SERIES(chart_id, data, x_field, y_field, serieType, serie_name = "")`（`serie_name` 用于自定义系列/图例名）
 - `HIGHLIGHT` / `CHANGE_SERIE_COLOR` / `CHANGE_DATA_COLOR`
 
 **系统级**：
 - `MESSAGE(content)` — 仅显示文本反馈
-- `DATA_TRANSFORM(inputPath, idField, labelName, valueName, excludeFields)` — 按 ID 把宽表拆成多个长表 JSON
+- `DATA_TRANSFORM(inputPath, idField, labelName = "item", valueName = "value", excludeFields = null, type = "split", includeFields = "")` — 通过 `type` 选择模式：
+  - `type = "split"`（默认）：按 `idField` 把单个宽表拆成多个长表 JSON；
+  - `type = "merge"`：把 `DxRData/{inputPath}` 文件夹下所有 JSON 合并为 `{文件夹名}_all.json`（如 city → city/city_all.json），每行补 `idField`（= 源文件名），`includeFields` 可只保留指定字段（逗号分隔，留空保留全部）
 
 ### 7.2 执行流程
 
@@ -318,8 +324,7 @@ ORIENT_TO("ElectricityCompareChart", "User");
 | `StreamingAssets/DxRData/education/student_scores.json` | 14 名学生：`student_id`、`name`、`math_score`、`science_score`、`english_score` |
 | `StreamingAssets/DxRData/education/student_scores_S001~S012.json` | DATA_TRANSFORM 生成的长表（`subject`、`score`），每学生一个文件 |
 | `StreamingAssets/DxRData/city/building_001~018.json` | 18 栋建筑，每栋 6 条时间记录：`time`、`electricity`、`water`、`gas`、`footfall`；建筑按类型区分：001–004 住宅（傍晚峰值）、005–010 办公（白天峰值，005 为大型办公楼、010 为 16:00 峰值）、011–015 工业（全天高位，015 为夜班型 04:00 峰值）、016–018 商业（晚间峰值、人流最大），各楼量级不同 |
-| `StreamingAssets/DxRData/city/city_electricity.json` | T5 用：18 栋 × 6 时段合并长表（`building`、`time`、`electricity`，108 行） |
-| `StreamingAssets/DxRData/city/city_all.json` | T6 用：18 栋 × 6 时段全字段合并表（`building`、`time`、`electricity`、`water`、`gas`、`footfall`，108 行） |
+| `StreamingAssets/Skills/DataTransform.cs` | DATA_TRANSFORM skill：`type="split"` 拆分为多文件（默认）、`type="merge"` 运行时把 18 个 building 文件合并成 `city/city_all.json`（T5/T6 在 CREATE 前调用；不再预生成） |
 | `StreamingAssets/DxRData/sales/` | 销售数据（Reproduction 场景用） |
 
 ---
@@ -342,13 +347,14 @@ ORIENT_TO("ElectricityCompareChart", "User");
 ## 10. 注意事项 / 已知问题
 
 1. **T4 配色说明**：代码将 science 数据点设为绿色（#8AC471FF）、english 设为橙色（#F7C15BFF）；新版模拟指令 `Recolor science and English scores across all charts.` 不指定具体颜色，避免了口径不一致。
-2. **T5/T6 使用 3D x/y/z 编码**：需要 `StreamingAssets/DxRData/city/city_electricity.json` 与 `city_all.json`（已预生成）；若删除这两个文件需重新生成（合并 18 个 building_XXX.json）。
+2. **T5/T6 使用 3D x/y/z 编码**：合并文件 `city_all.json` 不再预生成，而是由 `DATA_TRANSFORM("city", "building", type: "merge")` 在运行时动态生成（T5/T6 序列开头已包含该调用）；若单独执行 T5/T6 请确保先运行 merge。
 3. **T3 的 DATA_TRANSFORM 路径有空格**：`"education / student_scores.json"`（斜杠两侧有空格）会导致文件找不到并静默返回；但仓库已预生成 `student_scores_S001~S012.json`，所以后续 CREATE 仍能成功。若删除生成文件后重新执行 T3 需先修复该路径。
 4. **T3 只用到 S001–S012**：数据源有 14 名学生，S013/S014 未参与。
 5. **任务依赖**：T2←T1、T4←T3；T5–T8 建议按顺序执行（总览→关联→钻取→对比）以获得完整分析体验，但每个任务自身均可独立创建图表。
 6. **构建列表**：`ProjectSettings/EditorBuildSettings.asset` 目前只包含旧的 `SampleScene.unity`；实际开发/评测应打开 `Scenes/DemoScene01.unity`。
 7. `ActionExecutor.OnDisable()` 会取消所有 Roslyn 任务并触发 GC，场景停止/切换时可能有短暂卡顿属正常。
 8. **细节微调点**：DxR 图例 tick 文字偏移量在 `DxR/Resources/Legend/Legend.cs`（`pos.y`/首尾 `pos.x`）；散点大小在 `DxR/Create.cs` 的 scatter 分支 `size.value`；x 轴标签字号/倾斜在 `XCharts/Create.cs`（>8 类别 → 10px+45°，否则 24px）；3D 朝向参考点在 `StreamingAssets/Skills/OrientTo.cs`（包围盒中心）。
+9. **VR 卡顿优化**：`ExecuteSkillSequence` 保持**每个函数单独编译、单独执行**（单个函数出错只影响它自己，后续函数继续执行），同时用 `_compiledSkillCache` 按 Skill 文件缓存编译结果——同一个 Skill 文件只完整编译一次，后续调用通过 Roslyn `ContinueWith` 只追加编译一行调用代码，显著减少重复编译开销；每步之间 `await Task.Yield()` 让出一帧。剩余瓶颈：DxR 单张图一次创建上百个 mark 仍在同一帧完成，若仍感明显冻结，可进一步做 prefab/着色器预热或把 mark 创建分批到多帧。
 
 ---
 

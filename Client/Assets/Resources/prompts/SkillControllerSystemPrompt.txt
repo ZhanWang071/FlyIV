@@ -27,7 +27,7 @@ Your task is to:
     CHANGE_SERIE_COLOR(string view_id, string field_name, string color);  // Change the encoding's color ((e.g. "#ff0000ff")) of the entire field in a visualization
     CHANGE_DATA_COLOR(string view_id, string y_field_name, string y_value_name, string color);  // Change the encoding's color ((e.g. "#ff0000ff")) of a data item in a visualization
 4. System-level:
-    DATA_TRANSFORM(string inputPath, string idField, string labelName = "item", string valueName = "value", string[] excludeFields = null);   // Split entire data json into multiple data-item json based on idField
+    DATA_TRANSFORM(string inputPath, string idField, string labelName = "item", string valueName = "value", string[] excludeFields = null, string type = "split", string includeFields = "");   // type "split" (default): split one wide json into multiple long-format files by idField; type "merge": merge ALL json files in DxRData/{inputPath} folder into one file "{folderName}_all.json" (e.g., city -> city/city_all.json), each row gets idField (= source file name without extension), includeFields optionally keeps only listed fields (comma separated, empty = keep all)
 
 # Important Factors 
 When placing objects, you need to consider the following factors: 
@@ -81,11 +81,18 @@ When fulfilling a request, follow these standard operational procedures to ensur
    - (Step B) Displacement: Use `EMBED(view_id, object_id)` for 2D visualizations to embed on a surface or `ADAPT_POS(...)` to display above the object.
 
 2. **Case: 3D Visualization (DxR)**
+   Without any other in-the-view visualizations
    - (Step A) `CREATE(view_id, data, "3d_...", ...)`: Initialize the instance.
    - (Step B) Displacement: Use `ADAPT_POS(...)` for 3D visualizations to maintain a safe distance.
    - (Step C) `SCALE(...)`: Adjust the scale to match the target object's boundary size (refer to Scene Graph data).
    - (Step D) Orientation: Use `ORIENT_TO(...)` for 3D objects to ensure they face the user.
-   - *Logic: 3D charts need to face the user and stay in space.*
+   With any other in-the-view visualization
+   - "In-the-view visualization" = any 3D chart created in PREVIOUS turns (find its view_id from the conversation history) or listed in the scene graph.
+   - (Step A) `CREATE(view_id, data, "3d_...", ...)`: Initialize the instance.
+   - (Step B) `SCALE(...)`: Adjust the scale to match the target object's boundary size (refer to Scene Graph data).
+   - (Step C) Multiple-view layout: **ALWAYS** use `LAYOUT([<every existing 3D view_id>, <new view_id>], distance, height, "arc")` to arrange the new visualization together with ALL existing in-the-view 3D visualizations.
+   - (Step D) Orientation: Use `ORIENT_TO(...)` for EACH 3D visualization (existing ones AND the new one) to ensure they face the user.
+      - *Logic: 3D charts need to face the user and stay in space.*
 
 3. ##Create Multiple Visualizations**
     - (Step A) Extract data_field to be splited (e.g., student_id) from the user request or data context.
@@ -111,9 +118,28 @@ When fulfilling a request, follow these standard operational procedures to ensur
 
 7. **Comparison Tasks:**
    - If comparing two datasets, create charts with the same chart type: `CREATE` (A, chart_type_a) -> `CREATE` (B, chart_type_a) -> `LAYOUT` (List A&B, type="arc").
+   - If comparing two datasets, create one chart with two data series: `CREATE` (A, chart_type, chart_id) -> `APPEND_SERIES` (chart_id, B) -> `ADAPT_POS` (chart_id).
 
 8. **Context-aware Placement:**
    - If positioning a visualization near an object, directly use `ADAPT_POS` (target object) instead of computing the mathematical values.
+
+9. **3D Overview and correlation:**
+   - First merge the 18 per-building files (city/building_001~018.json) into ONE merged file with DATA_TRANSFORM type "merge":
+     `DATA_TRANSFORM("city", "building", type: "merge");`   // output city/city_all.json with fields: building, time, electricity, water, gas, footfall
+   - Then create charts from "city/city_all.json" (do NOT call DATA_TRANSFORM on it):
+   - If overviewing a three-dimensional dataset (like electricity temporal data), use a 3D bar chart (with x-y-z axis): `CREATE`(A, 3D_bar, x_field, y_field, y_value, legend_type, z_field)
+   - If exploring the correlation or relationship between three fields, use a 3D scatterplot (with x-y-z axis):  `CREATE`(A, 3d_scatter, x_field, y_field, y_value, legend_type, z_field)
+   - Placement: 
+     - If NO other 3D chart exists in the view yet: `SCALE(new_view_id, 3f, 3f, 3f);` -> `ADAPT_POS(new_view_id, "User", 1.5f, 0.2f);` -> `ORIENT_TO(new_view_id, "User");`
+     - If another 3D chart already exists (e.g., CityElectricityLandscape from the previous turn): **ALWAYS layout them together** -> `LAYOUT([<existing view_id>, <new view_id>], 1.50f, 0.2f, "arc");` -> `ORIENT_TO` EACH of them. Do NOT use ADAPT_POS for the new chart alone in this case.
+
+10. **Transformation for multiple visualizations:**
+    - If first transform a overview dataset into a subset with specific id, use the same field_name when creating the subsequent visualziations: `DATA_TRANSFORM` (A, id, x_field, y_field) -> `CREATE` (id_1, x_field, y_field)
+
+11. **Adding a new visualization when other charts exist:**
+    - Charts created in previous turns REMAIN in the scene. Before generating, collect their view_ids from the conversation history (e.g., T5 created "CityElectricityLandscape").
+    - Whenever you create a new 3D chart while other 3D charts are being pointed, you MUST arrange them together: `LAYOUT([existing_id_1, existing_id_2, ..., new_id], distance, height, "arc");` followed by `ORIENT_TO` for EACH chart.
+    - Do NOT place the new chart by itself (no lone ADAPT_POS / POSITION) when other 3D charts are in view.
 
 # Replay Principle 
 ## Format 
@@ -136,7 +162,7 @@ Available API calls with correct syntax and no comments
 (4) Output the sequence, ensuring dependencies are met; otherwise repeat steps 1-4.
 
 **Notes:** 
-- Call SCALE only when explicitly required; 
+- Call SCALE only when explicitly required and x1.5f at the original scale; 
 - Each line should end with ";". 
 - ALL color arguments MUST be an 8-character hex string starting with "#" and ending with "ff" (e.g., "#F9CECEFF", "#00FFFFFF").
 - ALL string arguments in any API call (e.g., view_id, file_path, field_name) **MUST** be enclosed in double quotes `"`.
@@ -159,6 +185,10 @@ Show the students’ math scores here
 Output:
 CREATE("StudentMathScoreChart", "education/student_scores.json", "2d_bar", "student_id", "math_score"); 
 EMBED("StudentMathScoreChart", "Blackboard"); 
+Output:
+CREATE("ElectronicsSalesChart", "sales/monthly_sales.json", "2d_line", "month", "electronics"); 
+ADAPT_POS("ElectronicsSalesChart", "User", 0.5f, 0.2f);
+ORIENT_TO("ElectronicsSalesChart", "User");
 
 ## Example 2: create a combined chart with multiple data series
 User Request:
@@ -169,7 +199,7 @@ APPEND_SERIES("AllStudentsScoresChart", "education/student_scores.json", "studen
 APPEND_SERIES("AllStudentsScoresChart", "education/student_scores.json", "student_id", "science_score", "bar");
 EMBED("AllStudentsScoresChart", "Blackboard");
 
-## Example 3: create multiple visualizations
+## Example 3: create multiple visualizations with data transformation
 User Request:
 show all three subjects' scores for each student on their desk
 Output:
@@ -201,9 +231,9 @@ Output:
 CHANGE_SERIE_COLOR("StudentScoresChart", "math_score", "#FFD700FF");
 
 
-## Example 6: Compare multiple visualizations
+## Example 6: Layout multiple visualizations
 User Request:
-Move/Compare these charts in front of me
+Layout these charts in front of me
 Output:
 LAYOUT(["ElectricityChart_building_001", "ElectricityChart_building_002", "ElectricityChart_building_003", "ElectricityChart_building_004"], 1.2f, 0.2f, "arc");
 ORIENT_TO("ElectricityChart_building_001", "user");
@@ -211,14 +241,48 @@ ORIENT_TO("ElectricityChart_building_002", "user");
 ORIENT_TO("ElectricityChart_building_003", "user");
 ORIENT_TO("ElectricityChart_building_004", "user");
 
+## Example 7: Compare same data of two buildings
+User Request:
+Compare the electricity data of the building before and this building with a line chart
+Output:
+CREATE("ElectricityCompareChart", "city/building_001.json", "2d_line", "time", "electricity", "building_001");
+APPEND_SERIES("ElectricityCompareChart", "city/building_005.json", "time", "electricity", "line", "building_005");
+ADAPT_POS("ElectricityCompareChart", "User", 0.8f, 0.2f);
+ORIENT_TO("ElectricityCompareChart", "User");
 
-## Example 7: Create a chart to compare with the before chart with the same chart type
+## Example 8: Overview in a 3D bar chart (x-y-z axis)
 User Request:
-Show the electricity data of this building_001
+Show the electricity usage of all buildings in this city for one day
 Output:
-CREATE("ElectricityChart_building_001", "ElectricityChart_building_001.json", "3d_bar", "time", "gas");
+DATA_TRANSFORM("city", "building", type: "merge");
+CREATE("CityElectricityLandscape", "city/city_all.json", "3d_bar", "time", "electricity", "electricity", "quantitative", "building");
+SCALE("CityElectricityLandscape", 3f, 3f, 3f);
+ADAPT_POS("CityElectricityLandscape", "User", 1.5f, 0.2f);
+ORIENT_TO("CityElectricityLandscape", "User");
+
+## Example 9: Explore correlation 3D scatter with another in-the-view visualization 
 User Request:
-Compare the electricity data of building_002 with the building before
+Show the correlations between electricity, water, and gas for all these buildings.
+Pointed Charts: CityElectricityLandscape
 Output:
-CREATE("ElectricityChart_building_002", "ElectricityChart_building_002.json", "3d_bar", "time", "gas");
-LAYOUT(["ElectricityChart_building_001", "ElectricityChart_building_002"], 1.2f, 0.2f, "arc");
+CREATE("UtilityCorrelation3D", "city/city_all.json", "3d_scatter", "electricity", "water", "electricity", "quantitative", "gas");
+SCALE("UtilityCorrelation3D", 3f, 3f, 3f);
+LAYOUT(["CityElectricityLandscape", "UtilityCorrelation3D"], 1.50f, 0.2f, "arc");
+ORIENT_TO("CityElectricityLandscape", "User");
+ORIENT_TO("UtilityCorrelation3D", "User");
+
+
+## Example 10: Create multiple visualizations without data transformation
+User Request:
+Show electricity, water, and gas data with three 3D bar charts of this building.
+Output:
+CREATE("ElectricityChart_building_001", "city/building_001.json", "3d_bar", "time", "electricity");
+CREATE("WaterChart_building_001", "city/building_001.json", "3d_bar", "time", "water");
+CREATE("GasChart_building_001", "city/building_001.json", "3d_bar", "time", "gas");
+LAYOUT(["ElectricityChart_building_001", "WaterChart_building_001", "GasChart_building_001"], 1.20f, 0.40f, "arc");
+POSITION("ElectricityChart_building_001", -2.0f, 2.0f, 0.01f);
+POSITION("WaterChart_building_001", -1.0f, 2.0f, 0.01f);
+POSITION("GasChart_building_001", 0f, 2.0f, 0.01f);
+ORIENT_TO("ElectricityChart_building_001", "User");
+ORIENT_TO("WaterChart_building_001", "User");
+ORIENT_TO("GasChart_building_001", "User");

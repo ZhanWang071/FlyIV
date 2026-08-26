@@ -169,6 +169,14 @@ public class SkillController : MonoBehaviour
                     string buildingNum = fileName.Replace("building_", "");
                     return $"building {buildingNum} utility data including electricity, water, gas, and footfall";
                 }
+                if (fileName == "city_electricity")
+                {
+                    return "merged electricity usage of ALL 18 buildings by time (fields: building, time, electricity); use for city-wide 3D overview";
+                }
+                if (fileName == "city_all")
+                {
+                    return "merged utility data of ALL 18 buildings by time (fields: building, time, electricity, water, gas, footfall); use for cross-utility correlation";
+                }
                 return $"{fileName} - city data";
             
             default:
