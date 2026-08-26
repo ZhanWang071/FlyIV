@@ -6,13 +6,14 @@ public class Scale
         if (go != null)
         {
             Vector3 current = go.transform.localScale;
-            // 如果传入值为 null，则保留当前缩放
-            float finalX = (x != 0 && x > current.x) ? x : current.x;
-            float finalY = (y != 0 && y > current.y) ? y : current.y;
-            float finalZ = (z != 0 && z > current.z) ? z : current.z;
+            // SCALE 的参数是图表的【绝对目标 localScale】（0 = 该轴保持不变）。
+            // 例如当前 localScale 为 (3,3,3)，要放大 50% 应传 (4.5,4.5,4.5)。
+            float finalX = (x != 0) ? x : current.x;
+            float finalY = (y != 0) ? y : current.y;
+            float finalZ = (z != 0) ? z : current.z;
 
             go.transform.localScale = new Vector3(finalX, finalY, finalZ);
-            Debug.Log($"[Skill] Scale 完成: {object_name} 缩放更新为 ({finalX},{finalY},{finalZ})");
+            Debug.Log($"[Skill] Scale 完成: {object_name} localScale 设为绝对目标 ({finalX},{finalY},{finalZ})");
         }
     }
 }

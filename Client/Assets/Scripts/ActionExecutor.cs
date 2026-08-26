@@ -70,7 +70,10 @@ public class ActionExecutor : MonoBehaviour
         _baseScriptOptions = null;
         _compiledSkillCache.Clear();
 
-        // 3. 强制触发垃圾回收（可选，但在处理 DLL 占用时有效）
+        // 3. 删除 play 期间由 DATA_TRANSFORM 等 Skill 新增的数据文件（如 city/city_all.json）
+        RuntimeFileRegistry.Cleanup();
+
+        // 4. 强制触发垃圾回收（可选，但在处理 DLL 占用时有效）
         GC.Collect();
         GC.WaitForPendingFinalizers();
 

@@ -70,6 +70,8 @@ public class DataTransform
                 string fileName = $"{Path.GetFileNameWithoutExtension(inputPath)}_{entityId}.json";
                 string outputPath = Path.Combine(Application.streamingAssetsPath, "DxRData", folder, fileName);
 
+                // 登记运行时新增文件：写入前不存在的文件，play 停止后会自动删除
+                RuntimeFileRegistry.RecordWrite(outputPath);
                 File.WriteAllText(outputPath, JsonConvert.SerializeObject(transformedList, Formatting.Indented));
             }
             Debug.Log($"[DataTransform] 成功为字段 {idField} 转换了 {rootArray.Count} 个实体文件。");
@@ -149,6 +151,8 @@ public class DataTransform
             return;
         }
 
+        // 登记运行时新增文件：写入前不存在的文件，play 停止后会自动删除
+        RuntimeFileRegistry.RecordWrite(outputPath);
         File.WriteAllText(outputPath, JsonConvert.SerializeObject(merged, Formatting.Indented));
         Debug.Log($"[DataTransform:merge] 已合并 {merged.Count} 行 -> {outputPath}");
     }

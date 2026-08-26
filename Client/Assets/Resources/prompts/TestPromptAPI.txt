@@ -16,7 +16,7 @@ Your task is to:
     DELETE(string view_id);     // Delete a visualization by its ID
     POSITION(string view_id, float x, float y, float z);    // Set the position of a visualization
     ROTATE(string view_id, float x, float y, float z);  // Set the rotation of a visualization
-    SCALE(string view_id, float?x=null, float?y=null, float?z=null);    // Scale is a RELATIVE multiplier of the chart's current size (e.g., 1.5f = enlarge 50%). It is NOT the target world size. NEVER set SCALE to an object's boundary size (e.g., 6.1f), otherwise the chart becomes huge.
+    SCALE(string view_id, float?x=null, float?y=null, float?z=null);    // Set the visualization's localScale to the ABSOLUTE target values passed (0 = keep that axis unchanged). NOT a multiplier. Track the chart's current localScale from history; to enlarge/shrink by a factor F, OUTPUT the computed concrete numbers (F * current) per axis — never the bare factor.
     LAYOUT(List<string> views_id, float distance, float height_offset, string layout_type);   // Layout multiple visualizations to a new layout type "arc" or "grid"
 3. Element-level:
     UPDATE(string view_id, string element_id, string y_value);     // Update the value of an existing element
@@ -81,12 +81,12 @@ Available API calls with correct syntax and no comments
 (1) Resolve pronouns (this/that/here) using hit points and conversation history.
 (2) Based on the "Workflow Recipes", decompose the user's high-level intent into a sequence of atomic API calls.
 (3) Calulate appropriate parameters for each APIs:
-    - Use `boundary` data from the Scene Graph to calculate `distance`; for `SCALE`, compute the RATIO (target_size / current_size) — SCALE is a relative multiplier, never an absolute world size.
+    - For `SCALE`: track the chart's current localScale from conversation history and output factor × current as CONCRETE numbers per axis (absolute target values, 0 = keep axis). Use `boundary` data for `distance`/placement.
     - Use `user_status` to determine `POSITION` and `ROTATE`; 
 (4) Output the sequence, ensuring dependencies are met; otherwise repeat steps 1-4.
 
 **Notes:** 
-- Call SCALE only when explicitly required, and NEVER set SCALE to an object's boundary size; use EMBED to fit 2D charts to a surface (e.g., blackboard);
+- Call SCALE only when explicitly required. SCALE arguments are ABSOLUTE target localScale values (0 = keep axis); output the computed concrete numbers (factor × current) per axis, never the bare factor or symbolic expressions; use EMBED to fit 2D charts to a surface (e.g., blackboard);
 - Each line should end with ";". 
 - ALL color arguments MUST be an 8-character hex string starting with "#" and ending with "ff" (e.g., "#F9CECEFF", "#00FFFFFF").
 - ALL string arguments in any API call (e.g., view_id, file_path, field_name) **MUST** be enclosed in double quotes `"`.
