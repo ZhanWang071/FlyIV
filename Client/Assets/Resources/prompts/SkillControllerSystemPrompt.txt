@@ -188,7 +188,7 @@ EMBED("...", "Blackboard");
 User Request:
 Enlarge the chart by 50%
 Output:
-SCALE("...", 4.5f, 4.5f, 4.5f);   // current localScale is (3.0f, 3.0f, 3.0f) from history; 1.5 × 3.0 = 4.5
+SCALE("...", 0.0015, 0.0015f, 0.0015f);   // current scale is (0.001f, 0.001f, 0.001f); 1.5 × 0.001 = 0.0015
 
 ## Example 1: create a simple chart
 User Request:
