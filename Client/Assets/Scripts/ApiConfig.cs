@@ -23,10 +23,19 @@ public class ApiConfig : ScriptableObject
     // public string skillModel = "gemini-3-flash-preview";
     public string skillModel = "gpt-4o-mini";
     public string vlmModel = "gpt-4o-mini";
-    public string sttModel = "whisper-1";
     // public string llmModel = "gemini-2.5-flash";
     // public string llmModel = "gemini-3-flash-preview";
     public string llmModel = "gpt-4o-mini";
+
+    [Header("STT Settings (Qwen ASR, 独立于其他模型)")]
+    [Tooltip("STT 专用的中转平台地址（OpenAI 兼容），不影响其他模型")]
+    public string sttBaseUrl = "https://dashscope.aliyuncs.com/compatible-mode/v1";
+    [Tooltip("STT 专用的 API Key（与其他模型分开填写）")]
+    public string sttApiKey = "sk-ws-H.EXMPRXR.tklg.MEUCIQDqEYRFuLVwTgxIzJ4I0cqlp-bxnz0mfSpyY6eahQAmOwIgW4c3fvnpm6it0yyEBjTdVyoYnjYMxSUTzUjyzR7dxQs";
+    [Tooltip("STT 模型名：qwen-audio-3.0-asr-flash-streaming 官方为 WebSocket 实时模型；OpenAI 兼容 HTTP 官方支持 qwen3-asr-flash。若中转平台对前者返回 400，请改为 qwen3-asr-flash")]
+    public string sttModel = "qwen-audio-3.0-asr-flash-streaming";
+    [Tooltip("识别语言：en / zh 等，留空自动检测")]
+    public string sttLanguage = "en";
 
 
     // --- 自动化单例访问逻辑 ---

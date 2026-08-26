@@ -18,5 +18,8 @@ MonoBehaviour:
   skillUrl: https://api.rcouyi.com/v1/chat/completions
   skillModel: gpt-4o-mini
   vlmModel: gpt-4o-mini
-  sttModel: whisper-1
   llmModel: gpt-4o-mini
+  sttBaseUrl: https://dashscope.aliyuncs.com/compatible-mode/v1
+  sttApiKey: sk-ws-H.EXMPRXR.tklg.MEUCIQDqEYRFuLVwTgxIzJ4I0cqlp-bxnz0mfSpyY6eahQAmOwIgW4c3fvnpm6it0yyEBjTdVyoYnjYMxSUTzUjyzR7dxQs
+  sttModel: qwen3-asr-flash
+  sttLanguage: en

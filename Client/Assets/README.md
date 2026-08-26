@@ -40,7 +40,7 @@
 | `Scripts/Orchestrator.cs` | 正式语音工作流：STT → VLM → 场景图 → LLM 生成序列 → 执行；负责 UI 反馈与日志 |
 | `Scripts/SkillController.cs` | 调用 LLM 生成 Skill 序列；按场景扫描数据文件 |
 | `Scripts/UserStudyController.cs` | 场景切换（Classroom / City / Reproduction）、传送点 |
-| `Scripts/SpeechToText.cs` | 语音识别（STT） |
+| `Scripts/SpeechToText.cs` | 语音识别（STT）：Qwen ASR 流式（OpenAI 兼容，独立配置） |
 | `Scripts/VLMFocus.cs` | VLM 识别用户注视/指向的物体 |
 | `Scripts/RelationDetection.cs` | 构建场景图（物体位置、包围盒、空间关系） |
 | `Scripts/InteractionTracker.cs` | 手柄/手部射线与 hit point 追踪 |
@@ -96,6 +96,19 @@ Roslyn 动态执行 Skills/*.cs → 场景中出现图表
 说明：`HandLocomotionController` 的"双手捏合前进"属于手部追踪模式，戴控制器时通常不生效，不影响上述手柄操作。键盘等效键：空格=按住说话、WASD+鼠标=移动视角、↓=切换传送点。
 
 **传送点高度说明**：`TeleportToCurrentPoint` 先把 Rig 旋转到目标朝向，再把"眼睛"（CenterEyeAnchor）精确平移到传送点位置。由于 OVRCameraRig 每帧把 `CenterEyeAnchor.localPosition` 设为头显追踪位姿（FloorLevel 下 Y 含离地眼高），传送时必须扣除该偏移，否则视角会比设定点高约一个眼高（表现为"很高的视角"）。如果 Play 后视角仍偏高，请先确认 Meta 守护者/地板高度校准正确。
+
+### 4.4 语音转文字（STT）配置
+
+STT 走**独立的 OpenAI 兼容配置**（不影响其他模型），在 `Resources/GlobalApiConfig.asset` 中：
+
+| 字段 | 说明 |
+|---|---|
+| `sttBaseUrl` | STT 专用地址，默认 `https://dashscope.aliyuncs.com/compatible-mode/v1` |
+| `sttApiKey` | STT 专用 API Key（与其他模型分开填写） |
+| `sttModel` | 默认 `qwen-audio-3.0-asr-flash-streaming`。注意：该模型官方是 **WebSocket 实时模型**；DashScope OpenAI 兼容 HTTP 官方支持的是 `qwen3-asr-flash`。若中转平台对默认模型返回 400/模型不存在，请把此项改为 `qwen3-asr-flash` |
+| `sttLanguage` | 识别语言（`en`/`zh` 等），留空自动检测 |
+
+调用方式：`POST {sttBaseUrl}/chat/completions`，音频以 base64 data URL 传入 `input_audio`，`stream=true` 流式返回；`SpeechToText.OnTranscribePartial` 会把中间识别结果实时显示到 VR 视野（由 `Orchestrator.ShowFeedback` 展示）。
 
 ---
 

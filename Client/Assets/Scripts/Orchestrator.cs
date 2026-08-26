@@ -89,6 +89,12 @@ public class Orchestrator : MonoBehaviour
             {
                 ShowFeedback("Stop Recording. Translating...", true);
             };
+
+            // 流式转写：把中间识别结果实时展示到 VR 视野
+            sttHandler.OnTranscribePartial += (partialText) =>
+            {
+                if (!string.IsNullOrEmpty(partialText)) ShowFeedback(partialText, true);
+            };
         }
 
         // 语音结束时处理结果（VLM可能已完成）

@@ -6,15 +6,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using OpenAI;
-using OpenAI.Chat;
-using OpenAI.Audio;
+using System.Text;
 using UnityEngine.InputSystem;
 public class SpeechToText : MonoBehaviour
 {
-    [Header("API Configuration")]
-    private OpenAIClient openaiClient;
-
     [Header("Open/Close Auto Voice Detection")]
     [Tooltip("是否启用自动语音检测")]
     [SerializeField] private bool autoDetection = false;
@@ -52,10 +47,11 @@ public class SpeechToText : MonoBehaviour
     // 事件：转录成功后通知 LLM 模块
     public Action<string> OnTranscribeFinished;
 
+    // 事件：流式转写的中间结果（用于把识别内容实时展示到 VR 视野）
+    public Action<string> OnTranscribePartial;
+
     private void Start()
     {
-        openaiClient = new OpenAIClient(ApiConfig.Instance.Auth, ApiConfig.Instance.Settings);
-
         StartCoroutine(DelayedStart());
     }
 
@@ -252,13 +248,7 @@ public class SpeechToText : MonoBehaviour
     {
         try
         {
-            var request = new AudioTranscriptionRequest(
-                audioPath: audioFile,
-                model: ApiConfig.Instance.sttModel,
-                prompt: "Translate the user's voice command into valid text, ignoring interjections like umm, ok.",
-                temperature: 0.1f
-            );
-            var response = await openaiClient.AudioEndpoint.CreateTranscriptionTextAsync(request);
+            string response = await TranscribeQwenStreamAsync(audioFile);
 
             lastRecognizedText = response;
 
@@ -275,44 +265,159 @@ public class SpeechToText : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.LogError($"[SpeechToText] OpenAI API 调用失败: {e.Message}");
+            Debug.LogError($"[SpeechToText] Qwen ASR 调用失败: {e.Message}");
+        }
+    }
+
+    /// <summary>
+    /// 通过 OpenAI 兼容接口调用 Qwen ASR（流式）：
+    /// POST {sttBaseUrl}/chat/completions，音频以 base64 data URL 传入，stream=true；
+    /// 边接收 SSE 边通过 OnTranscribePartial 把中间结果实时展示到 VR 视野。
+    /// 返回完整识别文本；失败时返回空字符串并打印错误。
+    /// </summary>
+    private async Task<string> TranscribeQwenStreamAsync(string audioFile)
+    {
+        if (string.IsNullOrEmpty(ApiConfig.Instance.sttApiKey))
+        {
+            Debug.LogError("[SpeechToText] 未配置 STT API Key（ApiConfig.sttApiKey），请在 GlobalApiConfig.asset 中填写");
+            return "";
         }
 
-        /// ------------- Old Version (UnityWebRequest) ----------
-        // WWWForm form = new WWWForm();
-        // form.AddBinaryData("file", wavBytes, "audio.wav", "audio/wav");
-        // form.AddField("model", model);
-        // form.AddField("prompt", "Translate the user's voice command into valid text, ignoring interjections like umm, ok.");
+        byte[] wavBytes = File.ReadAllBytes(audioFile);
+        string base64 = Convert.ToBase64String(wavBytes);
 
-        // using (UnityWebRequest www = UnityWebRequest.Post(customApiUrl, form))
-        // {
-        //     www.SetRequestHeader("Authorization", "Bearer " + apiKey);
+        var asrOptions = new Dictionary<string, object> { ["enable_itn"] = false };
+        if (!string.IsNullOrEmpty(ApiConfig.Instance.sttLanguage))
+            asrOptions["language"] = ApiConfig.Instance.sttLanguage;
 
-        //     yield return www.SendWebRequest();
+        var payload = new Dictionary<string, object>
+        {
+            ["model"] = ApiConfig.Instance.sttModel,
+            ["stream"] = true,
+            ["messages"] = new List<object>
+            {
+                new Dictionary<string, object>
+                {
+                    ["role"] = "user",
+                    ["content"] = new List<object>
+                    {
+                        new Dictionary<string, object>
+                        {
+                            ["type"] = "input_audio",
+                            ["input_audio"] = new Dictionary<string, object>
+                            {
+                                ["data"] = "data:audio/wav;base64," + base64
+                            }
+                        }
+                    }
+                }
+            },
+            ["asr_options"] = asrOptions
+        };
 
-        //     if (www.result == UnityWebRequest.Result.Success)
-        //     {
-        //         var response = JsonConvert.DeserializeObject<OpenAISttResponse>(www.downloadHandler.text);
-        //         string text = response.text.Trim();
+        string json = JsonConvert.SerializeObject(payload);
 
-        //         // 更新 Inspector 显示
-        //         lastRecognizedText = text;
+        using (UnityWebRequest www = new UnityWebRequest(ApiConfig.Instance.sttBaseUrl + "/chat/completions", "POST"))
+        {
+            var sse = new SseTranscriptionHandler();
+            sse.OnPartial = partial => OnTranscribePartial?.Invoke(partial);
 
-        //         if (IsMeaningful(text))
-        //         {
-        //             Debug.Log($"<color=cyan>[SpeechToText] 转录结果: {text}</color>");
-        //             OnTranscribeFinished?.Invoke(text);
-        //         }
-        //         else
-        //         {
-        //             Debug.Log("<color=gray>[SpeechToText] 已过滤语气词: " + text + "</color>");
-        //         }
-        //     }
-        //     else
-        //     {
-        //         Debug.LogError("<color=cyan>[SpeechToText] STT API Error: " + www.error + "</color>");
-        //     }
-        // }
+            www.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(json));
+            www.downloadHandler = sse;
+            www.SetRequestHeader("Content-Type", "application/json");
+            www.SetRequestHeader("Authorization", "Bearer " + ApiConfig.Instance.sttApiKey);
+            www.timeout = 60;
+
+            var operation = www.SendWebRequest();
+            while (!operation.isDone) await Task.Yield();
+
+            // 最后一个 SSE 数据块可能没有 \n\n 结尾，强制解析残留缓冲
+            sse.FlushRemaining();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"[SpeechToText] Qwen ASR 请求失败 ({(int)www.responseCode}): {www.error}\n响应体: {www.downloadHandler?.text}");
+                return "";
+            }
+
+            return sse.FullText;
+        }
+    }
+
+    /// <summary>
+    /// 解析 OpenAI 兼容的 SSE 流式响应：
+    /// data: {"choices":[{"delta":{"content":"..."}}]}
+    /// 每个 delta 追加到完整文本，并通过 OnPartial 回调把中间结果实时展示。
+    /// </summary>
+    private class SseTranscriptionHandler : DownloadHandlerScript
+    {
+        private readonly StringBuilder _buffer = new StringBuilder();
+        private readonly StringBuilder _text = new StringBuilder();
+
+        public Action<string> OnPartial;
+        public string FullText => _text.ToString();
+
+        public SseTranscriptionHandler() : base(new byte[16384]) { }
+
+        /// <summary>请求结束时调用，解析缓冲区中未以 \n\n 结尾的残留数据。</summary>
+        public void FlushRemaining()
+        {
+            if (_buffer.Length == 0) return;
+            string rest = _buffer.ToString();
+            _buffer.Clear();
+            ProcessFrame(rest);
+        }
+
+        protected override bool ReceiveData(byte[] data, int dataLength)
+        {
+            if (data == null || dataLength == 0) return false;
+            _buffer.Append(Encoding.UTF8.GetString(data, 0, dataLength).Replace("\r\n", "\n"));
+            ProcessBuffer();
+            return true;
+        }
+
+        private void ProcessBuffer()
+        {
+            int sepIdx;
+            while ((sepIdx = _buffer.ToString().IndexOf("\n\n", StringComparison.Ordinal)) >= 0)
+            {
+                string frame = _buffer.ToString().Substring(0, sepIdx);
+                _buffer.Remove(0, sepIdx + 2);
+                ProcessFrame(frame);
+            }
+        }
+
+        private void ProcessFrame(string frame)
+        {
+            foreach (string rawLine in frame.Split('\n'))
+            {
+                string line = rawLine.Trim();
+                if (!line.StartsWith("data:")) continue;
+                string data = line.Substring(5).Trim();
+                if (string.IsNullOrEmpty(data) || data == "[DONE]") continue;
+
+                try
+                {
+                    var chunk = JsonConvert.DeserializeObject<StreamChunk>(data);
+                    string delta = (chunk != null && chunk.choices != null && chunk.choices.Count > 0)
+                        ? chunk.choices[0].delta?.content
+                        : null;
+                    if (!string.IsNullOrEmpty(delta))
+                    {
+                        _text.Append(delta);
+                        OnPartial?.Invoke(_text.ToString());
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.LogWarning($"[SpeechToText] 解析流式响应失败: {e.Message} | 原始: {data}");
+                }
+            }
+        }
+
+        private class StreamChunk { public List<StreamChoice> choices; }
+        private class StreamChoice { public StreamDelta delta; }
+        private class StreamDelta { public string content; }
     }
 
     private string SaveAudioData(byte[] audioData, string fileName = "audio.wav")
@@ -354,5 +459,4 @@ public class SpeechToText : MonoBehaviour
         return clean.Length > 1;
     }
 
-    public class OpenAISttResponse { public string text; }
 }
