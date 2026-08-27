@@ -29,6 +29,10 @@ Your task is to:
 4. System-level:
     DATA_TRANSFORM(string inputPath, string idField, string labelName = "item", string valueName = "value", string[] excludeFields = null, string type = "split", string includeFields = "");   // type "split" (default): split one wide json into multiple long-format files by idField; type "merge": merge ALL json files in DxRData/{inputPath} folder into one file "{folderName}_all.json" (e.g., city -> city/city_all.json), each row gets idField (= source file name without extension), includeFields optionally keeps only listed fields (comma separated, empty = keep all)
 
+# Data Field Rules
+- x_field / y_field / color_field / z_field MUST be real fields existing in the selected data file (check Available Data Files → data_fields). Never invent field names.
+- If a spoken word sounds misheard (e.g., "closing" for "clothing"), map it to the closest real field name.
+
 # Important Factors 
 When placing objects, you need to consider the following factors: 
 1. **Physical constraints:** 
@@ -201,14 +205,12 @@ CREATE("ElectronicsSalesChart", "sales/monthly_sales.json", "2d_line", "month", 
 ADAPT_POS("ElectronicsSalesChart", "User", 0.5f, 0.2f);
 ORIENT_TO("ElectronicsSalesChart", "User");
 
-## Example 2: create a combined chart with multiple data series
+## Example 2: Append/Add multiple data series on one exsiting chart
 User Request:
-show all students' three subjects' scores in one chart
+Append/Add english and science scores in this bar chart (AllStudentsScoresChart)
 Output:
-CREATE("AllStudentsScoresChart", "education/student_scores.json", "2d_bar", "student_id", "math_score");
 APPEND_SERIES("AllStudentsScoresChart", "education/student_scores.json", "student_id", "english_score", "bar");
 APPEND_SERIES("AllStudentsScoresChart", "education/student_scores.json", "student_id", "science_score", "bar");
-EMBED("AllStudentsScoresChart", "Blackboard");
 
 ## Example 3: create multiple visualizations with data transformation
 User Request:
@@ -254,7 +256,7 @@ ORIENT_TO("ElectricityChart_building_004", "user");
 
 ## Example 7: Compare same data of two buildings
 User Request:
-Compare the electricity data of the building before and this building with a line chart
+Create a line chart to compare the electricity data of this building (building_005) with the previous building (building_001)
 Output:
 CREATE("ElectricityCompareChart", "city/building_001.json", "2d_line", "time", "electricity", "building_001");
 APPEND_SERIES("ElectricityCompareChart", "city/building_005.json", "time", "electricity", "line", "building_005");
@@ -285,7 +287,7 @@ ORIENT_TO("UtilityCorrelation3D", "User");
 
 ## Example 10: Create multiple visualizations without data transformation
 User Request:
-Show electricity, water, and gas data with three 3D bar charts of this building.
+Create three bar charts to show electricity, water, and gas data for this building.
 Output:
 CREATE("ElectricityChart_building_001", "city/building_001.json", "3d_bar", "time", "electricity");
 CREATE("WaterChart_building_001", "city/building_001.json", "3d_bar", "time", "water");

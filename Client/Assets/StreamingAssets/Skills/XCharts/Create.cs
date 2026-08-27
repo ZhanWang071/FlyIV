@@ -1,12 +1,20 @@
 public class Create
     {
+        /// <summary>
+        /// 签名与 DxR/Create.cs 保持一致（含 color_field / color_type / z_field），
+        /// 避免 LLM 按通用 API 文档生成 7/8 个参数时出现 CS1501 编译失败。
+        /// 2D 图表不支持颜色编码：color_field 直接作为系列名（serie_name）使用，
+        /// color_type 与 z_field 在 2D 下忽略。
+        /// </summary>
         public static void Execute(
             string view_id,
             string data_path,
             string chart_type,
             string x_field,
             string y_field,
-            string serie_name = "")
+            string color_field = "",
+            string color_type = "",
+            string z_field = "")
     {
         Debug.Log("Executing CreateSkill logic...");
 
@@ -77,11 +85,11 @@ public class Create
         bool isRadar = ct == "radar";
 
         if (isPie)
-            PopulatePieChart(chart, dataArray, x_field, y_field, view_id, serie_name);
+            PopulatePieChart(chart, dataArray, x_field, y_field, view_id, color_field);
         else if (isRadar)
-            PopulateRadarChart(chart, dataArray, x_field, y_field, view_id, serie_name);
+            PopulateRadarChart(chart, dataArray, x_field, y_field, view_id, color_field);
         else
-            PopulateCartesianChart(chart, dataArray, x_field, y_field, view_id, ct, serie_name);
+            PopulateCartesianChart(chart, dataArray, x_field, y_field, view_id, ct, color_field);
 
         chart.RefreshChart();
 

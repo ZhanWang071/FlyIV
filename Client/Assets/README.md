@@ -292,7 +292,7 @@ ORIENT_TO("ElectricityCompareChart", "User");
 - `EMBED(view_id, object_id)` — 把 2D 图表平面映射到物体表面
 
 **视图级**：
-- `CREATE(view_id, data, chart_type, x_field, y_field, color_field = "", color_type = "", z_field = "")` — 创建图表（`2d_bar/2d_line/2d_pie/3d_bar/3d_scatter` 等）；3D 图表可用 `z_field` 编码第三个数据维度，用 `color_field + color_type("quantitative"/"nominal")` 编码颜色
+- `CREATE(view_id, data, chart_type, x_field, y_field, color_field = "", color_type = "", z_field = "")` — 创建图表（`2d_bar/2d_line/2d_pie/3d_bar/3d_scatter` 等）；3D 图表可用 `z_field` 编码第三个数据维度，用 `color_field + color_type("quantitative"/"nominal")` 编码颜色。2D 图表签名与 3D 一致（`XCharts/Create.cs` 内部把 `color_field` 当作系列名、忽略 `color_type/z_field`），避免 LLM 按通用签名传参导致编译失败
 - `DELETE(view_id)` / `POSITION(view_id, x, y, z)` / `ROTATE(...)` / `SCALE(...)`
 - `LAYOUT(List<view_id>, distance, height_offset, "arc"|"grid")` — 批量布局
 
@@ -315,6 +315,8 @@ ORIENT_TO("ElectricityCompareChart", "User");
 3. 函数名下划线转大驼峰：`ORIENT_TO` → `OrientTo`、`CREATE` → `Create`。
 4. 查找脚本：`StreamingAssets/Skills/{ClassName}.cs` → `StreamingAssets/Skills/{skillsFolder}/{ClassName}.cs`。
 5. 用 Roslyn 编译执行拼接后的代码：`{Skill源码}\n{ClassName}.Execute({args});`。
+
+> 每条 skill 的逐条执行结果（✓ 成功 / ✗ 编译错误、找不到文件等）会由 `ActionExecutor.LastExecutionLog` 记录，并在正式语音工作流中写入 UserStudy 日志的 `[Skill Execution]` 段，便于排查"生成了序列但没效果"的问题。
 
 ### 7.3 2D 与 3D 的差异
 

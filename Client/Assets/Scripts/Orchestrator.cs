@@ -210,7 +210,7 @@ public class Orchestrator : MonoBehaviour
     /// Appends one interaction block (userPrompt + APICalls + timings) to the log file.
     /// Pass -1 for llmSeconds or executorSeconds when the corresponding step was skipped.
     /// </summary>
-    private void AppendInteractionLog(string prompt, string apiCalls,
+    private void AppendInteractionLog(string prompt, string apiCalls, string executionLog,
         double llmSeconds, double executorSeconds, double totalSeconds,
         double voiceSeconds, double speechToFinishSeconds)
     {
@@ -228,7 +228,8 @@ public class Orchestrator : MonoBehaviour
             $"[Timing]  Voice→STT: {voiceStr}  |  LLM: {llmStr}  |  Executor: {executorStr}  |  Total(workflow): {totalSeconds:F2}s  |  Total(speech→finish): {speechToFinishStr}{System.Environment.NewLine}" +
             $"{separator}{System.Environment.NewLine}" +
             $"[User Prompt]{System.Environment.NewLine}{prompt}{System.Environment.NewLine}" +
-            $"{System.Environment.NewLine}[Generated Sequence]{System.Environment.NewLine}{(string.IsNullOrEmpty(apiCalls) ? "(not generated)" : apiCalls)}{System.Environment.NewLine}";
+            $"{System.Environment.NewLine}[Generated Sequence]{System.Environment.NewLine}{(string.IsNullOrEmpty(apiCalls) ? "(not generated)" : apiCalls)}{System.Environment.NewLine}" +
+            $"{System.Environment.NewLine}[Skill Execution]{System.Environment.NewLine}{(string.IsNullOrEmpty(executionLog) ? "(not executed)" : executionLog)}{System.Environment.NewLine}";
 
         try
         {
@@ -365,6 +366,11 @@ public class Orchestrator : MonoBehaviour
             UnityEngine.Debug.Log($"<color=yellow>[Timer] ExecuteSkillSequence 耗时: {executorElapsed:F2} s</color>");
         }
 
+        // 汇总本次 skill 的逐条执行结果（成功/编译错误等），写入 UserStudy 日志
+        string executionLog = (actionExecutor.LastExecutionLog != null && actionExecutor.LastExecutionLog.Count > 0)
+            ? string.Join(System.Environment.NewLine, actionExecutor.LastExecutionLog)
+            : "";
+
         if (!message) ShowFeedback("Task done. Input next command...");
 
         totalSw.Stop();
@@ -383,7 +389,7 @@ public class Orchestrator : MonoBehaviour
         }
 
         // --- Write interaction to log ---
-        AppendInteractionLog(userPrompt, APICalls, llmElapsed, executorElapsed, totalElapsed, voiceElapsed, speechToFinishElapsed);
+        AppendInteractionLog(userPrompt, APICalls, executionLog, llmElapsed, executorElapsed, totalElapsed, voiceElapsed, speechToFinishElapsed);
 
         UnityEngine.Debug.Log($"<color=yellow>[Timer] 总耗时: {totalElapsed:F2} s</color>");
         if (speechToFinishElapsed >= 0)

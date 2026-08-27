@@ -66602,7 +66602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 179.713, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.00000004840866, y: 1.8}
+  m_AnchoredPosition: {x: 0, y: 1.8}
   m_SizeDelta: {x: 368.64, y: 144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1055927519
@@ -71420,9 +71420,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1055927518}
   - {fileID: 23901412}
   - {fileID: 1483506472}
+  - {fileID: 1055927518}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1135745088
@@ -106230,6 +106230,7 @@ MonoBehaviour:
     "Blackboard");
 
 '
+  LastExecutionLog: []
 --- !u!114 &1687222474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106330,7 +106331,7 @@ MonoBehaviour:
   currentScene: 2
   classroom: {fileID: 122912966}
   city: {fileID: 8771091788274259170}
-  participantID: 2
+  participantID: -1
   cameraRig: {fileID: 243533547}
   teleportConfigs:
   - scene: 0

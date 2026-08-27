@@ -56,6 +56,12 @@ public class ActionExecutor : MonoBehaviour
     /// </summary>
     private readonly Dictionary<string, Script> _compiledSkillCache = new Dictionary<string, Script>();
 
+    /// <summary>
+    /// 最近一次 ExecuteSkillSequence 的逐条执行结果（成功/编译错误/找不到文件等），
+    /// 供 Orchestrator 写入 UserStudy 日志，便于在日志中直接定位失败原因。
+    /// </summary>
+    public List<string> LastExecutionLog = new List<string>();
+
     private void OnDisable()
     {
         // 1. 触发取消信号，终止所有正在运行的 Roslyn 任务
@@ -144,6 +150,7 @@ public class ActionExecutor : MonoBehaviour
 
         skillSequence = skillOutput;
         executeCodes = "";
+        LastExecutionLog.Clear();
 
         // 正则表达式匹配：函数名(所有参数内容)
         string pattern = @"(\w+)\s*\((.*?)\);";
@@ -231,12 +238,15 @@ public class ActionExecutor : MonoBehaviour
         string filePath = ResolveSkillFilePath(className);
         if (!File.Exists(filePath))
         {
-            Debug.LogError($"[ActionExecutor] 找不到 Skill 文件: {filePath}");
+            string msg = $"[ActionExecutor] ✗ {codeLine} — 找不到 Skill 文件: {filePath}";
+            Debug.LogError(msg);
+            LastExecutionLog.Add(msg);
             return;
         }
 
         try
         {
+            string okMsg = $"[ActionExecutor] ✓ {codeLine}";
             // 首次遇到该 Skill 文件：完整编译一次并缓存；
             // 之后同文件的调用通过 ContinueWith 只追加编译一行调用代码，
             // 大幅减少重复编译开销，同时保持“每个函数独立执行、互不影响”。
@@ -257,14 +267,20 @@ public class ActionExecutor : MonoBehaviour
 
             Debug.Log($"[ActionExecutor]: {codeLine}");
             await skillScript.ContinueWith(codeLine).RunAsync(cancellationToken: _cts.Token);
+            LastExecutionLog.Add(okMsg);
         }
         catch (OperationCanceledException)
         {
-            Debug.Log("[ActionExecutor] 执行已被用户停止。");
+            string msg = "[ActionExecutor] ✗ 执行已被用户停止。";
+            Debug.Log(msg);
+            LastExecutionLog.Add(msg);
         }
         catch (Exception e)
         {
+            string oneLine = (e.Message ?? "").Replace("\r", " ").Replace("\n", " ");
+            string msg = $"[ActionExecutor] ✗ {codeLine} — 执行失败: {oneLine}";
             Debug.LogError($"[Roslyn Error] 执行失败: {e.Message}");
+            LastExecutionLog.Add(msg);
         }
     }
 
