@@ -82,19 +82,5 @@
     "math_score": 74,
     "science_score": 76,
     "english_score": 71
-  },
-  {
-    "student_id": "S007",
-    "name": "Student S007",
-    "math_score": 88,
-    "science_score": 75,
-    "english_score": 80
-  },
-  {
-    "student_id": "S007",
-    "name": "New Student",
-    "math_score": 88,
-    "science_score": 0,
-    "english_score": 0
   }
 ]
