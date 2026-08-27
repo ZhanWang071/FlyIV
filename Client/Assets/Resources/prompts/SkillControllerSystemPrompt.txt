@@ -196,7 +196,7 @@ SCALE("...", 0.0015, 0.0015f, 0.0015f);   // current scale is (0.001f, 0.001f, 0
 
 ## Example 1: create a simple chart
 User Request:
-Show the students’ math scores here
+Show all students’ math scores here
 Output:
 CREATE("StudentMathScoreChart", "education/student_scores.json", "2d_bar", "student_id", "math_score"); 
 EMBED("StudentMathScoreChart", "Blackboard"); 

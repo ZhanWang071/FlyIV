@@ -1,0 +1,6611 @@
+=== User Study Log ===
+Participant : 3
+Scene       : City
+Started     : 2026-08-27 19:15:54
+============================================================
+
+============================================================
+Interaction #1  |  19:17:17
+[Timing]  Voice→STT: 6.99s  |  LLM: 6.34s  |  Executor: 2.88s  |  Total(workflow): 9.25s  |  Total(speech→finish): 16.25s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": 6.5,
+      "y": 2.51,
+      "z": -6.11
+    },
+    "forward": {
+      "x": -0.71,
+      "y": -0.19,
+      "z": 0.68
+    },
+    "right": {
+      "x": 0.68,
+      "y": 0.05,
+      "z": 0.73
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "building_001",
+        "position": {
+          "x": -1.02,
+          "y": 1.81,
+          "z": 1.21
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.02,
+            "y": 0.91,
+            "z": 1.21
+          },
+          "size": {
+            "x": 1.09,
+            "y": 1.78,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_002",
+        "position": {
+          "x": 0.99,
+          "y": 1.23,
+          "z": -3.48
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.99,
+            "y": 0.67,
+            "z": -3.48
+          },
+          "size": {
+            "x": 1.27,
+            "y": 1.14,
+            "z": 0.65
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_003",
+        "position": {
+          "x": 1.94,
+          "y": 2.33,
+          "z": -2.42
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.94,
+            "y": 1.21,
+            "z": -2.42
+          },
+          "size": {
+            "x": 0.61,
+            "y": 2.24,
+            "z": 1.25
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_004",
+        "position": {
+          "x": 2.31,
+          "y": 1.62,
+          "z": -1.16
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 2.31,
+            "y": 0.82,
+            "z": -1.16
+          },
+          "size": {
+            "x": 1.27,
+            "y": 1.6,
+            "z": 0.65
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_005",
+        "position": {
+          "x": -2.41,
+          "y": 1.39,
+          "z": 1.32
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.41,
+            "y": 0.7,
+            "z": 1.32
+          },
+          "size": {
+            "x": 1.29,
+            "y": 1.37,
+            "z": 0.88
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_006",
+        "position": {
+          "x": -0.19,
+          "y": 0.54,
+          "z": 2.27
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.19,
+            "y": 0.26,
+            "z": 2.27
+          },
+          "size": {
+            "x": 1.47,
+            "y": 0.56,
+            "z": 2.24
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_007",
+        "position": {
+          "x": -4.03,
+          "y": 0.67,
+          "z": -1.23
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -4.03,
+            "y": 0.35,
+            "z": -1.23
+          },
+          "size": {
+            "x": 0.86,
+            "y": 0.64,
+            "z": 0.68
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_008",
+        "position": {
+          "x": -2.41,
+          "y": 2.06,
+          "z": -3.58
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.41,
+            "y": 1.16,
+            "z": -3.58
+          },
+          "size": {
+            "x": 1.15,
+            "y": 1.79,
+            "z": 0.48
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_009",
+        "position": {
+          "x": -5.24,
+          "y": 1.96,
+          "z": 3.52
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -5.24,
+            "y": 1.06,
+            "z": 3.52
+          },
+          "size": {
+            "x": 1.15,
+            "y": 1.79,
+            "z": 0.48
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_010",
+        "position": {
+          "x": -6.75,
+          "y": 1.92,
+          "z": 2.4
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -6.75,
+            "y": 1.03,
+            "z": 2.4
+          },
+          "size": {
+            "x": 0.48,
+            "y": 1.79,
+            "z": 1.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_011",
+        "position": {
+          "x": -2.67,
+          "y": 2.02,
+          "z": -2.59
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.67,
+            "y": 1.12,
+            "z": -2.59
+          },
+          "size": {
+            "x": 0.48,
+            "y": 1.79,
+            "z": 1.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_012",
+        "position": {
+          "x": 5.51,
+          "y": 1.97,
+          "z": -2.21
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 5.51,
+            "y": 1.08,
+            "z": -2.21
+          },
+          "size": {
+            "x": 0.48,
+            "y": 1.79,
+            "z": 1.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_013",
+        "position": {
+          "x": 7.42,
+          "y": 2.7,
+          "z": -1.26
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 7.42,
+            "y": 1.37,
+            "z": -1.26
+          },
+          "size": {
+            "x": 1.35,
+            "y": 2.65,
+            "z": 1.35
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_014",
+        "position": {
+          "x": 0.75,
+          "y": 1.23,
+          "z": -1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.75,
+            "y": 0.62,
+            "z": -1.0
+          },
+          "size": {
+            "x": 0.84,
+            "y": 1.23,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_015",
+        "position": {
+          "x": 0.64,
+          "y": 0.54,
+          "z": -1.71
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.64,
+            "y": 0.29,
+            "z": -1.71
+          },
+          "size": {
+            "x": 0.59,
+            "y": 0.5,
+            "z": 0.9
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_016",
+        "position": {
+          "x": -0.68,
+          "y": 0.4,
+          "z": 3.51
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.68,
+            "y": 0.21,
+            "z": 3.51
+          },
+          "size": {
+            "x": 0.47,
+            "y": 0.38,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_017",
+        "position": {
+          "x": 1.35,
+          "y": 1.52,
+          "z": -1.36
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.35,
+            "y": 0.77,
+            "z": -1.36
+          },
+          "size": {
+            "x": 0.39,
+            "y": 1.49,
+            "z": 1.18
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_018",
+        "position": {
+          "x": -2.12,
+          "y": 1.5,
+          "z": 2.22
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.12,
+            "y": 0.76,
+            "z": 2.22
+          },
+          "size": {
+            "x": 1.17,
+            "y": 1.48,
+            "z": 0.39
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": 6.55,
+          "y": 2.5,
+          "z": -6.09
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 6.55,
+            "y": 1.65,
+            "z": -6.09
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": -0.68,
+            "y": -0.21,
+            "z": 0.7
+          },
+          "right": {
+            "x": 0.72,
+            "y": -0.03,
+            "z": 0.69
+          },
+          "up": {
+            "x": -0.13,
+            "y": 0.98,
+            "z": 0.17
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "building_001",
+        "target": "building_002",
+        "relation": "right"
+      },
+      {
+        "object": "building_001",
+        "target": "building_003",
+        "relation": "right"
+      },
+      {
+        "object": "building_001",
+        "target": "building_004",
+        "relation": "left"
+      },
+      {
+        "object": "building_001",
+        "target": "building_005",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "building_006",
+        "relation": "above"
+      },
+      {
+        "object": "building_001",
+        "target": "building_007",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_001",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_001",
+        "target": "building_014",
+        "relation": "right"
+      },
+      {
+        "object": "building_001",
+        "target": "building_015",
+        "relation": "right"
+      },
+      {
+        "object": "building_001",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "building_017",
+        "relation": "right"
+      },
+      {
+        "object": "building_001",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_002",
+        "target": "building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_002",
+        "target": "building_003",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_004",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_005",
+        "relation": "left"
+      },
+      {
+        "object": "building_002",
+        "target": "building_009",
+        "relation": "left"
+      },
+      {
+        "object": "building_002",
+        "target": "building_010",
+        "relation": "right"
+      },
+      {
+        "object": "building_002",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_017",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_003",
+        "target": "building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_003",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_003",
+        "target": "building_004",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_003",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "building_003",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_003",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_017",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_003",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_004",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_004",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_004",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_004",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_004",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "building_004",
+        "target": "building_008",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_004",
+        "target": "building_012",
+        "relation": "left"
+      },
+      {
+        "object": "building_004",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_004",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_004",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_004",
+        "target": "building_017",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_004",
+        "target": "building_018",
+        "relation": "right"
+      },
+      {
+        "object": "building_004",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_005",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "building_002",
+        "relation": "right"
+      },
+      {
+        "object": "building_005",
+        "target": "building_003",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_004",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "building_007",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_005",
+        "target": "building_014",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_015",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "building_017",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_006",
+        "target": "building_001",
+        "relation": "below"
+      },
+      {
+        "object": "building_006",
+        "target": "building_003",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "building_004",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "building_005",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_007",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_006",
+        "target": "building_012",
+        "relation": "left"
+      },
+      {
+        "object": "building_006",
+        "target": "building_014",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_017",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_007",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_007",
+        "target": "building_005",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_007",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_007",
+        "target": "building_008",
+        "relation": "right"
+      },
+      {
+        "object": "building_007",
+        "target": "building_010",
+        "relation": "left"
+      },
+      {
+        "object": "building_007",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_007",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_007",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_008",
+        "target": "building_004",
+        "relation": "behind"
+      },
+      {
+        "object": "building_008",
+        "target": "building_007",
+        "relation": "left"
+      },
+      {
+        "object": "building_008",
+        "target": "building_010",
+        "relation": "left"
+      },
+      {
+        "object": "building_008",
+        "target": "building_011",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_008",
+        "target": "building_014",
+        "relation": "behind"
+      },
+      {
+        "object": "building_008",
+        "target": "building_015",
+        "relation": "behind"
+      },
+      {
+        "object": "building_008",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_009",
+        "target": "building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_002",
+        "relation": "right"
+      },
+      {
+        "object": "building_009",
+        "target": "building_003",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_005",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_009",
+        "target": "building_014",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_015",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_017",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_010",
+        "target": "building_002",
+        "relation": "left"
+      },
+      {
+        "object": "building_010",
+        "target": "building_007",
+        "relation": "right"
+      },
+      {
+        "object": "building_010",
+        "target": "building_008",
+        "relation": "right"
+      },
+      {
+        "object": "building_010",
+        "target": "building_009",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_011",
+        "relation": "right"
+      },
+      {
+        "object": "building_011",
+        "target": "building_001",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_006",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_007",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_008",
+        "relation": "behind"
+      },
+      {
+        "object": "building_011",
+        "target": "building_010",
+        "relation": "left"
+      },
+      {
+        "object": "building_011",
+        "target": "building_014",
+        "relation": "behind"
+      },
+      {
+        "object": "building_011",
+        "target": "building_015",
+        "relation": "behind"
+      },
+      {
+        "object": "building_011",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_012",
+        "target": "building_004",
+        "relation": "right"
+      },
+      {
+        "object": "building_012",
+        "target": "building_006",
+        "relation": "right"
+      },
+      {
+        "object": "building_012",
+        "target": "building_013",
+        "relation": "behind"
+      },
+      {
+        "object": "building_012",
+        "target": "building_016",
+        "relation": "right"
+      },
+      {
+        "object": "building_012",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_013",
+        "target": "building_012",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_014",
+        "target": "building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_014",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_004",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_014",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "building_014",
+        "target": "building_008",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_014",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_014",
+        "target": "building_011",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_014",
+        "target": "building_015",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_014",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_015",
+        "target": "building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_015",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_004",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_015",
+        "target": "building_008",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_015",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_015",
+        "target": "building_011",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_015",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_015",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_015",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_016",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_004",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_007",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_012",
+        "relation": "left"
+      },
+      {
+        "object": "building_016",
+        "target": "building_017",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_016",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_017",
+        "target": "building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_017",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_017",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_017",
+        "target": "building_004",
+        "relation": "behind"
+      },
+      {
+        "object": "building_017",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_017",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "building_017",
+        "target": "building_008",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_017",
+        "target": "building_011",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_017",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_017",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_018",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_002",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_003",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_004",
+        "relation": "left"
+      },
+      {
+        "object": "building_018",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_007",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_014",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_015",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_016",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_017",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "User",
+        "relation": "left"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "Plane",
+      "position": {
+        "x": 4.96,
+        "y": -0.1,
+        "z": -2.14
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h1",
+      "object": "building_004",
+      "position": {
+        "x": 2.68,
+        "y": 1.45,
+        "z": -1.49
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h2",
+      "object": "Plane",
+      "position": {
+        "x": 4.96,
+        "y": -0.1,
+        "z": -2.14
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h3",
+      "object": "building_004",
+      "position": {
+        "x": 2.68,
+        "y": 1.45,
+        "z": -1.49
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h4",
+      "object": "Plane",
+      "position": {
+        "x": 4.96,
+        "y": -0.1,
+        "z": -2.14
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h5",
+      "object": "building_004",
+      "position": {
+        "x": 2.68,
+        "y": 1.45,
+        "z": -1.49
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h6",
+      "object": "Plane",
+      "position": {
+        "x": 4.96,
+        "y": -0.1,
+        "z": -2.14
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h7",
+      "object": "building_004",
+      "position": {
+        "x": 2.69,
+        "y": 1.44,
+        "z": -1.49
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h8",
+      "object": "Plane",
+      "position": {
+        "x": 4.96,
+        "y": -0.1,
+        "z": -2.14
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h9",
+      "object": "building_004",
+      "position": {
+        "x": 2.69,
+        "y": 1.44,
+        "z": -1.49
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h10",
+      "object": "Plane",
+      "position": {
+        "x": 4.96,
+        "y": -0.1,
+        "z": -2.14
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h11",
+      "object": "building_004",
+      "position": {
+        "x": 2.71,
+        "y": 1.44,
+        "z": -1.49
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h12",
+      "object": "Plane",
+      "position": {
+        "x": 4.96,
+        "y": -0.1,
+        "z": -2.14
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h13",
+      "object": "building_004",
+      "position": {
+        "x": 2.73,
+        "y": 1.43,
+        "z": -1.49
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h14",
+      "object": "Plane",
+      "position": {
+        "x": 4.97,
+        "y": -0.1,
+        "z": -2.14
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h15",
+      "object": "building_004",
+      "position": {
+        "x": 2.76,
+        "y": 1.42,
+        "z": -1.49
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h16",
+      "object": "Plane",
+      "position": {
+        "x": 4.97,
+        "y": -0.1,
+        "z": -2.14
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h17",
+      "object": "building_004",
+      "position": {
+        "x": 2.8,
+        "y": 1.4,
+        "z": -1.49
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h18",
+      "object": "Plane",
+      "position": {
+        "x": 4.97,
+        "y": -0.1,
+        "z": -2.14
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h19",
+      "object": "building_004",
+      "position": {
+        "x": 2.88,
+        "y": 1.37,
+        "z": -1.49
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h20",
+      "object": "Plane",
+      "position": {
+        "x": 4.98,
+        "y": -0.1,
+        "z": -2.14
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h21",
+      "object": "building_004",
+      "position": {
+        "x": 2.94,
+        "y": 1.36,
+        "z": -1.48
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h22",
+      "object": "Plane",
+      "position": {
+        "x": 4.98,
+        "y": -0.1,
+        "z": -2.13
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h23",
+      "object": "building_004",
+      "position": {
+        "x": 2.94,
+        "y": 1.36,
+        "z": -1.44
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h24",
+      "object": "Plane",
+      "position": {
+        "x": 4.99,
+        "y": -0.1,
+        "z": -2.13
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h25",
+      "object": "building_004",
+      "position": {
+        "x": 2.94,
+        "y": 1.36,
+        "z": -1.42
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h26",
+      "object": "Plane",
+      "position": {
+        "x": 5.0,
+        "y": -0.1,
+        "z": -2.13
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h27",
+      "object": "building_004",
+      "position": {
+        "x": 2.94,
+        "y": 1.36,
+        "z": -1.39
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h28",
+      "object": "Plane",
+      "position": {
+        "x": 5.01,
+        "y": -0.1,
+        "z": -2.12
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h29",
+      "object": "building_004",
+      "position": {
+        "x": 2.94,
+        "y": 1.37,
+        "z": -1.38
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  ],
+  "user_request": "Show the usage of the electricity of all the buildings in one day.",
+  "data_info": null
+}
+
+[Generated Sequence]
+DATA_TRANSFORM("city", "building", type: "merge"); 
+CREATE("CityElectricityUsage", "city/city_all.json", "3d_bar", "time", "electricity", "electricity", "quantitative", "building"); 
+SCALE("CityElectricityUsage", 3f, 3f, 3f); 
+ADAPT_POS("CityElectricityUsage", "User", 1.5f, 0.2f); 
+ORIENT_TO("CityElectricityUsage", "User"); 
+
+[Skill Execution]
+[ActionExecutor] ✓ DataTransform.Execute("city", "building", type: "merge");
+[ActionExecutor] ✓ Create.Execute("CityElectricityUsage",  "city/city_all.json", "bar",  "time",  "electricity",  "electricity",  "quantitative",  "building");
+[ActionExecutor] ✓ Scale.Execute("CityElectricityUsage", 3f, 3f, 3f);
+[ActionExecutor] ✓ AdaptPos.Execute("CityElectricityUsage", "User", 1.5f, 0.2f);
+[ActionExecutor] ✓ OrientTo.Execute("CityElectricityUsage", "User");
+
+============================================================
+Interaction #2  |  19:17:59
+[Timing]  Voice→STT: 6.14s  |  LLM: 5.29s  |  Executor: 0.24s  |  Total(workflow): 5.54s  |  Total(speech→finish): 11.68s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": 7.76,
+      "y": 2.59,
+      "z": -6.41
+    },
+    "forward": {
+      "x": -0.64,
+      "y": -0.13,
+      "z": 0.75
+    },
+    "right": {
+      "x": 0.76,
+      "y": 0.05,
+      "z": 0.65
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "building_001",
+        "position": {
+          "x": -1.02,
+          "y": 1.81,
+          "z": 1.21
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.02,
+            "y": 0.91,
+            "z": 1.21
+          },
+          "size": {
+            "x": 1.09,
+            "y": 1.78,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_002",
+        "position": {
+          "x": 0.99,
+          "y": 1.23,
+          "z": -3.48
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.99,
+            "y": 0.67,
+            "z": -3.48
+          },
+          "size": {
+            "x": 1.27,
+            "y": 1.14,
+            "z": 0.65
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_003",
+        "position": {
+          "x": 1.94,
+          "y": 2.33,
+          "z": -2.42
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.94,
+            "y": 1.21,
+            "z": -2.42
+          },
+          "size": {
+            "x": 0.61,
+            "y": 2.24,
+            "z": 1.25
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_004",
+        "position": {
+          "x": 2.31,
+          "y": 1.62,
+          "z": -1.16
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 2.31,
+            "y": 0.82,
+            "z": -1.16
+          },
+          "size": {
+            "x": 1.27,
+            "y": 1.6,
+            "z": 0.65
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_005",
+        "position": {
+          "x": -2.41,
+          "y": 1.39,
+          "z": 1.32
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.41,
+            "y": 0.7,
+            "z": 1.32
+          },
+          "size": {
+            "x": 1.29,
+            "y": 1.37,
+            "z": 0.88
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_006",
+        "position": {
+          "x": -0.19,
+          "y": 0.54,
+          "z": 2.27
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.19,
+            "y": 0.26,
+            "z": 2.27
+          },
+          "size": {
+            "x": 1.47,
+            "y": 0.56,
+            "z": 2.24
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_007",
+        "position": {
+          "x": -4.03,
+          "y": 0.67,
+          "z": -1.23
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -4.03,
+            "y": 0.35,
+            "z": -1.23
+          },
+          "size": {
+            "x": 0.86,
+            "y": 0.64,
+            "z": 0.68
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_008",
+        "position": {
+          "x": -2.41,
+          "y": 2.06,
+          "z": -3.58
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.41,
+            "y": 1.16,
+            "z": -3.58
+          },
+          "size": {
+            "x": 1.15,
+            "y": 1.79,
+            "z": 0.48
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_009",
+        "position": {
+          "x": -5.24,
+          "y": 1.96,
+          "z": 3.52
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -5.24,
+            "y": 1.06,
+            "z": 3.52
+          },
+          "size": {
+            "x": 1.15,
+            "y": 1.79,
+            "z": 0.48
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_010",
+        "position": {
+          "x": -6.75,
+          "y": 1.92,
+          "z": 2.4
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -6.75,
+            "y": 1.03,
+            "z": 2.4
+          },
+          "size": {
+            "x": 0.48,
+            "y": 1.79,
+            "z": 1.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_011",
+        "position": {
+          "x": -2.67,
+          "y": 2.02,
+          "z": -2.59
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.67,
+            "y": 1.12,
+            "z": -2.59
+          },
+          "size": {
+            "x": 0.48,
+            "y": 1.79,
+            "z": 1.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_012",
+        "position": {
+          "x": 5.51,
+          "y": 1.97,
+          "z": -2.21
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 5.51,
+            "y": 1.08,
+            "z": -2.21
+          },
+          "size": {
+            "x": 0.48,
+            "y": 1.79,
+            "z": 1.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_013",
+        "position": {
+          "x": 7.42,
+          "y": 2.7,
+          "z": -1.26
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 7.42,
+            "y": 1.37,
+            "z": -1.26
+          },
+          "size": {
+            "x": 1.35,
+            "y": 2.65,
+            "z": 1.35
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_014",
+        "position": {
+          "x": 0.75,
+          "y": 1.23,
+          "z": -1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.75,
+            "y": 0.62,
+            "z": -1.0
+          },
+          "size": {
+            "x": 0.84,
+            "y": 1.23,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_015",
+        "position": {
+          "x": 0.64,
+          "y": 0.54,
+          "z": -1.71
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.64,
+            "y": 0.29,
+            "z": -1.71
+          },
+          "size": {
+            "x": 0.59,
+            "y": 0.5,
+            "z": 0.9
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_016",
+        "position": {
+          "x": -0.68,
+          "y": 0.4,
+          "z": 3.51
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.68,
+            "y": 0.21,
+            "z": 3.51
+          },
+          "size": {
+            "x": 0.47,
+            "y": 0.38,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_017",
+        "position": {
+          "x": 1.35,
+          "y": 1.52,
+          "z": -1.36
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.35,
+            "y": 0.77,
+            "z": -1.36
+          },
+          "size": {
+            "x": 0.39,
+            "y": 1.49,
+            "z": 1.18
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_018",
+        "position": {
+          "x": -2.12,
+          "y": 1.5,
+          "z": 2.22
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.12,
+            "y": 0.76,
+            "z": 2.22
+          },
+          "size": {
+            "x": 1.17,
+            "y": 1.48,
+            "z": 0.39
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "CityElectricityUsage",
+        "position": {
+          "x": 4.92,
+          "y": 3.42,
+          "z": -4.64
+        },
+        "scale": {
+          "x": 3.0,
+          "y": 3.0,
+          "z": 3.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.92,
+            "y": 2.26,
+            "z": -4.64
+          },
+          "size": {
+            "x": 2.68,
+            "y": 2.33,
+            "z": 2.31
+          },
+          "forward": {
+            "x": -0.64,
+            "y": -0.11,
+            "z": 0.76
+          },
+          "right": {
+            "x": 0.77,
+            "y": 0.0,
+            "z": 0.64
+          },
+          "up": {
+            "x": -0.07,
+            "y": 0.99,
+            "z": 0.09
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": 7.77,
+          "y": 2.59,
+          "z": -6.41
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 7.77,
+            "y": 1.74,
+            "z": -6.41
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": -0.62,
+            "y": -0.12,
+            "z": 0.78
+          },
+          "right": {
+            "x": 0.78,
+            "y": -0.05,
+            "z": 0.62
+          },
+          "up": {
+            "x": -0.03,
+            "y": 0.99,
+            "z": 0.12
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "building_001",
+        "target": "building_002",
+        "relation": "right"
+      },
+      {
+        "object": "building_001",
+        "target": "building_003",
+        "relation": "left"
+      },
+      {
+        "object": "building_001",
+        "target": "building_004",
+        "relation": "left"
+      },
+      {
+        "object": "building_001",
+        "target": "building_005",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "building_006",
+        "relation": "above"
+      },
+      {
+        "object": "building_001",
+        "target": "building_007",
+        "relation": "behind"
+      },
+      {
+        "object": "building_001",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_001",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_001",
+        "target": "building_014",
+        "relation": "left"
+      },
+      {
+        "object": "building_001",
+        "target": "building_015",
+        "relation": "right"
+      },
+      {
+        "object": "building_001",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "building_017",
+        "relation": "left"
+      },
+      {
+        "object": "building_001",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "CityElectricityUsage",
+        "relation": "left"
+      },
+      {
+        "object": "building_002",
+        "target": "building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_002",
+        "target": "building_003",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_004",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_005",
+        "relation": "left"
+      },
+      {
+        "object": "building_002",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_002",
+        "target": "building_012",
+        "relation": "behind"
+      },
+      {
+        "object": "building_002",
+        "target": "building_014",
+        "relation": "left"
+      },
+      {
+        "object": "building_002",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_017",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_002",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_003",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_003",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_003",
+        "target": "building_004",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_003",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "building_003",
+        "target": "building_008",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_003",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_003",
+        "target": "building_017",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_003",
+        "target": "building_018",
+        "relation": "right"
+      },
+      {
+        "object": "building_003",
+        "target": "CityElectricityUsage",
+        "relation": "left"
+      },
+      {
+        "object": "building_004",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_004",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_004",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_004",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "building_004",
+        "target": "building_008",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_004",
+        "target": "building_011",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_004",
+        "target": "building_012",
+        "relation": "left"
+      },
+      {
+        "object": "building_004",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_004",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_004",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_004",
+        "target": "building_017",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_004",
+        "target": "building_018",
+        "relation": "right"
+      },
+      {
+        "object": "building_004",
+        "target": "CityElectricityUsage",
+        "relation": "right"
+      },
+      {
+        "object": "building_004",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "building_002",
+        "relation": "right"
+      },
+      {
+        "object": "building_005",
+        "target": "building_003",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "building_007",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_005",
+        "target": "building_014",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_015",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "building_017",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_001",
+        "relation": "below"
+      },
+      {
+        "object": "building_006",
+        "target": "building_003",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "building_004",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "building_005",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_007",
+        "relation": "behind"
+      },
+      {
+        "object": "building_006",
+        "target": "building_012",
+        "relation": "left"
+      },
+      {
+        "object": "building_006",
+        "target": "building_014",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "building_015",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_017",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "CityElectricityUsage",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_007",
+        "target": "building_001",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_007",
+        "target": "building_005",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_007",
+        "target": "building_006",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_007",
+        "target": "building_008",
+        "relation": "right"
+      },
+      {
+        "object": "building_007",
+        "target": "building_010",
+        "relation": "left"
+      },
+      {
+        "object": "building_007",
+        "target": "building_011",
+        "relation": "behind"
+      },
+      {
+        "object": "building_007",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_007",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_008",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_008",
+        "target": "building_004",
+        "relation": "behind"
+      },
+      {
+        "object": "building_008",
+        "target": "building_007",
+        "relation": "left"
+      },
+      {
+        "object": "building_008",
+        "target": "building_010",
+        "relation": "left"
+      },
+      {
+        "object": "building_008",
+        "target": "building_011",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_008",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_008",
+        "target": "building_015",
+        "relation": "behind"
+      },
+      {
+        "object": "building_008",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_009",
+        "target": "building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_002",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_003",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_005",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_009",
+        "target": "building_011",
+        "relation": "right"
+      },
+      {
+        "object": "building_009",
+        "target": "building_014",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_015",
+        "relation": "left"
+      },
+      {
+        "object": "building_009",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_010",
+        "target": "building_007",
+        "relation": "right"
+      },
+      {
+        "object": "building_010",
+        "target": "building_008",
+        "relation": "right"
+      },
+      {
+        "object": "building_010",
+        "target": "building_009",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_011",
+        "relation": "left"
+      },
+      {
+        "object": "building_011",
+        "target": "building_001",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_004",
+        "relation": "behind"
+      },
+      {
+        "object": "building_011",
+        "target": "building_007",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_011",
+        "target": "building_008",
+        "relation": "behind"
+      },
+      {
+        "object": "building_011",
+        "target": "building_009",
+        "relation": "left"
+      },
+      {
+        "object": "building_011",
+        "target": "building_010",
+        "relation": "right"
+      },
+      {
+        "object": "building_011",
+        "target": "building_014",
+        "relation": "behind"
+      },
+      {
+        "object": "building_011",
+        "target": "building_015",
+        "relation": "behind"
+      },
+      {
+        "object": "building_011",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_012",
+        "target": "building_002",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_012",
+        "target": "building_004",
+        "relation": "right"
+      },
+      {
+        "object": "building_012",
+        "target": "building_006",
+        "relation": "right"
+      },
+      {
+        "object": "building_012",
+        "target": "building_013",
+        "relation": "behind"
+      },
+      {
+        "object": "building_012",
+        "target": "building_016",
+        "relation": "right"
+      },
+      {
+        "object": "building_012",
+        "target": "CityElectricityUsage",
+        "relation": "behind"
+      },
+      {
+        "object": "building_012",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_013",
+        "target": "building_012",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_013",
+        "target": "CityElectricityUsage",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_014",
+        "target": "building_002",
+        "relation": "right"
+      },
+      {
+        "object": "building_014",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_004",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_014",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "building_014",
+        "target": "building_008",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_014",
+        "target": "building_011",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_014",
+        "target": "building_015",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_014",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_014",
+        "target": "building_018",
+        "relation": "right"
+      },
+      {
+        "object": "building_014",
+        "target": "CityElectricityUsage",
+        "relation": "left"
+      },
+      {
+        "object": "building_015",
+        "target": "building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_015",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_004",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_015",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "building_015",
+        "target": "building_008",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_015",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_015",
+        "target": "building_011",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_015",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_015",
+        "target": "building_017",
+        "relation": "behind"
+      },
+      {
+        "object": "building_015",
+        "target": "building_018",
+        "relation": "left"
+      },
+      {
+        "object": "building_015",
+        "target": "CityElectricityUsage",
+        "relation": "left"
+      },
+      {
+        "object": "building_016",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_003",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_004",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_007",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_012",
+        "relation": "left"
+      },
+      {
+        "object": "building_016",
+        "target": "building_014",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_017",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "CityElectricityUsage",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_017",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_017",
+        "target": "building_002",
+        "relation": "behind"
+      },
+      {
+        "object": "building_017",
+        "target": "building_003",
+        "relation": "behind"
+      },
+      {
+        "object": "building_017",
+        "target": "building_004",
+        "relation": "behind"
+      },
+      {
+        "object": "building_017",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_017",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "building_017",
+        "target": "building_008",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_011",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_014",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_015",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_017",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_017",
+        "target": "building_018",
+        "relation": "right"
+      },
+      {
+        "object": "building_017",
+        "target": "CityElectricityUsage",
+        "relation": "left"
+      },
+      {
+        "object": "building_017",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_018",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_002",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_003",
+        "relation": "left"
+      },
+      {
+        "object": "building_018",
+        "target": "building_004",
+        "relation": "left"
+      },
+      {
+        "object": "building_018",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_007",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_009",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_014",
+        "relation": "left"
+      },
+      {
+        "object": "building_018",
+        "target": "building_015",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_018",
+        "target": "building_017",
+        "relation": "left"
+      },
+      {
+        "object": "building_018",
+        "target": "CityElectricityUsage",
+        "relation": "left"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "building_003",
+        "relation": "right"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "building_004",
+        "relation": "left"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "building_012",
+        "relation": "in front of"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "building_013",
+        "relation": "in front of"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "building_014",
+        "relation": "right"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "building_015",
+        "relation": "right"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "building_017",
+        "relation": "right"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "building_018",
+        "relation": "right"
+      },
+      {
+        "object": "CityElectricityUsage",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "CityElectricityUsage",
+        "relation": "right"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "Plane",
+      "position": {
+        "x": 6.96,
+        "y": -0.1,
+        "z": -1.72
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h1",
+      "object": "building_012",
+      "position": {
+        "x": 5.73,
+        "y": 1.21,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h2",
+      "object": "Plane",
+      "position": {
+        "x": 6.96,
+        "y": -0.1,
+        "z": -1.72
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h3",
+      "object": "building_012",
+      "position": {
+        "x": 5.74,
+        "y": 1.22,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h4",
+      "object": "Plane",
+      "position": {
+        "x": 6.96,
+        "y": -0.1,
+        "z": -1.72
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h5",
+      "object": "building_012",
+      "position": {
+        "x": 5.75,
+        "y": 1.22,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h6",
+      "object": "Plane",
+      "position": {
+        "x": 6.96,
+        "y": -0.1,
+        "z": -1.71
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h7",
+      "object": "building_012",
+      "position": {
+        "x": 5.75,
+        "y": 1.22,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h8",
+      "object": "Plane",
+      "position": {
+        "x": 6.95,
+        "y": -0.1,
+        "z": -1.71
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h9",
+      "object": "building_012",
+      "position": {
+        "x": 5.75,
+        "y": 1.22,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h10",
+      "object": "Plane",
+      "position": {
+        "x": 6.95,
+        "y": -0.1,
+        "z": -1.71
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h11",
+      "object": "building_012",
+      "position": {
+        "x": 5.75,
+        "y": 1.22,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h12",
+      "object": "Plane",
+      "position": {
+        "x": 6.95,
+        "y": -0.1,
+        "z": -1.7
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h13",
+      "object": "building_012",
+      "position": {
+        "x": 5.75,
+        "y": 1.23,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h14",
+      "object": "Plane",
+      "position": {
+        "x": 6.95,
+        "y": -0.1,
+        "z": -1.7
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h15",
+      "object": "building_012",
+      "position": {
+        "x": 5.75,
+        "y": 1.23,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h16",
+      "object": "Plane",
+      "position": {
+        "x": 6.95,
+        "y": -0.1,
+        "z": -1.7
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h17",
+      "object": "building_012",
+      "position": {
+        "x": 5.74,
+        "y": 1.23,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h18",
+      "object": "Plane",
+      "position": {
+        "x": 6.94,
+        "y": -0.1,
+        "z": -1.7
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h19",
+      "object": "building_012",
+      "position": {
+        "x": 5.74,
+        "y": 1.24,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h20",
+      "object": "Plane",
+      "position": {
+        "x": 6.94,
+        "y": -0.1,
+        "z": -1.69
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h21",
+      "object": "building_012",
+      "position": {
+        "x": 5.73,
+        "y": 1.26,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h22",
+      "object": "Plane",
+      "position": {
+        "x": 6.94,
+        "y": -0.1,
+        "z": -1.69
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h23",
+      "object": "building_012",
+      "position": {
+        "x": 5.73,
+        "y": 1.28,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h24",
+      "object": "Plane",
+      "position": {
+        "x": 6.93,
+        "y": -0.1,
+        "z": -1.68
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h25",
+      "object": "building_012",
+      "position": {
+        "x": 5.71,
+        "y": 1.31,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h26",
+      "object": "Plane",
+      "position": {
+        "x": 6.93,
+        "y": -0.1,
+        "z": -1.68
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h27",
+      "object": "building_012",
+      "position": {
+        "x": 5.67,
+        "y": 1.31,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h28",
+      "object": "Plane",
+      "position": {
+        "x": 6.92,
+        "y": -0.1,
+        "z": -1.68
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h29",
+      "object": "building_012",
+      "position": {
+        "x": 5.66,
+        "y": 1.32,
+        "z": -2.79
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    }
+  ],
+  "user_request": "Should the collaboration of the electricity, water, and gas of all the buildings.",
+  "data_info": null
+}
+
+[Generated Sequence]
+CREATE("UtilityCorrelation3D", "city/city_all.json", "3d_scatter", "electricity", "water", "electricity", "quantitative", "gas"); 
+SCALE("UtilityCorrelation3D", 3f, 3f, 3f); 
+ADAPT_POS("UtilityCorrelation3D", "User", 1.5f, 0.2f); 
+ORIENT_TO("UtilityCorrelation3D", "User"); 
+
+[Skill Execution]
+[ActionExecutor] ✓ Create.Execute("UtilityCorrelation3D",  "city/city_all.json", "scatter",  "electricity",  "water",  "electricity",  "quantitative",  "gas");
+[ActionExecutor] ✓ Scale.Execute("UtilityCorrelation3D", 3f, 3f, 3f);
+[ActionExecutor] ✓ AdaptPos.Execute("UtilityCorrelation3D", "User", 1.5f, 0.2f);
+[ActionExecutor] ✓ OrientTo.Execute("UtilityCorrelation3D", "User");
+
+============================================================
+Interaction #3  |  19:19:07
+[Timing]  Voice→STT: 8.58s  |  LLM: 7.73s  |  Executor: 0.79s  |  Total(workflow): 8.53s  |  Total(speech→finish): 17.11s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": -0.9,
+      "y": 1.78,
+      "z": -0.98
+    },
+    "forward": {
+      "x": -0.05,
+      "y": -0.18,
+      "z": 0.98
+    },
+    "right": {
+      "x": 0.99,
+      "y": 0.13,
+      "z": 0.07
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "building_001",
+        "position": {
+          "x": -1.02,
+          "y": 1.81,
+          "z": 1.21
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.02,
+            "y": 0.91,
+            "z": 1.21
+          },
+          "size": {
+            "x": 1.09,
+            "y": 1.78,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_005",
+        "position": {
+          "x": -2.41,
+          "y": 1.39,
+          "z": 1.32
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.41,
+            "y": 0.7,
+            "z": 1.32
+          },
+          "size": {
+            "x": 1.29,
+            "y": 1.37,
+            "z": 0.88
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_006",
+        "position": {
+          "x": -0.19,
+          "y": 0.54,
+          "z": 2.27
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.19,
+            "y": 0.26,
+            "z": 2.27
+          },
+          "size": {
+            "x": 1.47,
+            "y": 0.56,
+            "z": 2.24
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_009",
+        "position": {
+          "x": -5.24,
+          "y": 1.96,
+          "z": 3.52
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -5.24,
+            "y": 1.06,
+            "z": 3.52
+          },
+          "size": {
+            "x": 1.15,
+            "y": 1.79,
+            "z": 0.48
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_010",
+        "position": {
+          "x": -6.75,
+          "y": 1.92,
+          "z": 2.4
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -6.75,
+            "y": 1.03,
+            "z": 2.4
+          },
+          "size": {
+            "x": 0.48,
+            "y": 1.79,
+            "z": 1.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_016",
+        "position": {
+          "x": -0.68,
+          "y": 0.4,
+          "z": 3.51
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.68,
+            "y": 0.21,
+            "z": 3.51
+          },
+          "size": {
+            "x": 0.47,
+            "y": 0.38,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_018",
+        "position": {
+          "x": -2.12,
+          "y": 1.5,
+          "z": 2.22
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.12,
+            "y": 0.76,
+            "z": 2.22
+          },
+          "size": {
+            "x": 1.17,
+            "y": 1.48,
+            "z": 0.39
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": -0.92,
+          "y": 1.78,
+          "z": -0.97
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.92,
+            "y": 0.93,
+            "z": -0.97
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": -0.06,
+            "y": -0.23,
+            "z": 0.97
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.03,
+            "z": 0.07
+          },
+          "up": {
+            "x": -0.05,
+            "y": 0.97,
+            "z": 0.23
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "building_001",
+        "target": "building_005",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "building_006",
+        "relation": "above"
+      },
+      {
+        "object": "building_001",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_001",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_005",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "building_006",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "building_006",
+        "target": "building_001",
+        "relation": "below"
+      },
+      {
+        "object": "building_006",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_006",
+        "target": "building_009",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_009",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_009",
+        "target": "building_010",
+        "relation": "behind"
+      },
+      {
+        "object": "building_009",
+        "target": "building_016",
+        "relation": "behind"
+      },
+      {
+        "object": "building_009",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_009",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_010",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_010",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_009",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_016",
+        "target": "building_010",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_009",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_018",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_018",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_018",
+        "target": "User",
+        "relation": "left"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h1",
+      "object": "building_001",
+      "position": {
+        "x": -0.87,
+        "y": 1.02,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h2",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h3",
+      "object": "building_001",
+      "position": {
+        "x": -0.87,
+        "y": 1.02,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h4",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h5",
+      "object": "building_001",
+      "position": {
+        "x": -0.87,
+        "y": 1.02,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h6",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h7",
+      "object": "building_001",
+      "position": {
+        "x": -0.87,
+        "y": 1.02,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h8",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h9",
+      "object": "building_001",
+      "position": {
+        "x": -0.87,
+        "y": 1.02,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h10",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h11",
+      "object": "building_001",
+      "position": {
+        "x": -0.87,
+        "y": 1.02,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h12",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h13",
+      "object": "building_001",
+      "position": {
+        "x": -0.87,
+        "y": 1.02,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h14",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h15",
+      "object": "building_001",
+      "position": {
+        "x": -0.87,
+        "y": 1.02,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h16",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h17",
+      "object": "building_001",
+      "position": {
+        "x": -0.87,
+        "y": 1.02,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h18",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h19",
+      "object": "building_001",
+      "position": {
+        "x": -0.88,
+        "y": 1.03,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h20",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h21",
+      "object": "building_001",
+      "position": {
+        "x": -0.88,
+        "y": 1.03,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h22",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h23",
+      "object": "building_001",
+      "position": {
+        "x": -0.89,
+        "y": 1.04,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h24",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h25",
+      "object": "building_001",
+      "position": {
+        "x": -0.9,
+        "y": 1.04,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h26",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h27",
+      "object": "building_001",
+      "position": {
+        "x": -0.91,
+        "y": 1.04,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h28",
+      "object": "building_001",
+      "position": {
+        "x": -0.53,
+        "y": 0.67,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h29",
+      "object": "building_001",
+      "position": {
+        "x": -0.9,
+        "y": 1.03,
+        "z": 0.92
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    }
+  ],
+  "user_request": "Create three bar charts to show the usage of electricity, gas, and water of this building.",
+  "data_info": null
+}
+
+[Generated Sequence]
+CREATE("ElectricityChart_building_001", "city/building_001.json", "3d_bar", "time", "electricity"); 
+CREATE("GasChart_building_001", "city/building_001.json", "3d_bar", "time", "gas"); 
+CREATE("WaterChart_building_001", "city/building_001.json", "3d_bar", "time", "water"); 
+LAYOUT(["ElectricityChart_building_001", "GasChart_building_001", "WaterChart_building_001"], 1.20f, 0.40f, "arc"); 
+ORIENT_TO("ElectricityChart_building_001", "User"); 
+ORIENT_TO("GasChart_building_001", "User"); 
+ORIENT_TO("WaterChart_building_001", "User"); 
+
+[Skill Execution]
+[ActionExecutor] ✓ Create.Execute("ElectricityChart_building_001",  "city/building_001.json", "bar",  "time",  "electricity");
+[ActionExecutor] ✓ Create.Execute("GasChart_building_001",  "city/building_001.json", "bar",  "time",  "gas");
+[ActionExecutor] ✓ Create.Execute("WaterChart_building_001",  "city/building_001.json", "bar",  "time",  "water");
+[ActionExecutor] ✓ Layout.Execute(["ElectricityChart_building_001", "GasChart_building_001", "WaterChart_building_001"], 1.20f, 0.40f, "arc");
+[ActionExecutor] ✓ OrientTo.Execute("ElectricityChart_building_001", "User");
+[ActionExecutor] ✓ OrientTo.Execute("GasChart_building_001", "User");
+[ActionExecutor] ✓ OrientTo.Execute("WaterChart_building_001", "User");
+
+============================================================
+Interaction #4  |  19:20:18
+[Timing]  Voice→STT: 7.78s  |  LLM: 5.58s  |  Executor: 1.14s  |  Total(workflow): 6.73s  |  Total(speech→finish): 14.50s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": -2.54,
+      "y": 1.24,
+      "z": -0.72
+    },
+    "forward": {
+      "x": 0.07,
+      "y": -0.13,
+      "z": 0.99
+    },
+    "right": {
+      "x": 0.99,
+      "y": 0.13,
+      "z": -0.05
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "building_001",
+        "position": {
+          "x": -1.02,
+          "y": 1.81,
+          "z": 1.21
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.02,
+            "y": 0.91,
+            "z": 1.21
+          },
+          "size": {
+            "x": 1.09,
+            "y": 1.78,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_005",
+        "position": {
+          "x": -2.41,
+          "y": 1.39,
+          "z": 1.32
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.41,
+            "y": 0.7,
+            "z": 1.32
+          },
+          "size": {
+            "x": 1.29,
+            "y": 1.37,
+            "z": 0.88
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_006",
+        "position": {
+          "x": -0.19,
+          "y": 0.54,
+          "z": 2.27
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.19,
+            "y": 0.26,
+            "z": 2.27
+          },
+          "size": {
+            "x": 1.47,
+            "y": 0.56,
+            "z": 2.24
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_009",
+        "position": {
+          "x": -5.24,
+          "y": 1.96,
+          "z": 3.52
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -5.24,
+            "y": 1.06,
+            "z": 3.52
+          },
+          "size": {
+            "x": 1.15,
+            "y": 1.79,
+            "z": 0.48
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_010",
+        "position": {
+          "x": -6.75,
+          "y": 1.92,
+          "z": 2.4
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -6.75,
+            "y": 1.03,
+            "z": 2.4
+          },
+          "size": {
+            "x": 0.48,
+            "y": 1.79,
+            "z": 1.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_016",
+        "position": {
+          "x": -0.68,
+          "y": 0.4,
+          "z": 3.51
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.68,
+            "y": 0.21,
+            "z": 3.51
+          },
+          "size": {
+            "x": 0.47,
+            "y": 0.38,
+            "z": 0.56
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "building_018",
+        "position": {
+          "x": -2.12,
+          "y": 1.5,
+          "z": 2.22
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.12,
+            "y": 0.76,
+            "z": 2.22
+          },
+          "size": {
+            "x": 1.17,
+            "y": 1.48,
+            "z": 0.39
+          },
+          "forward": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "name": "ElectricityChart_building_001",
+        "position": {
+          "x": -1.8,
+          "y": 2.64,
+          "z": -0.27
+        },
+        "scale": {
+          "x": 1.66,
+          "y": 1.66,
+          "z": 1.66
+        },
+        "boundary": {
+          "center": {
+            "x": -1.8,
+            "y": 2.17,
+            "z": -0.27
+          },
+          "size": {
+            "x": 0.99,
+            "y": 0.95,
+            "z": 0.37
+          },
+          "forward": {
+            "x": -0.08,
+            "y": 0.3,
+            "z": 0.95
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.08
+          },
+          "up": {
+            "x": 0.02,
+            "y": 0.95,
+            "z": -0.3
+          }
+        }
+      },
+      {
+        "name": "GasChart_building_001",
+        "position": {
+          "x": -0.96,
+          "y": 2.64,
+          "z": 0.14
+        },
+        "scale": {
+          "x": 1.66,
+          "y": 1.66,
+          "z": 1.66
+        },
+        "boundary": {
+          "center": {
+            "x": -0.96,
+            "y": 2.17,
+            "z": 0.14
+          },
+          "size": {
+            "x": 0.96,
+            "y": 0.95,
+            "z": 0.37
+          },
+          "forward": {
+            "x": -0.07,
+            "y": 0.3,
+            "z": 0.95
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.08
+          },
+          "up": {
+            "x": 0.02,
+            "y": 0.95,
+            "z": -0.3
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": -2.55,
+          "y": 1.23,
+          "z": -0.72
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -2.55,
+            "y": 0.38,
+            "z": -0.72
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": 0.01,
+            "y": -0.14,
+            "z": 0.99
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.09,
+            "z": 0.0
+          },
+          "up": {
+            "x": -0.09,
+            "y": 0.99,
+            "z": 0.14
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "building_001",
+        "target": "building_005",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "building_006",
+        "relation": "above"
+      },
+      {
+        "object": "building_001",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_001",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_001",
+        "target": "ElectricityChart_building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_001",
+        "target": "GasChart_building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_001",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "building_006",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "building_005",
+        "target": "building_018",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_005",
+        "target": "ElectricityChart_building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "GasChart_building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_005",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "building_001",
+        "relation": "below"
+      },
+      {
+        "object": "building_006",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_006",
+        "target": "building_009",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_006",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_006",
+        "target": "ElectricityChart_building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_006",
+        "target": "GasChart_building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_009",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_009",
+        "target": "building_010",
+        "relation": "behind"
+      },
+      {
+        "object": "building_009",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_009",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_010",
+        "target": "building_009",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_010",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_010",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_005",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "building_006",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_009",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_010",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "building_018",
+        "relation": "behind"
+      },
+      {
+        "object": "building_016",
+        "target": "ElectricityChart_building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "GasChart_building_001",
+        "relation": "right"
+      },
+      {
+        "object": "building_016",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "building_018",
+        "target": "building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_005",
+        "relation": "behind"
+      },
+      {
+        "object": "building_018",
+        "target": "building_006",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_018",
+        "target": "building_009",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_018",
+        "target": "building_010",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_018",
+        "target": "building_016",
+        "relation": "in front of"
+      },
+      {
+        "object": "building_018",
+        "target": "ElectricityChart_building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_018",
+        "target": "GasChart_building_001",
+        "relation": "left"
+      },
+      {
+        "object": "building_018",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "ElectricityChart_building_001",
+        "target": "building_001",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectricityChart_building_001",
+        "target": "building_005",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectricityChart_building_001",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "ElectricityChart_building_001",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "ElectricityChart_building_001",
+        "target": "building_018",
+        "relation": "right"
+      },
+      {
+        "object": "ElectricityChart_building_001",
+        "target": "GasChart_building_001",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectricityChart_building_001",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "GasChart_building_001",
+        "target": "building_001",
+        "relation": "in front of"
+      },
+      {
+        "object": "GasChart_building_001",
+        "target": "building_005",
+        "relation": "in front of"
+      },
+      {
+        "object": "GasChart_building_001",
+        "target": "building_006",
+        "relation": "left"
+      },
+      {
+        "object": "GasChart_building_001",
+        "target": "building_016",
+        "relation": "left"
+      },
+      {
+        "object": "GasChart_building_001",
+        "target": "building_018",
+        "relation": "right"
+      },
+      {
+        "object": "GasChart_building_001",
+        "target": "ElectricityChart_building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "GasChart_building_001",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "User",
+        "target": "ElectricityChart_building_001",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "GasChart_building_001",
+        "relation": "behind"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "Plane",
+      "position": {
+        "x": -1.48,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h1",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h2",
+      "object": "Plane",
+      "position": {
+        "x": -1.48,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h3",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h4",
+      "object": "Plane",
+      "position": {
+        "x": -1.48,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h5",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h6",
+      "object": "Plane",
+      "position": {
+        "x": -1.48,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h7",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h8",
+      "object": "Plane",
+      "position": {
+        "x": -1.48,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h9",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h10",
+      "object": "Plane",
+      "position": {
+        "x": -1.48,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h11",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h12",
+      "object": "Plane",
+      "position": {
+        "x": -1.48,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h13",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h14",
+      "object": "Plane",
+      "position": {
+        "x": -1.48,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h15",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h16",
+      "object": "Plane",
+      "position": {
+        "x": -1.48,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h17",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h18",
+      "object": "Plane",
+      "position": {
+        "x": -1.49,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h19",
+      "object": "building_005",
+      "position": {
+        "x": -2.32,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h20",
+      "object": "Plane",
+      "position": {
+        "x": -1.49,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h21",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h22",
+      "object": "Plane",
+      "position": {
+        "x": -1.49,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h23",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h24",
+      "object": "Plane",
+      "position": {
+        "x": -1.49,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h25",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.64,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h26",
+      "object": "Plane",
+      "position": {
+        "x": -1.49,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h27",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.64,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    },
+    {
+      "hit_id": "h28",
+      "object": "Plane",
+      "position": {
+        "x": -1.49,
+        "y": -0.1,
+        "z": 1.21
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "hit_id": "h29",
+      "object": "building_005",
+      "position": {
+        "x": -2.31,
+        "y": 0.63,
+        "z": 0.88
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      }
+    }
+  ],
+  "user_request": "Okay, create a line chart to compare the usage of electricity of this building and previous building.",
+  "data_info": null
+}
+
+[Generated Sequence]
+CREATE("ElectricityCompareChart", "city/building_001.json", "2d_line", "time", "electricity", "building_001"); 
+APPEND_SERIES("ElectricityCompareChart", "city/building_005.json", "time", "electricity", "line", "building_005"); 
+ADAPT_POS("ElectricityCompareChart", "User", 0.5f, 0.2f); 
+ORIENT_TO("ElectricityCompareChart", "User"); 
+
+[Skill Execution]
+[ActionExecutor] ✓ Create.Execute("ElectricityCompareChart",  "city/building_001.json", "line",  "time",  "electricity",  "building_001");
+[ActionExecutor] ✓ AppendSeries.Execute("ElectricityCompareChart", "city/building_005.json", "time", "electricity", "line", "building_005");
+[ActionExecutor] ✓ AdaptPos.Execute("ElectricityCompareChart", "User", 0.5f, 0.2f);
+[ActionExecutor] ✓ OrientTo.Execute("ElectricityCompareChart", "User");
