@@ -2,31 +2,31 @@
   {
     "month": "January",
     "electronics": 450,
-    "book": 150
+    "furniture": 150
   },
   {
     "month": "February",
     "electronics": 520,
-    "book": 200
+    "furniture": 200
   },
   {
     "month": "March",
     "electronics": 480,
-    "book": 180
+    "furniture": 180
   },
   {
     "month": "April",
     "electronics": 610,
-    "book": 310
+    "furniture": 310
   },
   {
     "month": "May",
     "electronics": 550,
-    "book": 280
+    "furniture": 280
   },
   {
     "month": "June",
     "electronics": 670,
-    "book": 350
+    "furniture": 350
   }
 ]
