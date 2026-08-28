@@ -31,7 +31,7 @@ Your task is to:
 
 # Data Field Rules
 - x_field / y_field / color_field / z_field MUST be real fields existing in the selected data file (check Available Data Files → data_fields). Never invent field names.
-- If a spoken word sounds misheard (e.g., "closing" for "clothing"), map it to the closest real field name.
+- If a spoken word sounds misheard, direct map it to the closest real field name (e.g., "clothing" for "closing").
 
 # Important Factors 
 When placing objects, you need to consider the following factors: 
