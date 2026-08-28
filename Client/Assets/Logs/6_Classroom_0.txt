@@ -1,0 +1,1051 @@
+=== User Study Log ===
+Participant : 6
+Scene       : Classroom
+Started     : 2026-08-28 13:27:27
+============================================================
+
+============================================================
+Interaction #1  |  13:28:31
+[Timing]  Voice→STT: 0.50s  |  LLM: 3.01s  |  Executor: 0.49s  |  Total(workflow): 3.50s  |  Total(speech→finish): 4.00s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": -0.07,
+      "y": 1.71,
+      "z": -3.29
+    },
+    "forward": {
+      "x": -0.17,
+      "y": 0.14,
+      "z": -0.97
+    },
+    "right": {
+      "x": -0.98,
+      "y": 0.06,
+      "z": 0.18
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "Blackboard",
+        "position": {
+          "x": 0.05,
+          "y": 2.6,
+          "z": -3.93
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.05,
+            "y": 1.8,
+            "z": -3.93
+          },
+          "size": {
+            "x": 5.99,
+            "y": 1.6,
+            "z": 0.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": -0.08,
+          "y": 1.71,
+          "z": -3.29
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.08,
+            "y": 0.86,
+            "z": -3.29
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": -0.17,
+            "y": 0.13,
+            "z": -0.98
+          },
+          "right": {
+            "x": -0.98,
+            "y": 0.06,
+            "z": 0.18
+          },
+          "up": {
+            "x": 0.09,
+            "y": 0.99,
+            "z": 0.12
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "Blackboard",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "User",
+        "target": "Blackboard",
+        "relation": "in front of"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.37,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h1",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h2",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.38,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h3",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h4",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.38,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h5",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h6",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.39,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h7",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h8",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.39,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h9",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h10",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.4,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h11",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h12",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.4,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h13",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h14",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h15",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h16",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h17",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h18",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h19",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h20",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h21",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h22",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.42,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h23",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h24",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h25",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h26",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h27",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    }
+  ],
+  "user_request": "Thank you.",
+  "data_info": null
+}
+
+[Generated Sequence]
+MESSAGE("You're welcome! If you have any more requests, feel free to ask.");
+
+[Skill Execution]
+[ActionExecutor] ✓ Message.Execute("You're welcome! If you have any more requests, feel free to ask.");
+
+============================================================
+Interaction #2  |  13:28:32
+[Timing]  Voice→STT: 0.00s  |  LLM: 4.52s  |  Executor: 0.03s  |  Total(workflow): 4.57s  |  Total(speech→finish): 4.00s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": -0.07,
+      "y": 1.71,
+      "z": -3.29
+    },
+    "forward": {
+      "x": -0.17,
+      "y": 0.14,
+      "z": -0.97
+    },
+    "right": {
+      "x": -0.98,
+      "y": 0.06,
+      "z": 0.18
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "Blackboard",
+        "position": {
+          "x": 0.05,
+          "y": 2.6,
+          "z": -3.93
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.05,
+            "y": 1.8,
+            "z": -3.93
+          },
+          "size": {
+            "x": 5.99,
+            "y": 1.6,
+            "z": 0.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": -0.08,
+          "y": 1.71,
+          "z": -3.29
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.08,
+            "y": 0.86,
+            "z": -3.29
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": -0.17,
+            "y": 0.13,
+            "z": -0.98
+          },
+          "right": {
+            "x": -0.98,
+            "y": 0.06,
+            "z": 0.18
+          },
+          "up": {
+            "x": 0.09,
+            "y": 0.99,
+            "z": 0.12
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "Blackboard",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "User",
+        "target": "Blackboard",
+        "relation": "in front of"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.37,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h1",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h2",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.38,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h3",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h4",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.38,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h5",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h6",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.39,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h7",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h8",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.39,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h9",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h10",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.4,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h11",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h12",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.4,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h13",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h14",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h15",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h16",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h17",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h18",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.05,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h19",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h20",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h21",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h22",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.42,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h23",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h24",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h25",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h26",
+      "object": "Blackboard (1)",
+      "position": {
+        "x": -0.04,
+        "y": 1.41,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.01,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h27",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.37,
+        "y": 1.36,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    }
+  ],
+  "user_request": "Thank you.",
+  "data_info": null
+}
+
+[Generated Sequence]
+MESSAGE("You're welcome! If you have any more requests or questions, feel free to ask.");
+
+[Skill Execution]
+[ActionExecutor] ✓ Message.Execute("You're welcome! If you have any more requests or questions, feel free to ask.");
