@@ -24,7 +24,7 @@ Client/[Rr]ecordings/
 # 这里的路径包含了 Client/ 前缀，确保只影响 Unity 目录
 Client/*.log
 Client/*.blend1
-Client/*.blend1.meta
+# Client/*.blend1.meta
 
 # 编译器与 IDE 相关
 Client/ExportedObj/
@@ -43,9 +43,9 @@ Client/*.pdb
 Client/*.mdb
 Client/*.opendb
 Client/*.VC.db
-Client/*.pidb.meta
-Client/*.pdb.meta
-Client/*.mdb.meta
+# Client/*.pidb.meta
+# Client/*.pdb.meta
+# Client/*.mdb.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
@@ -80,9 +80,9 @@ Client/*.opendb
 Client/*.VC.db
 
 # Unity3D generated meta files
-Client/*.pidb.meta
-Client/*.pdb.meta
-Client/*.mdb.meta
+# Client/*.pidb.meta
+# Client/*.pdb.meta
+# Client/*.mdb.meta
 
 # Unity3D generated file on crash reports
 Client/sysinfo.txt
@@ -94,7 +94,7 @@ Client/mono_crash.*
 Client/*.apk
 Client/*.aab
 Client/*.unitypackage
-Client/*.unitypackage.meta
+# Client/*.unitypackage.meta
 Client/*.app
 
 # Crashlytics generated file
@@ -115,9 +115,9 @@ Client/[Aa]ssets/AddressableAssetsData/*/*.bin*
 
 # Visual Scripting auto-generated files
 Client/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
-Client/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
+# Client/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
 Client/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
-Client/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
+# Client/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
 
 # Auto-generated scenes by play mode tests
 Client/[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
