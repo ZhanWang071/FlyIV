@@ -1,0 +1,5476 @@
+=== User Study Log ===
+Participant : 10
+Scene       : Reproduction
+Started     : 2026-09-01 13:47:50
+============================================================
+
+============================================================
+Interaction #1  |  13:49:20
+[Timing]  Voice→STT: 10.15s  |  LLM: 4.64s  |  Executor: 1.00s  |  Total(workflow): 5.66s  |  Total(speech→finish): 15.81s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": 0.01,
+      "y": 1.69,
+      "z": -1.74
+    },
+    "forward": {
+      "x": -0.5,
+      "y": -0.02,
+      "z": 0.87
+    },
+    "right": {
+      "x": 0.87,
+      "y": 0.05,
+      "z": 0.5
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "DeskAndChair_S001",
+        "position": {
+          "x": -3.0,
+          "y": 1.0,
+          "z": 0.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -3.0,
+            "y": 0.5,
+            "z": 0.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S002",
+        "position": {
+          "x": -1.0,
+          "y": 1.0,
+          "z": 0.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.0,
+            "y": 0.5,
+            "z": 0.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S003",
+        "position": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 0.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.0,
+            "y": 0.5,
+            "z": 0.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S004",
+        "position": {
+          "x": 3.0,
+          "y": 1.0,
+          "z": 0.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 3.0,
+            "y": 0.5,
+            "z": 0.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S005",
+        "position": {
+          "x": -3.0,
+          "y": 1.0,
+          "z": 2.58
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -3.0,
+            "y": 0.5,
+            "z": 2.58
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S006",
+        "position": {
+          "x": -1.0,
+          "y": 1.0,
+          "z": 2.58
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.0,
+            "y": 0.5,
+            "z": 2.58
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S007",
+        "position": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 2.58
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.0,
+            "y": 0.5,
+            "z": 2.58
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S008",
+        "position": {
+          "x": 3.0,
+          "y": 1.0,
+          "z": 2.58
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 3.0,
+            "y": 0.5,
+            "z": 2.58
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S009",
+        "position": {
+          "x": -3.0,
+          "y": 1.0,
+          "z": 5.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -3.0,
+            "y": 0.5,
+            "z": 5.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S010",
+        "position": {
+          "x": -1.0,
+          "y": 1.0,
+          "z": 5.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.0,
+            "y": 0.5,
+            "z": 5.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S011",
+        "position": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 5.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.0,
+            "y": 0.5,
+            "z": 5.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S012",
+        "position": {
+          "x": 3.0,
+          "y": 1.0,
+          "z": 5.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 3.0,
+            "y": 0.5,
+            "z": 5.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "BackDoor",
+        "position": {
+          "x": -5.12,
+          "y": 2.5,
+          "z": 8.25
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -5.12,
+            "y": 1.25,
+            "z": 8.25
+          },
+          "size": {
+            "x": 0.23,
+            "y": 2.5,
+            "z": 1.5
+          },
+          "forward": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Noticeboard",
+        "position": {
+          "x": 0.0,
+          "y": 2.6,
+          "z": 9.93
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 1.8,
+            "z": 9.93
+          },
+          "size": {
+            "x": 3.1,
+            "y": 1.6,
+            "z": 0.14
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Shelf",
+        "position": {
+          "x": 4.1,
+          "y": 1.5,
+          "z": 9.8
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.1,
+            "y": 0.75,
+            "z": 9.8
+          },
+          "size": {
+            "x": 1.8,
+            "y": 1.5,
+            "z": 0.4
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": 0.06,
+          "y": 1.71,
+          "z": -1.74
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.06,
+            "y": 0.86,
+            "z": -1.74
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": -0.05,
+            "y": 0.13,
+            "z": 0.99
+          },
+          "right": {
+            "x": 0.99,
+            "y": 0.1,
+            "z": 0.03
+          },
+          "up": {
+            "x": -0.1,
+            "y": 0.99,
+            "z": -0.14
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S002",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S003",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S004",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S005",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S009",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "BackDoor",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S001",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S003",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S004",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S005",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S006",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S009",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S010",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "Noticeboard",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S001",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S002",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S004",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S006",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S007",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S010",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S011",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "Noticeboard",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S001",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S002",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S003",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S007",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S008",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S011",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S012",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "Shelf",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S001",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S002",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S006",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S007",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S008",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S009",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "BackDoor",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S002",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S003",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S005",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S007",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S008",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S009",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S010",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "Noticeboard",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S003",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S004",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S005",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S006",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S008",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S010",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S011",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "Noticeboard",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S004",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S005",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S006",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S007",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S011",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S012",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "Shelf",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S001",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S002",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S005",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S006",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S010",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S011",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S012",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "BackDoor",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S002",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S003",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S006",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S007",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S009",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S011",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S012",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "Noticeboard",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S003",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S004",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S007",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S008",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S009",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S010",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S012",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "Noticeboard",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S004",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S008",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S009",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S010",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S011",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "Shelf",
+        "relation": "left"
+      },
+      {
+        "object": "BackDoor",
+        "target": "DeskAndChair_S001",
+        "relation": "left"
+      },
+      {
+        "object": "BackDoor",
+        "target": "DeskAndChair_S005",
+        "relation": "left"
+      },
+      {
+        "object": "BackDoor",
+        "target": "DeskAndChair_S009",
+        "relation": "left"
+      },
+      {
+        "object": "BackDoor",
+        "target": "Noticeboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "BackDoor",
+        "target": "Shelf",
+        "relation": "in front of"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S002",
+        "relation": "right"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S003",
+        "relation": "left"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S006",
+        "relation": "right"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S007",
+        "relation": "left"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S010",
+        "relation": "right"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S011",
+        "relation": "left"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "BackDoor",
+        "relation": "behind"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "Shelf",
+        "relation": "behind"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "Shelf",
+        "target": "DeskAndChair_S004",
+        "relation": "right"
+      },
+      {
+        "object": "Shelf",
+        "target": "DeskAndChair_S008",
+        "relation": "right"
+      },
+      {
+        "object": "Shelf",
+        "target": "DeskAndChair_S012",
+        "relation": "right"
+      },
+      {
+        "object": "Shelf",
+        "target": "BackDoor",
+        "relation": "behind"
+      },
+      {
+        "object": "Shelf",
+        "target": "Noticeboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S001",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S002",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S003",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S004",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S006",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S007",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S010",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S011",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Noticeboard",
+        "relation": "left"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "None",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  ],
+  "user_request": "To create a line chart to show electronic sale data in front of me.",
+  "data_info": null
+}
+
+[Generated Sequence]
+CREATE("ElectronicsSalesChart", "sales/monthly_sales.json", "2d_line", "month", "electronics"); 
+ADAPT_POS("ElectronicsSalesChart", "User", 0.5f, 0.2f); 
+ORIENT_TO("ElectronicsSalesChart", "User"); 
+
+[Skill Execution]
+[ActionExecutor] ✓ Create.Execute("ElectronicsSalesChart",  "sales/monthly_sales.json", "line",  "month",  "electronics");
+[ActionExecutor] ✓ AdaptPos.Execute("ElectronicsSalesChart", "User", 0.5f, 0.2f);
+[ActionExecutor] ✓ OrientTo.Execute("ElectronicsSalesChart", "User");
+
+============================================================
+Interaction #2  |  13:49:56
+[Timing]  Voice→STT: 7.46s  |  LLM: 4.07s  |  Executor: 0.19s  |  Total(workflow): 4.26s  |  Total(speech→finish): 11.71s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": 0.04,
+      "y": 1.69,
+      "z": -1.77
+    },
+    "forward": {
+      "x": -0.32,
+      "y": -0.07,
+      "z": 0.95
+    },
+    "right": {
+      "x": 0.95,
+      "y": 0.03,
+      "z": 0.32
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "DeskAndChair_S001",
+        "position": {
+          "x": -3.0,
+          "y": 1.0,
+          "z": 0.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -3.0,
+            "y": 0.5,
+            "z": 0.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S002",
+        "position": {
+          "x": -1.0,
+          "y": 1.0,
+          "z": 0.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.0,
+            "y": 0.5,
+            "z": 0.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S003",
+        "position": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 0.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.0,
+            "y": 0.5,
+            "z": 0.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S004",
+        "position": {
+          "x": 3.0,
+          "y": 1.0,
+          "z": 0.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 3.0,
+            "y": 0.5,
+            "z": 0.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S005",
+        "position": {
+          "x": -3.0,
+          "y": 1.0,
+          "z": 2.58
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -3.0,
+            "y": 0.5,
+            "z": 2.58
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S006",
+        "position": {
+          "x": -1.0,
+          "y": 1.0,
+          "z": 2.58
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.0,
+            "y": 0.5,
+            "z": 2.58
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S007",
+        "position": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 2.58
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.0,
+            "y": 0.5,
+            "z": 2.58
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S008",
+        "position": {
+          "x": 3.0,
+          "y": 1.0,
+          "z": 2.58
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 3.0,
+            "y": 0.5,
+            "z": 2.58
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S009",
+        "position": {
+          "x": -3.0,
+          "y": 1.0,
+          "z": 5.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -3.0,
+            "y": 0.5,
+            "z": 5.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S010",
+        "position": {
+          "x": -1.0,
+          "y": 1.0,
+          "z": 5.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -1.0,
+            "y": 0.5,
+            "z": 5.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S011",
+        "position": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 5.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.0,
+            "y": 0.5,
+            "z": 5.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "DeskAndChair_S012",
+        "position": {
+          "x": 3.0,
+          "y": 1.0,
+          "z": 5.08
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 3.0,
+            "y": 0.5,
+            "z": 5.08
+          },
+          "size": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.75
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "BackDoor",
+        "position": {
+          "x": -5.12,
+          "y": 2.5,
+          "z": 8.25
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -5.12,
+            "y": 1.25,
+            "z": 8.25
+          },
+          "size": {
+            "x": 0.23,
+            "y": 2.5,
+            "z": 1.5
+          },
+          "forward": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Noticeboard",
+        "position": {
+          "x": 0.0,
+          "y": 2.6,
+          "z": 9.93
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 1.8,
+            "z": 9.93
+          },
+          "size": {
+            "x": 3.1,
+            "y": 1.6,
+            "z": 0.14
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Shelf",
+        "position": {
+          "x": 4.1,
+          "y": 1.5,
+          "z": 9.8
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.1,
+            "y": 0.75,
+            "z": 9.8
+          },
+          "size": {
+            "x": 1.8,
+            "y": 1.5,
+            "z": 0.4
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "ElectronicsSalesChart",
+        "position": {
+          "x": 0.09,
+          "y": 2.06,
+          "z": -1.23
+        },
+        "scale": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.09,
+            "y": 1.76,
+            "z": -1.23
+          },
+          "size": {
+            "x": 0.96,
+            "y": 0.59,
+            "z": 0.11
+          },
+          "forward": {
+            "x": 0.02,
+            "y": 0.14,
+            "z": 0.99
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": -0.02
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.99,
+            "z": -0.14
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": 0.06,
+          "y": 1.68,
+          "z": -1.75
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.06,
+            "y": 0.83,
+            "z": -1.75
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": -0.14,
+            "y": -0.13,
+            "z": 0.98
+          },
+          "right": {
+            "x": 0.99,
+            "y": 0.06,
+            "z": 0.15
+          },
+          "up": {
+            "x": -0.08,
+            "y": 0.99,
+            "z": 0.11
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S002",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S003",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S004",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S005",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S007",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S008",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "DeskAndChair_S009",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "BackDoor",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S001",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S001",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S003",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S004",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S005",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S006",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S008",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S009",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "DeskAndChair_S010",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S002",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S001",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S002",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S004",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S006",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S007",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S010",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "DeskAndChair_S011",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "Noticeboard",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S003",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S001",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S002",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S003",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S007",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S008",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S011",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "DeskAndChair_S012",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "Noticeboard",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S004",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S001",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S002",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S006",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S007",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S008",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S009",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S011",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "DeskAndChair_S012",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S005",
+        "target": "BackDoor",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S002",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S003",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S005",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S007",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S008",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S009",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S010",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "DeskAndChair_S012",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "ElectronicsSalesChart",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S006",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S001",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S003",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S004",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S005",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S006",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S008",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S010",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "DeskAndChair_S011",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "Noticeboard",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "ElectronicsSalesChart",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S007",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S001",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S002",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S004",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S005",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S006",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S007",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S011",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "DeskAndChair_S012",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S008",
+        "target": "Noticeboard",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S001",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S002",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S005",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S006",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S010",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S011",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "DeskAndChair_S012",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S009",
+        "target": "BackDoor",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S002",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S003",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S006",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S007",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S009",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S011",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "DeskAndChair_S012",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "Noticeboard",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "ElectronicsSalesChart",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S010",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S003",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S004",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S005",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S007",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S008",
+        "relation": "left"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S009",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S010",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "DeskAndChair_S012",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "Noticeboard",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "ElectronicsSalesChart",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S011",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S004",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S005",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S006",
+        "relation": "behind"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S008",
+        "relation": "right"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S009",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S010",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "DeskAndChair_S011",
+        "relation": "in front of"
+      },
+      {
+        "object": "DeskAndChair_S012",
+        "target": "Shelf",
+        "relation": "left"
+      },
+      {
+        "object": "BackDoor",
+        "target": "DeskAndChair_S001",
+        "relation": "left"
+      },
+      {
+        "object": "BackDoor",
+        "target": "DeskAndChair_S005",
+        "relation": "left"
+      },
+      {
+        "object": "BackDoor",
+        "target": "DeskAndChair_S009",
+        "relation": "left"
+      },
+      {
+        "object": "BackDoor",
+        "target": "Noticeboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "BackDoor",
+        "target": "Shelf",
+        "relation": "in front of"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S003",
+        "relation": "right"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S004",
+        "relation": "left"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S007",
+        "relation": "right"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S008",
+        "relation": "left"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S010",
+        "relation": "right"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "DeskAndChair_S011",
+        "relation": "left"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "BackDoor",
+        "relation": "behind"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "Shelf",
+        "relation": "behind"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "ElectronicsSalesChart",
+        "relation": "right"
+      },
+      {
+        "object": "Noticeboard",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "Shelf",
+        "target": "DeskAndChair_S012",
+        "relation": "right"
+      },
+      {
+        "object": "Shelf",
+        "target": "BackDoor",
+        "relation": "behind"
+      },
+      {
+        "object": "Shelf",
+        "target": "Noticeboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "DeskAndChair_S001",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "DeskAndChair_S002",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "DeskAndChair_S003",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "DeskAndChair_S004",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "DeskAndChair_S006",
+        "relation": "right"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "DeskAndChair_S007",
+        "relation": "left"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "DeskAndChair_S010",
+        "relation": "right"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "DeskAndChair_S011",
+        "relation": "left"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Noticeboard",
+        "relation": "left"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S001",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S002",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S003",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S004",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S006",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S007",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S010",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "DeskAndChair_S011",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Noticeboard",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.06,
+        "y": 1.56,
+        "z": -1.2
+      },
+      "normal": {
+        "x": -0.02,
+        "y": -0.14,
+        "z": -0.99
+      }
+    }
+  ],
+  "user_request": "A panda furniture sales data on this chart.",
+  "data_info": null
+}
+
+[Generated Sequence]
+APPEND_SERIES("ElectronicsSalesChart", "sales/monthly_sales.json", "month", "furniture", "line");
+
+[Skill Execution]
+[ActionExecutor] ✓ AppendSeries.Execute("ElectronicsSalesChart", "sales/monthly_sales.json", "month", "furniture", "line");
+
+============================================================
+Interaction #3  |  13:50:39
+[Timing]  Voice→STT: 7.07s  |  LLM: 4.98s  |  Executor: 0.15s  |  Total(workflow): 5.14s  |  Total(speech→finish): 12.21s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": -0.02,
+      "y": 1.84,
+      "z": -1.28
+    },
+    "forward": {
+      "x": 0.47,
+      "y": -0.03,
+      "z": -0.88
+    },
+    "right": {
+      "x": -0.88,
+      "y": 0.01,
+      "z": -0.47
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "Chair",
+        "position": {
+          "x": 3.82,
+          "y": 1.0,
+          "z": -3.65
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 3.82,
+            "y": 0.5,
+            "z": -3.65
+          },
+          "size": {
+            "x": 0.59,
+            "y": 1.0,
+            "z": 0.57
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "TeacherDesk",
+        "position": {
+          "x": 0.0,
+          "y": 0.92,
+          "z": -2.3
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 0.46,
+            "z": -2.3
+          },
+          "size": {
+            "x": 1.8,
+            "y": 0.92,
+            "z": 0.8
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Globe",
+        "position": {
+          "x": 4.73,
+          "y": -0.07,
+          "z": -1.34
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.73,
+            "y": -0.39,
+            "z": -1.34
+          },
+          "size": {
+            "x": 0.45,
+            "y": 0.63,
+            "z": 0.42
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Blackboard",
+        "position": {
+          "x": 0.05,
+          "y": 2.6,
+          "z": -3.93
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.05,
+            "y": 1.8,
+            "z": -3.93
+          },
+          "size": {
+            "x": 5.99,
+            "y": 1.6,
+            "z": 0.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Chalks",
+        "position": {
+          "x": 1.78,
+          "y": 1.04,
+          "z": -3.89
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.78,
+            "y": 1.03,
+            "z": -3.89
+          },
+          "size": {
+            "x": 0.16,
+            "y": 0.01,
+            "z": 0.05
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Brush",
+        "position": {
+          "x": 2.16,
+          "y": 1.09,
+          "z": -3.9
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 2.16,
+            "y": 1.06,
+            "z": -3.9
+          },
+          "size": {
+            "x": 0.16,
+            "y": 0.07,
+            "z": 0.08
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Clock",
+        "position": {
+          "x": 0.0,
+          "y": 3.7,
+          "z": -3.95
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 3.4,
+            "z": -3.95
+          },
+          "size": {
+            "x": 0.6,
+            "y": 0.6,
+            "z": 0.08
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Bookcase",
+        "position": {
+          "x": 4.75,
+          "y": 1.2,
+          "z": -3.09
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.75,
+            "y": 0.6,
+            "z": -3.09
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.2,
+            "z": 2.0
+          },
+          "forward": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Books",
+        "position": {
+          "x": 4.65,
+          "y": 1.07,
+          "z": -2.1
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.65,
+            "y": -0.23,
+            "z": -2.1
+          },
+          "size": {
+            "x": 0.25,
+            "y": 2.6,
+            "z": 3.74
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "ElectronicsSalesChart",
+        "position": {
+          "x": 0.09,
+          "y": 2.06,
+          "z": -1.23
+        },
+        "scale": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.09,
+            "y": 1.76,
+            "z": -1.23
+          },
+          "size": {
+            "x": 0.96,
+            "y": 0.59,
+            "z": 0.11
+          },
+          "forward": {
+            "x": 0.02,
+            "y": 0.14,
+            "z": 0.99
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": -0.02
+          },
+          "up": {
+            "x": 0.0,
+            "y": 0.99,
+            "z": -0.14
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": -0.02,
+          "y": 1.87,
+          "z": -1.26
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.02,
+            "y": 1.02,
+            "z": -1.26
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": 0.46,
+            "y": 0.2,
+            "z": -0.87
+          },
+          "right": {
+            "x": -0.89,
+            "y": 0.14,
+            "z": -0.44
+          },
+          "up": {
+            "x": 0.04,
+            "y": 0.97,
+            "z": 0.24
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "Chair",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Blackboard",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Brush",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Globe",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Chalks",
+        "relation": "right"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Brush",
+        "relation": "right"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Globe",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "Globe",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Chalks",
+        "relation": "above"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Brush",
+        "relation": "above"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Clock",
+        "relation": "below"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "ElectronicsSalesChart",
+        "relation": "right"
+      },
+      {
+        "object": "Blackboard",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "Chalks",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "TeacherDesk",
+        "relation": "left"
+      },
+      {
+        "object": "Chalks",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Blackboard",
+        "relation": "below"
+      },
+      {
+        "object": "Chalks",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "ElectronicsSalesChart",
+        "relation": "left"
+      },
+      {
+        "object": "Chalks",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "Brush",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Brush",
+        "target": "TeacherDesk",
+        "relation": "left"
+      },
+      {
+        "object": "Brush",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Blackboard",
+        "relation": "below"
+      },
+      {
+        "object": "Brush",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "Brush",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "ElectronicsSalesChart",
+        "relation": "left"
+      },
+      {
+        "object": "Brush",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "Clock",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Blackboard",
+        "relation": "above"
+      },
+      {
+        "object": "Clock",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "ElectronicsSalesChart",
+        "relation": "right"
+      },
+      {
+        "object": "Clock",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Blackboard",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Brush",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Books",
+        "relation": "above"
+      },
+      {
+        "object": "Books",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Blackboard",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Bookcase",
+        "relation": "below"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "TeacherDesk",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Blackboard",
+        "relation": "left"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Chalks",
+        "relation": "right"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Brush",
+        "relation": "right"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Clock",
+        "relation": "left"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "User",
+        "relation": "above"
+      },
+      {
+        "object": "User",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "Globe",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "Blackboard",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Chalks",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Clock",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Bookcase",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "User",
+        "target": "ElectronicsSalesChart",
+        "relation": "below"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.92,
+        "y": 3.05,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h1",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.79,
+        "y": 1.9,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h2",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.92,
+        "y": 3.05,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h3",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.79,
+        "y": 1.9,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h4",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.93,
+        "y": 3.05,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h5",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.78,
+        "y": 1.9,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h6",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.93,
+        "y": 3.05,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h7",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.78,
+        "y": 1.9,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h8",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.93,
+        "y": 3.05,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h9",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.78,
+        "y": 1.9,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h10",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.93,
+        "y": 3.05,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h11",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.77,
+        "y": 1.9,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h12",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.04,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h13",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.77,
+        "y": 1.9,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h14",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.04,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h15",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.76,
+        "y": 1.9,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h16",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.04,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h17",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.76,
+        "y": 1.91,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h18",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.04,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h19",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.75,
+        "y": 1.92,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h20",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.04,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h21",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.74,
+        "y": 1.92,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h22",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.04,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h23",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.73,
+        "y": 1.93,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h24",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.04,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h25",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.72,
+        "y": 1.95,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h26",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.04,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h27",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.72,
+        "y": 1.96,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h28",
+      "object": "WallCollider (3)",
+      "position": {
+        "x": 0.94,
+        "y": 3.05,
+        "z": -4.0
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h29",
+      "object": "Blackboard (2)",
+      "position": {
+        "x": -0.71,
+        "y": 1.96,
+        "z": -3.86
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    }
+  ],
+  "user_request": "Uh, embed this, chart line chart, on the blackboard.",
+  "data_info": null
+}
+
+[Generated Sequence]
+EMBED("ElectronicsSalesChart", "Blackboard");
+
+[Skill Execution]
+[ActionExecutor] ✓ Embed.Execute("ElectronicsSalesChart", "Blackboard");
+
+============================================================
+Interaction #4  |  13:51:12
+[Timing]  Voice→STT: 6.83s  |  LLM: 4.08s  |  Executor: 0.02s  |  Total(workflow): 4.10s  |  Total(speech→finish): 10.94s
+============================================================
+[User Prompt]
+{
+  "user_status": {
+    "position": {
+      "x": -0.04,
+      "y": 1.84,
+      "z": -1.31
+    },
+    "forward": {
+      "x": 0.35,
+      "y": -0.04,
+      "z": -0.94
+    },
+    "right": {
+      "x": -0.93,
+      "y": 0.06,
+      "z": -0.35
+    }
+  },
+  "scene_graph": {
+    "objects": [
+      {
+        "name": "Chair",
+        "position": {
+          "x": 3.82,
+          "y": 1.0,
+          "z": -3.65
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 3.82,
+            "y": 0.5,
+            "z": -3.65
+          },
+          "size": {
+            "x": 0.59,
+            "y": 1.0,
+            "z": 0.57
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "TeacherDesk",
+        "position": {
+          "x": 0.0,
+          "y": 0.92,
+          "z": -2.3
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 0.46,
+            "z": -2.3
+          },
+          "size": {
+            "x": 1.8,
+            "y": 0.92,
+            "z": 0.8
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Blackboard",
+        "position": {
+          "x": 0.05,
+          "y": 2.6,
+          "z": -3.93
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.05,
+            "y": 1.8,
+            "z": -3.93
+          },
+          "size": {
+            "x": 5.99,
+            "y": 1.6,
+            "z": 0.15
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Chalks",
+        "position": {
+          "x": 1.78,
+          "y": 1.04,
+          "z": -3.89
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 1.78,
+            "y": 1.03,
+            "z": -3.89
+          },
+          "size": {
+            "x": 0.16,
+            "y": 0.01,
+            "z": 0.05
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Brush",
+        "position": {
+          "x": 2.16,
+          "y": 1.09,
+          "z": -3.9
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 2.16,
+            "y": 1.06,
+            "z": -3.9
+          },
+          "size": {
+            "x": 0.16,
+            "y": 0.07,
+            "z": 0.08
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": -1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Clock",
+        "position": {
+          "x": 0.0,
+          "y": 3.7,
+          "z": -3.95
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 0.0,
+            "y": 3.4,
+            "z": -3.95
+          },
+          "size": {
+            "x": 0.6,
+            "y": 0.6,
+            "z": 0.08
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Bookcase",
+        "position": {
+          "x": 4.75,
+          "y": 1.2,
+          "z": -3.09
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.75,
+            "y": 0.6,
+            "z": -3.09
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.2,
+            "z": 2.0
+          },
+          "forward": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "right": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "Books",
+        "position": {
+          "x": 4.65,
+          "y": 1.07,
+          "z": -2.1
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": 4.65,
+            "y": -0.23,
+            "z": -2.1
+          },
+          "size": {
+            "x": 0.25,
+            "y": 2.6,
+            "z": 3.74
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          },
+          "right": {
+            "x": 1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "ElectronicsSalesChart",
+        "position": {
+          "x": 0.05,
+          "y": 4.8,
+          "z": -3.83
+        },
+        "scale": {
+          "x": 0.01,
+          "y": 0.01,
+          "z": 0.01
+        },
+        "boundary": {
+          "center": {
+            "x": 0.05,
+            "y": 1.8,
+            "z": -3.83
+          },
+          "size": {
+            "x": 9.6,
+            "y": 6.0,
+            "z": 0.0
+          },
+          "forward": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+          },
+          "right": {
+            "x": -1.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "up": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "name": "User",
+        "position": {
+          "x": -0.05,
+          "y": 1.85,
+          "z": -1.33
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "boundary": {
+          "center": {
+            "x": -0.05,
+            "y": 1.0,
+            "z": -1.33
+          },
+          "size": {
+            "x": 0.5,
+            "y": 1.7,
+            "z": 0.3
+          },
+          "forward": {
+            "x": 0.23,
+            "y": 0.04,
+            "z": -0.97
+          },
+          "right": {
+            "x": -0.97,
+            "y": 0.08,
+            "z": -0.23
+          },
+          "up": {
+            "x": 0.06,
+            "y": 1.0,
+            "z": 0.06
+          }
+        }
+      }
+    ],
+    "relations": [
+      {
+        "object": "Chair",
+        "target": "Blackboard",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Brush",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Chair",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Brush",
+        "relation": "right"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "ElectronicsSalesChart",
+        "relation": "in front of"
+      },
+      {
+        "object": "TeacherDesk",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Chalks",
+        "relation": "above"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Brush",
+        "relation": "above"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Clock",
+        "relation": "below"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "Blackboard",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      },
+      {
+        "object": "Blackboard",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "Chalks",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Blackboard",
+        "relation": "below"
+      },
+      {
+        "object": "Chalks",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Chalks",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      },
+      {
+        "object": "Chalks",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "Brush",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Brush",
+        "target": "TeacherDesk",
+        "relation": "left"
+      },
+      {
+        "object": "Brush",
+        "target": "Blackboard",
+        "relation": "below"
+      },
+      {
+        "object": "Brush",
+        "target": "Chalks",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Bookcase",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      },
+      {
+        "object": "Brush",
+        "target": "User",
+        "relation": "left"
+      },
+      {
+        "object": "Clock",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "Blackboard",
+        "relation": "above"
+      },
+      {
+        "object": "Clock",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "Clock",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      },
+      {
+        "object": "Clock",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Blackboard",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Clock",
+        "relation": "behind"
+      },
+      {
+        "object": "Bookcase",
+        "target": "Books",
+        "relation": "above"
+      },
+      {
+        "object": "Bookcase",
+        "target": "ElectronicsSalesChart",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "Books",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "Bookcase",
+        "relation": "below"
+      },
+      {
+        "object": "Books",
+        "target": "ElectronicsSalesChart",
+        "relation": "in front of"
+      },
+      {
+        "object": "Books",
+        "target": "User",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Chair",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Blackboard",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Chalks",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Brush",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Clock",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Bookcase",
+        "relation": "in front of"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "Books",
+        "relation": "behind"
+      },
+      {
+        "object": "ElectronicsSalesChart",
+        "target": "User",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "TeacherDesk",
+        "relation": "behind"
+      },
+      {
+        "object": "User",
+        "target": "Blackboard",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Chalks",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Clock",
+        "relation": "left"
+      },
+      {
+        "object": "User",
+        "target": "Bookcase",
+        "relation": "right"
+      },
+      {
+        "object": "User",
+        "target": "Books",
+        "relation": "in front of"
+      },
+      {
+        "object": "User",
+        "target": "ElectronicsSalesChart",
+        "relation": "right"
+      }
+    ]
+  },
+  "hit_points": [
+    {
+      "hit_id": "h0",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.77,
+        "y": 2.77,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h1",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.66,
+        "y": 1.97,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h2",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.77,
+        "y": 2.77,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h3",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.66,
+        "y": 1.97,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h4",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.77,
+        "y": 2.77,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h5",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.66,
+        "y": 1.98,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h6",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.77,
+        "y": 2.77,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h7",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.66,
+        "y": 1.98,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h8",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.77,
+        "y": 2.77,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h9",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.66,
+        "y": 1.98,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h10",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.77,
+        "y": 2.77,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h11",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.66,
+        "y": 1.98,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h12",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.78,
+        "y": 2.78,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h13",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.66,
+        "y": 1.98,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h14",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.78,
+        "y": 2.78,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h15",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.66,
+        "y": 1.98,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h16",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.78,
+        "y": 2.78,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h17",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.66,
+        "y": 1.98,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h18",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.78,
+        "y": 2.78,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h19",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.66,
+        "y": 1.98,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h20",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.78,
+        "y": 2.78,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h21",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.65,
+        "y": 2.0,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h22",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.78,
+        "y": 2.78,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h23",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.65,
+        "y": 2.02,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h24",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.78,
+        "y": 2.78,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h25",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.65,
+        "y": 2.03,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h26",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.78,
+        "y": 2.78,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h27",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.65,
+        "y": 2.02,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h28",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": 0.78,
+        "y": 2.78,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    },
+    {
+      "hit_id": "h29",
+      "object": "ElectronicsSalesChart",
+      "position": {
+        "x": -0.66,
+        "y": 2.01,
+        "z": -3.83
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      }
+    }
+  ],
+  "user_request": "Adapt this chart to the size of blackboard.",
+  "data_info": null
+}
+
+[Generated Sequence]
+EMBED("ElectronicsSalesChart", "Blackboard");
+
+[Skill Execution]
+[ActionExecutor] ✓ Embed.Execute("ElectronicsSalesChart", "Blackboard");

@@ -207,6 +207,10 @@ ORIENT_TO("ElectronicsSalesChart", "User");
 
 ## Example 2: Append/Add multiple data series on one exsiting chart
 User Request:
+Append furniture data on this line chart (ElectronicsSalesChart)
+Output:
+APPEND_SERIES("ElectronicsSalesChart", "sales/monthly_sales.json", "month", "furniture", "line");
+User Request:
 Append/Add english and science scores in this bar chart (AllStudentsScoresChart)
 Output:
 APPEND_SERIES("AllStudentsScoresChart", "education/student_scores.json", "student_id", "english_score", "bar");
